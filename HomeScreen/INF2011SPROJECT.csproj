@@ -46,10 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerInformation.cs">
+    <Compile Include="Presentation Layer\AvailableRooms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerInformation.Designer.cs">
+    <Compile Include="Presentation Layer\AvailableRooms.Designer.cs">
+      <DependentUpon>AvailableRooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\CustomerInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CustomerInformation.Designer.cs">
       <DependentUpon>CustomerInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\HomeScreen.cs">
@@ -60,7 +66,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CustomerInformation.resx">
+    <EmbeddedResource Include="Presentation Layer\AvailableRooms.resx">
+      <DependentUpon>AvailableRooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\CustomerInformation.resx">
       <DependentUpon>CustomerInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\HomeScreen.resx">
