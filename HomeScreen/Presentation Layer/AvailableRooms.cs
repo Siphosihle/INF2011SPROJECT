@@ -16,5 +16,10 @@ namespace HomeScreen.Presentation_Layer
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
