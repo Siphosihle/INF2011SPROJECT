@@ -33,8 +33,8 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.pnlAvailability = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbAvailableRooms = new System.Windows.Forms.RichTextBox();
+            this.lbTheFollowing = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.pnlAvailability.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +75,7 @@
             // 
             this.btnPrevious.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.Color.HotPink;
-            this.btnPrevious.Location = new System.Drawing.Point(148, 408);
+            this.btnPrevious.Location = new System.Drawing.Point(149, 408);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(123, 48);
             this.btnPrevious.TabIndex = 30;
@@ -84,30 +84,30 @@
             // 
             // pnlAvailability
             // 
-            this.pnlAvailability.Controls.Add(this.richTextBox1);
-            this.pnlAvailability.Controls.Add(this.label2);
+            this.pnlAvailability.Controls.Add(this.rtbAvailableRooms);
+            this.pnlAvailability.Controls.Add(this.lbTheFollowing);
             this.pnlAvailability.Location = new System.Drawing.Point(293, 139);
             this.pnlAvailability.Name = "pnlAvailability";
             this.pnlAvailability.Size = new System.Drawing.Size(447, 241);
             this.pnlAvailability.TabIndex = 32;
             // 
-            // label2
+            // rtbAvailableRooms
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "The Following Rooms Are Availabe";
+            this.rtbAvailableRooms.Location = new System.Drawing.Point(3, 18);
+            this.rtbAvailableRooms.Name = "rtbAvailableRooms";
+            this.rtbAvailableRooms.Size = new System.Drawing.Size(441, 220);
+            this.rtbAvailableRooms.TabIndex = 1;
+            this.rtbAvailableRooms.Text = "";
             // 
-            // richTextBox1
+            // lbTheFollowing
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(3, 18);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(441, 220);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.lbTheFollowing.AutoSize = true;
+            this.lbTheFollowing.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTheFollowing.Location = new System.Drawing.Point(3, 0);
+            this.lbTheFollowing.Name = "lbTheFollowing";
+            this.lbTheFollowing.Size = new System.Drawing.Size(194, 15);
+            this.lbTheFollowing.TabIndex = 0;
+            this.lbTheFollowing.Text = "The Following Rooms Are Availabe";
             // 
             // AvailableRooms
             // 
@@ -136,7 +136,7 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.Panel pnlAvailability;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label lbTheFollowing;
+        private System.Windows.Forms.RichTextBox rtbAvailableRooms;
     }
 }
