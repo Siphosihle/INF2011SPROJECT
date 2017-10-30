@@ -28,97 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbBookingDetails = new System.Windows.Forms.Label();
+            this.dtpCheckIn = new System.Windows.Forms.DateTimePicker();
+            this.dtpCheckOut = new System.Windows.Forms.DateTimePicker();
+            this.lbCheckInDate = new System.Windows.Forms.Label();
+            this.lbCheckOutDate = new System.Windows.Forms.Label();
+            this.lbNumberOfGuests = new System.Windows.Forms.Label();
+            this.lbSpecialRequirements = new System.Windows.Forms.Label();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbNumberOfGuests = new System.Windows.Forms.ComboBox();
+            this.cbSpecialRequirements = new System.Windows.Forms.ComboBox();
+            this.picBox = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lbBookingDetails
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.HotPink;
-            this.label1.Location = new System.Drawing.Point(491, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(269, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "BOOKING DETAILS";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lbBookingDetails.AutoSize = true;
+            this.lbBookingDetails.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBookingDetails.ForeColor = System.Drawing.Color.HotPink;
+            this.lbBookingDetails.Location = new System.Drawing.Point(491, 81);
+            this.lbBookingDetails.Name = "lbBookingDetails";
+            this.lbBookingDetails.Size = new System.Drawing.Size(269, 31);
+            this.lbBookingDetails.TabIndex = 0;
+            this.lbBookingDetails.Text = "BOOKING DETAILS";
+            this.lbBookingDetails.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dateTimePicker1
+            // dtpCheckIn
             // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.Salmon;
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.LightCoral;
-            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.LightCoral;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.LightCoral;
-            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.Salmon;
-            this.dateTimePicker1.Location = new System.Drawing.Point(560, 214);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.dtpCheckIn.CalendarForeColor = System.Drawing.Color.Salmon;
+            this.dtpCheckIn.CalendarMonthBackground = System.Drawing.Color.LightCoral;
+            this.dtpCheckIn.CalendarTitleBackColor = System.Drawing.Color.LightCoral;
+            this.dtpCheckIn.CalendarTitleForeColor = System.Drawing.Color.LightCoral;
+            this.dtpCheckIn.CalendarTrailingForeColor = System.Drawing.Color.Salmon;
+            this.dtpCheckIn.Location = new System.Drawing.Point(560, 214);
+            this.dtpCheckIn.Name = "dtpCheckIn";
+            this.dtpCheckIn.Size = new System.Drawing.Size(200, 20);
+            this.dtpCheckIn.TabIndex = 7;
             // 
-            // dateTimePicker2
+            // dtpCheckOut
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(560, 272);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 8;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.dtpCheckOut.Location = new System.Drawing.Point(560, 272);
+            this.dtpCheckOut.Name = "dtpCheckOut";
+            this.dtpCheckOut.Size = new System.Drawing.Size(200, 20);
+            this.dtpCheckOut.TabIndex = 8;
+            this.dtpCheckOut.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
-            // label4
+            // lbCheckInDate
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.HotPink;
-            this.label4.Location = new System.Drawing.Point(468, 219);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 15);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Check-In Date";
+            this.lbCheckInDate.AutoSize = true;
+            this.lbCheckInDate.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCheckInDate.ForeColor = System.Drawing.Color.HotPink;
+            this.lbCheckInDate.Location = new System.Drawing.Point(468, 219);
+            this.lbCheckInDate.Name = "lbCheckInDate";
+            this.lbCheckInDate.Size = new System.Drawing.Size(86, 15);
+            this.lbCheckInDate.TabIndex = 15;
+            this.lbCheckInDate.Text = "Check-In Date";
             // 
-            // label2
+            // lbCheckOutDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.HotPink;
-            this.label2.Location = new System.Drawing.Point(458, 277);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 15);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Check-Out Date";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lbCheckOutDate.AutoSize = true;
+            this.lbCheckOutDate.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCheckOutDate.ForeColor = System.Drawing.Color.HotPink;
+            this.lbCheckOutDate.Location = new System.Drawing.Point(458, 277);
+            this.lbCheckOutDate.Name = "lbCheckOutDate";
+            this.lbCheckOutDate.Size = new System.Drawing.Size(96, 15);
+            this.lbCheckOutDate.TabIndex = 16;
+            this.lbCheckOutDate.Text = "Check-Out Date";
+            this.lbCheckOutDate.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label3
+            // lbNumberOfGuests
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.HotPink;
-            this.label3.Location = new System.Drawing.Point(449, 334);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 15);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Number of Guests";
+            this.lbNumberOfGuests.AutoSize = true;
+            this.lbNumberOfGuests.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNumberOfGuests.ForeColor = System.Drawing.Color.HotPink;
+            this.lbNumberOfGuests.Location = new System.Drawing.Point(449, 334);
+            this.lbNumberOfGuests.Name = "lbNumberOfGuests";
+            this.lbNumberOfGuests.Size = new System.Drawing.Size(105, 15);
+            this.lbNumberOfGuests.TabIndex = 20;
+            this.lbNumberOfGuests.Text = "Number of Guests";
             // 
-            // label5
+            // lbSpecialRequirements
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.HotPink;
-            this.label5.Location = new System.Drawing.Point(427, 386);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 15);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Special Requirements";
+            this.lbSpecialRequirements.AutoSize = true;
+            this.lbSpecialRequirements.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSpecialRequirements.ForeColor = System.Drawing.Color.HotPink;
+            this.lbSpecialRequirements.Location = new System.Drawing.Point(427, 386);
+            this.lbSpecialRequirements.Name = "lbSpecialRequirements";
+            this.lbSpecialRequirements.Size = new System.Drawing.Size(127, 15);
+            this.lbSpecialRequirements.TabIndex = 21;
+            this.lbSpecialRequirements.Text = "Special Requirements";
             // 
             // vScrollBar1
             // 
@@ -127,31 +127,31 @@
             this.vScrollBar1.Size = new System.Drawing.Size(20, 463);
             this.vScrollBar1.TabIndex = 22;
             // 
-            // comboBox1
+            // cbNumberOfGuests
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(560, 328);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 23;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbNumberOfGuests.FormattingEnabled = true;
+            this.cbNumberOfGuests.Location = new System.Drawing.Point(560, 328);
+            this.cbNumberOfGuests.Name = "cbNumberOfGuests";
+            this.cbNumberOfGuests.Size = new System.Drawing.Size(200, 21);
+            this.cbNumberOfGuests.TabIndex = 23;
+            this.cbNumberOfGuests.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // comboBox2
+            // cbSpecialRequirements
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(560, 380);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 21);
-            this.comboBox2.TabIndex = 24;
+            this.cbSpecialRequirements.FormattingEnabled = true;
+            this.cbSpecialRequirements.Location = new System.Drawing.Point(560, 380);
+            this.cbSpecialRequirements.Name = "cbSpecialRequirements";
+            this.cbSpecialRequirements.Size = new System.Drawing.Size(200, 21);
+            this.cbSpecialRequirements.TabIndex = 24;
             // 
-            // pictureBox1
+            // picBox
             // 
-            this.pictureBox1.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(184, 111);
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
+            this.picBox.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
+            this.picBox.Location = new System.Drawing.Point(0, 1);
+            this.picBox.Name = "picBox";
+            this.picBox.Size = new System.Drawing.Size(184, 111);
+            this.picBox.TabIndex = 25;
+            this.picBox.TabStop = false;
             // 
             // button1
             // 
@@ -172,24 +172,24 @@
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(1048, 627);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.picBox);
+            this.Controls.Add(this.cbSpecialRequirements);
+            this.Controls.Add(this.cbNumberOfGuests);
             this.Controls.Add(this.vScrollBar1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbSpecialRequirements);
+            this.Controls.Add(this.lbNumberOfGuests);
+            this.Controls.Add(this.lbCheckOutDate);
+            this.Controls.Add(this.lbCheckInDate);
+            this.Controls.Add(this.dtpCheckOut);
+            this.Controls.Add(this.dtpCheckIn);
+            this.Controls.Add(this.lbBookingDetails);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.LightCoral;
             this.Name = "HomeScreen";
             this.Text = "Rest Easy Hotel ";
             this.TransparencyKey = System.Drawing.Color.Silver;
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,17 +197,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbBookingDetails;
+        private System.Windows.Forms.DateTimePicker dtpCheckIn;
+        private System.Windows.Forms.DateTimePicker dtpCheckOut;
+        private System.Windows.Forms.Label lbCheckInDate;
+        private System.Windows.Forms.Label lbCheckOutDate;
+        private System.Windows.Forms.Label lbNumberOfGuests;
+        private System.Windows.Forms.Label lbSpecialRequirements;
         private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cbNumberOfGuests;
+        private System.Windows.Forms.ComboBox cbSpecialRequirements;
+        private System.Windows.Forms.PictureBox picBox;
         private System.Windows.Forms.Button button1;
     }
 }
