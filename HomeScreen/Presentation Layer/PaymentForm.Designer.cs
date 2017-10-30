@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.picBox = new System.Windows.Forms.PictureBox();
+            this.lbPaymentDetails = new System.Windows.Forms.Label();
+            this.cbPaymentType = new System.Windows.Forms.ComboBox();
+            this.lbPaymentType = new System.Windows.Forms.Label();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.treeView2 = new System.Windows.Forms.TreeView();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,48 +54,48 @@
             this.label20 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // picBox
             // 
-            this.pictureBox1.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(1, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(184, 111);
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
+            this.picBox.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
+            this.picBox.Location = new System.Drawing.Point(1, 1);
+            this.picBox.Name = "picBox";
+            this.picBox.Size = new System.Drawing.Size(184, 111);
+            this.picBox.TabIndex = 27;
+            this.picBox.TabStop = false;
             // 
-            // label1
+            // lbPaymentDetails
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.HotPink;
-            this.label1.Location = new System.Drawing.Point(406, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(270, 31);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "PAYMENT DETAILS";
+            this.lbPaymentDetails.AutoSize = true;
+            this.lbPaymentDetails.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPaymentDetails.ForeColor = System.Drawing.Color.HotPink;
+            this.lbPaymentDetails.Location = new System.Drawing.Point(406, 81);
+            this.lbPaymentDetails.Name = "lbPaymentDetails";
+            this.lbPaymentDetails.Size = new System.Drawing.Size(270, 31);
+            this.lbPaymentDetails.TabIndex = 28;
+            this.lbPaymentDetails.Text = "PAYMENT DETAILS";
             // 
-            // comboBox1
+            // cbPaymentType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(452, 218);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(183, 21);
-            this.comboBox1.TabIndex = 29;
+            this.cbPaymentType.FormattingEnabled = true;
+            this.cbPaymentType.Location = new System.Drawing.Point(452, 218);
+            this.cbPaymentType.Name = "cbPaymentType";
+            this.cbPaymentType.Size = new System.Drawing.Size(183, 21);
+            this.cbPaymentType.TabIndex = 29;
             // 
-            // label2
+            // lbPaymentType
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.HotPink;
-            this.label2.Location = new System.Drawing.Point(354, 224);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 15);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Payment Type";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lbPaymentType.AutoSize = true;
+            this.lbPaymentType.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPaymentType.ForeColor = System.Drawing.Color.HotPink;
+            this.lbPaymentType.Location = new System.Drawing.Point(354, 224);
+            this.lbPaymentType.Name = "lbPaymentType";
+            this.lbPaymentType.Size = new System.Drawing.Size(82, 15);
+            this.lbPaymentType.TabIndex = 30;
+            this.lbPaymentType.Text = "Payment Type";
+            this.lbPaymentType.Click += new System.EventHandler(this.label2_Click);
             // 
             // treeView1
             // 
@@ -324,13 +324,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.treeView2);
             this.Controls.Add(this.treeView1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lbPaymentType);
+            this.Controls.Add(this.cbPaymentType);
+            this.Controls.Add(this.lbPaymentDetails);
+            this.Controls.Add(this.picBox);
             this.Name = "PaymentForm";
             this.Text = "PaymentForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,10 +338,10 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox picBox;
+        private System.Windows.Forms.Label lbPaymentDetails;
+        private System.Windows.Forms.ComboBox cbPaymentType;
+        private System.Windows.Forms.Label lbPaymentType;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.TreeView treeView2;
         private System.Windows.Forms.Label label3;
