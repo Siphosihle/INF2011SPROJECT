@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.picBox = new System.Windows.Forms.PictureBox();
-            this.lbBookingDetails = new System.Windows.Forms.Label();
+            this.lblAdminLogin = new System.Windows.Forms.Label();
             this.lbCheckInDate = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -43,22 +43,23 @@
             // picBox
             // 
             this.picBox.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
+            this.picBox.Image = global::HomeScreen.Properties.Resources.Screenshot__1_;
             this.picBox.Location = new System.Drawing.Point(2, 1);
             this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(184, 111);
+            this.picBox.Size = new System.Drawing.Size(207, 111);
             this.picBox.TabIndex = 27;
             this.picBox.TabStop = false;
             // 
-            // lbBookingDetails
+            // lblAdminLogin
             // 
-            this.lbBookingDetails.AutoSize = true;
-            this.lbBookingDetails.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBookingDetails.ForeColor = System.Drawing.Color.HotPink;
-            this.lbBookingDetails.Location = new System.Drawing.Point(461, 81);
-            this.lbBookingDetails.Name = "lbBookingDetails";
-            this.lbBookingDetails.Size = new System.Drawing.Size(205, 31);
-            this.lbBookingDetails.TabIndex = 32;
-            this.lbBookingDetails.Text = "ADMIN LOGIN";
+            this.lblAdminLogin.AutoSize = true;
+            this.lblAdminLogin.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdminLogin.ForeColor = System.Drawing.Color.HotPink;
+            this.lblAdminLogin.Location = new System.Drawing.Point(461, 81);
+            this.lblAdminLogin.Name = "lblAdminLogin";
+            this.lblAdminLogin.Size = new System.Drawing.Size(205, 31);
+            this.lblAdminLogin.TabIndex = 32;
+            this.lblAdminLogin.Text = "ADMIN LOGIN";
             // 
             // lbCheckInDate
             // 
@@ -141,7 +142,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbCheckInDate);
-            this.Controls.Add(this.lbBookingDetails);
+            this.Controls.Add(this.lblAdminLogin);
             this.Controls.Add(this.picBox);
             this.Name = "AdminLoginForm";
             this.Text = "AdminLoginForm";
@@ -154,7 +155,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox picBox;
-        private System.Windows.Forms.Label lbBookingDetails;
+        private System.Windows.Forms.Label lblAdminLogin;
         private System.Windows.Forms.Label lbCheckInDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
