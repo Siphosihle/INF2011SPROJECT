@@ -31,6 +31,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,11 +46,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -86,6 +86,41 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(271, 315);
             this.panel1.TabIndex = 2;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(147, 155);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 13;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(147, 192);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 12;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(147, 81);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 11;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(147, 118);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 10;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(147, 44);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 9;
             // 
             // label6
             // 
@@ -177,46 +212,11 @@
             this.button2.Text = "Confirm Payment";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(147, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 9;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(147, 118);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 10;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(147, 81);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 11;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(147, 192);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 12;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(147, 155);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 13;
-            // 
             // PaymentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 527);
+            this.ClientSize = new System.Drawing.Size(1098, 576);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel2);
