@@ -42,7 +42,7 @@
             // picBox
             // 
             this.picBox.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
-            this.picBox.Location = new System.Drawing.Point(-2, 1);
+            this.picBox.Location = new System.Drawing.Point(-3, 1);
             this.picBox.Name = "picBox";
             this.picBox.Size = new System.Drawing.Size(184, 111);
             this.picBox.TabIndex = 27;
@@ -63,7 +63,7 @@
             // 
             this.btnNext.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.HotPink;
-            this.btnNext.Location = new System.Drawing.Point(698, 408);
+            this.btnNext.Location = new System.Drawing.Point(748, 447);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(123, 48);
             this.btnNext.TabIndex = 29;
@@ -75,7 +75,7 @@
             // 
             this.btnPrevious.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.Color.HotPink;
-            this.btnPrevious.Location = new System.Drawing.Point(149, 408);
+            this.btnPrevious.Location = new System.Drawing.Point(145, 447);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(123, 48);
             this.btnPrevious.TabIndex = 30;
@@ -113,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 507);
+            this.ClientSize = new System.Drawing.Size(1032, 581);
             this.Controls.Add(this.pnlAvailability);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
