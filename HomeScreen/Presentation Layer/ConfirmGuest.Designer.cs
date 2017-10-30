@@ -28,31 +28,211 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblGuestVerification = new System.Windows.Forms.Label();
+            this.lblGuestID = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblSurname = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblCellphone = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblAccountBalance = new System.Windows.Forms.Label();
+            this.lblGuestStatus = new System.Windows.Forms.Label();
+            this.txtboxGuestID = new System.Windows.Forms.TextBox();
+            this.txtboxName = new System.Windows.Forms.TextBox();
+            this.txtboxSurname = new System.Windows.Forms.TextBox();
+            this.txtboxID = new System.Windows.Forms.TextBox();
+            this.txtboxEmail = new System.Windows.Forms.TextBox();
+            this.txtboxCellphone = new System.Windows.Forms.TextBox();
+            this.txtboxAddress = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnProceed = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblGuestVerification
+            // 
+            this.lblGuestVerification.AutoSize = true;
+            this.lblGuestVerification.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGuestVerification.Location = new System.Drawing.Point(332, 80);
+            this.lblGuestVerification.Name = "lblGuestVerification";
+            this.lblGuestVerification.Size = new System.Drawing.Size(320, 31);
+            this.lblGuestVerification.TabIndex = 1;
+            this.lblGuestVerification.Text = "Guest Details Verification";
+            this.lblGuestVerification.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lblGuestID
+            // 
+            this.lblGuestID.AutoSize = true;
+            this.lblGuestID.Location = new System.Drawing.Point(49, 154);
+            this.lblGuestID.Name = "lblGuestID";
+            this.lblGuestID.Size = new System.Drawing.Size(49, 13);
+            this.lblGuestID.TabIndex = 2;
+            this.lblGuestID.Text = "Guest ID";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(49, 194);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.TabIndex = 3;
+            this.lblName.Text = "Name";
+            // 
+            // lblSurname
+            // 
+            this.lblSurname.AutoSize = true;
+            this.lblSurname.Location = new System.Drawing.Point(49, 234);
+            this.lblSurname.Name = "lblSurname";
+            this.lblSurname.Size = new System.Drawing.Size(49, 13);
+            this.lblSurname.TabIndex = 4;
+            this.lblSurname.Text = "Surname";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(49, 274);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(18, 13);
+            this.lblID.TabIndex = 5;
+            this.lblID.Text = "ID";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(49, 314);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.TabIndex = 6;
+            this.lblEmail.Text = "Email";
+            // 
+            // lblCellphone
+            // 
+            this.lblCellphone.AutoSize = true;
+            this.lblCellphone.Location = new System.Drawing.Point(49, 354);
+            this.lblCellphone.Name = "lblCellphone";
+            this.lblCellphone.Size = new System.Drawing.Size(54, 13);
+            this.lblCellphone.TabIndex = 7;
+            this.lblCellphone.Text = "Cellphone";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Location = new System.Drawing.Point(49, 394);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(45, 13);
+            this.lblAddress.TabIndex = 8;
+            this.lblAddress.Text = "Address";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblStatus);
+            this.panel1.Controls.Add(this.lblAccountBalance);
+            this.panel1.Controls.Add(this.lblGuestStatus);
+            this.panel1.Location = new System.Drawing.Point(489, 154);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(455, 225);
+            this.panel1.TabIndex = 9;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(30, 67);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(37, 13);
+            this.lblStatus.TabIndex = 20;
+            this.lblStatus.Text = "Status";
+            // 
+            // lblAccountBalance
+            // 
+            this.lblAccountBalance.AutoSize = true;
+            this.lblAccountBalance.Location = new System.Drawing.Point(30, 37);
+            this.lblAccountBalance.Name = "lblAccountBalance";
+            this.lblAccountBalance.Size = new System.Drawing.Size(89, 13);
+            this.lblAccountBalance.TabIndex = 19;
+            this.lblAccountBalance.Text = "Account Balance";
+            this.lblAccountBalance.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // lblGuestStatus
+            // 
+            this.lblGuestStatus.AutoSize = true;
+            this.lblGuestStatus.Location = new System.Drawing.Point(3, 0);
+            this.lblGuestStatus.Name = "lblGuestStatus";
+            this.lblGuestStatus.Size = new System.Drawing.Size(68, 13);
+            this.lblGuestStatus.TabIndex = 0;
+            this.lblGuestStatus.Text = "Guest Status";
+            // 
+            // txtboxGuestID
+            // 
+            this.txtboxGuestID.Location = new System.Drawing.Point(158, 151);
+            this.txtboxGuestID.Name = "txtboxGuestID";
+            this.txtboxGuestID.ReadOnly = true;
+            this.txtboxGuestID.Size = new System.Drawing.Size(100, 20);
+            this.txtboxGuestID.TabIndex = 10;
+            // 
+            // txtboxName
+            // 
+            this.txtboxName.Location = new System.Drawing.Point(158, 191);
+            this.txtboxName.Name = "txtboxName";
+            this.txtboxName.Size = new System.Drawing.Size(100, 20);
+            this.txtboxName.TabIndex = 11;
+            // 
+            // txtboxSurname
+            // 
+            this.txtboxSurname.Location = new System.Drawing.Point(158, 231);
+            this.txtboxSurname.Name = "txtboxSurname";
+            this.txtboxSurname.Size = new System.Drawing.Size(100, 20);
+            this.txtboxSurname.TabIndex = 12;
+            // 
+            // txtboxID
+            // 
+            this.txtboxID.Location = new System.Drawing.Point(158, 271);
+            this.txtboxID.Name = "txtboxID";
+            this.txtboxID.Size = new System.Drawing.Size(100, 20);
+            this.txtboxID.TabIndex = 13;
+            // 
+            // txtboxEmail
+            // 
+            this.txtboxEmail.Location = new System.Drawing.Point(158, 311);
+            this.txtboxEmail.Name = "txtboxEmail";
+            this.txtboxEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtboxEmail.TabIndex = 14;
+            // 
+            // txtboxCellphone
+            // 
+            this.txtboxCellphone.Location = new System.Drawing.Point(158, 351);
+            this.txtboxCellphone.Name = "txtboxCellphone";
+            this.txtboxCellphone.Size = new System.Drawing.Size(100, 20);
+            this.txtboxCellphone.TabIndex = 15;
+            // 
+            // txtboxAddress
+            // 
+            this.txtboxAddress.Location = new System.Drawing.Point(158, 391);
+            this.txtboxAddress.Name = "txtboxAddress";
+            this.txtboxAddress.Size = new System.Drawing.Size(100, 20);
+            this.txtboxAddress.TabIndex = 16;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(158, 443);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 17;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnProceed
+            // 
+            this.btnProceed.Location = new System.Drawing.Point(489, 443);
+            this.btnProceed.Name = "btnProceed";
+            this.btnProceed.Size = new System.Drawing.Size(123, 23);
+            this.btnProceed.TabIndex = 18;
+            this.btnProceed.Text = "Proceed to Booking";
+            this.btnProceed.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -63,215 +243,35 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(332, 80);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(320, 31);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Guest Details Verification";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 154);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Guest ID";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 194);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Name";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(49, 234);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Surname";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(49, 274);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(18, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "ID";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(49, 314);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Email";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(49, 354);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Cellphone";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(49, 394);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 13);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Address";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Location = new System.Drawing.Point(489, 154);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(455, 225);
-            this.panel1.TabIndex = 9;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Guest Status";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(158, 151);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 10;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(158, 191);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 11;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(158, 231);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 12;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(158, 271);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 13;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(158, 311);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 14;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(158, 351);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 15;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(158, 391);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 16;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(158, 443);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(489, 443);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 23);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Proceed to Booking";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(30, 37);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 13);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Account Balance";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(30, 67);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 13);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Status";
-            // 
             // ConfirmGuest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 517);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnProceed);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.txtboxAddress);
+            this.Controls.Add(this.txtboxCellphone);
+            this.Controls.Add(this.txtboxEmail);
+            this.Controls.Add(this.txtboxID);
+            this.Controls.Add(this.txtboxSurname);
+            this.Controls.Add(this.txtboxName);
+            this.Controls.Add(this.txtboxGuestID);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblAddress);
+            this.Controls.Add(this.lblCellphone);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.lblSurname);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblGuestID);
+            this.Controls.Add(this.lblGuestVerification);
             this.Controls.Add(this.pictureBox1);
             this.Name = "ConfirmGuest";
             this.Text = "ConfirmGuest";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,26 +280,26 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblGuestVerification;
+        private System.Windows.Forms.Label lblGuestID;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblSurname;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblCellphone;
+        private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblGuestStatus;
+        private System.Windows.Forms.TextBox txtboxGuestID;
+        private System.Windows.Forms.TextBox txtboxName;
+        private System.Windows.Forms.TextBox txtboxSurname;
+        private System.Windows.Forms.TextBox txtboxID;
+        private System.Windows.Forms.TextBox txtboxEmail;
+        private System.Windows.Forms.TextBox txtboxCellphone;
+        private System.Windows.Forms.TextBox txtboxAddress;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnProceed;
+        private System.Windows.Forms.Label lblAccountBalance;
+        private System.Windows.Forms.Label lblStatus;
     }
 }

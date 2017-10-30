@@ -28,136 +28,127 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCCPayment = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblExpiryDate = new System.Windows.Forms.Label();
+            this.lblCVV = new System.Windows.Forms.Label();
+            this.lblCCType = new System.Windows.Forms.Label();
+            this.lblCCNumber = new System.Windows.Forms.Label();
+            this.lblCardHolder = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblDepositDue = new System.Windows.Forms.Label();
+            this.lblAmountDue = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.txtboxCCName = new System.Windows.Forms.TextBox();
+            this.txtboxCCType = new System.Windows.Forms.TextBox();
+            this.txtboxCCNumber = new System.Windows.Forms.TextBox();
+            this.txtboxExpiry = new System.Windows.Forms.TextBox();
+            this.txtboxCVV = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // lblCCPayment
             // 
-            this.pictureBox1.Image = global::HomeScreen.Properties.Resources.Screenshot__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(196, 114);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(219, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 31);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Credit Card Payment";
+            this.lblCCPayment.AutoSize = true;
+            this.lblCCPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCCPayment.Location = new System.Drawing.Point(219, 83);
+            this.lblCCPayment.Name = "lblCCPayment";
+            this.lblCCPayment.Size = new System.Drawing.Size(267, 31);
+            this.lblCCPayment.TabIndex = 1;
+            this.lblCCPayment.Text = "Credit Card Payment";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtboxCVV);
+            this.panel1.Controls.Add(this.txtboxExpiry);
+            this.panel1.Controls.Add(this.txtboxCCNumber);
+            this.panel1.Controls.Add(this.txtboxCCType);
+            this.panel1.Controls.Add(this.txtboxCCName);
+            this.panel1.Controls.Add(this.lblExpiryDate);
+            this.panel1.Controls.Add(this.lblCVV);
+            this.panel1.Controls.Add(this.lblCCType);
+            this.panel1.Controls.Add(this.lblCCNumber);
+            this.panel1.Controls.Add(this.lblCardHolder);
             this.panel1.Location = new System.Drawing.Point(25, 134);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(271, 315);
             this.panel1.TabIndex = 2;
             // 
-            // label6
+            // lblExpiryDate
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 195);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Expiry Date";
+            this.lblExpiryDate.AutoSize = true;
+            this.lblExpiryDate.Location = new System.Drawing.Point(17, 195);
+            this.lblExpiryDate.Name = "lblExpiryDate";
+            this.lblExpiryDate.Size = new System.Drawing.Size(61, 13);
+            this.lblExpiryDate.TabIndex = 8;
+            this.lblExpiryDate.Text = "Expiry Date";
             // 
-            // label5
+            // lblCVV
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 158);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "CVV";
+            this.lblCVV.AutoSize = true;
+            this.lblCVV.Location = new System.Drawing.Point(17, 158);
+            this.lblCVV.Name = "lblCVV";
+            this.lblCVV.Size = new System.Drawing.Size(28, 13);
+            this.lblCVV.TabIndex = 7;
+            this.lblCVV.Text = "CVV";
             // 
-            // label4
+            // lblCCType
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 121);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Credit Card Type";
+            this.lblCCType.AutoSize = true;
+            this.lblCCType.Location = new System.Drawing.Point(17, 121);
+            this.lblCCType.Name = "lblCCType";
+            this.lblCCType.Size = new System.Drawing.Size(86, 13);
+            this.lblCCType.TabIndex = 6;
+            this.lblCCType.Text = "Credit Card Type";
             // 
-            // label3
+            // lblCCNumber
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Credit Card Number";
+            this.lblCCNumber.AutoSize = true;
+            this.lblCCNumber.Location = new System.Drawing.Point(17, 84);
+            this.lblCCNumber.Name = "lblCCNumber";
+            this.lblCCNumber.Size = new System.Drawing.Size(99, 13);
+            this.lblCCNumber.TabIndex = 5;
+            this.lblCCNumber.Text = "Credit Card Number";
             // 
-            // label2
+            // lblCardHolder
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Credit Card Name Holder";
+            this.lblCardHolder.AutoSize = true;
+            this.lblCardHolder.Location = new System.Drawing.Point(17, 47);
+            this.lblCardHolder.Name = "lblCardHolder";
+            this.lblCardHolder.Size = new System.Drawing.Size(124, 13);
+            this.lblCardHolder.TabIndex = 4;
+            this.lblCardHolder.Text = "Credit Card Name Holder";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.lblDepositDue);
+            this.panel2.Controls.Add(this.lblAmountDue);
             this.panel2.Location = new System.Drawing.Point(319, 134);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(271, 315);
             this.panel2.TabIndex = 3;
             // 
-            // label8
+            // lblDepositDue
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 80);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 13);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Deposit Due";
+            this.lblDepositDue.AutoSize = true;
+            this.lblDepositDue.Location = new System.Drawing.Point(15, 80);
+            this.lblDepositDue.Name = "lblDepositDue";
+            this.lblDepositDue.Size = new System.Drawing.Size(66, 13);
+            this.lblDepositDue.TabIndex = 10;
+            this.lblDepositDue.Text = "Deposit Due";
             // 
-            // label7
+            // lblAmountDue
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 47);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 13);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Total Amount Due";
+            this.lblAmountDue.AutoSize = true;
+            this.lblAmountDue.Location = new System.Drawing.Point(15, 47);
+            this.lblAmountDue.Name = "lblAmountDue";
+            this.lblAmountDue.Size = new System.Drawing.Size(93, 13);
+            this.lblAmountDue.TabIndex = 9;
+            this.lblAmountDue.Text = "Total Amount Due";
             // 
             // button1
             // 
@@ -177,40 +168,49 @@
             this.button2.Text = "Confirm Payment";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtboxCCName
             // 
-            this.textBox1.Location = new System.Drawing.Point(147, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 9;
+            this.txtboxCCName.Location = new System.Drawing.Point(147, 44);
+            this.txtboxCCName.Name = "txtboxCCName";
+            this.txtboxCCName.Size = new System.Drawing.Size(100, 20);
+            this.txtboxCCName.TabIndex = 9;
             // 
-            // textBox2
+            // txtboxCCType
             // 
-            this.textBox2.Location = new System.Drawing.Point(147, 118);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtboxCCType.Location = new System.Drawing.Point(147, 118);
+            this.txtboxCCType.Name = "txtboxCCType";
+            this.txtboxCCType.Size = new System.Drawing.Size(100, 20);
+            this.txtboxCCType.TabIndex = 10;
             // 
-            // textBox3
+            // txtboxCCNumber
             // 
-            this.textBox3.Location = new System.Drawing.Point(147, 81);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtboxCCNumber.Location = new System.Drawing.Point(147, 81);
+            this.txtboxCCNumber.Name = "txtboxCCNumber";
+            this.txtboxCCNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtboxCCNumber.TabIndex = 11;
             // 
-            // textBox4
+            // txtboxExpiry
             // 
-            this.textBox4.Location = new System.Drawing.Point(147, 192);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 12;
+            this.txtboxExpiry.Location = new System.Drawing.Point(147, 192);
+            this.txtboxExpiry.Name = "txtboxExpiry";
+            this.txtboxExpiry.Size = new System.Drawing.Size(100, 20);
+            this.txtboxExpiry.TabIndex = 12;
             // 
-            // textBox5
+            // txtboxCVV
             // 
-            this.textBox5.Location = new System.Drawing.Point(147, 155);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 13;
+            this.txtboxCVV.Location = new System.Drawing.Point(147, 155);
+            this.txtboxCVV.Name = "txtboxCVV";
+            this.txtboxCVV.Size = new System.Drawing.Size(100, 20);
+            this.txtboxCVV.TabIndex = 13;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HomeScreen.Properties.Resources.Screenshot__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(196, 114);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // PaymentDetails
             // 
@@ -221,15 +221,15 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblCCPayment);
             this.Controls.Add(this.pictureBox1);
             this.Name = "PaymentDetails";
             this.Text = "PaymentDetails";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,22 +238,22 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCCPayment;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblExpiryDate;
+        private System.Windows.Forms.Label lblCVV;
+        private System.Windows.Forms.Label lblCCType;
+        private System.Windows.Forms.Label lblCCNumber;
+        private System.Windows.Forms.Label lblCardHolder;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblDepositDue;
+        private System.Windows.Forms.Label lblAmountDue;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtboxCVV;
+        private System.Windows.Forms.TextBox txtboxExpiry;
+        private System.Windows.Forms.TextBox txtboxCCNumber;
+        private System.Windows.Forms.TextBox txtboxCCType;
+        private System.Windows.Forms.TextBox txtboxCCName;
     }
 }

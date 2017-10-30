@@ -28,22 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.picBox = new System.Windows.Forms.PictureBox();
-            this.lbPaymentDetails = new System.Windows.Forms.Label();
-            this.cbPaymentType = new System.Windows.Forms.ComboBox();
-            this.lbPaymentType = new System.Windows.Forms.Label();
+            this.lblPaymentDetails = new System.Windows.Forms.Label();
+            this.cmbPaymentType = new System.Windows.Forms.ComboBox();
+            this.lblPaymentType = new System.Windows.Forms.Label();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.treeView2 = new System.Windows.Forms.TreeView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblGuestProfile = new System.Windows.Forms.Label();
+            this.lblPaymentSummary = new System.Windows.Forms.Label();
+            this.lblCheckOutDate = new System.Windows.Forms.Label();
+            this.lblCheckInDate = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblSurname = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblDepositDue = new System.Windows.Forms.Label();
+            this.lblReferenceNumber = new System.Windows.Forms.Label();
+            this.lblTotalDue = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -54,48 +53,40 @@
             this.label20 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.picBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // picBox
+            // lblPaymentDetails
             // 
-            this.picBox.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
-            this.picBox.Location = new System.Drawing.Point(1, 1);
-            this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(184, 111);
-            this.picBox.TabIndex = 27;
-            this.picBox.TabStop = false;
+            this.lblPaymentDetails.AutoSize = true;
+            this.lblPaymentDetails.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaymentDetails.ForeColor = System.Drawing.Color.HotPink;
+            this.lblPaymentDetails.Location = new System.Drawing.Point(406, 81);
+            this.lblPaymentDetails.Name = "lblPaymentDetails";
+            this.lblPaymentDetails.Size = new System.Drawing.Size(270, 31);
+            this.lblPaymentDetails.TabIndex = 28;
+            this.lblPaymentDetails.Text = "PAYMENT DETAILS";
             // 
-            // lbPaymentDetails
+            // cmbPaymentType
             // 
-            this.lbPaymentDetails.AutoSize = true;
-            this.lbPaymentDetails.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPaymentDetails.ForeColor = System.Drawing.Color.HotPink;
-            this.lbPaymentDetails.Location = new System.Drawing.Point(406, 81);
-            this.lbPaymentDetails.Name = "lbPaymentDetails";
-            this.lbPaymentDetails.Size = new System.Drawing.Size(270, 31);
-            this.lbPaymentDetails.TabIndex = 28;
-            this.lbPaymentDetails.Text = "PAYMENT DETAILS";
+            this.cmbPaymentType.FormattingEnabled = true;
+            this.cmbPaymentType.Location = new System.Drawing.Point(452, 218);
+            this.cmbPaymentType.Name = "cmbPaymentType";
+            this.cmbPaymentType.Size = new System.Drawing.Size(183, 21);
+            this.cmbPaymentType.TabIndex = 29;
             // 
-            // cbPaymentType
+            // lblPaymentType
             // 
-            this.cbPaymentType.FormattingEnabled = true;
-            this.cbPaymentType.Location = new System.Drawing.Point(452, 218);
-            this.cbPaymentType.Name = "cbPaymentType";
-            this.cbPaymentType.Size = new System.Drawing.Size(183, 21);
-            this.cbPaymentType.TabIndex = 29;
-            // 
-            // lbPaymentType
-            // 
-            this.lbPaymentType.AutoSize = true;
-            this.lbPaymentType.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPaymentType.ForeColor = System.Drawing.Color.HotPink;
-            this.lbPaymentType.Location = new System.Drawing.Point(354, 224);
-            this.lbPaymentType.Name = "lbPaymentType";
-            this.lbPaymentType.Size = new System.Drawing.Size(82, 15);
-            this.lbPaymentType.TabIndex = 30;
-            this.lbPaymentType.Text = "Payment Type";
-            this.lbPaymentType.Click += new System.EventHandler(this.label2_Click);
+            this.lblPaymentType.AutoSize = true;
+            this.lblPaymentType.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaymentType.ForeColor = System.Drawing.Color.HotPink;
+            this.lblPaymentType.Location = new System.Drawing.Point(354, 224);
+            this.lblPaymentType.Name = "lblPaymentType";
+            this.lblPaymentType.Size = new System.Drawing.Size(82, 15);
+            this.lblPaymentType.TabIndex = 30;
+            this.lblPaymentType.Text = "Payment Type";
+            this.lblPaymentType.Click += new System.EventHandler(this.label2_Click);
             // 
             // treeView1
             // 
@@ -111,97 +102,97 @@
             this.treeView2.Size = new System.Drawing.Size(242, 234);
             this.treeView2.TabIndex = 32;
             // 
-            // label3
+            // lblGuestProfile
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(814, 221);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Guest Profile";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lblGuestProfile.AutoSize = true;
+            this.lblGuestProfile.Location = new System.Drawing.Point(814, 221);
+            this.lblGuestProfile.Name = "lblGuestProfile";
+            this.lblGuestProfile.Size = new System.Drawing.Size(67, 13);
+            this.lblGuestProfile.TabIndex = 33;
+            this.lblGuestProfile.Text = "Guest Profile";
+            this.lblGuestProfile.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label4
+            // lblPaymentSummary
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(62, 218);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 13);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Payment Details";
+            this.lblPaymentSummary.AutoSize = true;
+            this.lblPaymentSummary.Location = new System.Drawing.Point(62, 218);
+            this.lblPaymentSummary.Name = "lblPaymentSummary";
+            this.lblPaymentSummary.Size = new System.Drawing.Size(83, 13);
+            this.lblPaymentSummary.TabIndex = 34;
+            this.lblPaymentSummary.Text = "Payment Details";
             // 
-            // label5
+            // lblCheckOutDate
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(727, 399);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 13);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Check-Out Date";
+            this.lblCheckOutDate.AutoSize = true;
+            this.lblCheckOutDate.Location = new System.Drawing.Point(727, 399);
+            this.lblCheckOutDate.Name = "lblCheckOutDate";
+            this.lblCheckOutDate.Size = new System.Drawing.Size(84, 13);
+            this.lblCheckOutDate.TabIndex = 35;
+            this.lblCheckOutDate.Text = "Check-Out Date";
             // 
-            // label6
+            // lblCheckInDate
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(727, 362);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 13);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Check-In Date";
+            this.lblCheckInDate.AutoSize = true;
+            this.lblCheckInDate.Location = new System.Drawing.Point(727, 362);
+            this.lblCheckInDate.Name = "lblCheckInDate";
+            this.lblCheckInDate.Size = new System.Drawing.Size(76, 13);
+            this.lblCheckInDate.TabIndex = 36;
+            this.lblCheckInDate.Text = "Check-In Date";
             // 
-            // label7
+            // lblID
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(727, 324);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(18, 13);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "ID";
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(727, 324);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(18, 13);
+            this.lblID.TabIndex = 37;
+            this.lblID.Text = "ID";
             // 
-            // label8
+            // lblSurname
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(727, 289);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 13);
-            this.label8.TabIndex = 38;
-            this.label8.Text = "Surname";
+            this.lblSurname.AutoSize = true;
+            this.lblSurname.Location = new System.Drawing.Point(727, 289);
+            this.lblSurname.Name = "lblSurname";
+            this.lblSurname.Size = new System.Drawing.Size(49, 13);
+            this.lblSurname.TabIndex = 38;
+            this.lblSurname.Text = "Surname";
             // 
-            // label9
+            // lblName
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(727, 257);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 39;
-            this.label9.Text = "Name";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(727, 257);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.TabIndex = 39;
+            this.lblName.Text = "Name";
+            this.lblName.Click += new System.EventHandler(this.label9_Click);
             // 
-            // label10
+            // lblDepositDue
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 387);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 13);
-            this.label10.TabIndex = 40;
-            this.label10.Text = "Deposit Due";
+            this.lblDepositDue.AutoSize = true;
+            this.lblDepositDue.Location = new System.Drawing.Point(12, 387);
+            this.lblDepositDue.Name = "lblDepositDue";
+            this.lblDepositDue.Size = new System.Drawing.Size(66, 13);
+            this.lblDepositDue.TabIndex = 40;
+            this.lblDepositDue.Text = "Deposit Due";
             // 
-            // label11
+            // lblReferenceNumber
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 324);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(141, 13);
-            this.label11.TabIndex = 41;
-            this.label11.Text = "Payment Reference Number";
+            this.lblReferenceNumber.AutoSize = true;
+            this.lblReferenceNumber.Location = new System.Drawing.Point(12, 324);
+            this.lblReferenceNumber.Name = "lblReferenceNumber";
+            this.lblReferenceNumber.Size = new System.Drawing.Size(141, 13);
+            this.lblReferenceNumber.TabIndex = 41;
+            this.lblReferenceNumber.Text = "Payment Reference Number";
             // 
-            // label12
+            // lblTotalDue
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 257);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(91, 13);
-            this.label12.TabIndex = 42;
-            this.label12.Text = "Total Amount due";
+            this.lblTotalDue.AutoSize = true;
+            this.lblTotalDue.Location = new System.Drawing.Point(12, 257);
+            this.lblTotalDue.Name = "lblTotalDue";
+            this.lblTotalDue.Size = new System.Drawing.Size(91, 13);
+            this.lblTotalDue.TabIndex = 42;
+            this.lblTotalDue.Text = "Total Amount due";
             // 
             // label13
             // 
@@ -297,6 +288,15 @@
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // picBox
+            // 
+            this.picBox.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
+            this.picBox.Location = new System.Drawing.Point(1, 1);
+            this.picBox.Name = "picBox";
+            this.picBox.Size = new System.Drawing.Size(184, 111);
+            this.picBox.TabIndex = 27;
+            this.picBox.TabStop = false;
+            // 
             // PaymentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,21 +312,21 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblTotalDue);
+            this.Controls.Add(this.lblReferenceNumber);
+            this.Controls.Add(this.lblDepositDue);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblSurname);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.lblCheckInDate);
+            this.Controls.Add(this.lblCheckOutDate);
+            this.Controls.Add(this.lblPaymentSummary);
+            this.Controls.Add(this.lblGuestProfile);
             this.Controls.Add(this.treeView2);
             this.Controls.Add(this.treeView1);
-            this.Controls.Add(this.lbPaymentType);
-            this.Controls.Add(this.cbPaymentType);
-            this.Controls.Add(this.lbPaymentDetails);
+            this.Controls.Add(this.lblPaymentType);
+            this.Controls.Add(this.cmbPaymentType);
+            this.Controls.Add(this.lblPaymentDetails);
             this.Controls.Add(this.picBox);
             this.Name = "PaymentForm";
             this.Text = "PaymentForm";
@@ -339,21 +339,21 @@
         #endregion
 
         private System.Windows.Forms.PictureBox picBox;
-        private System.Windows.Forms.Label lbPaymentDetails;
-        private System.Windows.Forms.ComboBox cbPaymentType;
-        private System.Windows.Forms.Label lbPaymentType;
+        private System.Windows.Forms.Label lblPaymentDetails;
+        private System.Windows.Forms.ComboBox cmbPaymentType;
+        private System.Windows.Forms.Label lblPaymentType;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.TreeView treeView2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblGuestProfile;
+        private System.Windows.Forms.Label lblPaymentSummary;
+        private System.Windows.Forms.Label lblCheckOutDate;
+        private System.Windows.Forms.Label lblCheckInDate;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblSurname;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblDepositDue;
+        private System.Windows.Forms.Label lblReferenceNumber;
+        private System.Windows.Forms.Label lblTotalDue;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;

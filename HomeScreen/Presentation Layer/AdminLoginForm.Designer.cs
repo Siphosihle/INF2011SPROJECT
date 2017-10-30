@@ -30,13 +30,16 @@
         {
             this.picBox = new System.Windows.Forms.PictureBox();
             this.lblAdminLogin = new System.Windows.Forms.Label();
-            this.lbCheckInDate = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblCheckInDate = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.txtboxUsername = new System.Windows.Forms.TextBox();
+            this.txtboxPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.btnLogIn = new System.Windows.Forms.Button();
+            this.btnForgotPassword = new System.Windows.Forms.Button();
+            this.btnChangePassword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,42 +64,42 @@
             this.lblAdminLogin.TabIndex = 32;
             this.lblAdminLogin.Text = "ADMIN LOGIN";
             // 
-            // lbCheckInDate
+            // lblCheckInDate
             // 
-            this.lbCheckInDate.AutoSize = true;
-            this.lbCheckInDate.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCheckInDate.ForeColor = System.Drawing.Color.HotPink;
-            this.lbCheckInDate.Location = new System.Drawing.Point(379, 184);
-            this.lbCheckInDate.Name = "lbCheckInDate";
-            this.lbCheckInDate.Size = new System.Drawing.Size(67, 15);
-            this.lbCheckInDate.TabIndex = 33;
-            this.lbCheckInDate.Text = "User Name";
-            this.lbCheckInDate.Click += new System.EventHandler(this.lbCheckInDate_Click);
+            this.lblCheckInDate.AutoSize = true;
+            this.lblCheckInDate.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckInDate.ForeColor = System.Drawing.Color.HotPink;
+            this.lblCheckInDate.Location = new System.Drawing.Point(379, 184);
+            this.lblCheckInDate.Name = "lblCheckInDate";
+            this.lblCheckInDate.Size = new System.Drawing.Size(67, 15);
+            this.lblCheckInDate.TabIndex = 33;
+            this.lblCheckInDate.Text = "User Name";
+            this.lblCheckInDate.Click += new System.EventHandler(this.lbCheckInDate_Click);
             // 
-            // label1
+            // lblUsername
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.HotPink;
-            this.label1.Location = new System.Drawing.Point(358, 260);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 15);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "User Password";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.ForeColor = System.Drawing.Color.HotPink;
+            this.lblUsername.Location = new System.Drawing.Point(358, 260);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(88, 15);
+            this.lblUsername.TabIndex = 34;
+            this.lblUsername.Text = "User Password";
             // 
-            // textBox1
+            // txtboxUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(467, 179);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 20);
-            this.textBox1.TabIndex = 35;
+            this.txtboxUsername.Location = new System.Drawing.Point(467, 179);
+            this.txtboxUsername.Name = "txtboxUsername";
+            this.txtboxUsername.Size = new System.Drawing.Size(199, 20);
+            this.txtboxUsername.TabIndex = 35;
             // 
-            // textBox2
+            // txtboxPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(467, 255);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(199, 20);
-            this.textBox2.TabIndex = 36;
+            this.txtboxPassword.Location = new System.Drawing.Point(467, 255);
+            this.txtboxPassword.Name = "txtboxPassword";
+            this.txtboxPassword.Size = new System.Drawing.Size(199, 20);
+            this.txtboxPassword.TabIndex = 36;
             // 
             // label2
             // 
@@ -130,18 +133,48 @@
             this.radioButton2.Text = "Change Password";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
+            // btnLogIn
+            // 
+            this.btnLogIn.Location = new System.Drawing.Point(467, 351);
+            this.btnLogIn.Name = "btnLogIn";
+            this.btnLogIn.Size = new System.Drawing.Size(75, 23);
+            this.btnLogIn.TabIndex = 40;
+            this.btnLogIn.Text = "button1";
+            this.btnLogIn.UseVisualStyleBackColor = true;
+            // 
+            // btnForgotPassword
+            // 
+            this.btnForgotPassword.Location = new System.Drawing.Point(548, 351);
+            this.btnForgotPassword.Name = "btnForgotPassword";
+            this.btnForgotPassword.Size = new System.Drawing.Size(75, 23);
+            this.btnForgotPassword.TabIndex = 41;
+            this.btnForgotPassword.Text = "button1";
+            this.btnForgotPassword.UseVisualStyleBackColor = true;
+            // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.Location = new System.Drawing.Point(629, 351);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(75, 23);
+            this.btnChangePassword.TabIndex = 42;
+            this.btnChangePassword.Text = "button1";
+            this.btnChangePassword.UseVisualStyleBackColor = true;
+            // 
             // AdminLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 546);
+            this.Controls.Add(this.btnChangePassword);
+            this.Controls.Add(this.btnForgotPassword);
+            this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbCheckInDate);
+            this.Controls.Add(this.txtboxPassword);
+            this.Controls.Add(this.txtboxUsername);
+            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.lblCheckInDate);
             this.Controls.Add(this.lblAdminLogin);
             this.Controls.Add(this.picBox);
             this.Name = "AdminLoginForm";
@@ -156,12 +189,15 @@
 
         private System.Windows.Forms.PictureBox picBox;
         private System.Windows.Forms.Label lblAdminLogin;
-        private System.Windows.Forms.Label lbCheckInDate;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lblCheckInDate;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.TextBox txtboxUsername;
+        private System.Windows.Forms.TextBox txtboxPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Button btnLogIn;
+        private System.Windows.Forms.Button btnForgotPassword;
+        private System.Windows.Forms.Button btnChangePassword;
     }
 }

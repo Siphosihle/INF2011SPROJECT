@@ -28,61 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbGuestDetails = new System.Windows.Forms.Label();
-            this.tbFirstName = new System.Windows.Forms.TextBox();
-            this.tbLastName = new System.Windows.Forms.TextBox();
-            this.tbID = new System.Windows.Forms.TextBox();
-            this.lbFirstName = new System.Windows.Forms.Label();
+            this.lblGuestDetails = new System.Windows.Forms.Label();
+            this.txtboxFirstName = new System.Windows.Forms.TextBox();
+            this.txtboxLastName = new System.Windows.Forms.TextBox();
+            this.txtboxID = new System.Windows.Forms.TextBox();
+            this.lblFirstName = new System.Windows.Forms.Label();
             this.lbLastName = new System.Windows.Forms.Label();
-            this.lbID = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
             this.picBox = new System.Windows.Forms.PictureBox();
             this.btnCheckStatus = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbGuestDetails
+            // lblGuestDetails
             // 
-            this.lbGuestDetails.AutoSize = true;
-            this.lbGuestDetails.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGuestDetails.ForeColor = System.Drawing.Color.HotPink;
-            this.lbGuestDetails.Location = new System.Drawing.Point(356, 81);
-            this.lbGuestDetails.Name = "lbGuestDetails";
-            this.lbGuestDetails.Size = new System.Drawing.Size(229, 31);
-            this.lbGuestDetails.TabIndex = 1;
-            this.lbGuestDetails.Text = "GUEST DETAILS";
-            this.lbGuestDetails.Click += new System.EventHandler(this.label1_Click);
+            this.lblGuestDetails.AutoSize = true;
+            this.lblGuestDetails.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGuestDetails.ForeColor = System.Drawing.Color.HotPink;
+            this.lblGuestDetails.Location = new System.Drawing.Point(356, 81);
+            this.lblGuestDetails.Name = "lblGuestDetails";
+            this.lblGuestDetails.Size = new System.Drawing.Size(229, 31);
+            this.lblGuestDetails.TabIndex = 1;
+            this.lblGuestDetails.Text = "GUEST DETAILS";
+            this.lblGuestDetails.Click += new System.EventHandler(this.label1_Click);
             // 
-            // tbFirstName
+            // txtboxFirstName
             // 
-            this.tbFirstName.Location = new System.Drawing.Point(423, 175);
-            this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(162, 22);
-            this.tbFirstName.TabIndex = 2;
+            this.txtboxFirstName.Location = new System.Drawing.Point(423, 175);
+            this.txtboxFirstName.Name = "txtboxFirstName";
+            this.txtboxFirstName.Size = new System.Drawing.Size(162, 22);
+            this.txtboxFirstName.TabIndex = 2;
             // 
-            // tbLastName
+            // txtboxLastName
             // 
-            this.tbLastName.Location = new System.Drawing.Point(423, 236);
-            this.tbLastName.Name = "tbLastName";
-            this.tbLastName.Size = new System.Drawing.Size(162, 22);
-            this.tbLastName.TabIndex = 3;
+            this.txtboxLastName.Location = new System.Drawing.Point(423, 236);
+            this.txtboxLastName.Name = "txtboxLastName";
+            this.txtboxLastName.Size = new System.Drawing.Size(162, 22);
+            this.txtboxLastName.TabIndex = 3;
             // 
-            // tbID
+            // txtboxID
             // 
-            this.tbID.Location = new System.Drawing.Point(423, 296);
-            this.tbID.Name = "tbID";
-            this.tbID.Size = new System.Drawing.Size(162, 22);
-            this.tbID.TabIndex = 4;
+            this.txtboxID.Location = new System.Drawing.Point(423, 296);
+            this.txtboxID.Name = "txtboxID";
+            this.txtboxID.Size = new System.Drawing.Size(162, 22);
+            this.txtboxID.TabIndex = 4;
             // 
-            // lbFirstName
+            // lblFirstName
             // 
-            this.lbFirstName.AutoSize = true;
-            this.lbFirstName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFirstName.ForeColor = System.Drawing.Color.HotPink;
-            this.lbFirstName.Location = new System.Drawing.Point(340, 182);
-            this.lbFirstName.Name = "lbFirstName";
-            this.lbFirstName.Size = new System.Drawing.Size(68, 15);
-            this.lbFirstName.TabIndex = 16;
-            this.lbFirstName.Text = "First Name";
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.ForeColor = System.Drawing.Color.HotPink;
+            this.lblFirstName.Location = new System.Drawing.Point(340, 182);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(68, 15);
+            this.lblFirstName.TabIndex = 16;
+            this.lblFirstName.Text = "First Name";
             // 
             // lbLastName
             // 
@@ -95,17 +95,17 @@
             this.lbLastName.TabIndex = 17;
             this.lbLastName.Text = "Last Name";
             // 
-            // lbID
+            // lblID
             // 
-            this.lbID.AutoSize = true;
-            this.lbID.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbID.ForeColor = System.Drawing.Color.HotPink;
-            this.lbID.Location = new System.Drawing.Point(388, 303);
-            this.lbID.Name = "lbID";
-            this.lbID.Size = new System.Drawing.Size(20, 15);
-            this.lbID.TabIndex = 18;
-            this.lbID.Text = "ID";
-            this.lbID.Click += new System.EventHandler(this.label3_Click);
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblID.ForeColor = System.Drawing.Color.HotPink;
+            this.lblID.Location = new System.Drawing.Point(388, 303);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(20, 15);
+            this.lblID.TabIndex = 18;
+            this.lblID.Text = "ID";
+            this.lblID.Click += new System.EventHandler(this.label3_Click);
             // 
             // picBox
             // 
@@ -135,13 +135,13 @@
             this.ClientSize = new System.Drawing.Size(925, 450);
             this.Controls.Add(this.btnCheckStatus);
             this.Controls.Add(this.picBox);
-            this.Controls.Add(this.lbID);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.lbLastName);
-            this.Controls.Add(this.lbFirstName);
-            this.Controls.Add(this.tbID);
-            this.Controls.Add(this.tbLastName);
-            this.Controls.Add(this.tbFirstName);
-            this.Controls.Add(this.lbGuestDetails);
+            this.Controls.Add(this.lblFirstName);
+            this.Controls.Add(this.txtboxID);
+            this.Controls.Add(this.txtboxLastName);
+            this.Controls.Add(this.txtboxFirstName);
+            this.Controls.Add(this.lblGuestDetails);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CustomerInformation";
             this.Text = "Rest Easy Hotel";
@@ -153,13 +153,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbGuestDetails;
-        private System.Windows.Forms.TextBox tbFirstName;
-        private System.Windows.Forms.TextBox tbLastName;
-        private System.Windows.Forms.TextBox tbID;
-        private System.Windows.Forms.Label lbFirstName;
+        private System.Windows.Forms.Label lblGuestDetails;
+        private System.Windows.Forms.TextBox txtboxFirstName;
+        private System.Windows.Forms.TextBox txtboxLastName;
+        private System.Windows.Forms.TextBox txtboxID;
+        private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lbLastName;
-        private System.Windows.Forms.Label lbID;
+        private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.PictureBox picBox;
         private System.Windows.Forms.Button btnCheckStatus;
     }
