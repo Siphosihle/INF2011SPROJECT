@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace HomeScreen.Presentation_Layer
 {
-    public partial class ConfirmGuest : Form
+    public partial class PaymentDetails : Form
     {
-        public ConfirmGuest()
+        public PaymentDetails()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
