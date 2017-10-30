@@ -71,6 +71,12 @@
     <Compile Include="Presentation Layer\ConfirmGuest.Designer.cs">
       <DependentUpon>ConfirmGuest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\ConfirmReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\ConfirmReservation.Designer.cs">
+      <DependentUpon>ConfirmReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\CustomerInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\ConfirmGuest.resx">
       <DependentUpon>ConfirmGuest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\ConfirmReservation.resx">
+      <DependentUpon>ConfirmReservation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\CustomerInformation.resx">
       <DependentUpon>CustomerInformation.cs</DependentUpon>
