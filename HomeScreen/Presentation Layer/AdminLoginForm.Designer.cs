@@ -35,8 +35,6 @@
             this.txtboxUsername = new System.Windows.Forms.TextBox();
             this.txtboxPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.btnForgotPassword = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
@@ -111,53 +109,31 @@
             this.label2.Size = new System.Drawing.Size(0, 15);
             this.label2.TabIndex = 37;
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(467, 328);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(104, 17);
-            this.radioButton1.TabIndex = 38;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Forgot Password";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(577, 328);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(111, 17);
-            this.radioButton2.TabIndex = 39;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Change Password";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
             // btnLogIn
             // 
-            this.btnLogIn.Location = new System.Drawing.Point(467, 351);
+            this.btnLogIn.Location = new System.Drawing.Point(368, 351);
             this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(75, 23);
+            this.btnLogIn.Size = new System.Drawing.Size(105, 23);
             this.btnLogIn.TabIndex = 40;
-            this.btnLogIn.Text = "button1";
+            this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = true;
             // 
             // btnForgotPassword
             // 
-            this.btnForgotPassword.Location = new System.Drawing.Point(548, 351);
+            this.btnForgotPassword.Location = new System.Drawing.Point(479, 351);
             this.btnForgotPassword.Name = "btnForgotPassword";
-            this.btnForgotPassword.Size = new System.Drawing.Size(75, 23);
+            this.btnForgotPassword.Size = new System.Drawing.Size(105, 23);
             this.btnForgotPassword.TabIndex = 41;
-            this.btnForgotPassword.Text = "button1";
+            this.btnForgotPassword.Text = "Forgot Password";
             this.btnForgotPassword.UseVisualStyleBackColor = true;
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Location = new System.Drawing.Point(629, 351);
+            this.btnChangePassword.Location = new System.Drawing.Point(590, 351);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(75, 23);
+            this.btnChangePassword.Size = new System.Drawing.Size(105, 23);
             this.btnChangePassword.TabIndex = 42;
-            this.btnChangePassword.Text = "button1";
+            this.btnChangePassword.Text = "Change Password";
             this.btnChangePassword.UseVisualStyleBackColor = true;
             // 
             // AdminLoginForm
@@ -168,8 +144,6 @@
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.btnForgotPassword);
             this.Controls.Add(this.btnLogIn);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtboxPassword);
             this.Controls.Add(this.txtboxUsername);
@@ -194,8 +168,6 @@
         private System.Windows.Forms.TextBox txtboxUsername;
         private System.Windows.Forms.TextBox txtboxPassword;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Button btnForgotPassword;
         private System.Windows.Forms.Button btnChangePassword;
