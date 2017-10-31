@@ -104,7 +104,6 @@ namespace HomeScreen.Business_Layer
         }
         public bool CheckSatus()
         {
-            status = true;
             return status;
         }
     }
