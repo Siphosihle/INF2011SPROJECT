@@ -75,6 +75,7 @@ namespace HomeScreen.Presentation_Layer
             if (Admin.accessGranted == true)
             {
                 HomeScreenForm hsm = new HomeScreenForm();
+                this.Hide();
                 hsm.ShowDialog();
                 this.Close();
             }
