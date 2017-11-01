@@ -23,6 +23,7 @@ namespace HomeScreen.Business_Layer
         private string guestID;
         private bool status = false;
         public Type type;
+
         #region Properties
         public GuestType TypeValue
         {
@@ -46,6 +47,8 @@ namespace HomeScreen.Business_Layer
                 description = value;
             }
         }
+        #endregion
+
         public Type(string name, string surname, string id)
         {
             typevalue = GuestType.ExistingGuest;
