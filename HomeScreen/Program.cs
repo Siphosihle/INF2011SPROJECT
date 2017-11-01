@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using HomeScreen.Presentation_Layer;
+
 namespace HomeScreen
 {
     static class Program
@@ -16,7 +18,7 @@ namespace HomeScreen
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeScreen());
+            Application.Run(new AdminLoginForm());
         }
     }
 }
