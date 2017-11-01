@@ -1,4 +1,4 @@
-﻿namespace INF2011SProject.Presentation_Layer
+﻿namespace HomeScreen.Presentation_Layer
 {
     partial class ConfirmReservation
     {
@@ -66,7 +66,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::INF2011SProject.Properties.Resources.Screenshot__1_;
+            this.pictureBox1.Image = global::HomeScreen.Properties.Resources.Screenshot__1_;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(195, 111);

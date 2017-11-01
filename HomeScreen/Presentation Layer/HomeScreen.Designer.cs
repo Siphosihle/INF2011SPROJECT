@@ -1,4 +1,4 @@
-﻿namespace INF2011SProject
+﻿namespace HomeScreen
 {
     partial class HomeScreen
     {
@@ -146,7 +146,7 @@
             // 
             // picBox
             // 
-            this.picBox.BackgroundImage = global::INF2011SProject.Properties.Resources.Screenshot__1_;
+            this.picBox.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
             this.picBox.Location = new System.Drawing.Point(0, 1);
             this.picBox.Name = "picBox";
             this.picBox.Size = new System.Drawing.Size(184, 111);
@@ -165,7 +165,7 @@
             this.btnCheck.UseVisualStyleBackColor = true;
             this.btnCheck.Click += new System.EventHandler(this.button1_Click);
             // 
-            // INF2011SProject
+            // HomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -185,7 +185,7 @@
             this.Controls.Add(this.lblBookingDetails);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.LightCoral;
-            this.Name = "INF2011SProject";
+            this.Name = "HomeScreen";
             this.Text = "Rest Easy Hotel ";
             this.TransparencyKey = System.Drawing.Color.Silver;
             this.Load += new System.EventHandler(this.Form1_Load);

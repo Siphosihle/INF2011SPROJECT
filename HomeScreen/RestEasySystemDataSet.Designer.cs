@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace INF2011SProject {
+namespace HomeScreen {
     
     
     /// <summary>
