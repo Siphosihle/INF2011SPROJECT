@@ -70,7 +70,6 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            //Admin call = new Admin();
             PopulateObject(Name, Password);
             if (Admin.accessGranted == true)
             {
@@ -78,11 +77,13 @@ namespace HomeScreen.Presentation_Layer
                 this.Hide();
                 hsm.ShowDialog();
                 this.Close();
+                
             }
-            else
+            else if (Admin.accessGranted == false)
             {
-                MessageBox.Show("The login details are not correct, please try again.");
+                MessageBox.Show("The login details entered are not correct, please try again.");
             }
+           
         }
     }
 }
