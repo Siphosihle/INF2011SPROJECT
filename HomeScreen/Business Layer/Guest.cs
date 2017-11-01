@@ -8,16 +8,19 @@ namespace HomeScreen.Business_Layer
 {
     class Guest
     {
+        
         #region Members
         private string surname;
         private string address;
         private string email;
         private string name;
         private int phoneNo;
-        private int guestID;
+        private string guestID;
         private bool status = false;
+        public Type type; 
         #endregion
         #region Properties
+
         public string Surname
         {
             get
@@ -73,7 +76,7 @@ namespace HomeScreen.Business_Layer
                 phoneNo = value;
             }
         }
-        public int GuestID
+        public string GuestID
         {
             get
             {
@@ -85,16 +88,19 @@ namespace HomeScreen.Business_Layer
             }
         }
         #endregion
-        public Guest(string name, string surname, int id, string email, int phone, string address)
+        public Guest(Type.GuestType typeValue)
         {
-            this.name = name;
-            this.surname = surname;
-            this.email = email;
-            this.address = address;
-            phoneNo = phone;
-            guestID = id;
+            switch (typeValue)
+            {
+                case Type.GuestType.ExistingGuest:
+                    type = new Type(name, surname, guestID);
+                    break;
+                case Type.GuestType.NewGuest:
+                    type = new Type(name, surname, guestID, phoneNo, email, address);
+                    break;
+            }
         }
-        public void GuestDetails()
+        public void NewGuest(string email, int phoneNo, string address)
         {
 
         }

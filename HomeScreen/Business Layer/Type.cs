@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HomeScreen.Business_Layer
+{
+    class Type
+    {
+        public enum GuestType
+        {
+            ExistingGuest = 0,
+            NewGuest = 1
+        }
+        protected GuestType typevalue;
+        protected string description;
+        public GuestType TypeValue
+        {
+            get
+            {
+                return typevalue;
+            }
+            set
+            {
+                typevalue = value;
+            }
+        }
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+            }
+        }
+        public Type(string name, string surname, string id)
+        {
+            typevalue = GuestType.ExistingGuest;
+            description = "Existing Guest";
+        }
+        public Type(string name, string surname, string id, int phone, string email, string address)
+        {
+            typevalue = GuestType.NewGuest;
+            description = "New Guest";
+        }
+
+    }
+}

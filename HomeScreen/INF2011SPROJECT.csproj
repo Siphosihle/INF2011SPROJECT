@@ -68,6 +68,7 @@
     <Compile Include="Business Layer\GuestController.cs" />
     <Compile Include="Business Layer\Hotel.cs" />
     <Compile Include="Business Layer\Room.cs" />
+    <Compile Include="Business Layer\Type.cs" />
     <Compile Include="Presentation Layer\AdminLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

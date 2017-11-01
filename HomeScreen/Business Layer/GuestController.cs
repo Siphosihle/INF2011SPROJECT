@@ -50,7 +50,12 @@ namespace HomeScreen.Business_Layer
             }
         }
         #endregion
-
+        public GuestController(string name, string surname, int ID)
+        {
+            this.name = name;
+            this.surname = surname;
+            this.ID = ID;
+        }
         public bool CheckStatus()
         {
             // check the status of a guest, wheter its a new or existing guest
