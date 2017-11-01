@@ -16,5 +16,13 @@ namespace HomeScreen.Presentation_Layer
         {
             InitializeComponent();
         }
+
+        private void btnMakeaBooking_Click(object sender, EventArgs e)
+        {
+            HomeScreen hs = new HomeScreen();
+            this.Hide();
+            hs.ShowDialog();
+            this.Close();
+        }
     }
 }
