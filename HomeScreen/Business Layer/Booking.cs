@@ -11,7 +11,16 @@ namespace HomeScreen.Business_Layer
         int reservationNumber, noOfRooms;
         DateTime startDate, endDate;
         bool sentConfirmation, receivedDeposit, isCancelled;
-        
+
+
+        #region Properties
+        #endregion
+
+        #region Constructors
+        #endregion
+
+        #region Methods
+        #endregion
 
     }
 }

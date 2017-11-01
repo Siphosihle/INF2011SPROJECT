@@ -19,6 +19,7 @@ namespace HomeScreen.Business_Layer
         private bool status = false;
         public Type type; 
         #endregion
+
         #region Properties
 
         public string Surname
