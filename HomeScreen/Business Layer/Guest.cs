@@ -100,6 +100,7 @@ namespace HomeScreen.Business_Layer
                     break;
             }
         }
+
         public void NewGuest(string email, int phoneNo, string address)
         {
 

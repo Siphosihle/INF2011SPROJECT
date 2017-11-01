@@ -20,36 +20,36 @@ namespace HomeScreen
         }
         private void PopulateObject(string name, string surname, string id)
         {
-            HeadWaiter headW;
-            Waiter waiter;
-            Runner runner;
+            //HeadWaiter headW;
+            //Waiter waiter;
+            //Runner runner;
             Guest existingGuest;
             Guest newGuest;
-            guest = new Guest(name, surname, id);
+            //guest = new Type(name, surname, id);
             guest.Name = txtboxFirstName.Text;
             guest.Surname = txtboxLastName.Text;
             guest.GuestID = txtboxID.Text;
 
-            switch (guest.GuestValue)
-            {
-                case Guest.GuestType.ExistingGuest:
-                    headW = (Guest)(guest.);
-                    headW.Salary = decimal.Parse(paymentTextBox.Text);
-                    break;
-                case Role.RoleType.Waiter:
-                    //***waiter to be done later for HW
-                    waiter = (Waiter)(employee.role);
-                    waiter.Rate = decimal.Parse(paymentTextBox.Text);
-                    waiter.NumberOfShifts = int.Parse(hoursTextBox.Text);
-                    //  waiter.Tips = decimal.Parse(tipsTextBox.Text);
-                    break;
-                case Role.RoleType.Runner:
-                    //***waiter to be done later for HW
-                    runner = (Runner)(employee.role);
-                    runner.Rate = decimal.Parse(paymentTextBox.Text);
-                    runner.NumberOfShifts = int.Parse(hoursTextBox.Text);
-                    break;
+            //switch (guest.GuestValue)
+            //{
+            //    case Guest.GuestType.ExistingGuest:
+            //        headW = (Guest)(guest.);
+            //        headW.Salary = decimal.Parse(paymentTextBox.Text);
+            //        break;
+            //    case Role.RoleType.Waiter:
+            //        //***waiter to be done later for HW
+            //        waiter = (Waiter)(employee.role);
+            //        waiter.Rate = decimal.Parse(paymentTextBox.Text);
+            //        waiter.NumberOfShifts = int.Parse(hoursTextBox.Text);
+            //        //  waiter.Tips = decimal.Parse(tipsTextBox.Text);
+            //        break;
+            //    case Role.RoleType.Runner:
+            //        //***waiter to be done later for HW
+            //        runner = (Runner)(employee.role);
+            //        runner.Rate = decimal.Parse(paymentTextBox.Text);
+            //        runner.NumberOfShifts = int.Parse(hoursTextBox.Text);
+            //        break;
             }
         }
-    }
+    
 }

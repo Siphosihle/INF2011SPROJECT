@@ -15,6 +15,15 @@ namespace HomeScreen.Business_Layer
         }
         protected GuestType typevalue;
         protected string description;
+        private string surname;
+        private string address;
+        private string email;
+        private string name;
+        private int phoneNo;
+        private string guestID;
+        private bool status = false;
+        public Type type;
+        #region Properties
         public GuestType TypeValue
         {
             get
