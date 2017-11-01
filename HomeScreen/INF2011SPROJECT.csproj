@@ -71,9 +71,12 @@
     <Compile Include="Business Layer\Hotel.cs" />
     <Compile Include="Business Layer\Room.cs" />
     <Compile Include="Business Layer\Type.cs" />
+    <Compile Include="Database Layer\AdminDB.cs" />
     <Compile Include="Database Layer\BookingDB.cs" />
     <Compile Include="Database Layer\DB.cs" />
     <Compile Include="Database Layer\GuestDB.cs" />
+    <Compile Include="Database Layer\HotelDB.cs" />
+    <Compile Include="Database Layer\RoomAvailabilityDB.cs" />
     <Compile Include="Presentation Layer\AdminLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
