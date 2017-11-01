@@ -11,7 +11,7 @@ namespace HomeScreen.Business_Layer
         #region Members
         private string name;
         private string surname;
-        private int ID;
+        private string ID;
         private DateTime date;
         private bool status;
         #endregion
@@ -38,7 +38,7 @@ namespace HomeScreen.Business_Layer
                 surname = value;
             }
         }
-        public int GuestID
+        public string GuestID
         {
             get
             {
@@ -50,7 +50,12 @@ namespace HomeScreen.Business_Layer
             }
         }
         #endregion
-
+        public GuestController(string name, string surname, string ID)
+        {
+            this.name = name;
+            this.surname = surname;
+            this.ID = ID;
+        }
         public bool CheckStatus()
         {
             // check the status of a guest, wheter its a new or existing guest
@@ -65,7 +70,7 @@ namespace HomeScreen.Business_Layer
             else
             {
                 //create a new guest
-                new Guest(name, surname, id, email, phoneNo, address);
+                new Type(name, surname, ID,phoneNo, email, address);
             }
         }
         public override string ToString()

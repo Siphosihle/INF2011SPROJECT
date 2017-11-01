@@ -50,7 +50,7 @@
             this.lblGuestDetails.Size = new System.Drawing.Size(229, 31);
             this.lblGuestDetails.TabIndex = 1;
             this.lblGuestDetails.Text = "GUEST DETAILS";
-            this.lblGuestDetails.Click += new System.EventHandler(this.label1_Click);
+          
             // 
             // txtboxFirstName
             // 
@@ -58,6 +58,7 @@
             this.txtboxFirstName.Name = "txtboxFirstName";
             this.txtboxFirstName.Size = new System.Drawing.Size(162, 22);
             this.txtboxFirstName.TabIndex = 2;
+            
             // 
             // txtboxLastName
             // 
@@ -105,7 +106,7 @@
             this.lblID.Size = new System.Drawing.Size(20, 15);
             this.lblID.TabIndex = 18;
             this.lblID.Text = "ID";
-            this.lblID.Click += new System.EventHandler(this.label3_Click);
+     
             // 
             // picBox
             // 
@@ -126,7 +127,7 @@
             this.btnCheckStatus.TabIndex = 27;
             this.btnCheckStatus.Text = "Check Status";
             this.btnCheckStatus.UseVisualStyleBackColor = true;
-            this.btnCheckStatus.Click += new System.EventHandler(this.button1_Click);
+
             // 
             // CustomerInformation
             // 
