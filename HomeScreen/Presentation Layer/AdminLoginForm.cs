@@ -13,10 +13,43 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class AdminLoginForm : Form
     {
-        private Admin obj;
+        private Admin obj = new Admin();
+        private string name;
+        private string password;
+        public bool adminLoginFormClosed = false;
+        #region Properties
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+            set
+            {
+                password = value;
+            }
+        }
+        #endregion
         public AdminLoginForm()
         {
             InitializeComponent();
+            this.FormClosed += AdminLoginForm_Closed;
+        }
+
+        private void AdminLoginForm_Closed(object sender, FormClosedEventArgs e)
+        {
+            adminLoginFormClosed = true;
         }
 
         private void lbCheckInDate_Click(object sender, EventArgs e)
@@ -30,22 +63,25 @@ namespace HomeScreen.Presentation_Layer
         }
         private void PopulateObject(string name, string password)
         {
-            obj = new Admin();
-            obj.username = txtboxUsername.Text;
-            obj.userpassword = txtboxPassword.Text;
-            obj.Login(obj.username, obj.userpassword);
+            name = txtboxUsername.Text;
+            password = txtboxPassword.Text;
+            obj.Login(name, password);
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            Admin call = new Admin();
-            if (call.accessGranted == true)
+            //Admin call = new Admin();
+            PopulateObject(Name, Password);
+            if (Admin.accessGranted == true)
             {
-                MessageBox.Show("The login details are correct");
+                HomeScreenForm hsm = new HomeScreenForm();
+                this.Hide();
+                hsm.ShowDialog();
+                this.Close();
             }
             else
             {
-                MessageBox.Show("The login details are not correct");
+                MessageBox.Show("The login details are not correct, please try again.");
             }
         }
     }

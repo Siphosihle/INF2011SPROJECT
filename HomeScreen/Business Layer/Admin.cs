@@ -10,10 +10,10 @@ namespace HomeScreen.Business_Layer
     {
         public readonly string admin1 = "Siphosihle";
         public readonly string admin2 = "Hannan";
-        public string adminPassword = "inf2011sproject";
+        public readonly string adminPassword = "inf2011sproject";
         public string username;
         public string userpassword;
-        public bool accessGranted;
+        public static bool accessGranted;
 
         #region Properties
         public string Admin1
@@ -56,12 +56,10 @@ namespace HomeScreen.Business_Layer
 
         public bool Login(string name, string password)
         {
-            if (name.Equals(admin1)) 
+            if (((admin1.Equals(name)) || (admin2.Equals(name))) && (adminPassword.Equals(password)))
             {
-                if(password.Equals(adminPassword))
-                {
-                    accessGranted = true;
-                }
+                accessGranted = true;
+
             }
             else
             {
