@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeScreen.Business_Layer
+namespace INF2011SProject.Business_Layer
 {
     class Type
     {

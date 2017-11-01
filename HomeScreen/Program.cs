@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using HomeScreen.Presentation_Layer;
+using INF2011SProject.Presentation_Layer;
 
-namespace HomeScreen
+namespace INF2011SProject
 {
     static class Program
     {
