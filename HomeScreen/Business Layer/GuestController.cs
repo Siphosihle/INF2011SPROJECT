@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeScreen.Business_Layer
+namespace INF2011SProject.Business_Layer
 {
     class GuestController
     {
         #region Members
         private string name;
         private string surname;
-        private int ID;
+        private string ID;
         private DateTime date;
         private bool status;
         #endregion
@@ -38,7 +38,7 @@ namespace HomeScreen.Business_Layer
                 surname = value;
             }
         }
-        public int GuestID
+        public string GuestID
         {
             get
             {
@@ -50,7 +50,10 @@ namespace HomeScreen.Business_Layer
             }
         }
         #endregion
+        public GuestController()
+        {
 
+        }
         public bool CheckStatus()
         {
             // check the status of a guest, wheter its a new or existing guest
@@ -65,7 +68,7 @@ namespace HomeScreen.Business_Layer
             else
             {
                 //create a new guest
-                new Guest(name, surname, id, email, phoneNo, address);
+                new Type(name, surname, ID,phoneNo, email, address);
             }
         }
         public override string ToString()

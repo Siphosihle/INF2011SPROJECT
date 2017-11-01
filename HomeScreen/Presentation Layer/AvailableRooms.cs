@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HomeScreen.Presentation_Layer
+namespace INF2011SProject.Presentation_Layer
 {
     public partial class AvailableRooms : Form
     {
