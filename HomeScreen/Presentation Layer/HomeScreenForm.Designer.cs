@@ -1,4 +1,4 @@
-﻿namespace INF2011SProject.Presentation_Layer
+﻿namespace HomeScreen.Presentation_Layer
 {
     partial class HomeScreenForm
     {
@@ -39,7 +39,7 @@
             // 
             // picBox
             // 
-            this.picBox.Image = global::HomeScreen.Properties.Resources.Screenshot__1_;
+            this.picBox.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
             this.picBox.Location = new System.Drawing.Point(2, 2);
             this.picBox.Name = "picBox";
             this.picBox.Size = new System.Drawing.Size(184, 111);
@@ -95,7 +95,7 @@
             this.lbBookingDetails.AutoSize = true;
             this.lbBookingDetails.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBookingDetails.ForeColor = System.Drawing.Color.HotPink;
-            this.lbBookingDetails.Location = new System.Drawing.Point(334, 82);
+            this.lbBookingDetails.Location = new System.Drawing.Point(330, 82);
             this.lbBookingDetails.Name = "lbBookingDetails";
             this.lbBookingDetails.Size = new System.Drawing.Size(435, 31);
             this.lbBookingDetails.TabIndex = 31;

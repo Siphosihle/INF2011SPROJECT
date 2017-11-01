@@ -1,4 +1,4 @@
-﻿namespace INF2011SProject
+﻿namespace HomeScreen
 {
     partial class CustomerInformation
     {
@@ -50,6 +50,7 @@
             this.lblGuestDetails.Size = new System.Drawing.Size(229, 31);
             this.lblGuestDetails.TabIndex = 1;
             this.lblGuestDetails.Text = "GUEST DETAILS";
+          
             // 
             // txtboxFirstName
             // 
@@ -57,6 +58,7 @@
             this.txtboxFirstName.Name = "txtboxFirstName";
             this.txtboxFirstName.Size = new System.Drawing.Size(162, 22);
             this.txtboxFirstName.TabIndex = 2;
+            
             // 
             // txtboxLastName
             // 
@@ -104,10 +106,11 @@
             this.lblID.Size = new System.Drawing.Size(20, 15);
             this.lblID.TabIndex = 18;
             this.lblID.Text = "ID";
+     
             // 
             // picBox
             // 
-            this.picBox.Image = global::HomeScreen.Properties.Resources.Screenshot__1_;
+            this.picBox.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
             this.picBox.Location = new System.Drawing.Point(0, 1);
             this.picBox.Name = "picBox";
             this.picBox.Size = new System.Drawing.Size(184, 111);
@@ -124,6 +127,7 @@
             this.btnCheckStatus.TabIndex = 27;
             this.btnCheckStatus.Text = "Check Status";
             this.btnCheckStatus.UseVisualStyleBackColor = true;
+
             // 
             // CustomerInformation
             // 

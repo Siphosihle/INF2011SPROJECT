@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace INF2011SProject.Business_Layer
+namespace HomeScreen.Business_Layer
 {
     class Type
     {
@@ -46,7 +46,6 @@ namespace INF2011SProject.Business_Layer
                 description = value;
             }
         }
-        #endregion
         public Type(string name, string surname, string id)
         {
             typevalue = GuestType.ExistingGuest;

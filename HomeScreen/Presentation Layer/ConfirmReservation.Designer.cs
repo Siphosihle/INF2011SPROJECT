@@ -1,4 +1,4 @@
-﻿namespace INF2011SProject.Presentation_Layer
+﻿namespace HomeScreen.Presentation_Layer
 {
     partial class ConfirmReservation
     {

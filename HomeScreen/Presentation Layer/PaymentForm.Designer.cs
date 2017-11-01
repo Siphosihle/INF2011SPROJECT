@@ -1,4 +1,4 @@
-﻿namespace INF2011SProject.Presentation_Layer
+﻿namespace HomeScreen.Presentation_Layer
 {
     partial class PaymentForm
     {
@@ -290,7 +290,7 @@
             // 
             // picBox
             // 
-            this.picBox.Image = global::HomeScreen.Properties.Resources.Screenshot__1_;
+            this.picBox.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
             this.picBox.Location = new System.Drawing.Point(1, 1);
             this.picBox.Name = "picBox";
             this.picBox.Size = new System.Drawing.Size(184, 111);

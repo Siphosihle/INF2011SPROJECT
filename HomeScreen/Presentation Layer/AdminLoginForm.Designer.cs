@@ -1,4 +1,4 @@
-﻿namespace INF2011SProject.Presentation_Layer
+﻿namespace HomeScreen.Presentation_Layer
 {
     partial class AdminLoginForm
     {
@@ -43,6 +43,7 @@
             // 
             // picBox
             // 
+            this.picBox.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
             this.picBox.Image = global::HomeScreen.Properties.Resources.Screenshot__1_;
             this.picBox.Location = new System.Drawing.Point(2, 1);
             this.picBox.Name = "picBox";

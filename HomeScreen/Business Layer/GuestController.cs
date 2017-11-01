@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace INF2011SProject.Business_Layer
+namespace HomeScreen.Business_Layer
 {
     class GuestController
     {

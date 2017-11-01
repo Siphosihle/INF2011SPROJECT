@@ -1,4 +1,4 @@
-﻿using INF2011SProject.Business_Layer;
+﻿using HomeScreen.Business_Layer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace INF2011SProject
+namespace HomeScreen
 {
     public partial class CustomerInformation : Form
     {
