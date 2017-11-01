@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HomeScreen
+namespace INF2011SProject
 {
     public partial class HomeScreen : Form
     {
