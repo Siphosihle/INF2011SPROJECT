@@ -56,6 +56,7 @@
             this.btnMakeaBooking.TabIndex = 27;
             this.btnMakeaBooking.Text = "Make a Booking";
             this.btnMakeaBooking.UseVisualStyleBackColor = true;
+            this.btnMakeaBooking.Click += new System.EventHandler(this.btnMakeaBooking_Click);
             // 
             // btnUpdateBooking
             // 
