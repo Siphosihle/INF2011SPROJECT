@@ -23,6 +23,7 @@ namespace HomeScreen.Business_Layer
         private string guestID;
         private bool status = false;
         public Type type;
+        private GuestType guestType;
 
         #region Properties
         public GuestType TypeValue
@@ -60,5 +61,9 @@ namespace HomeScreen.Business_Layer
             description = "New Guest";
         }
 
+        public Type(GuestType guestType)
+        {
+            this.guestType = guestType;
+        }
     }
 }

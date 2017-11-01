@@ -10,12 +10,12 @@ namespace HomeScreen.Business_Layer
     {
         
         #region Members
-        private string surname;
-        private string address;
-        private string email;
-        private string name;
-        private int phoneNo;
-        private string guestID;
+        public string surname;
+        public string address;
+        public string email;
+        public string name;
+        public int phoneNo;
+        public string guestID;
         private bool status = false;
         public Type type; 
         #endregion
