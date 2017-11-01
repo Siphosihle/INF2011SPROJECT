@@ -30,6 +30,11 @@
         {
             this.lblCCPayment = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtboxCVV = new System.Windows.Forms.TextBox();
+            this.txtboxExpiry = new System.Windows.Forms.TextBox();
+            this.txtboxCCNumber = new System.Windows.Forms.TextBox();
+            this.txtboxCCType = new System.Windows.Forms.TextBox();
+            this.txtboxCCName = new System.Windows.Forms.TextBox();
             this.lblExpiryDate = new System.Windows.Forms.Label();
             this.lblCVV = new System.Windows.Forms.Label();
             this.lblCCType = new System.Windows.Forms.Label();
@@ -40,11 +45,6 @@
             this.lblAmountDue = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtboxCCName = new System.Windows.Forms.TextBox();
-            this.txtboxCCType = new System.Windows.Forms.TextBox();
-            this.txtboxCCNumber = new System.Windows.Forms.TextBox();
-            this.txtboxExpiry = new System.Windows.Forms.TextBox();
-            this.txtboxCVV = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -77,6 +77,41 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(271, 315);
             this.panel1.TabIndex = 2;
+            // 
+            // txtboxCVV
+            // 
+            this.txtboxCVV.Location = new System.Drawing.Point(147, 155);
+            this.txtboxCVV.Name = "txtboxCVV";
+            this.txtboxCVV.Size = new System.Drawing.Size(100, 20);
+            this.txtboxCVV.TabIndex = 13;
+            // 
+            // txtboxExpiry
+            // 
+            this.txtboxExpiry.Location = new System.Drawing.Point(147, 192);
+            this.txtboxExpiry.Name = "txtboxExpiry";
+            this.txtboxExpiry.Size = new System.Drawing.Size(100, 20);
+            this.txtboxExpiry.TabIndex = 12;
+            // 
+            // txtboxCCNumber
+            // 
+            this.txtboxCCNumber.Location = new System.Drawing.Point(147, 81);
+            this.txtboxCCNumber.Name = "txtboxCCNumber";
+            this.txtboxCCNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtboxCCNumber.TabIndex = 11;
+            // 
+            // txtboxCCType
+            // 
+            this.txtboxCCType.Location = new System.Drawing.Point(147, 118);
+            this.txtboxCCType.Name = "txtboxCCType";
+            this.txtboxCCType.Size = new System.Drawing.Size(100, 20);
+            this.txtboxCCType.TabIndex = 10;
+            // 
+            // txtboxCCName
+            // 
+            this.txtboxCCName.Location = new System.Drawing.Point(147, 44);
+            this.txtboxCCName.Name = "txtboxCCName";
+            this.txtboxCCName.Size = new System.Drawing.Size(100, 20);
+            this.txtboxCCName.TabIndex = 9;
             // 
             // lblExpiryDate
             // 
@@ -168,44 +203,9 @@
             this.button2.Text = "Confirm Payment";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // txtboxCCName
-            // 
-            this.txtboxCCName.Location = new System.Drawing.Point(147, 44);
-            this.txtboxCCName.Name = "txtboxCCName";
-            this.txtboxCCName.Size = new System.Drawing.Size(100, 20);
-            this.txtboxCCName.TabIndex = 9;
-            // 
-            // txtboxCCType
-            // 
-            this.txtboxCCType.Location = new System.Drawing.Point(147, 118);
-            this.txtboxCCType.Name = "txtboxCCType";
-            this.txtboxCCType.Size = new System.Drawing.Size(100, 20);
-            this.txtboxCCType.TabIndex = 10;
-            // 
-            // txtboxCCNumber
-            // 
-            this.txtboxCCNumber.Location = new System.Drawing.Point(147, 81);
-            this.txtboxCCNumber.Name = "txtboxCCNumber";
-            this.txtboxCCNumber.Size = new System.Drawing.Size(100, 20);
-            this.txtboxCCNumber.TabIndex = 11;
-            // 
-            // txtboxExpiry
-            // 
-            this.txtboxExpiry.Location = new System.Drawing.Point(147, 192);
-            this.txtboxExpiry.Name = "txtboxExpiry";
-            this.txtboxExpiry.Size = new System.Drawing.Size(100, 20);
-            this.txtboxExpiry.TabIndex = 12;
-            // 
-            // txtboxCVV
-            // 
-            this.txtboxCVV.Location = new System.Drawing.Point(147, 155);
-            this.txtboxCVV.Name = "txtboxCVV";
-            this.txtboxCVV.Size = new System.Drawing.Size(100, 20);
-            this.txtboxCVV.TabIndex = 13;
-            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::INF2011SProject.Properties.Resources.Screenshot__1_;
+            this.pictureBox1.Image = global::HomeScreen.Properties.Resources.Screenshot__1_;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(196, 114);
