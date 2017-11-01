@@ -15,6 +15,7 @@ namespace HomeScreen.Business_Layer
         public string userpassword;
         public bool accessGranted;
 
+        #region Properties
         public string Admin1
         {
             get
@@ -51,6 +52,8 @@ namespace HomeScreen.Business_Layer
                 userpassword = value;
             }
         }
+        #endregion
+
         public bool Login(string name, string password)
         {
             if (name.Equals(admin1)) 
