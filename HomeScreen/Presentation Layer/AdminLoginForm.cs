@@ -74,7 +74,9 @@ namespace HomeScreen.Presentation_Layer
             PopulateObject(Name, Password);
             if (Admin.accessGranted == true)
             {
-                adminLoginFormClosed = true;
+                HomeScreenForm hsm = new HomeScreenForm();
+                hsm.ShowDialog();
+                this.Close();
             }
             else
             {
