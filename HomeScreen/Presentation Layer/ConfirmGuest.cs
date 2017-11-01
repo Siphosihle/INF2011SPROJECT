@@ -26,5 +26,10 @@ namespace HomeScreen.Presentation_Layer
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
