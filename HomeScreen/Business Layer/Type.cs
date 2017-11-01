@@ -46,6 +46,7 @@ namespace HomeScreen.Business_Layer
                 description = value;
             }
         }
+        #endregion
         public Type(string name, string surname, string id)
         {
             typevalue = GuestType.ExistingGuest;

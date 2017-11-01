@@ -50,11 +50,9 @@ namespace HomeScreen.Business_Layer
             }
         }
         #endregion
-        public GuestController(string name, string surname, string ID)
+        public GuestController()
         {
-            this.name = name;
-            this.surname = surname;
-            this.ID = ID;
+
         }
         public bool CheckStatus()
         {
