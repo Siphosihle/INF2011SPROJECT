@@ -65,6 +65,7 @@
     <Compile Include="Business Layer\Account.cs" />
     <Compile Include="Business Layer\Admin.cs" />
     <Compile Include="Business Layer\Booking.cs" />
+    <Compile Include="Business Layer\BookingController.cs" />
     <Compile Include="Business Layer\Guest.cs" />
     <Compile Include="Business Layer\GuestController.cs" />
     <Compile Include="Business Layer\Hotel.cs" />
