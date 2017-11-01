@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HomeScreen.Presentation_Layer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace HomeScreen
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HomeScreen());
+            Application.Run(new AdminLoginForm());
         }
     }
 }
