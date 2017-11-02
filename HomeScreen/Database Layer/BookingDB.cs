@@ -81,22 +81,6 @@ namespace HomeScreen.Database_Layer
             //Declare references to a myRow object and an Employee object
             DataRow myRow = null;
             Booking aBooking;
-            HeadWaiter headw;
-            Waiter waiter;
-            Runner runner;
-            Role.RoleType roleValue = Role.RoleType.NoRole;  //Declare roleValue and initialise
-            switch (table)
-            {
-                case "HeadWaiter":
-                    roleValue = Role.RoleType.Headwaiter;
-                    break;
-                case "Waiter":
-                    roleValue = Role.RoleType.Waiter;
-                    break;
-                case "Runner":
-                    roleValue = Role.RoleType.Runner;
-                    break;
-            }
             //READ from the table  
             foreach (DataRow myRow_loopVariable in dsMain.Tables[table].Rows)
             {
@@ -104,73 +88,35 @@ namespace HomeScreen.Database_Layer
                 if (!(myRow.RowState == DataRowState.Deleted))
                 {
                     //Instantiate a new Employee object
-                    anEmp = new Employee(roleValue);
+                    aBooking = new Booking();
                     //Obtain each employee attribute from the specific field in the row in the table
-                    anEmp.ID = Convert.ToString(myRow["ID"]).TrimEnd();
-                    //Do the same for all other attributes
-                    anEmp.EmpID = Convert.ToString(myRow["EmpID"]).TrimEnd();
-                    //***The code below shows thee test for database Null values
-                    if (myRow["Name"] == System.DBNull.Value)
-                    { anEmp.Name = ""; }
-                    else { anEmp.Name = Convert.ToString(myRow["Name"]).TrimEnd(); }
-                    anEmp.Phone = Convert.ToString(myRow["Phone"]).TrimEnd();
-                    anEmp.role.RoleValue = (Role.RoleType)Convert.ToByte(myRow["Role"]);
-                    //Depending on Role read more Values
-                    switch (anEmp.role.RoleValue)
-                    {
-                        case Role.RoleType.Headwaiter:
-                            headw = (HeadWaiter)anEmp.role;
-                            headw.Salary = Convert.ToDecimal(myRow["Salary"]);
-                            break;
-                        case Role.RoleType.Waiter:
-                            waiter = (Waiter)anEmp.role;
-                            waiter.Rate = Convert.ToDecimal(myRow["DayRate"]);
-                            waiter.NumberOfShifts = Convert.ToInt32(myRow["NoOfShifts"]);
-                            break;
-                        case Role.RoleType.Runner:
-                            runner = (Runner)anEmp.role;
-                            runner.Rate = Convert.ToDecimal(myRow["DayRate"]);
-                            runner.NumberOfShifts = Convert.ToInt32(myRow["NoOfShifts"]);
-                            break;
-                    }
-                    employees.Add(anEmp);
+                    aBooking.ReservationNumber = Convert.ToInt32(myRow["ID"]);
+                    aBooking.NoOfRooms = Convert.ToInt32(myRow["NoOfRooms"]);
+                    aBooking.StartDate = Convert.ToDateTime(myRow["StartDate"]);
+                    aBooking.EndDate = Convert.ToDateTime(myRow["EndDate"]);
+                    aBooking.SentConfirmation = Convert.ToBoolean(myRow["SentConfirmation"]);
+                    aBooking.RecievedDeposit = Convert.ToBoolean(myRow["RecievedDeposit"]);
+                    aBooking.IsCancelled = Convert.ToBoolean(myRow["IsCancelled"]);
+
+                    bookings.Add(aBooking);
                 }
             }
         }
         private void FillRow(DataRow aRow, Booking aBooking, DB.DBOperation operation)
         {
-            Booking booking
+            Booking booking;
             if (operation == DB.DBOperation.Add)
             {
                 aRow["ReservationNumber"] = aBooking.ReservationNumber;  //NOTE square brackets to indicate index of collections of fields in row.
-                aRow["EmpID"] = anEmp.EmpID;
             }
-            aRow["Name"] = anEmp.Name;
-            aRow["Phone"] = anEmp.Phone;
-            aRow["Role"] = (byte)anEmp.role.RoleValue;
-            //*** For each role add the specific data variables
-            switch (anEmp.role.RoleValue)
-            {
-                case Role.RoleType.Headwaiter:
-                    headwaiter = (HeadWaiter)anEmp.role;
-                    aRow["Salary"] = headwaiter.Salary;
-                    break;
-                case Role.RoleType.Waiter:
-                    waiter = (Waiter)anEmp.role;
-                    aRow["DayRate"] = waiter.Rate;
-                    aRow["NoOfShifts"] = waiter.NumberOfShifts;
-                    aRow["Tips"] = waiter.Tips;
-                    break;
-                case Role.RoleType.Runner:
-                    runner = (Runner)anEmp.role;
-                    aRow["DayRate"] = runner.Rate;
-                    aRow["NoOfShifts"] = runner.NumberOfShifts;
-                    break;
-            }
+            aRow["NoOfRooms"] = aBooking.NoOfRooms;
+            aRow["StartDate"] = aBooking.StartDate;
+            aRow["EndDate"] = aBooking.EndDate;
+
         }
 
         //The FindRow method finds the row for a specific employee(by ID)  in a specific table
-        private int FindRow(Employee anEmp, string table)
+        private int FindRow(Booking aBooking, string table)
         {
             int rowIndex = 0;
             DataRow myRow;
@@ -182,7 +128,7 @@ namespace HomeScreen.Database_Layer
                 if (!(myRow.RowState == DataRowState.Deleted))
                 {
                     //In c# there is no item property (but we use the 2-dim array) it is automatically known to the compiler when used as below
-                    if (anEmp.ID == Convert.ToString(dsMain.Tables[table].Rows[rowIndex]["ID"]))
+                    if (aBooking.ReservationNumber == Convert.ToInt32(dsMain.Tables[table].Rows[rowIndex]["ID"]))
                     {
                         returnValue = rowIndex;
                     }
@@ -194,11 +140,12 @@ namespace HomeScreen.Database_Layer
         #endregion
 
         #region Build Parameters, Create Commands & Update database
-        private void Build_INSERT_Parameters(Employee anEmp)
+        private void Build_INSERT_Parameters(Booking aBooking)
         {
             //Create Parameters to communicate with SQL INSERT
             //https://www.google.co.za/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=size+in+bytes+of+Int+in+SQL
             SqlParameter param = default(SqlParameter);
+
             param = new SqlParameter("@ID", SqlDbType.NVarChar, 15, "ID");
             daMain.InsertCommand.Parameters.Add(param);
 
@@ -241,7 +188,7 @@ namespace HomeScreen.Database_Layer
             //***https://msdn.microsoft.com/en-za/library/ms179882.aspx
         }
 
-        private void Build_UPDATE_Parameters(Employee anEmp)
+        private void Build_UPDATE_Parameters(Booking aBooking)
         {
             //---Create Parameters to communicate with SQL UPDATE
             SqlParameter param = default(SqlParameter);
@@ -303,7 +250,7 @@ namespace HomeScreen.Database_Layer
             param.SourceVersion = DataRowVersion.Original;
             daMain.DeleteCommand.Parameters.Add(param);
         }
-        private void Create_INSERT_Command(Employee anEmp)
+        private void Create_INSERT_Command(Booking aBooking)
         {
             //Create the command that must be used to insert values into the Books table..
             switch (anEmp.role.RoleValue)
@@ -321,7 +268,7 @@ namespace HomeScreen.Database_Layer
             Build_INSERT_Parameters(anEmp);
         }
 
-        private void Create_UPDATE_Command(Employee anEmp)
+        private void Create_UPDATE_Command(Booking aBooking)
         {
             //Create the command that must be used to insert values into one of the three tables
             //Assumption is that the ID and EMPID cannot be changed
@@ -341,7 +288,7 @@ namespace HomeScreen.Database_Layer
             Build_UPDATE_Parameters(anEmp);
         }
 
-        private string Create_DELETE_Command(Employee anEmp)
+        private string Create_DELETE_Command(Booking aBooking)
         {
             string errorString = null;
             //Create the command that must be used to delete values from the the appropriate table
@@ -367,12 +314,12 @@ namespace HomeScreen.Database_Layer
             }
             return errorString;
         }
-        public bool UpdateDataSource(Employee anEmp)
+        public bool UpdateDataSource(Booking aBooking)
         {
             bool success = true;
-            Create_INSERT_Command(anEmp);
-            Create_UPDATE_Command(anEmp);
-            Create_DELETE_Command(anEmp);
+            Create_INSERT_Command(aBooking);
+            Create_UPDATE_Command(aBooking);
+            Create_DELETE_Command(aBooking);
             switch (anEmp.role.RoleValue)
             {
                 case Role.RoleType.Headwaiter:
