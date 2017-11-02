@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeScreen.Business_Layer
 {
-    class Type
+    public class Type
     {
         public enum GuestType
         {

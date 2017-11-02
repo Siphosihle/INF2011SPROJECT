@@ -64,12 +64,15 @@
   <ItemGroup>
     <Compile Include="Business Layer\Account.cs" />
     <Compile Include="Business Layer\Admin.cs" />
+    <Compile Include="Business Layer\BillingController.cs" />
     <Compile Include="Business Layer\Booking.cs" />
     <Compile Include="Business Layer\BookingController.cs" />
     <Compile Include="Business Layer\Guest.cs" />
     <Compile Include="Business Layer\GuestController.cs" />
     <Compile Include="Business Layer\Hotel.cs" />
+    <Compile Include="Business Layer\Payment.cs" />
     <Compile Include="Business Layer\Room.cs" />
+    <Compile Include="Business Layer\RoomCharge.cs" />
     <Compile Include="Business Layer\Type.cs" />
     <Compile Include="Database Layer\AdminDB.cs" />
     <Compile Include="Database Layer\BookingDB.cs" />

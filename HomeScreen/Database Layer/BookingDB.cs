@@ -7,13 +7,13 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Xml;
-
 //namespaces
 using HomeScreen.Business_Layer;
+using HomeScreen.Database_Layer;
 
 namespace HomeScreen.Database_Layer
 {
-    class BookingDB
+    class BookingDB: DB
     {
         private string table1 = "Booking";
         private string sqlLocal1 = "SELECT * FROM Booking";
@@ -30,6 +30,8 @@ namespace HomeScreen.Database_Layer
         public BookingDB(): base()
         {
             bookings = new Collection<Booking>();
+            FillDataSet(sqlLocal1, table1);
+            Add2Collection(table1);
 
         }
     }

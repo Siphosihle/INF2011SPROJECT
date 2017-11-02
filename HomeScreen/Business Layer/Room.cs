@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeScreen.Business_Layer
 {
-    class Room
+    public class Room
     {
     }
 }

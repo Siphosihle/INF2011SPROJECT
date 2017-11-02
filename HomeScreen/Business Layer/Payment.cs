@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeScreen.Business_Layer
 {
-    public class Account
+    public class Payment
     {
     }
 }

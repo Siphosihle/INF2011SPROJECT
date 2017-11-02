@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeScreen.Business_Layer
 {
-    class Admin
+    public class Admin
     {
         public readonly string admin1 = "Siphosihle";
         public readonly string admin2 = "Hannan";
