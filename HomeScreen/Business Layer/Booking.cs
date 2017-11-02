@@ -14,6 +14,92 @@ namespace HomeScreen.Business_Layer
 
 
         #region Properties
+
+        public int ReservationNumber
+        {
+            get
+            {
+                return reservationNumber;
+            }
+            set
+            {
+                reservationNumber = value;
+            }
+        }
+
+        public int NoOfRooms
+        {
+            get
+            {
+                return noOfRooms;
+            }
+            set
+            {
+                noOfRooms = value;
+            }
+        }
+
+        public DateTime StartDate
+        {
+            get
+            {
+                return startDate;
+            }
+            set
+            {
+                startDate = value;
+            }
+        }
+
+        public DateTime EndDate
+        {
+            get
+            {
+                return endDate;
+            }
+            set
+            {
+                endDate = value;
+            }
+        }
+
+        public bool SentConfirmation
+        {
+            get
+            {
+                return sentConfirmation;
+            }
+            set
+            {
+                sentConfirmation = value;
+            }
+        }
+
+        public bool RecievedDeposit
+        {
+            get
+            {
+                return receivedDeposit;
+            }
+            set
+            {
+                receivedDeposit = value;
+            }
+        }
+
+        public bool IsCancelled
+        {
+            get
+            {
+                return isCancelled;
+            }
+            set
+            {
+                isCancelled = value;
+            }
+        }
+
+
         #endregion
 
         #region Constructors

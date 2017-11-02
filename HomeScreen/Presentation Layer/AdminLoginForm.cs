@@ -13,13 +13,13 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class AdminLoginForm : Form
     {
-        private Admin obj = new Admin();
+        private Admin admin = new Admin();
         private string name;
         private string password;
         public bool adminLoginFormClosed = false;
 
         #region Properties
-        public string Name
+        public new string Name
         {
             get
             {
@@ -66,7 +66,7 @@ namespace HomeScreen.Presentation_Layer
         {
             name = txtboxUsername.Text;
             password = txtboxPassword.Text;
-            obj.Login(name, password);
+            admin.Login(name, password);
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)

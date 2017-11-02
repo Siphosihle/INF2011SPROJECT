@@ -31,7 +31,7 @@ namespace HomeScreen.Database_Layer
         {
             bookings = new Collection<Booking>();
             FillDataSet(sqlLocal1, table1);
-            Add2Collection(table1);
+            //Add2Collection(table1);
 
         }
 
@@ -47,7 +47,7 @@ namespace HomeScreen.Database_Layer
             return dsMain;
         }
 
-       /* #region Database Operations CRUD --- Add the object's values to the database
+        #region Database Operations CRUD --- Add the object's values to the database
         public void DataSetChange(Booking aBooking, DB.DBOperation operation)
         {
             DataRow aRow = null;
@@ -137,14 +137,12 @@ namespace HomeScreen.Database_Layer
                 }
             }
         }
-        private void FillRow(DataRow aRow, Employee anEmp, DB.DBOperation operation)
+        private void FillRow(DataRow aRow, Booking aBooking, DB.DBOperation operation)
         {
-            HeadWaiter headwaiter;
-            Runner runner;
-            Waiter waiter;
+            Booking booking
             if (operation == DB.DBOperation.Add)
             {
-                aRow["ID"] = anEmp.ID;  //NOTE square brackets to indicate index of collections of fields in row.
+                aRow["ReservationNumber"] = aBooking.ReservationNumber;  //NOTE square brackets to indicate index of collections of fields in row.
                 aRow["EmpID"] = anEmp.EmpID;
             }
             aRow["Name"] = anEmp.Name;
