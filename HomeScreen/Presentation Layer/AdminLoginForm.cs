@@ -17,6 +17,7 @@ namespace HomeScreen.Presentation_Layer
         private string name;
         private string password;
         public bool adminLoginFormClosed = false;
+
         #region Properties
         public string Name
         {

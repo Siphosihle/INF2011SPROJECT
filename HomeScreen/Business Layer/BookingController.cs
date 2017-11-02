@@ -25,7 +25,8 @@ namespace HomeScreen.Business_Layer
 
         public BookingController()
         {
-
+            bookingDB = new BookingDB();
+            bookings = bookingDB.AllBookings;
         }
 
 
