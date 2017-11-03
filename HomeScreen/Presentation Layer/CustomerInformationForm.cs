@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace HomeScreen
 {
-    public partial class CustomerInformation : Form
+    public partial class CustomerInformationForm : Form
     {
       
-        public CustomerInformation()
+        public CustomerInformationForm()
         {
             InitializeComponent();
         }

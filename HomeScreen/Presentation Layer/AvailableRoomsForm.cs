@@ -29,5 +29,13 @@ namespace HomeScreen.Presentation_Layer
             hs.ShowDialog();
             this.Close();
         }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            CustomerInformationForm hs = new CustomerInformationForm();
+            this.Hide();
+            hs.ShowDialog();
+            this.Close();
+        }
     }
 }

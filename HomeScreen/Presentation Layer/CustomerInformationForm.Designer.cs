@@ -1,6 +1,6 @@
 ﻿namespace HomeScreen
 {
-    partial class CustomerInformation
+    partial class CustomerInformationForm
     {
         /// <summary>
         /// Required designer variable.

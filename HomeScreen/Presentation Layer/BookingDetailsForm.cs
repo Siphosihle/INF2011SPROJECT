@@ -81,11 +81,15 @@ namespace HomeScreen.Presentation_Layer
         public BookingDetailsForm()
         {
             InitializeComponent();
-            for(int i = 1; i < 21; i++)
+            for(int i = 1; i < 6; i++)
             {
                 string str = i.ToString();
                 cmbNumberOfRooms.Items.Add(str);
-                cmbNumberOfGuests.Items.Add(str);
+            }
+            for(int s = 1; s < 21; s++)
+            {
+                string strt = s.ToString();
+                cmbNumberOfGuests.Items.Add(strt);
             }
         }
 
