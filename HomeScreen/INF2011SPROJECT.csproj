@@ -92,6 +92,12 @@
     <Compile Include="Presentation Layer\AvailableRooms.Designer.cs">
       <DependentUpon>AvailableRooms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\BookingDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\BookingDetailsForm.Designer.cs">
+      <DependentUpon>BookingDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\ConfirmGuest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\AvailableRooms.resx">
       <DependentUpon>AvailableRooms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\BookingDetailsForm.resx">
+      <DependentUpon>BookingDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\ConfirmGuest.resx">
       <DependentUpon>ConfirmGuest.cs</DependentUpon>
