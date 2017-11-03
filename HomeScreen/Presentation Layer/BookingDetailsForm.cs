@@ -97,21 +97,21 @@ namespace HomeScreen.Presentation_Layer
         {
 
         }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            AvailableRoomsForm hs = new AvailableRoomsForm();
-            this.Hide();
-            hs.ShowDialog();
-            this.Close();
-        }
         public void PopulateObject()
         {
             inDate = dtpCheckInDate.Text;
             outDate = dtpCheckOutDate.Text;
             roomNum = cmbNumberOfRooms.Text;
             guestNum = cmbNumberOfGuests.Text;
-            MessageBox.Show(inDate + " " + outDate + " " + roomNum + " " + guestNum);
+            //MessageBox.Show(inDate + " " + outDate + " " + roomNum + " " + guestNum);
+        }
+
+        private void btnCheckBooking_Click(object sender, EventArgs e)
+        {
+            AvailableRoomsForm hs = new AvailableRoomsForm();
+            this.Hide();
+            hs.ShowDialog();
+            this.Close();
         }
     }
 }

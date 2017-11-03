@@ -148,7 +148,7 @@
             this.btnCheckBooking.TabIndex = 41;
             this.btnCheckBooking.Text = "Check Booking";
             this.btnCheckBooking.UseVisualStyleBackColor = true;
-            this.btnCheckBooking.Click += new System.EventHandler(this.btnNext_Click);
+            this.btnCheckBooking.Click += new System.EventHandler(this.btnCheckBooking_Click);
             // 
             // BookingDetailsForm
             // 

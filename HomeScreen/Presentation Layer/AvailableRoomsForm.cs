@@ -17,12 +17,6 @@ namespace HomeScreen.Presentation_Layer
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void rtbAvailableRooms_TextChanged(object sender, EventArgs e)
         {
             MessageBox.Show(bookingDetails.InDate + " " + bookingDetails.OutDate + " " + bookingDetails.RoomNum + " " + bookingDetails.GuestNum);
