@@ -8,9 +8,9 @@ namespace HomeScreen.Business_Layer
 {
     public class Admin
     {
-        public readonly string admin1 = "Siphosihle";
+        public readonly string admin1 = "sipho";
         public readonly string admin2 = "Hannan";
-        public readonly string adminPassword = "inf2011sproject";
+        public readonly string adminPassword = "inf";
         public string username;
         public string userpassword;
         public static bool accessGranted;

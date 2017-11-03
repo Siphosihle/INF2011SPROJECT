@@ -86,5 +86,10 @@ namespace HomeScreen.Presentation_Layer
             }
            
         }
+
+        private void txtboxPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

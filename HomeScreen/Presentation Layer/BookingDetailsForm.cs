@@ -17,6 +17,7 @@ namespace HomeScreen.Presentation_Layer
         private string outDate;
         private string roomNum;
         private string guestNum;
+        private BookingDetailsForm bookingDetails;
         #endregion
         private class Number
         {
@@ -80,7 +81,7 @@ namespace HomeScreen.Presentation_Layer
         public BookingDetailsForm()
         {
             InitializeComponent();
-            for(int i = 1; i < 20; i++)
+            for(int i = 1; i < 21; i++)
             {
                 string str = i.ToString();
                 cmbNumberOfRooms.Items.Add(str);
@@ -103,7 +104,7 @@ namespace HomeScreen.Presentation_Layer
             outDate = dtpCheckOutDate.Text;
             roomNum = cmbNumberOfRooms.Text;
             guestNum = cmbNumberOfGuests.Text;
-            //MessageBox.Show(inDate + " " + outDate + " " + roomNum + " " + guestNum);
+            MessageBox.Show("Check-In date: " + inDate + "\n" + "Check-Out Date: " + outDate + " \n" + "Rooms Required: " + roomNum + " rooms" + "\n" + "Guests Expected: " + guestNum + " guests");
         }
 
         private void btnCheckBooking_Click(object sender, EventArgs e)
@@ -112,6 +113,10 @@ namespace HomeScreen.Presentation_Layer
             this.Hide();
             hs.ShowDialog();
             this.Close();
+        }
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            PopulateObject();
         }
     }
 }
