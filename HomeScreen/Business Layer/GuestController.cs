@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,7 @@ namespace HomeScreen.Business_Layer
             // check the status of a guest, wheter its a new or existing guest
             return true;
         }
+
         public void CreateGuest(string name, string surname, int id, string email, int phoneNo, string address)
         {
             if(CheckStatus() == true)
