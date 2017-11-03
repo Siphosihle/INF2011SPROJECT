@@ -16,7 +16,7 @@ namespace HomeScreen.Business_Layer
         public string name;
         public int phoneNo;
         public string guestID;
-        private bool status = false;
+        private string status;
         public Type type; 
         #endregion
 
@@ -110,7 +110,7 @@ namespace HomeScreen.Business_Layer
         {
             return type;
         }
-        public bool CheckSatus()
+        public string CheckStatus()
         {
             return status;
         }
