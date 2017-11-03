@@ -8,11 +8,18 @@ namespace HomeScreen.Business_Layer
 {
     public class Admin
     {
+
+
+
+
+
+
+
         public readonly string admin1 = "sipho";
         public readonly string admin2 = "Hannan";
         public readonly string adminPassword = "inf";
         public string username;
-        public string userpassword;
+        public string password;
         public static bool accessGranted;
 
         #region Properties
