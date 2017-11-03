@@ -14,7 +14,7 @@ namespace HomeScreen.Business_Layer
         public string address;
         public string email;
         public string name;
-        public int phoneNo;
+        public string phoneNo;
         public string guestID;
         private bool status = false;
         public Type type; 
@@ -66,7 +66,7 @@ namespace HomeScreen.Business_Layer
                 name = value;
             }
         }
-        public int PhoneNumber
+        public string PhoneNumber
         {
             get
             {
@@ -89,17 +89,11 @@ namespace HomeScreen.Business_Layer
             }
         }
         #endregion
-        public Guest(Type.GuestType typeValue)
+        public Guest()
         {
-            switch (typeValue)
-            {
-                case Type.GuestType.ExistingGuest:
-                    type = new Type(name, surname, guestID);
-                    break;
-                case Type.GuestType.NewGuest:
-                    type = new Type(name, surname, guestID, phoneNo, email, address);
-                    break;
-            }
+            name = "";
+            surname = "";
+            guestID = "";
         }
 
         public void NewGuest(string email, int phoneNo, string address)
