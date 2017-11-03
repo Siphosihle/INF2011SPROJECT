@@ -30,14 +30,15 @@
         {
             this.picBox = new System.Windows.Forms.PictureBox();
             this.lbBookingDetails = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpCheckInDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpCheckOutDate = new System.Windows.Forms.DateTimePicker();
             this.cmbNumberOfGuests = new System.Windows.Forms.ComboBox();
             this.cmbNumberOfRooms = new System.Windows.Forms.ComboBox();
-            this.lblCheckInDate = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbCheckInDate = new System.Windows.Forms.Label();
+            this.lbCheckOutDate = new System.Windows.Forms.Label();
+            this.lbNumberOfRooms = new System.Windows.Forms.Label();
+            this.lbNumberOfGuests = new System.Windows.Forms.Label();
+            this.btnCheckBooking = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,19 +62,19 @@
             this.lbBookingDetails.TabIndex = 32;
             this.lbBookingDetails.Text = "BOOKING DETAILS";
             // 
-            // dateTimePicker1
+            // dtpCheckInDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(449, 165);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 33;
+            this.dtpCheckInDate.Location = new System.Drawing.Point(449, 165);
+            this.dtpCheckInDate.Name = "dtpCheckInDate";
+            this.dtpCheckInDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpCheckInDate.TabIndex = 33;
             // 
-            // dateTimePicker2
+            // dtpCheckOutDate
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(449, 231);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 34;
+            this.dtpCheckOutDate.Location = new System.Drawing.Point(449, 231);
+            this.dtpCheckOutDate.Name = "dtpCheckOutDate";
+            this.dtpCheckOutDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpCheckOutDate.TabIndex = 34;
             // 
             // cmbNumberOfGuests
             // 
@@ -93,63 +94,76 @@
             this.cmbNumberOfRooms.TabIndex = 36;
             this.cmbNumberOfRooms.SelectedIndexChanged += new System.EventHandler(this.cmbNumberOfRooms_SelectedIndexChanged);
             // 
-            // lblCheckInDate
+            // lbCheckInDate
             // 
-            this.lblCheckInDate.AutoSize = true;
-            this.lblCheckInDate.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckInDate.ForeColor = System.Drawing.Color.HotPink;
-            this.lblCheckInDate.Location = new System.Drawing.Point(354, 170);
-            this.lblCheckInDate.Name = "lblCheckInDate";
-            this.lblCheckInDate.Size = new System.Drawing.Size(86, 15);
-            this.lblCheckInDate.TabIndex = 37;
-            this.lblCheckInDate.Text = "Check-In Date";
+            this.lbCheckInDate.AutoSize = true;
+            this.lbCheckInDate.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCheckInDate.ForeColor = System.Drawing.Color.HotPink;
+            this.lbCheckInDate.Location = new System.Drawing.Point(354, 170);
+            this.lbCheckInDate.Name = "lbCheckInDate";
+            this.lbCheckInDate.Size = new System.Drawing.Size(86, 15);
+            this.lbCheckInDate.TabIndex = 37;
+            this.lbCheckInDate.Text = "Check-In Date";
             // 
-            // label1
+            // lbCheckOutDate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.HotPink;
-            this.label1.Location = new System.Drawing.Point(344, 236);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 15);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Check-Out Date";
+            this.lbCheckOutDate.AutoSize = true;
+            this.lbCheckOutDate.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCheckOutDate.ForeColor = System.Drawing.Color.HotPink;
+            this.lbCheckOutDate.Location = new System.Drawing.Point(344, 236);
+            this.lbCheckOutDate.Name = "lbCheckOutDate";
+            this.lbCheckOutDate.Size = new System.Drawing.Size(96, 15);
+            this.lbCheckOutDate.TabIndex = 38;
+            this.lbCheckOutDate.Text = "Check-Out Date";
             // 
-            // label2
+            // lbNumberOfRooms
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.HotPink;
-            this.label2.Location = new System.Drawing.Point(336, 298);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 15);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Number of Rooms";
+            this.lbNumberOfRooms.AutoSize = true;
+            this.lbNumberOfRooms.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNumberOfRooms.ForeColor = System.Drawing.Color.HotPink;
+            this.lbNumberOfRooms.Location = new System.Drawing.Point(336, 298);
+            this.lbNumberOfRooms.Name = "lbNumberOfRooms";
+            this.lbNumberOfRooms.Size = new System.Drawing.Size(104, 15);
+            this.lbNumberOfRooms.TabIndex = 39;
+            this.lbNumberOfRooms.Text = "Number of Rooms";
             // 
-            // label3
+            // lbNumberOfGuests
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.HotPink;
-            this.label3.Location = new System.Drawing.Point(335, 358);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 15);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "Number of Guests";
+            this.lbNumberOfGuests.AutoSize = true;
+            this.lbNumberOfGuests.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNumberOfGuests.ForeColor = System.Drawing.Color.HotPink;
+            this.lbNumberOfGuests.Location = new System.Drawing.Point(335, 358);
+            this.lbNumberOfGuests.Name = "lbNumberOfGuests";
+            this.lbNumberOfGuests.Size = new System.Drawing.Size(105, 15);
+            this.lbNumberOfGuests.TabIndex = 40;
+            this.lbNumberOfGuests.Text = "Number of Guests";
+            // 
+            // btnCheckBooking
+            // 
+            this.btnCheckBooking.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCheckBooking.ForeColor = System.Drawing.Color.HotPink;
+            this.btnCheckBooking.Location = new System.Drawing.Point(489, 488);
+            this.btnCheckBooking.Name = "btnCheckBooking";
+            this.btnCheckBooking.Size = new System.Drawing.Size(123, 48);
+            this.btnCheckBooking.TabIndex = 41;
+            this.btnCheckBooking.Text = "Check Booking";
+            this.btnCheckBooking.UseVisualStyleBackColor = true;
+            this.btnCheckBooking.Click += new System.EventHandler(this.btnCheckBooking_Click);
             // 
             // BookingDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 524);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblCheckInDate);
+            this.ClientSize = new System.Drawing.Size(1112, 575);
+            this.Controls.Add(this.btnCheckBooking);
+            this.Controls.Add(this.lbNumberOfGuests);
+            this.Controls.Add(this.lbNumberOfRooms);
+            this.Controls.Add(this.lbCheckOutDate);
+            this.Controls.Add(this.lbCheckInDate);
             this.Controls.Add(this.cmbNumberOfRooms);
             this.Controls.Add(this.cmbNumberOfGuests);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpCheckOutDate);
+            this.Controls.Add(this.dtpCheckInDate);
             this.Controls.Add(this.lbBookingDetails);
             this.Controls.Add(this.picBox);
             this.Name = "BookingDetailsForm";
@@ -164,13 +178,14 @@
 
         private System.Windows.Forms.PictureBox picBox;
         private System.Windows.Forms.Label lbBookingDetails;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpCheckInDate;
+        private System.Windows.Forms.DateTimePicker dtpCheckOutDate;
         private System.Windows.Forms.ComboBox cmbNumberOfGuests;
         private System.Windows.Forms.ComboBox cmbNumberOfRooms;
-        private System.Windows.Forms.Label lblCheckInDate;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbCheckInDate;
+        private System.Windows.Forms.Label lbCheckOutDate;
+        private System.Windows.Forms.Label lbNumberOfRooms;
+        private System.Windows.Forms.Label lbNumberOfGuests;
+        private System.Windows.Forms.Button btnCheckBooking;
     }
 }

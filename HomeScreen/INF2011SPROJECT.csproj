@@ -86,11 +86,11 @@
     <Compile Include="Presentation Layer\AdminLoginForm.Designer.cs">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\AvailableRooms.cs">
+    <Compile Include="Presentation Layer\AvailableRoomsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\AvailableRooms.Designer.cs">
-      <DependentUpon>AvailableRooms.cs</DependentUpon>
+    <Compile Include="Presentation Layer\AvailableRoomsForm.Designer.cs">
+      <DependentUpon>AvailableRoomsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\BookingDetailsForm.cs">
       <SubType>Form</SubType>
@@ -98,23 +98,23 @@
     <Compile Include="Presentation Layer\BookingDetailsForm.Designer.cs">
       <DependentUpon>BookingDetailsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\ConfirmGuest.cs">
+    <Compile Include="Presentation Layer\ConfirmGuestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\ConfirmGuest.Designer.cs">
-      <DependentUpon>ConfirmGuest.cs</DependentUpon>
+    <Compile Include="Presentation Layer\ConfirmGuestForm.Designer.cs">
+      <DependentUpon>ConfirmGuestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\ConfirmReservation.cs">
+    <Compile Include="Presentation Layer\ConfirmReservationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\ConfirmReservation.Designer.cs">
-      <DependentUpon>ConfirmReservation.cs</DependentUpon>
+    <Compile Include="Presentation Layer\ConfirmReservationForm.Designer.cs">
+      <DependentUpon>ConfirmReservationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\CustomerInformation.cs">
+    <Compile Include="Presentation Layer\CustomerInformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\CustomerInformation.Designer.cs">
-      <DependentUpon>CustomerInformation.cs</DependentUpon>
+    <Compile Include="Presentation Layer\CustomerInformationForm.Designer.cs">
+      <DependentUpon>CustomerInformationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\HomeScreenForm.cs">
       <SubType>Form</SubType>
@@ -122,17 +122,17 @@
     <Compile Include="Presentation Layer\HomeScreenForm.Designer.cs">
       <DependentUpon>HomeScreenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\NewGuest.cs">
+    <Compile Include="Presentation Layer\NewGuestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\NewGuest.Designer.cs">
-      <DependentUpon>NewGuest.cs</DependentUpon>
+    <Compile Include="Presentation Layer\NewGuestForm.Designer.cs">
+      <DependentUpon>NewGuestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\PaymentDetails.cs">
+    <Compile Include="Presentation Layer\PaymentDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\PaymentDetails.Designer.cs">
-      <DependentUpon>PaymentDetails.cs</DependentUpon>
+    <Compile Include="Presentation Layer\PaymentDetailsForm.Designer.cs">
+      <DependentUpon>PaymentDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\PaymentForm.cs">
       <SubType>Form</SubType>
@@ -150,29 +150,29 @@
     <EmbeddedResource Include="Presentation Layer\AdminLoginForm.resx">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\AvailableRooms.resx">
-      <DependentUpon>AvailableRooms.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\AvailableRoomsForm.resx">
+      <DependentUpon>AvailableRoomsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\BookingDetailsForm.resx">
       <DependentUpon>BookingDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\ConfirmGuest.resx">
-      <DependentUpon>ConfirmGuest.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\ConfirmGuestForm.resx">
+      <DependentUpon>ConfirmGuestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\ConfirmReservation.resx">
-      <DependentUpon>ConfirmReservation.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\ConfirmReservationForm.resx">
+      <DependentUpon>ConfirmReservationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\CustomerInformation.resx">
-      <DependentUpon>CustomerInformation.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\CustomerInformationForm.resx">
+      <DependentUpon>CustomerInformationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\HomeScreenForm.resx">
       <DependentUpon>HomeScreenForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\NewGuest.resx">
-      <DependentUpon>NewGuest.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\NewGuestForm.resx">
+      <DependentUpon>NewGuestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\PaymentDetails.resx">
-      <DependentUpon>PaymentDetails.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\PaymentDetailsForm.resx">
+      <DependentUpon>PaymentDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>

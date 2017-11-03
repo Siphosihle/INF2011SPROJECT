@@ -12,6 +12,12 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class BookingDetailsForm : Form
     {
+        #region Members
+        private string inDate;
+        private string outDate;
+        private string roomNum;
+        private string guestNum;
+        #endregion
         private class Number
         {
             public string Num;
@@ -25,6 +31,52 @@ namespace HomeScreen.Presentation_Layer
                 return Num;
             }
         }
+        #region Properties
+        public string InDate
+        {
+            get
+            {
+                return inDate;
+            }
+            set
+            {
+                inDate = value;
+            }
+        }
+        public string OutDate
+        {
+            get
+            {
+                return outDate;
+            }
+            set
+            {
+                outDate = value;
+            }
+        }
+        public string RoomNum
+        {
+            get
+            {
+                return roomNum;
+            }
+            set
+            {
+                roomNum = value;
+            }
+        }
+        public string GuestNum
+        {
+            get
+            {
+                return guestNum;
+            }
+            set
+            {
+                guestNum = value;
+            }
+        }
+#endregion
         public BookingDetailsForm()
         {
             InitializeComponent();
@@ -44,6 +96,22 @@ namespace HomeScreen.Presentation_Layer
         private void cmbNumberOfGuests_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        public void PopulateObject()
+        {
+            inDate = dtpCheckInDate.Text;
+            outDate = dtpCheckOutDate.Text;
+            roomNum = cmbNumberOfRooms.Text;
+            guestNum = cmbNumberOfGuests.Text;
+            //MessageBox.Show(inDate + " " + outDate + " " + roomNum + " " + guestNum);
+        }
+
+        private void btnCheckBooking_Click(object sender, EventArgs e)
+        {
+            AvailableRoomsForm hs = new AvailableRoomsForm();
+            this.Hide();
+            hs.ShowDialog();
+            this.Close();
         }
     }
 }
