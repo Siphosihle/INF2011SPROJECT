@@ -104,7 +104,7 @@ namespace HomeScreen.Presentation_Layer
             outDate = dtpCheckOutDate.Text;
             roomNum = cmbNumberOfRooms.Text;
             guestNum = cmbNumberOfGuests.Text;
-            MessageBox.Show(inDate + " " + outDate + " " + roomNum + " " + guestNum);
+            MessageBox.Show("Check-In date: " + inDate + "\n" + "Check-Out Date: " + outDate + " \n" + "Rooms Required: " + roomNum + " rooms" + "\n" + "Guests Expected: " + guestNum + " guests");
         }
 
         private void btnCheckBooking_Click(object sender, EventArgs e)
@@ -114,10 +114,9 @@ namespace HomeScreen.Presentation_Layer
             hs.ShowDialog();
             this.Close();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show(roomNum);
+            PopulateObject();
         }
     }
 }
