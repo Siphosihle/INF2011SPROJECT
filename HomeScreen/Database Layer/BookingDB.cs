@@ -145,49 +145,32 @@ namespace HomeScreen.Database_Layer
             //https://www.google.co.za/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=size+in+bytes+of+Int+in+SQL
             SqlParameter param = default(SqlParameter);
 
-            param = new SqlParameter("@ID", SqlDbType.NVarChar, 15, "ID");
+            param = new SqlParameter("@ReservationNumber", SqlDbType.NVarChar, 15, "ReservationNumber");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@EMPID", SqlDbType.NVarChar, 10, "ID");
+            param = new SqlParameter("@NoOfRooms", SqlDbType.Int, 15, "NoOfRooms");
             daMain.InsertCommand.Parameters.Add(param);
 
-            //Do the same for Description & answer -ensure that you choose the right size
-            param = new SqlParameter("@Name", SqlDbType.NVarChar, 100, "Name");
+            param = new SqlParameter("@StartDate", SqlDbType.DateTime, 15, "StartDate");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@Phone", SqlDbType.NVarChar, 15, "Phone");
+            param = new SqlParameter("@EndDate", SqlDbType.DateTime, 15, "EndDate");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@Role", SqlDbType.TinyInt, 1, "Role");
+            param = new SqlParameter("@SentConfirmation", SqlDbType.Bit, 15, "SentConfirmation");
             daMain.InsertCommand.Parameters.Add(param);
-            switch (anEmp.role.RoleValue)
-            {
-                case Role.RoleType.Headwaiter:
-                    param = new SqlParameter("@Salary", SqlDbType.Money, 8, "Salary");
-                    daMain.InsertCommand.Parameters.Add(param);
-                    break;
-                case Role.RoleType.Waiter:
-                    param = new SqlParameter("@Tips", SqlDbType.Money, 8, "Tips");
-                    daMain.InsertCommand.Parameters.Add(param);
 
-                    param = new SqlParameter("@DayRate", SqlDbType.Money, 8, "DayRate");
-                    daMain.InsertCommand.Parameters.Add(param);
+            param = new SqlParameter("@ReceivedDeposit", SqlDbType.Bit, 15, "ReceivedDeposit");
+            daMain.InsertCommand.Parameters.Add(param);
 
-                    param = new SqlParameter("@NoOfShifts", SqlDbType.SmallInt, 4, "NoOfShifts");
-                    daMain.InsertCommand.Parameters.Add(param);
-                    break;
-                case Role.RoleType.Runner:
-                    param = new SqlParameter("@DayRate", SqlDbType.Money, 8, "DayRate");
-                    daMain.InsertCommand.Parameters.Add(param);
+            param = new SqlParameter("@isCancelled", SqlDbType.Bit, 15, "isCancelled");
+            daMain.InsertCommand.Parameters.Add(param);
 
-                    param = new SqlParameter("@NoOfShifts", SqlDbType.SmallInt, 4, "NoOfShifts");
-                    daMain.InsertCommand.Parameters.Add(param);
-                    break;
-            }
+            
             //***https://msdn.microsoft.com/en-za/library/ms179882.aspx
         }
 
-        private void Build_UPDATE_Parameters(Booking aBooking)
+        /*private void Build_UPDATE_Parameters(Booking aBooking)
         {
             //---Create Parameters to communicate with SQL UPDATE
             SqlParameter param = default(SqlParameter);
