@@ -104,7 +104,6 @@ namespace HomeScreen.Database_Layer
         }
         private void FillRow(DataRow aRow, Booking aBooking, DB.DBOperation operation)
         {
-            Booking booking;
             if (operation == DB.DBOperation.Add)
             {
                 aRow["ReservationNumber"] = aBooking.ReservationNumber;  //NOTE square brackets to indicate index of collections of fields in row.
@@ -139,7 +138,7 @@ namespace HomeScreen.Database_Layer
         }
         #endregion
 
-        #region Build Parameters, Create Commands & Update database
+        /*#region Build Parameters, Create Commands & Update database
         private void Build_INSERT_Parameters(Booking aBooking)
         {
             //Create Parameters to communicate with SQL INSERT
