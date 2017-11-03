@@ -66,7 +66,7 @@ namespace HomeScreen.Presentation_Layer
         {
             name = txtboxUsername.Text;
             password = txtboxPassword.Text;
-            admin.Login(name, password);
+            //admin.Login(name, password);
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)

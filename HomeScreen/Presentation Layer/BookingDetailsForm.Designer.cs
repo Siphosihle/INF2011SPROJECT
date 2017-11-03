@@ -39,7 +39,7 @@
             this.lbNumberOfRooms = new System.Windows.Forms.Label();
             this.lbNumberOfGuests = new System.Windows.Forms.Label();
             this.btnCheckBooking = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,7 +143,7 @@
             // 
             this.btnCheckBooking.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckBooking.ForeColor = System.Drawing.Color.HotPink;
-            this.btnCheckBooking.Location = new System.Drawing.Point(489, 488);
+            this.btnCheckBooking.Location = new System.Drawing.Point(809, 481);
             this.btnCheckBooking.Name = "btnCheckBooking";
             this.btnCheckBooking.Size = new System.Drawing.Size(123, 48);
             this.btnCheckBooking.TabIndex = 41;
@@ -151,22 +151,24 @@
             this.btnCheckBooking.UseVisualStyleBackColor = true;
             this.btnCheckBooking.Click += new System.EventHandler(this.btnCheckBooking_Click);
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.Location = new System.Drawing.Point(842, 231);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.HotPink;
+            this.btnSave.Location = new System.Drawing.Point(474, 481);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(123, 48);
+            this.btnSave.TabIndex = 42;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // BookingDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 575);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCheckBooking);
             this.Controls.Add(this.lbNumberOfGuests);
             this.Controls.Add(this.lbNumberOfRooms);
@@ -199,6 +201,6 @@
         private System.Windows.Forms.Label lbNumberOfRooms;
         private System.Windows.Forms.Label lbNumberOfGuests;
         private System.Windows.Forms.Button btnCheckBooking;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSave;
     }
 }

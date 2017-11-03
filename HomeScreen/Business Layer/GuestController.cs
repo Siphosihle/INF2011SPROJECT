@@ -70,7 +70,7 @@ namespace HomeScreen.Business_Layer
             else
             {
                 //create a new guest
-                new Type(name, surname, ID,phoneNo, email, address);
+                
             }
         }
         public override string ToString()
