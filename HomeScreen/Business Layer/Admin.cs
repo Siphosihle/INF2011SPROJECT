@@ -8,35 +8,12 @@ namespace HomeScreen.Business_Layer
 {
     public class Admin
     {
-
-
-
-
-
-
-
-        public readonly string admin1 = "sipho";
-        public readonly string admin2 = "Hannan";
-        public readonly string adminPassword = "inf";
         public string username;
         public string password;
         public static bool accessGranted;
 
         #region Properties
-        public string Admin1
-        {
-            get
-            {
-                return admin1;
-            }
-        }
-        public string Admin2
-        {
-            get
-            {
-                return admin2;
-            }
-        }
+        
         public string Username
         {
             get
@@ -48,20 +25,20 @@ namespace HomeScreen.Business_Layer
                 username = value;
             }
         }
-        public string UserPassword
+        public string Password
         {
             get
             {
-                return userpassword;
+                return password;
             }
             set
             {
-                userpassword = value;
+                password = value;
             }
         }
         #endregion
 
-        public bool Login(string name, string password)
+        /*public bool Login(string name, string password)
         {
             if (((admin1.Equals(name)) || (admin2.Equals(name))) && (adminPassword.Equals(password)))
             {
@@ -73,6 +50,6 @@ namespace HomeScreen.Business_Layer
                 accessGranted =  false;
             }
             return accessGranted; 
-        }
+        }*/
     }
 }
