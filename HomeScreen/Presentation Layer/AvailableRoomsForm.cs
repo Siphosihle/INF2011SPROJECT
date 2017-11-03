@@ -21,5 +21,13 @@ namespace HomeScreen.Presentation_Layer
         {
             MessageBox.Show(bookingDetails.InDate + " " + bookingDetails.OutDate + " " + bookingDetails.RoomNum + " " + bookingDetails.GuestNum);
         }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            BookingDetailsForm hs = new BookingDetailsForm();
+            this.Hide();
+            hs.ShowDialog();
+            this.Close();
+        }
     }
 }

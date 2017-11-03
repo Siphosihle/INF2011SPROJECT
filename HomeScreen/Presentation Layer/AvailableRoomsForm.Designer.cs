@@ -69,7 +69,6 @@
             this.btnNext.TabIndex = 29;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
-//            this.btnNext.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnPrevious
             // 
@@ -81,6 +80,7 @@
             this.btnPrevious.TabIndex = 30;
             this.btnPrevious.Text = "Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // pnlAvailability
             // 
@@ -110,7 +110,7 @@
             this.lblTheFollowing.TabIndex = 0;
             this.lblTheFollowing.Text = "The Following Rooms Are Availabe";
             // 
-            // AvailableRooms
+            // AvailableRoomsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -120,7 +120,7 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.lblAvailableRooms);
             this.Controls.Add(this.picBox);
-            this.Name = "AvailableRooms";
+            this.Name = "AvailableRoomsForm";
             this.Text = "Rest easy Hotel";
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.pnlAvailability.ResumeLayout(false);
