@@ -1,6 +1,6 @@
 ﻿namespace HomeScreen.Presentation_Layer
 {
-    partial class NewGuest
+    partial class NewGuestForm
     {
         /// <summary>
         /// Required designer variable.

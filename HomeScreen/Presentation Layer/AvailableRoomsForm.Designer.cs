@@ -1,6 +1,6 @@
 ﻿namespace HomeScreen.Presentation_Layer
 {
-    partial class AvailableRooms
+    partial class AvailableRoomsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -98,6 +98,7 @@
             this.rtbAvailableRooms.Size = new System.Drawing.Size(441, 220);
             this.rtbAvailableRooms.TabIndex = 1;
             this.rtbAvailableRooms.Text = "";
+            this.rtbAvailableRooms.TextChanged += new System.EventHandler(this.rtbAvailableRooms_TextChanged);
             // 
             // lblTheFollowing
             // 

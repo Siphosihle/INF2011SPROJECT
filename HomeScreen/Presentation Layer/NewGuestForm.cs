@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HomeScreen.Presentation_Layer
 {
-    public partial class NewGuest : Form
+    public partial class NewGuestForm : Form
     {
-        public NewGuest()
+        public NewGuestForm()
         {
             InitializeComponent();
         }

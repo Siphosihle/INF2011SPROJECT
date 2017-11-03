@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HomeScreen.Presentation_Layer
 {
-    public partial class ConfirmReservation : Form
+    public partial class PaymentDetailsForm : Form
     {
-        public ConfirmReservation()
+        public PaymentDetailsForm()
         {
             InitializeComponent();
         }

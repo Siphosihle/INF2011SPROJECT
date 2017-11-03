@@ -100,7 +100,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            BookingDetailsForm hs = new BookingDetailsForm();
+            AvailableRoomsForm hs = new AvailableRoomsForm();
             this.Hide();
             hs.ShowDialog();
             this.Close();

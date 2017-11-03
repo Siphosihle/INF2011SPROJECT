@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace HomeScreen.Presentation_Layer
 {
-    public partial class AvailableRooms : Form
+    public partial class ConfirmReservationForm : Form
     {
-        public AvailableRooms()
+        public ConfirmReservationForm()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

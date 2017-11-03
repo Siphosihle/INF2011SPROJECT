@@ -19,7 +19,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnMakeaBooking_Click(object sender, EventArgs e)
         {
-            AvailableRooms hs = new AvailableRooms();
+            BookingDetailsForm hs = new BookingDetailsForm();
             this.Hide();
             hs.ShowDialog();
             this.Close();
