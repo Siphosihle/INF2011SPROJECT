@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HomeScreen.Database_Layer;
+using HomeScreen.Business_Layer;
 
 namespace HomeScreen.Presentation_Layer
 {
@@ -15,15 +16,15 @@ namespace HomeScreen.Presentation_Layer
     {
         private int childFormNumber = 0;
         private AdminLoginForm adminForm;
-        private AdminDB adminDB;
+
+        private AdminController admincontroller;
 
         #region Constructors
         public RestEasyMDIParent()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-            adminDB = new AdminDB();
-
+            admincontroller = new AdminController();
         }
         #endregion
 
@@ -141,6 +142,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void RestEasyMDIParent_Load(object sender, EventArgs e)
         {
+            displayAdminForm();
         }
     }
 }

@@ -72,7 +72,6 @@
             this.lblCheckInDate.Size = new System.Drawing.Size(67, 15);
             this.lblCheckInDate.TabIndex = 33;
             this.lblCheckInDate.Text = "User Name";
-            this.lblCheckInDate.Click += new System.EventHandler(this.lbCheckInDate_Click);
             // 
             // lblUsername
             // 
@@ -90,9 +89,7 @@
             this.txtboxUsername.Location = new System.Drawing.Point(467, 179);
             this.txtboxUsername.Name = "txtboxUsername";
             this.txtboxUsername.Size = new System.Drawing.Size(199, 20);
-            this.txtboxUsername.TabIndex = 35;
-            this.txtboxUsername.TextChanged += new System.EventHandler(this.txtboxUsername_TextChanged);
-            // 
+            this.txtboxUsername.TabIndex = 35;            // 
             // txtboxPassword
             // 
             this.txtboxPassword.Location = new System.Drawing.Point(467, 255);
@@ -100,7 +97,6 @@
             this.txtboxPassword.PasswordChar = '*';
             this.txtboxPassword.Size = new System.Drawing.Size(199, 20);
             this.txtboxPassword.TabIndex = 36;
-            this.txtboxPassword.TextChanged += new System.EventHandler(this.txtboxPassword_TextChanged);
             // 
             // label2
             // 

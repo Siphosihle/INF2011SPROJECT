@@ -7,19 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HomeScreen.Business_Layer;
 
 namespace HomeScreen.Presentation_Layer
 {
     public partial class BookingDetailsForm : Form
     {
         #region Members
+
+        public bool bookingFormClosed = false;
+        private Booking booking;
+        private BookingController bookingcontroller;
+
+        /*
         private int count = 0;
         private string inDate;
         private string outDate;
         private string roomNum;
-        private string guestNum;
+        private string guestNum; */
         private BookingDetailsForm bookingDetails;
         #endregion
+
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            bookingFormClosed = true;
+        }
+
+        /*
         private class Number
         {
             public string Num;
@@ -33,6 +47,8 @@ namespace HomeScreen.Presentation_Layer
                 return Num;
             }
         }
+        */
+
         #region Properties
         public string InDate
         {
@@ -78,7 +94,8 @@ namespace HomeScreen.Presentation_Layer
                 guestNum = value;
             }
         }
-#endregion
+        #endregion
+
         public BookingDetailsForm()
         {
             InitializeComponent();
@@ -105,6 +122,9 @@ namespace HomeScreen.Presentation_Layer
         }
         public void PopulateObject()
         {
+
+
+
             int num = 0;
             int nw = 0;
             inDate = dtpCheckInDate.Text;
@@ -171,6 +191,11 @@ namespace HomeScreen.Presentation_Layer
         {
             PopulateObject();
             
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            PopulateObject
         }
     }
 }
