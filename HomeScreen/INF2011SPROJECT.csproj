@@ -149,9 +149,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reservations\BlockArray.cs" />
-    <Compile Include="Reservations\Reservation.cs" />
-    <Compile Include="Reservations\ReservationController.cs" />
+    <Compile Include="RoomAllocation\BlockArray.cs" />
+    <Compile Include="RoomAllocation\Reservation.cs" />
+    <Compile Include="RoomAllocation\ReservationController.cs" />
     <Compile Include="RestEasySystemDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

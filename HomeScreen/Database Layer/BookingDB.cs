@@ -138,7 +138,10 @@ namespace HomeScreen.Database_Layer
         }
         #endregion
 
-        /*#region Build Parameters, Create Commands & Update database
+        #region Build Parameters, Create Commands & Update database
+
+        private void Build_
+
         private void Build_INSERT_Parameters(Booking aBooking)
         {
             //Create Parameters to communicate with SQL INSERT
@@ -170,7 +173,7 @@ namespace HomeScreen.Database_Layer
             //***https://msdn.microsoft.com/en-za/library/ms179882.aspx
         }
 
-        /*private void Build_UPDATE_Parameters(Booking aBooking)
+        private void Build_UPDATE_Parameters(Booking aBooking)
         {
             //---Create Parameters to communicate with SQL UPDATE
             SqlParameter param = default(SqlParameter);
@@ -316,7 +319,7 @@ namespace HomeScreen.Database_Layer
             }
             return success;
         }
-        #endregion */
+        #endregion 
 
 
     }

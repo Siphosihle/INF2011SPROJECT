@@ -32,12 +32,14 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.bookingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.listToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.liToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -67,9 +69,29 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
+            // 
+            // bookingToolStripMenuItem
+            // 
+            this.bookingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listToolStripMenuItem});
+            this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
+            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.bookingToolStripMenuItem.Text = "Booking";
+            // 
+            // guestToolStripMenuItem
+            // 
+            this.guestToolStripMenuItem.Name = "guestToolStripMenuItem";
+            this.guestToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.guestToolStripMenuItem.Text = "Guest";
+            // 
+            // adminToolStripMenuItem
+            // 
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.adminToolStripMenuItem.Text = "Admin";
             // 
             // statusStrip
             // 
@@ -87,23 +109,19 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // bookingToolStripMenuItem
+            // listToolStripMenuItem
             // 
-            this.bookingToolStripMenuItem.Name = "bookingToolStripMenuItem";
-            this.bookingToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.bookingToolStripMenuItem.Text = "Booking";
+            this.listToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.liToolStripMenuItem});
+            this.listToolStripMenuItem.Name = "listToolStripMenuItem";
+            this.listToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.listToolStripMenuItem.Text = "List All Bookings";
             // 
-            // guestToolStripMenuItem
+            // liToolStripMenuItem
             // 
-            this.guestToolStripMenuItem.Name = "guestToolStripMenuItem";
-            this.guestToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.guestToolStripMenuItem.Text = "Guest";
-            // 
-            // adminToolStripMenuItem
-            // 
-            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.adminToolStripMenuItem.Text = "Admin";
+            this.liToolStripMenuItem.Name = "liToolStripMenuItem";
+            this.liToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.liToolStripMenuItem.Text = "Li";
             // 
             // RestEasyMDIParent
             // 
@@ -137,6 +155,8 @@
         private System.Windows.Forms.ToolStripMenuItem bookingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem guestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem liToolStripMenuItem;
     }
 }
 

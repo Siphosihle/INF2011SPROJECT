@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeScreen.Reservations
+namespace HomeScreen.RoomAllocation
 {
-    class Reservation
+    class BlockArray
     {
     }
 }

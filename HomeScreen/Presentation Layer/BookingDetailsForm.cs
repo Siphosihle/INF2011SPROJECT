@@ -36,8 +36,9 @@ namespace HomeScreen.Presentation_Layer
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             PopulateObject();
-            bookingcontroller.DataMaintenance(booking, Database_Layer.DB.DBOperation.Edit);
-            bookingcontroller.FinalizeChanges(booking);
+            
+            //bookingcontroller.DataMaintenance(booking, Database_Layer.DB);   CRUD
+            //bookingcontroller.FinalizeChanges(booking); 
             ClearAll();
         }
         
