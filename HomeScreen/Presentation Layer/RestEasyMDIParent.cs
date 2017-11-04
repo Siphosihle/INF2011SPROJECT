@@ -7,18 +7,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HomeScreen.Database_Layer;
 
 namespace HomeScreen.Presentation_Layer
 {
     public partial class RestEasyMDIParent : Form
     {
         private int childFormNumber = 0;
+        private AdminLoginForm adminForm;
+        private AdminDB adminDB;
 
+        #region Constructors
         public RestEasyMDIParent()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+            adminDB = new AdminDB();
+
+        }
+        #endregion
+
+        #region Properties
+
+        public AdminLoginForm AdminForm
+        {
+            get
+            {
+                return adminForm;
+            }
+
+            set
+            {
+                adminForm = value;
+            }
         }
 
+        #endregion
+
+        #region Form Events (MenuStrip)
         private void ShowNewForm(object sender, EventArgs e)
         {
             Form childForm = new Form();
@@ -37,7 +63,20 @@ namespace HomeScreen.Presentation_Layer
                 string FileName = openFileDialog.FileName;
             }
         }
+        #endregion
 
+        #region Child Forms
+
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+
+        #endregion
+
+        #region ToolStripMenu Items
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -52,28 +91,6 @@ namespace HomeScreen.Presentation_Layer
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-        }
-
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +119,28 @@ namespace HomeScreen.Presentation_Layer
             {
                 childForm.Close();
             }
+        }
+        #endregion
+
+        #region Coded ToolStripMenu Items
+
+        private void displayAdminForm()
+        {
+            if (adminForm == null)
+            {
+                CreateNewAdminForm();
+            }
+            if (adminForm.adminLoginFormClosed)
+            {
+                CreateNewAdminForm();
+            }
+            adminForm.Show();
+        }
+
+        #endregion
+
+        private void RestEasyMDIParent_Load(object sender, EventArgs e)
+        {
         }
     }
 }

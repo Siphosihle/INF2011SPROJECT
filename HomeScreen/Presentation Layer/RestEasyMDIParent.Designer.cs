@@ -92,6 +92,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "RestEasyMDIParent";
             this.Text = "RestEasyMDIParent";
+            this.Load += new System.EventHandler(this.RestEasyMDIParent_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);

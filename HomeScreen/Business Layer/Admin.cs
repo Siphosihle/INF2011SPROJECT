@@ -38,6 +38,8 @@ namespace HomeScreen.Business_Layer
         }
         #endregion
 
+        
+
         /*public bool Login(string name, string password)
         {
             if (((admin1.Equals(name)) || (admin2.Equals(name))) && (adminPassword.Equals(password)))
