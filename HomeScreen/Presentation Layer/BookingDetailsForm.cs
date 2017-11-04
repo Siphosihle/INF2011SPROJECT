@@ -17,7 +17,7 @@ namespace HomeScreen.Presentation_Layer
 
         public bool bookingFormClosed = false;
         private Booking booking;
-        private BookingController bookingcontroller;
+        private BookingController bookingController;
 
         
         private int count = 0;
@@ -36,7 +36,8 @@ namespace HomeScreen.Presentation_Layer
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             PopulateObject();
-            
+            bookingController.CheckAvailability();
+            bookingController.Calculate
             //bookingcontroller.DataMaintenance(booking, Database_Layer.DB);   CRUD
             //bookingcontroller.FinalizeChanges(booking); 
             ClearAll();
@@ -52,8 +53,8 @@ namespace HomeScreen.Presentation_Layer
         {
 
             booking = new Booking();
-            booking.ReservationNumber = bookingcontroller.GenerateReferenceNumber();
-            booking.NoOfRooms = Convert.ToInt32(bookingcontroller.CalculateNoOfRooms(Convert.ToDouble(cmbNoOfGuests.Text)));
+            booking.ReservationNumber = bookingController.GenerateReferenceNumber();
+            booking.NoOfRooms = Convert.ToInt32(bookingController.CalculateNoOfRooms(Convert.ToDouble(cmbNoOfGuests.Text)));
             booking.StartDate = dtpCheckInDate.Value;
             booking.EndDate = dtpCheckOutDate.Value;
             booking.SentConfirmation = false;
