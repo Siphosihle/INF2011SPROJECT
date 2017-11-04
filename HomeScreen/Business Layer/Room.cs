@@ -10,7 +10,6 @@ namespace HomeScreen.Business_Layer
     {
          private string roomNo;
          private bool roomOccuppied;
-         private string roomType;
          private double rate;
 
         //public bool RoomAvailability(string roomNo, Date startDate, Date endDate)
