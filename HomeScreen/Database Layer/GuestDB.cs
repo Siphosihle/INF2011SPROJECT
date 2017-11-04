@@ -26,7 +26,7 @@ namespace HomeScreen.Database_Layer
             FillDataSet(sqlLocal, table);
             Add2Collection(table);
         }
-        public Collection<Guest> AllEmployees
+        public Collection<Guest> AllGuests
         {
             get
             {

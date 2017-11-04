@@ -31,7 +31,7 @@ namespace HomeScreen.Database_Layer
         {
             admins = new Collection<Admin>();
             FillDataSet(sqlLocal1, table1);
-            //Add2Collection(table1);
+            Add2Collection(table1);
 
         }
 
