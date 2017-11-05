@@ -25,7 +25,8 @@ namespace HomeScreen.Database_Layer
         {
             Add = 0,
             Edit = 1,
-            Delete = 2
+            Delete = 2,
+            Search = 3
         }
         public DB()
         {

@@ -8,15 +8,51 @@ namespace HomeScreen.Business_Layer
 {
     public class Booking
     {
-        string guestID, roomChargeID;
-        int reservationNumber, noOfRooms, noOfPeople;
+        string guestID;
+        int reservationNumber, noOfRooms, noOfPeople, invoiceNumber;
         DateTime startDate, endDate;
         bool sentConfirmation, receivedDeposit, isCancelled;
 
-        public virtual ICollection<Room> rooms { get; set}
+        public virtual ICollection<Room> rooms { get; set; }
 
 
         #region Properties
+
+        public int NoOfPeople
+        {
+            get
+            {
+                return noOfPeople;
+            }
+            set
+            {
+                noOfPeople = value;
+            }
+        }
+
+        public int InvoiceNumber
+        {
+            get
+            {
+                return invoiceNumber;
+            }
+            set
+            {
+                invoiceNumber = value;
+            }
+        }
+
+        public string GuestID
+        {
+            get
+            {
+                return guestID;
+            }
+            set
+            {
+                guestID = value;
+            }
+        }
 
         public int ReservationNumber
         {
