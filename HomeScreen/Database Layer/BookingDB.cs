@@ -90,7 +90,8 @@ namespace HomeScreen.Database_Layer
                     //Instantiate a new Employee object
                     aBooking = new Booking();
                     //Obtain each employee attribute from the specific field in the row in the table
-                    aBooking.ReservationNumber = Convert.ToInt32(myRow["ID"]);
+                    aBooking.ReservationNumber = Convert.ToInt32(myRow["ReservationNumber"]);
+                    aBooking.noo
                     aBooking.NoOfRooms = Convert.ToInt32(myRow["NoOfRooms"]);
                     aBooking.StartDate = Convert.ToDateTime(myRow["StartDate"]);
                     aBooking.EndDate = Convert.ToDateTime(myRow["EndDate"]);

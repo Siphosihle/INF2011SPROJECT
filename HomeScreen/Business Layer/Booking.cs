@@ -8,7 +8,8 @@ namespace HomeScreen.Business_Layer
 {
     public class Booking
     {
-        int reservationNumber, noOfRooms;
+        string guestID, roomChargeID;
+        int reservationNumber, noOfRooms, noOfPeople;
         DateTime startDate, endDate;
         bool sentConfirmation, receivedDeposit, isCancelled;
 
