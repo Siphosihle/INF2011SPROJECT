@@ -12,6 +12,8 @@ namespace HomeScreen.Business_Layer
         DateTime startDate, endDate;
         bool sentConfirmation, receivedDeposit, isCancelled;
 
+        public virtual ICollection<Room> rooms { get; set}
+
 
         #region Properties
 
@@ -103,6 +105,12 @@ namespace HomeScreen.Business_Layer
         #endregion
 
         #region Constructors
+
+        public Booking()
+        {
+            this.rooms = new HashSet<Room>();
+        }
+
         #endregion
 
         #region Methods

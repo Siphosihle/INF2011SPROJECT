@@ -8,9 +8,15 @@ namespace HomeScreen.Business_Layer
 {
     public class Room
     {
-         private string roomNo;
-         private bool roomOccuppied;
-         private double rate;
+        private string roomID { get; set; }
+        private string hotelID { get; set; }
+        private string roomNo { get; set; }
+        public virtual ICollection<Booking> bookings { get; set; }
+
+        public Room()
+        {
+            this.bookings = new HashSet<Booking>();
+        }
 
         //public bool RoomAvailability(string roomNo, Date startDate, Date endDate)
         //{
