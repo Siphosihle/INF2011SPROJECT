@@ -8,5 +8,6 @@ namespace HomeScreen.Database_Layer
 {
     class RoomAvailabilityDB
     {
+
     }
 }
