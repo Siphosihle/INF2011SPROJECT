@@ -29,6 +29,16 @@ namespace HomeScreen.Business_Layer
             bookings = bookingDB.AllBookings;
         }
 
+        internal void CheckAvailability()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void CalculateDeposit()
+        {
+            throw new NotImplementedException();
+        }
+
         /*
         #region Database Communication
         public void DataMaintenance(Booking aBooking, DB.DBOperation operation)

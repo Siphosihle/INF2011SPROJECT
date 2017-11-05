@@ -37,7 +37,7 @@ namespace HomeScreen.Presentation_Layer
         {
             PopulateObject();
             bookingController.CheckAvailability();
-            bookingController.Calculate
+            bookingController.CalculateDeposit();
             //bookingcontroller.DataMaintenance(booking, Database_Layer.DB);   CRUD
             //bookingcontroller.FinalizeChanges(booking); 
             ClearAll();
