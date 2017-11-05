@@ -236,7 +236,6 @@
     </Content>
     <Content Include="RestEasySystem_log.ldf">
       <DependentUpon>RestEasySystem.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
