@@ -15,8 +15,8 @@ namespace HomeScreen.Database_Layer
 {
     class AdminDB: DB
     {
-        private string table1 = "Admin";
-        private string sqlLocal1 = "SELECT * FROM Admin";
+        private string table1 = "Admins";
+        private string sqlLocal1 = "SELECT * FROM Admins";
 
         private Collection<Admin> admins;
 

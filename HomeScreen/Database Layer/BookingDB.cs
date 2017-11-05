@@ -138,7 +138,9 @@ namespace HomeScreen.Database_Layer
         }
         #endregion
 
-        /*#region Build Parameters, Create Commands & Update database
+        #region Build Parameters, Create Commands & Update database
+
+
         private void Build_INSERT_Parameters(Booking aBooking)
         {
             //Create Parameters to communicate with SQL INSERT
@@ -170,56 +172,38 @@ namespace HomeScreen.Database_Layer
             //***https://msdn.microsoft.com/en-za/library/ms179882.aspx
         }
 
-        /*private void Build_UPDATE_Parameters(Booking aBooking)
+        private void Build_UPDATE_Parameters(Booking aBooking)
         {
             //---Create Parameters to communicate with SQL UPDATE
             SqlParameter param = default(SqlParameter);
 
-            param = new SqlParameter("@Name", SqlDbType.NVarChar, 100, "Name");
+            param = new SqlParameter("@NoOfRooms", SqlDbType.NVarChar, 50, "NoOfRooms");
             param.SourceVersion = DataRowVersion.Current;
             daMain.UpdateCommand.Parameters.Add(param);
 
             //Do for all fields other than ID and EMPID as for Insert 
-            param = new SqlParameter("@Phone", SqlDbType.NVarChar, 15, "Phone");
+            param = new SqlParameter("@StartDate", SqlDbType.DateTime, "StartDate");
             param.SourceVersion = DataRowVersion.Current;
             daMain.UpdateCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@Role", SqlDbType.TinyInt, 1, "Role");
+            param = new SqlParameter("@EndDate", SqlDbType.DateTime, 1, "EndDate");
+            param.SourceVersion = DataRowVersion.Current;
+            daMain.UpdateCommand.Parameters.Add(param);
+           
+            param = new SqlParameter("@SentConfirmation", SqlDbType.Money, 8, "SentConfirmation");
             param.SourceVersion = DataRowVersion.Current;
             daMain.UpdateCommand.Parameters.Add(param);
 
-            switch (anEmp.role.RoleValue)
-            {
-                case Role.RoleType.Headwaiter:
-                    param = new SqlParameter("@Salary", SqlDbType.Money, 8, "Salary");
-                    param.SourceVersion = DataRowVersion.Current;
-                    daMain.UpdateCommand.Parameters.Add(param);
-                    break;
-                case Role.RoleType.Waiter:
-                    param = new SqlParameter("@Tips", SqlDbType.Money, 8, "Tips");
-                    param.SourceVersion = DataRowVersion.Current;
-                    daMain.UpdateCommand.Parameters.Add(param);
+            param = new SqlParameter("@ReceivedDeposit", SqlDbType.Money, 8, "ReceivedDeposit");
+            param.SourceVersion = DataRowVersion.Current;
+            daMain.UpdateCommand.Parameters.Add(param);
 
-                    param = new SqlParameter("@DayRate", SqlDbType.Money, 8, "DayRate");
-                    param.SourceVersion = DataRowVersion.Current;
-                    daMain.UpdateCommand.Parameters.Add(param);
+            param = new SqlParameter("@IsCancelled", SqlDbType.Money, 8, "IsCancelled");
+            param.SourceVersion = DataRowVersion.Current;
+            daMain.UpdateCommand.Parameters.Add(param);
 
-                    param = new SqlParameter("@NoOfShifts", SqlDbType.SmallInt, 4, "NoOfShifts");
-                    param.SourceVersion = DataRowVersion.Current;
-                    daMain.UpdateCommand.Parameters.Add(param);
-                    break;
-                case Role.RoleType.Runner:
-                    param = new SqlParameter("@DayRate", SqlDbType.Money, 8, "DayRate");
-                    param.SourceVersion = DataRowVersion.Current;
-                    daMain.UpdateCommand.Parameters.Add(param);
-
-                    param = new SqlParameter("@NoOfShifts", SqlDbType.SmallInt, 4, "NoOfShifts");
-                    param.SourceVersion = DataRowVersion.Current;
-                    daMain.UpdateCommand.Parameters.Add(param);
-                    break;
-            }
             //testing the ID of record that needs to change with the original ID of the record
-            param = new SqlParameter("@Original_ID", SqlDbType.NVarChar, 15, "ID");
+            param = new SqlParameter("@Original_ReservationNumber", SqlDbType.NVarChar, 15, "ReservationNumber");
             param.SourceVersion = DataRowVersion.Original;
             daMain.UpdateCommand.Parameters.Add(param);
         }
@@ -234,20 +218,9 @@ namespace HomeScreen.Database_Layer
         }
         private void Create_INSERT_Command(Booking aBooking)
         {
-            //Create the command that must be used to insert values into the Books table..
-            switch (anEmp.role.RoleValue)
-            {
-                case Role.RoleType.Headwaiter:
-                    daMain.InsertCommand = new SqlCommand("INSERT into HeadWaiter (ID, EMPID, Name, Phone, Role, Salary) VALUES (@ID, @EmpID, @Name, @Phone, @Role, @Salary)", cnMain);
-                    break;
-                case Role.RoleType.Waiter:
-                    daMain.InsertCommand = new SqlCommand("INSERT into Waiter (ID, EMPID, Name, Phone, Role, Tips, DayRate, NoOfShifts) VALUES (@ID, @EmpID, @Name, @Phone, @Role, @Tips, @DayRate, @NoOfShifts)", cnMain);
-                    break;
-                case Role.RoleType.Runner:
-                    daMain.InsertCommand = new SqlCommand("INSERT into Runner (ID, EMPID, Name, Phone, Role, DayRate, NoOfShifts) VALUES (@ID, @EmpID, @Name, @Phone, @Role, @DayRate, @NoOfShifts)", cnMain);
-                    break;
-            }
-            Build_INSERT_Parameters(anEmp);
+
+            daMain.InsertCommand = new SqlCommand("INSERT into Bookings (ID, EMPID, Name, Phone, Role, Salary) VALUES (@ID, @EmpID, @Name, @Phone, @Role, @Salary)", cnMain);
+            Build_INSERT_Parameters(aBooking);
         }
 
         private void Create_UPDATE_Command(Booking aBooking)
@@ -316,7 +289,7 @@ namespace HomeScreen.Database_Layer
             }
             return success;
         }
-        #endregion */
+        #endregion 
 
 
     }

@@ -7,19 +7,142 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HomeScreen.Business_Layer;
 
 namespace HomeScreen.Presentation_Layer
 {
     public partial class BookingDetailsForm : Form
     {
         #region Members
+
+        public bool bookingFormClosed = false;
+        private Booking booking;
+        private BookingController bookingController;
+
+        
         private int count = 0;
         private string inDate;
         private string outDate;
         private string roomNum;
-        private string guestNum;
-        private BookingDetailsForm bookingDetails;
+        private string guestNum; 
         #endregion
+
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            bookingFormClosed = true;
+        }
+
+        
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            PopulateObject();
+            bookingController.CheckAvailability();
+            bookingController.CalculateDeposit();
+            //bookingcontroller.DataMaintenance(booking, Database_Layer.DB);   CRUD
+            //bookingcontroller.FinalizeChanges(booking); 
+            ClearAll();
+        }
+        
+
+        private void ClearAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PopulateObject()
+        {
+
+            booking = new Booking();
+            booking.ReservationNumber = bookingController.GenerateReferenceNumber();
+            booking.NoOfRooms = Convert.ToInt32(bookingController.CalculateNoOfRooms(Convert.ToDouble(cmbNoOfGuests.Text)));
+            booking.StartDate = dtpCheckInDate.Value;
+            booking.EndDate = dtpCheckOutDate.Value;
+            booking.SentConfirmation = false;
+            booking.RecievedDeposit = false;
+            booking.IsCancelled = false;
+
+            /*
+            int num = 0;
+            int nw = 0;
+            inDate = dtpCheckInDate.Text;
+            outDate = dtpCheckOutDate.Text;
+            roomNum = cmbNumberOfRooms.Text;
+            if (roomNum != "")
+            {
+                num = Int32.Parse(roomNum);
+            }
+
+            if (num > 5)
+            {
+                MessageBox.Show("The hotel only have 5 rooms");
+            }
+            guestNum = cmbNumberOfGuests.Text;
+            if (guestNum != "")
+            {
+                nw = Int32.Parse(guestNum);
+            }
+            if ((guestNum == "") && (roomNum == ""))
+            {
+                MessageBox.Show("Please enter the Number of Rooms and Guests before you save!");
+            }
+            if (nw > 20)
+            {
+                MessageBox.Show("Only 20 guest can be accomodated at a time");
+            }
+            int mlt = num * 4;
+            if (nw > mlt)
+            {
+                MessageBox.Show("A room can only accomodate 4 guests, please re-enter the number of guests!");
+            }
+            if (((num <= 5) && (nw <= 20) && (nw <= mlt)) && (guestNum != "") && (roomNum != ""))
+            {
+                MessageBox.Show("Check-In date: " + inDate + "\n" + "Check-Out Date: " + outDate + " \n" + "Rooms Required: " + roomNum + " rooms" + "\n" + "Guests Expected: " + guestNum + " guests");
+            }
+            if (((roomNum != "") && (guestNum == "")) || ((roomNum == "") && (guestNum != "")))
+            {
+                MessageBox.Show("Please complete the empty box!");
+            }
+            if ((roomNum != "") && (guestNum != ""))
+            {
+                count++;
+            } */
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*
         private class Number
         {
             public string Num;
@@ -33,6 +156,43 @@ namespace HomeScreen.Presentation_Layer
                 return Num;
             }
         }
+        */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         #region Properties
         public string InDate
         {
@@ -78,7 +238,9 @@ namespace HomeScreen.Presentation_Layer
                 guestNum = value;
             }
         }
-#endregion
+        #endregion
+
+        /*
         public BookingDetailsForm()
         {
             InitializeComponent();
@@ -92,7 +254,7 @@ namespace HomeScreen.Presentation_Layer
                 string strt = s.ToString();
                 cmbNumberOfGuests.Items.Add(strt);
             }
-        }
+        } */
 
         private void cmbNumberOfRooms_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -103,54 +265,7 @@ namespace HomeScreen.Presentation_Layer
         {
 
         }
-        public void PopulateObject()
-        {
-            int num = 0;
-            int nw = 0;
-            inDate = dtpCheckInDate.Text;
-            outDate = dtpCheckOutDate.Text;
-            roomNum = cmbNumberOfRooms.Text;
-            if (roomNum != "")
-            {
-                num = Int32.Parse(roomNum);
-            }
         
-            if (num > 5)
-            {
-                MessageBox.Show("The hotel only have 5 rooms");
-            }
-            guestNum = cmbNumberOfGuests.Text;
-            if (guestNum != "")
-            {
-                nw = Int32.Parse(guestNum);
-            }
-            if ((guestNum == "") && (roomNum == ""))
-            {
-                MessageBox.Show("Please enter the Number of Rooms and Guests before you save!");
-            }
-            if (nw > 20)
-            {
-                MessageBox.Show("Only 20 guest can be accomodated at a time");
-            }
-            int mlt = num * 4;
-            if(nw > mlt)
-            {
-                MessageBox.Show("A room can only accomodate 4 guests, please re-enter the number of guests!");
-            }
-            if (((num <= 5) && (nw <= 20) && (nw <= mlt)) && (guestNum != "") && (roomNum != ""))
-            {
-                MessageBox.Show("Check-In date: " + inDate + "\n" + "Check-Out Date: " + outDate + " \n" + "Rooms Required: " + roomNum + " rooms" + "\n" + "Guests Expected: " + guestNum + " guests");
-            }
-            if(((roomNum != "") && (guestNum == "")) || ((roomNum == "") && (guestNum != "")))
-            {
-                MessageBox.Show("Please complete the empty box!");
-            }
-            if((roomNum != "") && (guestNum != ""))
-            {
-                count++;
-            }
-            
-        }
 
         private void btnCheckBooking_Click(object sender, EventArgs e)
         {
@@ -172,5 +287,7 @@ namespace HomeScreen.Presentation_Layer
             PopulateObject();
             
         }
+
+        
     }
 }

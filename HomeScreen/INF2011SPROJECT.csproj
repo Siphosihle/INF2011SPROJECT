@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Business Layer\Account.cs" />
     <Compile Include="Business Layer\Admin.cs" />
+    <Compile Include="Business Layer\AdminController.cs" />
     <Compile Include="Business Layer\BillingController.cs" />
     <Compile Include="Business Layer\Booking.cs" />
     <Compile Include="Business Layer\BookingController.cs" />
@@ -140,8 +141,17 @@
     <Compile Include="Presentation Layer\PaymentForm.Designer.cs">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\RestEasyMDIParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\RestEasyMDIParent.Designer.cs">
+      <DependentUpon>RestEasyMDIParent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomAllocation\BlockArray.cs" />
+    <Compile Include="RoomAllocation\Reservation.cs" />
+    <Compile Include="RoomAllocation\ReservationController.cs" />
     <Compile Include="RestEasySystemDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -176,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\RestEasyMDIParent.resx">
+      <DependentUpon>RestEasyMDIParent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -222,8 +235,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="RestEasySystem_log.ldf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>RestEasySystem.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

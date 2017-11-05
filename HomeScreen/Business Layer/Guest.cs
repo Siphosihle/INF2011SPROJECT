@@ -16,7 +16,6 @@ namespace HomeScreen.Business_Layer
         public string name;
         public string phoneNo;
         public string guestID;
-        private string status;
         public Type type; 
         #endregion
 
@@ -104,9 +103,6 @@ namespace HomeScreen.Business_Layer
         {
             return type;
         }
-        public string CheckStatus()
-        {
-            return status;
-        }
+        
     }
 }

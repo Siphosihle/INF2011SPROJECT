@@ -13,7 +13,9 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class AdminLoginForm : Form
     {
-        private Admin admin = new Admin();
+
+        private Admin admin;
+        private AdminController adminController;
         private string name;
         private string password;
         public bool adminLoginFormClosed = false;
@@ -45,6 +47,7 @@ namespace HomeScreen.Presentation_Layer
         public AdminLoginForm()
         {
             InitializeComponent();
+            adminController = new AdminController();
             this.FormClosed += AdminLoginForm_Closed;
         }
 
@@ -53,26 +56,19 @@ namespace HomeScreen.Presentation_Layer
             adminLoginFormClosed = true;
         }
 
-        private void lbCheckInDate_Click(object sender, EventArgs e)
+        private void PopulateAdmin()
         {
-
-        }
-
-        private void txtboxUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void PopulateObject(string name, string password)
-        {
-            name = txtboxUsername.Text;
-            password = txtboxPassword.Text;
-            //admin.Login(name, password);
+            admin = new Admin();
+            admin.Username = txtboxUsername.Text;
+            admin.Password = txtboxPassword.Text;
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            PopulateObject(Name, Password);
-            if (Admin.accessGranted == true)
+            PopulateAdmin();
+
+
+            /*if (Admin.accessGranted == true)
             {
                 HomeScreenForm hsm = new HomeScreenForm();
                 this.Hide();
@@ -83,7 +79,7 @@ namespace HomeScreen.Presentation_Layer
             else if (Admin.accessGranted == false)
             {
                 MessageBox.Show("The login details entered are not correct, please try again.");
-            }
+            } */
            
         }
 
