@@ -24,9 +24,9 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            BookingDetailsForm hs = new BookingDetailsForm();
+            //BookingDetailsForm hs = new BookingDetailsForm();
             this.Hide();
-            hs.ShowDialog();
+            //hs.ShowDialog();
             this.Close();
         }
 
@@ -34,7 +34,7 @@ namespace HomeScreen.Presentation_Layer
         {
             CustomerInformationForm hs = new CustomerInformationForm();
             this.Hide();
-            hs.ShowDialog();
+            //hs.ShowDialog();
             this.Close();
         }
     }

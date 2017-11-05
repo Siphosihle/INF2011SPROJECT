@@ -16,8 +16,10 @@ namespace HomeScreen.Presentation_Layer
     {
         private int childFormNumber = 0;
         private AdminLoginForm adminForm;
+        private BookingDetailsForm bookingEnquiryForm;
 
         private AdminController admincontroller;
+        private BookingController bookingController;
 
         #region Constructors
         public RestEasyMDIParent()
@@ -75,6 +77,13 @@ namespace HomeScreen.Presentation_Layer
             adminForm.StartPosition = FormStartPosition.CenterParent;
         }
 
+        public void CreateNewBookingEnquiryForm()
+        {
+            bookingEnquiryForm = new BookingDetailsForm(bookingController);
+            bookingEnquiryForm.MdiParent = this;
+            bookingEnquiryForm.StartPosition = FormStartPosition.CenterParent;
+        }
+
         #endregion
 
         #region ToolStripMenu Items
@@ -125,7 +134,7 @@ namespace HomeScreen.Presentation_Layer
 
         #region Coded ToolStripMenu Items
 
-        private void displayAdminForm()
+        private void DisplayAdminForm()
         {
             if (adminForm == null)
             {
@@ -138,11 +147,24 @@ namespace HomeScreen.Presentation_Layer
             adminForm.Show();
         }
 
+        private void DisplayBookingEnquiryForm()
+        {
+            if (bookingEnquiryForm == null)
+            {
+                CreateNewBookingEnquiryForm();
+            }
+            if (bookingEnquiryForm.bookingFormClosed == true)
+            {
+                CreateNewBookingEnquiryForm();
+            }
+            bookingEnquiryForm.Show();
+        }
+
         #endregion
 
         private void RestEasyMDIParent_Load(object sender, EventArgs e)
         {
-            displayAdminForm();
+            DisplayBookingEnquiryForm();
         }
     }
 }

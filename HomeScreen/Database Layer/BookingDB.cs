@@ -13,10 +13,14 @@ using HomeScreen.Database_Layer;
 
 namespace HomeScreen.Database_Layer
 {
-    class BookingDB: DB
+    class RestEasyDB: DB
     {
-        private string table1 = "Booking";
-        private string sqlLocal1 = "SELECT * FROM Booking";
+        private string table1 = "Bookings";
+        private string sqlLocal1 = "SELECT * FROM Bookings";
+        private string table2 = "Rooms";
+        private string sqlLocal2 = "SELECT * FROM Rooms";
+        private string table3 = "RoomAllocation";
+        private string sqlLocal3 = "SELECT * FROM RoomAllocation";
 
         private Collection<Booking> bookings;
 
@@ -27,7 +31,7 @@ namespace HomeScreen.Database_Layer
             public int mySize;
         }
 
-        public BookingDB(): base()
+        public RestEasyDB(): base()
         {
             bookings = new Collection<Booking>();
             FillDataSet(sqlLocal1, table1);
@@ -48,6 +52,7 @@ namespace HomeScreen.Database_Layer
         }
 
         #region Database Operations CRUD --- Add the object's values to the database
+
         public void DataSetChange(Booking aBooking, DB.DBOperation operation)
         {
             DataRow aRow = null;
@@ -109,11 +114,13 @@ namespace HomeScreen.Database_Layer
         {
             if (operation == DB.DBOperation.Add)
             {
-                aRow["ReservationNumber"] = aBooking.ReservationNumber;  //NOTE square brackets to indicate index of collections of fields in row.
+                aRow["ReservationNumber"] = aBooking.ReservationNumber;
+                aRow["GuestID"] = aBooking.GuestID;
+                aRow["InvoiceNumber"] = aBooking.InvoiceNumber;
+                //NOTE square brackets to indicate index of collections of fields in row.
             }
             aRow["NoOfRooms"] = aBooking.NoOfRooms;
             aRow["NoOfPeople"] = aBooking.NoOfPeople;
-
             aRow["StartDate"] = aBooking.StartDate;
             aRow["EndDate"] = aBooking.EndDate;
             aRow["SentConfirmation"] = aBooking.SentConfirmation;
@@ -147,6 +154,7 @@ namespace HomeScreen.Database_Layer
         }
         #endregion
 
+        /*
         #region Build Parameters, Create Commands & Update database
 
 
@@ -284,21 +292,12 @@ namespace HomeScreen.Database_Layer
             Create_INSERT_Command(aBooking);
             Create_UPDATE_Command(aBooking);
             Create_DELETE_Command(aBooking);
-            switch (anEmp.role.RoleValue)
-            {
-                case Role.RoleType.Headwaiter:
-                    success = UpdateDataSource(sqlLocal1, table1);
-                    break;
-                case Role.RoleType.Waiter:
-                    success = UpdateDataSource(sqlLocal2, table2);
-                    break;
-                case Role.RoleType.Runner:
-                    success = UpdateDataSource(sqlLocal3, table3);
-                    break;
-            }
+
+            success = UpdateDataSource(sqlLocal1, table1);
+
             return success;
         }
-        #endregion 
+        #endregion */
 
 
     }

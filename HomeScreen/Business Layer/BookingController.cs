@@ -10,8 +10,11 @@ namespace HomeScreen.Business_Layer
 {
     public class BookingController
     {
-        BookingDB bookingDB;
+        RestEasyDB bookingDB;
+        
+
         Collection<Booking> bookings;
+        Collection<Room> rooms;
 
         #region Properties
         public Collection<Booking> AllBookings
@@ -25,12 +28,13 @@ namespace HomeScreen.Business_Layer
 
         public BookingController()
         {
-            bookingDB = new BookingDB();
+            bookingDB = new RestEasyDB();
             bookings = bookingDB.AllBookings;
         }
 
         internal void CheckAvailability()
         {
+
             throw new NotImplementedException();
         }
 
