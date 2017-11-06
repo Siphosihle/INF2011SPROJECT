@@ -28,33 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblReservationComplete = new System.Windows.Forms.Label();
-            this.lblReservation = new System.Windows.Forms.Label();
             this.rtbReservationDetails = new System.Windows.Forms.RichTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSendEmail = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
+            this.lblHotelName = new System.Windows.Forms.Label();
+            this.lbBookingDetails = new System.Windows.Forms.Label();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblReservationComplete
-            // 
-            this.lblReservationComplete.AutoSize = true;
-            this.lblReservationComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservationComplete.Location = new System.Drawing.Point(351, 95);
-            this.lblReservationComplete.Name = "lblReservationComplete";
-            this.lblReservationComplete.Size = new System.Drawing.Size(283, 31);
-            this.lblReservationComplete.TabIndex = 0;
-            this.lblReservationComplete.Text = "Reservation Complete";
-            // 
-            // lblReservation
-            // 
-            this.lblReservation.AutoSize = true;
-            this.lblReservation.Location = new System.Drawing.Point(369, 142);
-            this.lblReservation.Name = "lblReservation";
-            this.lblReservation.Size = new System.Drawing.Size(82, 13);
-            this.lblReservation.TabIndex = 1;
-            this.lblReservation.Text = "Reservation for ";
             // 
             // rtbReservationDetails
             // 
@@ -73,36 +54,62 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // btnSendEmail
+            // lblHotelName
             // 
-            this.btnSendEmail.Location = new System.Drawing.Point(417, 340);
-            this.btnSendEmail.Name = "btnSendEmail";
-            this.btnSendEmail.Size = new System.Drawing.Size(150, 23);
-            this.btnSendEmail.TabIndex = 4;
-            this.btnSendEmail.Text = "Send Confirmation Email";
-            this.btnSendEmail.UseVisualStyleBackColor = true;
+            this.lblHotelName.AutoSize = true;
+            this.lblHotelName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHotelName.ForeColor = System.Drawing.Color.HotPink;
+            this.lblHotelName.Location = new System.Drawing.Point(369, 140);
+            this.lblHotelName.Name = "lblHotelName";
+            this.lblHotelName.Size = new System.Drawing.Size(139, 15);
+            this.lblHotelName.TabIndex = 47;
+            this.lblHotelName.Text = "Reservation Information";
             // 
-            // btnHome
+            // lbBookingDetails
             // 
-            this.btnHome.Location = new System.Drawing.Point(455, 379);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(75, 23);
-            this.btnHome.TabIndex = 5;
-            this.btnHome.Text = "home";
-            this.btnHome.UseVisualStyleBackColor = true;
+            this.lbBookingDetails.AutoSize = true;
+            this.lbBookingDetails.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBookingDetails.ForeColor = System.Drawing.Color.HotPink;
+            this.lbBookingDetails.Location = new System.Drawing.Point(366, 80);
+            this.lbBookingDetails.Name = "lbBookingDetails";
+            this.lbBookingDetails.Size = new System.Drawing.Size(368, 31);
+            this.lbBookingDetails.TabIndex = 54;
+            this.lbBookingDetails.Text = "RESERVATION COMPLETE";
             // 
-            // ConfirmReservation
+            // btnPrevious
+            // 
+            this.btnPrevious.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.ForeColor = System.Drawing.Color.HotPink;
+            this.btnPrevious.Location = new System.Drawing.Point(372, 341);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(176, 32);
+            this.btnPrevious.TabIndex = 55;
+            this.btnPrevious.Text = "Send Confirmation Email";
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.HotPink;
+            this.button1.Location = new System.Drawing.Point(372, 403);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 32);
+            this.button1.TabIndex = 56;
+            this.button1.Text = "Home";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // ConfirmReservationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 461);
-            this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.btnSendEmail);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPrevious);
+            this.Controls.Add(this.lbBookingDetails);
+            this.Controls.Add(this.lblHotelName);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.rtbReservationDetails);
-            this.Controls.Add(this.lblReservation);
-            this.Controls.Add(this.lblReservationComplete);
-            this.Name = "ConfirmReservation";
+            this.Name = "ConfirmReservationForm";
             this.Text = "ConfirmReservation";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -111,12 +118,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblReservationComplete;
-        private System.Windows.Forms.Label lblReservation;
         private System.Windows.Forms.RichTextBox rtbReservationDetails;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnSendEmail;
-        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Label lblHotelName;
+        private System.Windows.Forms.Label lbBookingDetails;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button button1;
     }
 }

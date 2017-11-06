@@ -28,51 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCCPayment = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtboxCVV = new System.Windows.Forms.TextBox();
             this.txtboxExpiry = new System.Windows.Forms.TextBox();
             this.txtboxCCNumber = new System.Windows.Forms.TextBox();
             this.txtboxCCType = new System.Windows.Forms.TextBox();
             this.txtboxCCName = new System.Windows.Forms.TextBox();
-            this.lblExpiryDate = new System.Windows.Forms.Label();
-            this.lblCVV = new System.Windows.Forms.Label();
-            this.lblCCType = new System.Windows.Forms.Label();
-            this.lblCCNumber = new System.Windows.Forms.Label();
-            this.lblCardHolder = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblDepositDue = new System.Windows.Forms.Label();
-            this.lblAmountDue = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.lblPaymentDetails = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblCCPayment
-            // 
-            this.lblCCPayment.AutoSize = true;
-            this.lblCCPayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCCPayment.Location = new System.Drawing.Point(219, 83);
-            this.lblCCPayment.Name = "lblCCPayment";
-            this.lblCCPayment.Size = new System.Drawing.Size(267, 31);
-            this.lblCCPayment.TabIndex = 1;
-            this.lblCCPayment.Text = "Credit Card Payment";
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.txtboxCVV);
             this.panel1.Controls.Add(this.txtboxExpiry);
             this.panel1.Controls.Add(this.txtboxCCNumber);
             this.panel1.Controls.Add(this.txtboxCCType);
             this.panel1.Controls.Add(this.txtboxCCName);
-            this.panel1.Controls.Add(this.lblExpiryDate);
-            this.panel1.Controls.Add(this.lblCVV);
-            this.panel1.Controls.Add(this.lblCCType);
-            this.panel1.Controls.Add(this.lblCCNumber);
-            this.panel1.Controls.Add(this.lblCardHolder);
             this.panel1.Location = new System.Drawing.Point(25, 134);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(271, 315);
@@ -80,128 +70,47 @@
             // 
             // txtboxCVV
             // 
-            this.txtboxCVV.Location = new System.Drawing.Point(147, 155);
+            this.txtboxCVV.Location = new System.Drawing.Point(168, 168);
             this.txtboxCVV.Name = "txtboxCVV";
             this.txtboxCVV.Size = new System.Drawing.Size(100, 20);
             this.txtboxCVV.TabIndex = 13;
             // 
             // txtboxExpiry
             // 
-            this.txtboxExpiry.Location = new System.Drawing.Point(147, 192);
+            this.txtboxExpiry.Location = new System.Drawing.Point(168, 218);
             this.txtboxExpiry.Name = "txtboxExpiry";
             this.txtboxExpiry.Size = new System.Drawing.Size(100, 20);
             this.txtboxExpiry.TabIndex = 12;
             // 
             // txtboxCCNumber
             // 
-            this.txtboxCCNumber.Location = new System.Drawing.Point(147, 81);
+            this.txtboxCCNumber.Location = new System.Drawing.Point(168, 86);
             this.txtboxCCNumber.Name = "txtboxCCNumber";
             this.txtboxCCNumber.Size = new System.Drawing.Size(100, 20);
             this.txtboxCCNumber.TabIndex = 11;
             // 
             // txtboxCCType
             // 
-            this.txtboxCCType.Location = new System.Drawing.Point(147, 118);
+            this.txtboxCCType.Location = new System.Drawing.Point(168, 129);
             this.txtboxCCType.Name = "txtboxCCType";
             this.txtboxCCType.Size = new System.Drawing.Size(100, 20);
             this.txtboxCCType.TabIndex = 10;
             // 
             // txtboxCCName
             // 
-            this.txtboxCCName.Location = new System.Drawing.Point(147, 44);
+            this.txtboxCCName.Location = new System.Drawing.Point(168, 44);
             this.txtboxCCName.Name = "txtboxCCName";
             this.txtboxCCName.Size = new System.Drawing.Size(100, 20);
             this.txtboxCCName.TabIndex = 9;
             // 
-            // lblExpiryDate
-            // 
-            this.lblExpiryDate.AutoSize = true;
-            this.lblExpiryDate.Location = new System.Drawing.Point(17, 195);
-            this.lblExpiryDate.Name = "lblExpiryDate";
-            this.lblExpiryDate.Size = new System.Drawing.Size(61, 13);
-            this.lblExpiryDate.TabIndex = 8;
-            this.lblExpiryDate.Text = "Expiry Date";
-            // 
-            // lblCVV
-            // 
-            this.lblCVV.AutoSize = true;
-            this.lblCVV.Location = new System.Drawing.Point(17, 158);
-            this.lblCVV.Name = "lblCVV";
-            this.lblCVV.Size = new System.Drawing.Size(28, 13);
-            this.lblCVV.TabIndex = 7;
-            this.lblCVV.Text = "CVV";
-            // 
-            // lblCCType
-            // 
-            this.lblCCType.AutoSize = true;
-            this.lblCCType.Location = new System.Drawing.Point(17, 121);
-            this.lblCCType.Name = "lblCCType";
-            this.lblCCType.Size = new System.Drawing.Size(86, 13);
-            this.lblCCType.TabIndex = 6;
-            this.lblCCType.Text = "Credit Card Type";
-            // 
-            // lblCCNumber
-            // 
-            this.lblCCNumber.AutoSize = true;
-            this.lblCCNumber.Location = new System.Drawing.Point(17, 84);
-            this.lblCCNumber.Name = "lblCCNumber";
-            this.lblCCNumber.Size = new System.Drawing.Size(99, 13);
-            this.lblCCNumber.TabIndex = 5;
-            this.lblCCNumber.Text = "Credit Card Number";
-            // 
-            // lblCardHolder
-            // 
-            this.lblCardHolder.AutoSize = true;
-            this.lblCardHolder.Location = new System.Drawing.Point(17, 47);
-            this.lblCardHolder.Name = "lblCardHolder";
-            this.lblCardHolder.Size = new System.Drawing.Size(124, 13);
-            this.lblCardHolder.TabIndex = 4;
-            this.lblCardHolder.Text = "Credit Card Name Holder";
-            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lblDepositDue);
-            this.panel2.Controls.Add(this.lblAmountDue);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.lblFirstName);
             this.panel2.Location = new System.Drawing.Point(319, 134);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(271, 315);
             this.panel2.TabIndex = 3;
-            // 
-            // lblDepositDue
-            // 
-            this.lblDepositDue.AutoSize = true;
-            this.lblDepositDue.Location = new System.Drawing.Point(15, 80);
-            this.lblDepositDue.Name = "lblDepositDue";
-            this.lblDepositDue.Size = new System.Drawing.Size(66, 13);
-            this.lblDepositDue.TabIndex = 10;
-            this.lblDepositDue.Text = "Deposit Due";
-            // 
-            // lblAmountDue
-            // 
-            this.lblAmountDue.AutoSize = true;
-            this.lblAmountDue.Location = new System.Drawing.Point(15, 47);
-            this.lblAmountDue.Name = "lblAmountDue";
-            this.lblAmountDue.Size = new System.Drawing.Size(93, 13);
-            this.lblAmountDue.TabIndex = 9;
-            this.lblAmountDue.Text = "Total Amount Due";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(121, 466);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(412, 466);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Confirm Payment";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -212,18 +121,128 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // PaymentDetails
+            // lblFirstName
+            // 
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.ForeColor = System.Drawing.Color.HotPink;
+            this.lblFirstName.Location = new System.Drawing.Point(15, 44);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(79, 15);
+            this.lblFirstName.TabIndex = 17;
+            this.lblFirstName.Text = "Total Amount";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.HotPink;
+            this.label1.Location = new System.Drawing.Point(115, 173);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 15);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "CVV";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.HotPink;
+            this.label2.Location = new System.Drawing.Point(49, 129);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 15);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Credit Card Type";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.HotPink;
+            this.label3.Location = new System.Drawing.Point(30, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(119, 15);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Credit Card Number";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.HotPink;
+            this.label4.Location = new System.Drawing.Point(3, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(146, 15);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Credit Card Name Holder";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.HotPink;
+            this.label5.Location = new System.Drawing.Point(15, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 15);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Deposit Due";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.HotPink;
+            this.label6.Location = new System.Drawing.Point(79, 223);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 15);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Expiry Date";
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.ForeColor = System.Drawing.Color.HotPink;
+            this.btnPrevious.Location = new System.Drawing.Point(386, 499);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(123, 32);
+            this.btnPrevious.TabIndex = 46;
+            this.btnPrevious.Text = "Confirm Payment ";
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.HotPink;
+            this.button3.Location = new System.Drawing.Point(91, 499);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(123, 32);
+            this.button3.TabIndex = 47;
+            this.button3.Text = "Back";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // lblPaymentDetails
+            // 
+            this.lblPaymentDetails.AutoSize = true;
+            this.lblPaymentDetails.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaymentDetails.ForeColor = System.Drawing.Color.HotPink;
+            this.lblPaymentDetails.Location = new System.Drawing.Point(331, 83);
+            this.lblPaymentDetails.Name = "lblPaymentDetails";
+            this.lblPaymentDetails.Size = new System.Drawing.Size(469, 31);
+            this.lblPaymentDetails.TabIndex = 48;
+            this.lblPaymentDetails.Text = "CREDIT CARD PAYMENT DETAILS";
+            // 
+            // PaymentDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 527);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(1113, 602);
+            this.Controls.Add(this.lblPaymentDetails);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblCCPayment);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "PaymentDetails";
+            this.Name = "PaymentDetailsForm";
             this.Text = "PaymentDetails";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -238,22 +257,22 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblCCPayment;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblExpiryDate;
-        private System.Windows.Forms.Label lblCVV;
-        private System.Windows.Forms.Label lblCCType;
-        private System.Windows.Forms.Label lblCCNumber;
-        private System.Windows.Forms.Label lblCardHolder;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblDepositDue;
-        private System.Windows.Forms.Label lblAmountDue;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtboxCVV;
         private System.Windows.Forms.TextBox txtboxExpiry;
         private System.Windows.Forms.TextBox txtboxCCNumber;
         private System.Windows.Forms.TextBox txtboxCCType;
         private System.Windows.Forms.TextBox txtboxCCName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lblPaymentDetails;
     }
 }
