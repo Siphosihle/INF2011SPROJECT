@@ -35,9 +35,7 @@
             this.lbCheckInDate = new System.Windows.Forms.Label();
             this.lbCheckOutDate = new System.Windows.Forms.Label();
             this.lbNumberOfGuests = new System.Windows.Forms.Label();
-            this.btnCheckBooking = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.cmbNoOfGuests = new System.Windows.Forms.ComboBox();
             this.lblHotelName = new System.Windows.Forms.Label();
             this.cmbHotelName = new System.Windows.Forms.ComboBox();
@@ -111,39 +109,17 @@
             this.lbNumberOfGuests.TabIndex = 40;
             this.lbNumberOfGuests.Text = "Number of Guests";
             // 
-            // btnCheckBooking
-            // 
-            this.btnCheckBooking.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCheckBooking.ForeColor = System.Drawing.Color.HotPink;
-            this.btnCheckBooking.Location = new System.Drawing.Point(809, 481);
-            this.btnCheckBooking.Name = "btnCheckBooking";
-            this.btnCheckBooking.Size = new System.Drawing.Size(123, 48);
-            this.btnCheckBooking.TabIndex = 41;
-            this.btnCheckBooking.Text = "Check Booking";
-            this.btnCheckBooking.UseVisualStyleBackColor = true;
-            this.btnCheckBooking.Click += new System.EventHandler(this.btnCheckBooking_Click);
-            // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.HotPink;
-            this.btnSave.Location = new System.Drawing.Point(474, 481);
+            this.btnSave.Location = new System.Drawing.Point(545, 438);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(123, 48);
             this.btnSave.TabIndex = 42;
-            this.btnSave.Text = "Save";
+            this.btnSave.Text = "Submit";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.Location = new System.Drawing.Point(519, 428);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 43;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // cmbNoOfGuests
             // 
@@ -158,7 +134,7 @@
             this.lblHotelName.AutoSize = true;
             this.lblHotelName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHotelName.ForeColor = System.Drawing.Color.HotPink;
-            this.lblHotelName.Location = new System.Drawing.Point(418, 165);
+            this.lblHotelName.Location = new System.Drawing.Point(458, 169);
             this.lblHotelName.Name = "lblHotelName";
             this.lblHotelName.Size = new System.Drawing.Size(36, 15);
             this.lblHotelName.TabIndex = 45;
@@ -182,9 +158,7 @@
             this.Controls.Add(this.cmbHotelName);
             this.Controls.Add(this.lblHotelName);
             this.Controls.Add(this.cmbNoOfGuests);
-            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnCheckBooking);
             this.Controls.Add(this.lbNumberOfGuests);
             this.Controls.Add(this.lbCheckOutDate);
             this.Controls.Add(this.lbCheckInDate);
@@ -209,9 +183,7 @@
         private System.Windows.Forms.Label lbCheckInDate;
         private System.Windows.Forms.Label lbCheckOutDate;
         private System.Windows.Forms.Label lbNumberOfGuests;
-        private System.Windows.Forms.Button btnCheckBooking;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.ComboBox cmbNoOfGuests;
         private System.Windows.Forms.Label lblHotelName;
         private System.Windows.Forms.ComboBox cmbHotelName;

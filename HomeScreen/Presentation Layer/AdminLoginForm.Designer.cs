@@ -35,9 +35,9 @@
             this.txtboxUsername = new System.Windows.Forms.TextBox();
             this.txtboxPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnLogIn = new System.Windows.Forms.Button();
-            this.btnForgotPassword = new System.Windows.Forms.Button();
-            this.btnChangePassword = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,7 +89,8 @@
             this.txtboxUsername.Location = new System.Drawing.Point(467, 179);
             this.txtboxUsername.Name = "txtboxUsername";
             this.txtboxUsername.Size = new System.Drawing.Size(199, 20);
-            this.txtboxUsername.TabIndex = 35;            // 
+            this.txtboxUsername.TabIndex = 35;
+            // 
             // txtboxPassword
             // 
             this.txtboxPassword.Location = new System.Drawing.Point(467, 255);
@@ -108,42 +109,47 @@
             this.label2.Size = new System.Drawing.Size(0, 15);
             this.label2.TabIndex = 37;
             // 
-            // btnLogIn
+            // btnPrevious
             // 
-            this.btnLogIn.Location = new System.Drawing.Point(368, 351);
-            this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(105, 23);
-            this.btnLogIn.TabIndex = 40;
-            this.btnLogIn.Text = "Log In";
-            this.btnLogIn.UseVisualStyleBackColor = true;
-            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
+            this.btnPrevious.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevious.ForeColor = System.Drawing.Color.HotPink;
+            this.btnPrevious.Location = new System.Drawing.Point(344, 355);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(123, 32);
+            this.btnPrevious.TabIndex = 43;
+            this.btnPrevious.Text = "Log In";
+            this.btnPrevious.UseVisualStyleBackColor = true;
             // 
-            // btnForgotPassword
+            // button1
             // 
-            this.btnForgotPassword.Location = new System.Drawing.Point(479, 351);
-            this.btnForgotPassword.Name = "btnForgotPassword";
-            this.btnForgotPassword.Size = new System.Drawing.Size(105, 23);
-            this.btnForgotPassword.TabIndex = 41;
-            this.btnForgotPassword.Text = "Forgot Password";
-            this.btnForgotPassword.UseVisualStyleBackColor = true;
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.HotPink;
+            this.button1.Location = new System.Drawing.Point(654, 355);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 32);
+            this.button1.TabIndex = 44;
+            this.button1.Text = "Change Password";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // btnChangePassword
+            // button2
             // 
-            this.btnChangePassword.Location = new System.Drawing.Point(590, 351);
-            this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(105, 23);
-            this.btnChangePassword.TabIndex = 42;
-            this.btnChangePassword.Text = "Change Password";
-            this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.HotPink;
+            this.button2.Location = new System.Drawing.Point(504, 355);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(123, 32);
+            this.button2.TabIndex = 45;
+            this.button2.Text = "Forgot Password";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // AdminLoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 546);
-            this.Controls.Add(this.btnChangePassword);
-            this.Controls.Add(this.btnForgotPassword);
-            this.Controls.Add(this.btnLogIn);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtboxPassword);
             this.Controls.Add(this.txtboxUsername);
@@ -168,8 +174,8 @@
         private System.Windows.Forms.TextBox txtboxUsername;
         private System.Windows.Forms.TextBox txtboxPassword;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnLogIn;
-        private System.Windows.Forms.Button btnForgotPassword;
-        private System.Windows.Forms.Button btnChangePassword;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
