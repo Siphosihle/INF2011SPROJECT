@@ -10,13 +10,11 @@ namespace HomeScreen.Business_Layer
 {
     public class BookingController
     {
-        RestEasyDB bookingDB;
-        
-
-        Collection<Booking> bookings;
+        private RestEasyDB bookingDB;
+        private Collection<Booking> bookings;
         private Hotel hotel;
-        Collection<Room> bookingRooms;
-        Collection<Room> hotelRooms;
+        private Collection<Room> bookingRooms;
+        private Collection<Room> hotelRooms;
 
         #region Properties
         public Collection<Booking> AllBookings
@@ -34,7 +32,7 @@ namespace HomeScreen.Business_Layer
             bookings = bookingDB.AllBookings;
         }
 
-        public bool CheckAvailability(string hotelName, DateTime startDate, DateTime endDate, int roomsNeeded)
+        public bool CheckAvailability(Hotel hotel, DateTime startDate, DateTime endDate, int roomsNeeded)
         {
             int roomsAvail = 0;
             int index = 0;
@@ -102,7 +100,10 @@ namespace HomeScreen.Business_Layer
             {
                 return Math.Ceiling(noOfGuests / 4);
             }
-            else return 0;
+            else
+            {
+                return -1;
+            }
 
         }
 

@@ -20,6 +20,7 @@ namespace HomeScreen.Presentation_Layer
 
         private AdminController admincontroller;
         private BookingController bookingController;
+        private HotelController hotelController;
 
         #region Constructors
         public RestEasyMDIParent()
@@ -27,6 +28,8 @@ namespace HomeScreen.Presentation_Layer
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             admincontroller = new AdminController();
+            bookingController = new BookingController();
+            hotelController = new HotelController();
         }
         #endregion
 
@@ -79,7 +82,7 @@ namespace HomeScreen.Presentation_Layer
 
         public void CreateNewBookingEnquiryForm()
         {
-            bookingEnquiryForm = new BookingDetailsForm(bookingController);
+            bookingEnquiryForm = new BookingDetailsForm(bookingController, hotelController);
             bookingEnquiryForm.MdiParent = this;
             bookingEnquiryForm.StartPosition = FormStartPosition.CenterParent;
         }

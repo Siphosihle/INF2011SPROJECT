@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HomeScreen.Business_Layer;
 
 namespace HomeScreen.Presentation_Layer
 {
     public partial class AvailableRoomsForm : Form
     {
         private BookingDetailsForm bookingDetails; 
-        public AvailableRoomsForm()
+        public AvailableRoomsForm(BookingController bookingController)
         {
             InitializeComponent();
         }

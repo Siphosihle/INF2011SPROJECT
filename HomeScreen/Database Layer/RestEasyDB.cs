@@ -15,14 +15,49 @@ namespace HomeScreen.Database_Layer
 {
     class RestEasyDB: DB
     {
-        private string table1 = "Bookings";
-        private string sqlLocal1 = "SELECT * FROM Bookings";
-        private string table2 = "Rooms";
-        private string sqlLocal2 = "SELECT * FROM Rooms";
-        private string table3 = "RoomAllocation";
-        private string sqlLocal3 = "SELECT * FROM RoomAllocation";
+        #region sql strings
+        private string table1 = "Accounts";
+        private string sqlLocal1 = "SELECT * FROM Accounts";
+        private string table2 = "Admins";
+        private string sqlLocal2 = "SELECT * FROM Admins";
+        private string table3 = "BookingPayments";
+        private string sqlLocal3 = "SELECT * FROM BookingPayments";
+        private string table4 = "Bookings";
+        private string sqlLocal4 = "SELECT * FROM Bookings";
+        private string table5 = "CCDetails";
+        private string sqlLocal5 = "SELECT * FROM CCDetails";
+        private string table6 = "Guests";
+        private string sqlLocal6 = "SELECT * FROM Guests";
+        private string table7 = "Hotels";
+        private string sqlLocal7 = "SELECT * FROM Hotels";
+        private string table8 = "Payments";
+        private string sqlLocal8 = "SELECT * FROM Payments";
+        private string table9 = "RoomAllocation";
+        private string sqlLocal9 = "SELECT * FROM RoomAllocation";
+        private string table10 = "RoomCharge";
+        private string sqlLocal10 = "SELECT * FROM RoomCharge";
+        private string table11 = "RoomRates";
+        private string sqlLocal11 = "SELECT * FROM RoomRates";
+        private string table12 = "Rooms";
+        private string sqlLocal12 = "SELECT * FROM Rooms";
+        #endregion
 
+        #region Collections
+
+        private List<Type> types;
+        private List<String> tableNames;
+        private List<String> tableNamesLC;
+
+        private Collection<Account> accounts;
+        private Collection<Admin> admins;
         private Collection<Booking> bookings;
+        private Collection<CC> ccs;
+        private Collection<Guest> guests;
+        private Collection<Hotel> hotels;
+        private Collection<Payment> payments;
+        private Collection<RoomCharge> roomcharges;
+        private Collection<Room> rooms;
+        #endregion
 
         public struct ColumnAttribs
         {
@@ -33,12 +68,47 @@ namespace HomeScreen.Database_Layer
 
         public RestEasyDB(): base()
         {
+            /*types = new List<Type>()
+            {
+                
+            };
+
+            tableNames = new List<string>()
+            {
+                "Accounts", "Admins", "Bookings", "CCDetails", "Guests", "Hotels", "Payments", "RoomCharge", "Rooms"
+            };
+
+            tableNamesLC = tableNames.ConvertAll(low => low.ToLowerInvariant());
+
+            for(int i=0;i<tableNames.Count+1;i++)
+            {
+                tableNamesLC[i] = new Collection<types[i]>();
+            } */
+
+
+            //(Account), (Admin), (Booking), (CC), (Guest), (Hotel), (Payment), (Room), (RoomCharge)
+
+            accounts = new Collection<Account>();
+            admins = new Collection<Admin>();
             bookings = new Collection<Booking>();
-            FillDataSet(sqlLocal1, table1);
-            Add2Collection(table1);
+            ccs = new Collection<CC>();
+            guests = new Collection<Guest>();
+            hotels = new Collection<Hotel>();
+            payments = new Collection<Payment>();
+            rooms = new Collection<Room>();
+            roomcharges = new Collection<RoomCharge>();
+
+            for (int i=1; i<10; i++ )
+            {
+                string s1 = "sqlLocal" + Convert.ToString(i);
+                string s2 = "table" + Convert.ToString(i);
+                FillDataSet(s1, s2);
+                Add2Collection(s2);
+            }
 
         }
 
+        #region Properties
         public Collection<Booking> AllBookings
         {
             get
@@ -46,6 +116,20 @@ namespace HomeScreen.Database_Layer
                 return bookings;
             }
         }
+
+        public Collection<Hotel> AllHotels
+        {
+            get
+            {
+                return hotels;
+            }
+        }
+
+
+        #endregion
+
+
+
         public DataSet GetDataSet()
         {
             return dsMain;
