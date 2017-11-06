@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HomeScreen.Presentation_Layer
 {
-    public partial class PaymentDetailsForm : Form
+    public partial class CreditCardPaymentForm : Form
     {
-        public PaymentDetailsForm()
+        public CreditCardPaymentForm()
         {
             InitializeComponent();
         }

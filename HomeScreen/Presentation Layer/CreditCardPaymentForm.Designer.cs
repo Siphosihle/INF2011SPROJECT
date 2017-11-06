@@ -1,6 +1,6 @@
 ﻿namespace HomeScreen.Presentation_Layer
 {
-    partial class PaymentDetailsForm
+    partial class CreditCardPaymentForm
     {
         /// <summary>
         /// Required designer variable.

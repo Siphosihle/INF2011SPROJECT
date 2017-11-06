@@ -143,11 +143,11 @@
     <Compile Include="Presentation Layer\NewGuestForm.Designer.cs">
       <DependentUpon>NewGuestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation Layer\PaymentDetailsForm.cs">
+    <Compile Include="Presentation Layer\CreditCardPaymentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\PaymentDetailsForm.Designer.cs">
-      <DependentUpon>PaymentDetailsForm.cs</DependentUpon>
+    <Compile Include="Presentation Layer\CreditCardPaymentForm.Designer.cs">
+      <DependentUpon>CreditCardPaymentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\PaymentForm.cs">
       <SubType>Form</SubType>
@@ -196,8 +196,8 @@
     <EmbeddedResource Include="Presentation Layer\NewGuestForm.resx">
       <DependentUpon>NewGuestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\PaymentDetailsForm.resx">
-      <DependentUpon>PaymentDetailsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\CreditCardPaymentForm.resx">
+      <DependentUpon>CreditCardPaymentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>
