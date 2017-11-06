@@ -12,7 +12,7 @@ namespace HomeScreen.Business_Layer
         private int roomChargeID;
         private DateTime startDate;
         private DateTime endDate;
-        private decimal roomCharge;
+        private decimal price;
 
         #region Properties
 
@@ -32,10 +32,10 @@ namespace HomeScreen.Business_Layer
             get { return endDate; }
             set { endDate = value; }
         }
-        public decimal RoomCharge
+        public decimal Price
         {
-            get { return roomCharge; }
-            set { roomCharge = value; }
+            get { return price; }
+            set { price = value; }
         }
 
         #endregion

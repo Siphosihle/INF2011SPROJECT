@@ -642,18 +642,19 @@ namespace HomeScreen.Database_Layer
         {
             if (operation == DB.DBOperation.Add)
             {
-                aRow["ReservationNumber"] = aRoomCharge.roo;
+                aRow["RoomChargeID"] = aRoomCharge.RoomChargeID;
                 //NOTE square brackets to indicate index of collections of fields in row.
             }
-            aRow["NoOfRooms"] = aRoomCharge.NoOfRooms;
-
+            aRow["StartDate"] = aRoomCharge.StartDate;
+            aRow["EndDate"] = aRoomCharge.EndDate;
+            aRow["Price"] = aRoomCharge.Price;
 
         }
         private void FillRow(DataRow aRow, Room aRoom, DB.DBOperation operation)
         {
             if (operation == DB.DBOperation.Add)
             {
-                aRow["ReservationNumber"] = aRoom.ReservationNumber;
+                aRow["RoomID"] = aRoom.RoomID;
                 //NOTE square brackets to indicate index of collections of fields in row.
             }
             aRow["NoOfRooms"] = aRoom.NoOfRooms;
