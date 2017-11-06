@@ -11,9 +11,17 @@ namespace HomeScreen.Business_Layer
 {
     public class Booking
     {
-        string guestID;
-        int reservationNumber, noOfRooms, noOfPeople, invoiceNumber;
-        DateTime startDate, endDate;
+        //businesslayerformat
+        //variables
+        //properties
+        //constructors
+
+        private int reservationNumber;
+        private int guestID;
+        private int noOfPeople;
+        private int noOfRooms;
+        private DateTime startDate;
+        private DateTime endDate;
         bool sentConfirmation, receivedDeposit, isCancelled;
 
         public Collection<Room> rooms;
@@ -31,43 +39,6 @@ namespace HomeScreen.Business_Layer
                 return rooms;
             }
         }
-
-        public int NoOfPeople
-        {
-            get
-            {
-                return noOfPeople;
-            }
-            set
-            {
-                noOfPeople = value;
-            }
-        }
-
-        public int InvoiceNumber
-        {
-            get
-            {
-                return invoiceNumber;
-            }
-            set
-            {
-                invoiceNumber = value;
-            }
-        }
-
-        public string GuestID
-        {
-            get
-            {
-                return guestID;
-            }
-            set
-            {
-                guestID = value;
-            }
-        }
-
         public int ReservationNumber
         {
             get
@@ -79,7 +50,28 @@ namespace HomeScreen.Business_Layer
                 reservationNumber = value;
             }
         }
-
+        public int GuestID
+        {
+            get
+            {
+                return guestID;
+            }
+            set
+            {
+                guestID = value;
+            }
+        }
+        public int NoOfPeople
+        {
+            get
+            {
+                return noOfPeople;
+            }
+            set
+            {
+                noOfPeople = value;
+            }
+        }
         public int NoOfRooms
         {
             get
@@ -91,7 +83,6 @@ namespace HomeScreen.Business_Layer
                 noOfRooms = value;
             }
         }
-
         public DateTime StartDate
         {
             get
@@ -103,7 +94,6 @@ namespace HomeScreen.Business_Layer
                 startDate = value;
             }
         }
-
         public DateTime EndDate
         {
             get
@@ -115,7 +105,6 @@ namespace HomeScreen.Business_Layer
                 endDate = value;
             }
         }
-
         public bool SentConfirmation
         {
             get
@@ -127,7 +116,6 @@ namespace HomeScreen.Business_Layer
                 sentConfirmation = value;
             }
         }
-
         public bool RecievedDeposit
         {
             get
@@ -139,7 +127,6 @@ namespace HomeScreen.Business_Layer
                 receivedDeposit = value;
             }
         }
-
         public bool IsCancelled
         {
             get
@@ -151,8 +138,6 @@ namespace HomeScreen.Business_Layer
                 isCancelled = value;
             }
         }
-
-
         #endregion
 
         #region Constructors

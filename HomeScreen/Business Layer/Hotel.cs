@@ -9,6 +9,12 @@ namespace HomeScreen.Business_Layer
 {
     public class Hotel
     {
+
+        //businesslayerformat
+        //variables
+        //properties
+        //constructors
+
         private int hotelID;
         private string hotelName;
 

@@ -8,6 +8,12 @@ namespace HomeScreen.Business_Layer
 {
     public class Admin
     {
+
+        //businesslayerformat
+        //variables
+        //properties
+        //constructors
+
         public string username;
         public string password;
         public static bool accessGranted;
@@ -38,7 +44,10 @@ namespace HomeScreen.Business_Layer
         }
         #endregion
 
-        
+        public Admin()
+        {
+
+        }
 
         /*public bool Login(string name, string password)
         {
