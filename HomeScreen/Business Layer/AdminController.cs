@@ -10,7 +10,7 @@ namespace HomeScreen.Business_Layer
 {
     class AdminController
     {
-        AdminDB adminDB;
+        RestEasyDB adminDB;
         Collection<Admin> admins;
 
         #region Properties
@@ -27,40 +27,40 @@ namespace HomeScreen.Business_Layer
 
         public AdminController()
         {
-            adminDB = new AdminDB();
+            adminDB = new RestEasyDB();
             admins = adminDB.AllAdmins;
         }
 
-        /*
+        
         #region Database Communication
         public void DataMaintenance(Admin anAdmin, DB.DBOperation operation)
         {
             int index = 0;
             //perform a given database operation to the dataset in meory; 
-            adminDB.DataSetChange(anEmp, operation);
+            RestEasyDB.DataSetChange(anAdmin, operation);
             //perform operations on the collection
             switch (operation)
             {
                 case DB.DBOperation.Add:
                     //*** Add the employee to the Collection
-                    employees.Add(anEmp);
+                    admins.Add(anAdmin);
                     break;
                 case DB.DBOperation.Edit:
-                    index = FindIndex(anEmp);
-                    employees[index] = anEmp;  // replace employee at this index with the updated employee
+                    index = FindIndex(anAdmin);
+                    admins[index] = anAdmin;  // replace employee at this index with the updated employee
                     break;
                 case DB.DBOperation.Delete:
-                    index = FindIndex(anEmp);  // find the index of the specific employee in collection
-                    employees.RemoveAt(index);  // remove that employee form the collection
+                    index = FindIndex(anAdmin);  // find the index of the specific employee in collection
+                    admins.RemoveAt(index);  // remove that employee form the collection
                     break;
             }
         }
 
         //***Commit the changes to the database
-        public bool FinalizeChanges(Employee employee)
+        public bool FinalizeChanges(Object obj)
         {
             //***call the EmployeeDB method that will commit the changes to the database
-            return employeeDB.UpdateDataSource(employee);
+            return RestEasyDB.UpdateDataSource(obj);
         }
         #endregion
 
@@ -126,7 +126,7 @@ namespace HomeScreen.Business_Layer
                 return -1;
             }
         }
-        #endregion */
+        #endregion 
 
     }
 }

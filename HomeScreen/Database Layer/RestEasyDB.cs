@@ -48,6 +48,8 @@ namespace HomeScreen.Database_Layer
         private List<String> tableNames;
         private List<String> tableNamesLC;
 
+        private Collection<Object> objects;
+
         private Collection<Account> accounts;
         private Collection<Admin> admins;
         private Collection<Booking> bookings;
@@ -68,9 +70,9 @@ namespace HomeScreen.Database_Layer
 
         public RestEasyDB(): base()
         {
-            /*types = new List<Type>()
+             types = new List<Type>()
             {
-                
+                typeof(Account), typeof(Admin), typeof(Booking), typeof(CC), typeof(Guest), typeof(Hotel), typeof(Payment), typeof(Room), typeof(RoomCharge)
             };
 
             tableNames = new List<string>()
@@ -80,13 +82,26 @@ namespace HomeScreen.Database_Layer
 
             tableNamesLC = tableNames.ConvertAll(low => low.ToLowerInvariant());
 
-            for(int i=0;i<tableNames.Count+1;i++)
-            {
-                tableNamesLC[i] = new Collection<types[i]>();
-            } */
+            //for(int i=0;i<tableNames.Count+1;i++)
+            //{
+            //    tableNamesLC[i] = new Collection<>();
+            //} 
 
 
             //(Account), (Admin), (Booking), (CC), (Guest), (Hotel), (Payment), (Room), (RoomCharge)
+
+            objects = new Collection<object>()
+            {
+                new Account(),
+                new Admin(),
+                new Booking(),
+                new CC(),
+                new Guest(),
+                new Hotel(),
+                new Payment(),
+                new RoomCharge(),
+                new Room()
+            };
 
             accounts = new Collection<Account>();
             admins = new Collection<Admin>();
@@ -109,11 +124,66 @@ namespace HomeScreen.Database_Layer
         }
 
         #region Properties
+
+        public List<Type> AllTypes
+        {
+            get
+            {
+                return types;
+            }
+        }
+        public List<String> AllTableNames
+        {
+            get
+            {
+                return tableNames;
+            }
+        }
+        public List<String> AllTableNamesLC
+        {
+            get
+            {
+                return tableNamesLC;
+            }
+        }
+
+        public Collection<Account> AllAccounts
+        {
+            get
+            {
+                return accounts;
+            }
+        }
+
+        public Collection<Admin> AllAdmins
+        {
+            get
+            {
+                return admins;
+            }
+        }
+
         public Collection<Booking> AllBookings
         {
             get
             {
                 return bookings;
+            }
+        }
+
+        public Collection<CC> AllCCs
+        {
+            get
+            {
+                return ccs;
+            }
+        }
+
+        public Collection<Guest> AllGuests
+        {
+            get
+            {
+                return guests;
             }
         }
 
@@ -125,6 +195,29 @@ namespace HomeScreen.Database_Layer
             }
         }
 
+        public Collection<Payment> AllPayments
+        {
+            get
+            {
+                return payments;
+            }
+        }
+
+        public Collection<RoomCharge> AllRoomCharges
+        {
+            get
+            {
+                return roomcharges;
+            }
+        }
+
+        public Collection<Room> AllRooms
+        {
+            get
+            {
+                return rooms;
+            }
+        }
 
         #endregion
 
@@ -137,31 +230,72 @@ namespace HomeScreen.Database_Layer
 
         #region Database Operations CRUD --- Add the object's values to the database
 
-        public void DataSetChange(Booking aBooking, DB.DBOperation operation)
+        public void DataSetChange(Object obj, DB.DBOperation operation)
         {
             DataRow aRow = null;
             string dataTable = table1;
 
+            //setting the dataTable string property for which table to use
+            #region Set dataTable String
+            switch (obj.GetType().Name)
+            {
+                case nameof(Account):
+                    dataTable = table1;
+                    break;
+                case nameof(Admin):
+                    dataTable = table2;
+                    break;
+                case nameof(Booking):
+                    dataTable = table3;
+                    break;
+                case nameof(CC):
+                    dataTable = table4;
+                    break;
+                case nameof(Guest):
+                    dataTable = table5;
+                    break;
+                case nameof(Hotel):
+                    dataTable = table6;
+                    break;
+                case nameof(Payment):
+                    dataTable = table7;
+                    break;
+                case nameof(RoomCharge):
+                    dataTable = table8;
+                    break;
+                case nameof(Room):
+                    dataTable = table9;
+                    break;
+            }
+            #endregion
+
+
+            #region DBOperation
             switch (operation)
             {
                 case DB.DBOperation.Add:
                     aRow = dsMain.Tables[dataTable].NewRow();
-                    FillRow(aRow, aBooking, operation);
+                    FillRow(aRow, obj, operation);
                     //Add to the dataset
                     dsMain.Tables[dataTable].Rows.Add(aRow);
                     break;
                 case DB.DBOperation.Edit:
                     // to Edit
-                    aRow = dsMain.Tables[dataTable].Rows[FindRow(aBooking, dataTable)];
-                    FillRow(aRow, aBooking, operation);
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    FillRow(aRow, obj, operation);
                     break;
                 case DB.DBOperation.Delete:
                     //to delete
-                    aRow = dsMain.Tables[dataTable].Rows[FindRow(aBooking, dataTable)];
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
                     aRow.Delete();
                     break;
             }
+            #endregion
         }
+
+
+
+
         #endregion
 
         #region Utility Methods
@@ -169,6 +303,7 @@ namespace HomeScreen.Database_Layer
         {
             //Declare references to a myRow object and an Employee object
             DataRow myRow = null;
+
             Booking aBooking;
             //READ from the table  
             foreach (DataRow myRow_loopVariable in dsMain.Tables[table].Rows)
@@ -194,6 +329,34 @@ namespace HomeScreen.Database_Layer
                 }
             }
         }
+
+        #region FillRow
+        private void FillRow(DataRow aRow, Account anAccount, DB.DBOperation operation)
+        {
+            if (operation == DB.DBOperation.Add)
+            {
+                aRow["AccountID"] = anAccount;
+                
+                //NOTE square brackets to indicate index of collections of fields in row.
+            }
+            aRow["Balance"] = anAccount.NoOfRooms;
+            
+
+
+        }
+        private void FillRow(DataRow aRow, Admin anAdmin, DB.DBOperation operation)
+        {
+            if (operation == DB.DBOperation.Add)
+            {
+                aRow["ReservationNumber"] = aBooking.ReservationNumber;
+               
+                //NOTE square brackets to indicate index of collections of fields in row.
+            }
+            aRow["NoOfRooms"] = aBooking.NoOfRooms;
+            
+
+
+        }
         private void FillRow(DataRow aRow, Booking aBooking, DB.DBOperation operation)
         {
             if (operation == DB.DBOperation.Add)
@@ -213,6 +376,116 @@ namespace HomeScreen.Database_Layer
 
 
         }
+        private void FillRow(DataRow aRow, CC aCC, DB.DBOperation operation)
+        {
+            if (operation == DB.DBOperation.Add)
+            {
+                aRow["ReservationNumber"] = aBooking.ReservationNumber;
+                
+                //NOTE square brackets to indicate index of collections of fields in row.
+            }
+            aRow["NoOfRooms"] = aBooking.NoOfRooms;
+            
+
+
+        }
+        private void FillRow(DataRow aRow, Guest aGuest, DB.DBOperation operation)
+        {
+            if (operation == DB.DBOperation.Add)
+            {
+                aRow["ReservationNumber"] = aBooking.ReservationNumber;
+                aRow["GuestID"] = aBooking.GuestID;
+                aRow["InvoiceNumber"] = aBooking.InvoiceNumber;
+                //NOTE square brackets to indicate index of collections of fields in row.
+            }
+            aRow["NoOfRooms"] = aBooking.NoOfRooms;
+            aRow["NoOfPeople"] = aBooking.NoOfPeople;
+            aRow["StartDate"] = aBooking.StartDate;
+            aRow["EndDate"] = aBooking.EndDate;
+            aRow["SentConfirmation"] = aBooking.SentConfirmation;
+            aRow["RecievedDeposit"] = aBooking.RecievedDeposit;
+            aRow["IsCancelled"] = aBooking.IsCancelled;
+
+
+        }
+        private void FillRow(DataRow aRow, Hotel aHotel, DB.DBOperation operation)
+        {
+            if (operation == DB.DBOperation.Add)
+            {
+                aRow["ReservationNumber"] = aBooking.ReservationNumber;
+                aRow["GuestID"] = aBooking.GuestID;
+                aRow["InvoiceNumber"] = aBooking.InvoiceNumber;
+                //NOTE square brackets to indicate index of collections of fields in row.
+            }
+            aRow["NoOfRooms"] = aBooking.NoOfRooms;
+            aRow["NoOfPeople"] = aBooking.NoOfPeople;
+            aRow["StartDate"] = aBooking.StartDate;
+            aRow["EndDate"] = aBooking.EndDate;
+            aRow["SentConfirmation"] = aBooking.SentConfirmation;
+            aRow["RecievedDeposit"] = aBooking.RecievedDeposit;
+            aRow["IsCancelled"] = aBooking.IsCancelled;
+
+
+        }
+        private void FillRow(DataRow aRow, Payment aPayment, DB.DBOperation operation)
+        {
+            if (operation == DB.DBOperation.Add)
+            {
+                aRow["ReservationNumber"] = aBooking.ReservationNumber;
+                aRow["GuestID"] = aBooking.GuestID;
+                aRow["InvoiceNumber"] = aBooking.InvoiceNumber;
+                //NOTE square brackets to indicate index of collections of fields in row.
+            }
+            aRow["NoOfRooms"] = aBooking.NoOfRooms;
+            aRow["NoOfPeople"] = aBooking.NoOfPeople;
+            aRow["StartDate"] = aBooking.StartDate;
+            aRow["EndDate"] = aBooking.EndDate;
+            aRow["SentConfirmation"] = aBooking.SentConfirmation;
+            aRow["RecievedDeposit"] = aBooking.RecievedDeposit;
+            aRow["IsCancelled"] = aBooking.IsCancelled;
+
+
+        }
+        private void FillRow(DataRow aRow, RoomCharge aRoomCharge, DB.DBOperation operation)
+        {
+            if (operation == DB.DBOperation.Add)
+            {
+                aRow["ReservationNumber"] = aBooking.ReservationNumber;
+                aRow["GuestID"] = aBooking.GuestID;
+                aRow["InvoiceNumber"] = aBooking.InvoiceNumber;
+                //NOTE square brackets to indicate index of collections of fields in row.
+            }
+            aRow["NoOfRooms"] = aBooking.NoOfRooms;
+            aRow["NoOfPeople"] = aBooking.NoOfPeople;
+            aRow["StartDate"] = aBooking.StartDate;
+            aRow["EndDate"] = aBooking.EndDate;
+            aRow["SentConfirmation"] = aBooking.SentConfirmation;
+            aRow["RecievedDeposit"] = aBooking.RecievedDeposit;
+            aRow["IsCancelled"] = aBooking.IsCancelled;
+
+
+        }
+        private void FillRow(DataRow aRow, Room aRoom, DB.DBOperation operation)
+        {
+            if (operation == DB.DBOperation.Add)
+            {
+                aRow["ReservationNumber"] = aBooking.ReservationNumber;
+                aRow["GuestID"] = aBooking.GuestID;
+                aRow["InvoiceNumber"] = aBooking.InvoiceNumber;
+                //NOTE square brackets to indicate index of collections of fields in row.
+            }
+            aRow["NoOfRooms"] = aBooking.NoOfRooms;
+            aRow["NoOfPeople"] = aBooking.NoOfPeople;
+            aRow["StartDate"] = aBooking.StartDate;
+            aRow["EndDate"] = aBooking.EndDate;
+            aRow["SentConfirmation"] = aBooking.SentConfirmation;
+            aRow["RecievedDeposit"] = aBooking.RecievedDeposit;
+            aRow["IsCancelled"] = aBooking.IsCancelled;
+
+
+        }
+
+        #endregion
 
         //The FindRow method finds the row for a specific employee(by ID)  in a specific table
         private int FindRow(Booking aBooking, string table)
