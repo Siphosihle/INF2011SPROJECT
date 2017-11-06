@@ -167,7 +167,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void RestEasyMDIParent_Load(object sender, EventArgs e)
         {
-            DisplayBookingEnquiryForm();
+            DisplayAdminForm();
         }
     }
 }

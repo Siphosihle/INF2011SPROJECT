@@ -14,8 +14,8 @@ namespace HomeScreen.Business_Layer
         //properties
         //constructors
 
-        public string username;
-        public string password;
+        private string username;
+        private string password;
         public static bool accessGranted;
 
         #region Properties

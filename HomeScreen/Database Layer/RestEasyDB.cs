@@ -41,7 +41,7 @@ namespace HomeScreen.Database_Layer
         private string table12 = "Rooms";
         private string sqlLocal12 = "SELECT * FROM Rooms";
         #endregion
-
+        
         #region Collections
 
         private List<Type> types;
@@ -70,7 +70,7 @@ namespace HomeScreen.Database_Layer
 
         public RestEasyDB(): base()
         {
-             types = new List<Type>()
+            types = new List<Type>()
             {
                 typeof(Account), typeof(Admin), typeof(Booking), typeof(CC), typeof(Guest), typeof(Hotel), typeof(Payment), typeof(Room), typeof(RoomCharge)
             };
@@ -90,18 +90,7 @@ namespace HomeScreen.Database_Layer
 
             //(Account), (Admin), (Booking), (CC), (Guest), (Hotel), (Payment), (Room), (RoomCharge)
 
-            objects = new Collection<object>()
-            {
-                new Account(),
-                new Admin(),
-                new Booking(),
-                new CC(),
-                new Guest(),
-                new Hotel(),
-                new Payment(),
-                new RoomCharge(),
-                new Room()
-            };
+            
 
             accounts = new Collection<Account>();
             admins = new Collection<Admin>();
@@ -113,13 +102,13 @@ namespace HomeScreen.Database_Layer
             rooms = new Collection<Room>();
             roomcharges = new Collection<RoomCharge>();
 
-            for (int i=1; i<10; i++ )
-            {
-                string s1 = "sqlLocal" + Convert.ToString(i);
-                string s2 = "table" + Convert.ToString(i);
-                FillDataSet(s1, s2);
-                Add2Collection(s2);
-            }
+            //for (int i=1; i<10; i++ )
+            //{
+                string s1 = "sqlLocal" + Convert.ToString(2);
+                string s2 = "table" + Convert.ToString(2);
+                FillDataSet(sqlLocal2, table2);
+                Add2Collection(table2);
+            //}
 
         }
 
@@ -221,8 +210,6 @@ namespace HomeScreen.Database_Layer
 
         #endregion
 
-
-
         public DataSet GetDataSet()
         {
             return dsMain;
@@ -231,7 +218,7 @@ namespace HomeScreen.Database_Layer
         #region Database Operations CRUD --- Add the object's values to the database
 
         #region DataSetChange
-        public void DataSetChange(Account obj, DB.DBOperation operation)
+        /*public void DataSetChange(Account obj, DB.DBOperation operation)
         {
             DataRow aRow = null;
             string dataTable = table1;
@@ -482,7 +469,7 @@ namespace HomeScreen.Database_Layer
                     break;
             }
             #endregion
-        }
+        } */
         #endregion
 
         #region Utility Methods
@@ -491,7 +478,7 @@ namespace HomeScreen.Database_Layer
             //Declare references to a myRow object and an Employee object
             DataRow myRow = null;
 
-            switch (table)
+            /*switch (table)
             {
                 case "table1":
                     Account anAccount;
@@ -508,6 +495,22 @@ namespace HomeScreen.Database_Layer
                     }
                     break;
                 case "table2":
+                    Admin anAdmin;
+                    foreach (DataRow myRow_loopVariable in dsMain.Tables[table].Rows)
+                    {
+                        myRow = myRow_loopVariable;
+                        if (!(myRow.RowState == DataRowState.Deleted))
+                        {
+                            anAdmin = new Admin();
+                            anAdmin.Username = Convert.ToString(myRow["Username"]).TrimEnd();
+                            anAdmin.Password = Convert.ToString(myRow["Password"]).TrimEnd();
+
+
+
+
+                        }
+                    }
+                    break;
                 case "table3":
                     Booking aBooking;
                     //READ from the table  
@@ -534,7 +537,27 @@ namespace HomeScreen.Database_Layer
                 case "table4":
 
                     break;
+            } */
+
+            Admin anAdmin;
+            foreach (DataRow myRow_loopVariable in dsMain.Tables[table].Rows)
+            {
+                myRow = myRow_loopVariable;
+                if (!(myRow.RowState == DataRowState.Deleted))
+                {
+                    anAdmin = new Admin();
+                    anAdmin.Username = Convert.ToString(myRow["Username"]).TrimEnd();
+                    anAdmin.Password = Convert.ToString(myRow["Password"]).TrimEnd();
+
+                    admins.Add(anAdmin);
+
+
+                }
             }
+
+
+
+            
 
 
             
@@ -655,15 +678,17 @@ namespace HomeScreen.Database_Layer
             if (operation == DB.DBOperation.Add)
             {
                 aRow["RoomID"] = aRoom.RoomID;
+                aRow["HotelID"] = aRoom.HotelID;
                 //NOTE square brackets to indicate index of collections of fields in row.
             }
-            aRow["NoOfRooms"] = aRoom.NoOfRooms;
 
+            aRow["RoomNo"] = aRoom.RoomNo;
 
         }
 
         #endregion
 
+        #region FindRow
         //The FindRow method finds the row for a specific employee(by ID)  in a specific table
         private int FindRow(Booking aBooking, string table)
         {
@@ -686,7 +711,55 @@ namespace HomeScreen.Database_Layer
             }
             return returnValue;
         }
+        private int FindRow(Account anAccount, string table)
+        {
+            int rowIndex = 0;
+            DataRow myRow;
+            int returnValue = -1;
+            foreach (DataRow myRow_loopVariable in dsMain.Tables[table].Rows)
+            {
+                myRow = myRow_loopVariable;
+                //Ignore rows marked as deleted in dataset
+                if (!(myRow.RowState == DataRowState.Deleted))
+                {
+                    //In c# there is no item property (but we use the 2-dim array) it is automatically known to the compiler when used as below
+                    if (anAccount.AccountID == Convert.ToInt32(dsMain.Tables[table].Rows[rowIndex]["AccountID"]))
+                    {
+                        returnValue = rowIndex;
+                    }
+                }
+                rowIndex += 1;
+            }
+            return returnValue;
+        }
+        private int FindRow(Admin anAdmin, string table)
+        {
+            int rowIndex = 0;
+            DataRow myRow;
+            int returnValue = -1;
+            foreach (DataRow myRow_loopVariable in dsMain.Tables[table].Rows)
+            {
+                myRow = myRow_loopVariable;
+                //Ignore rows marked as deleted in dataset
+                if (!(myRow.RowState == DataRowState.Deleted))
+                {
+                    //In c# there is no item property (but we use the 2-dim array) it is automatically known to the compiler when used as below
+                    if (anAdmin.Username == Convert.ToString(dsMain.Tables[table].Rows[rowIndex]["Username"]))
+                    {
+                        returnValue = rowIndex;
+                    }
+                }
+                rowIndex += 1;
+            }
+            return returnValue;
+        }
+
         #endregion
+
+        #endregion
+
+        #endregion
+
 
         /*
         #region Many-To-Many CRUD Functionality
@@ -710,7 +783,7 @@ namespace HomeScreen.Database_Layer
         #endregion
         */
 
-        /*
+        
         #region Build Parameters, Create Commands & Update database
 
 
@@ -721,6 +794,9 @@ namespace HomeScreen.Database_Layer
             SqlParameter param = default(SqlParameter);
 
             param = new SqlParameter("@ReservationNumber", SqlDbType.NVarChar, 15, "ReservationNumber");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@GuestID", SqlDbType.NVarChar, 15, "GuestID");
             daMain.InsertCommand.Parameters.Add(param);
 
             param = new SqlParameter("@NoOfRooms", SqlDbType.Int, 15, "NoOfRooms");
@@ -754,12 +830,15 @@ namespace HomeScreen.Database_Layer
             param.SourceVersion = DataRowVersion.Current;
             daMain.UpdateCommand.Parameters.Add(param);
 
-            //Do for all fields other than ID and EMPID as for Insert 
-            param = new SqlParameter("@StartDate", SqlDbType.DateTime, "StartDate");
+            param = new SqlParameter("@GuestID", SqlDbType.NVarChar, 15, "GuestID");
             param.SourceVersion = DataRowVersion.Current;
             daMain.UpdateCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@EndDate", SqlDbType.DateTime, 1, "EndDate");
+            param = new SqlParameter("@StartDate", SqlDbType.DateTime, 15, "StartDate");
+            param.SourceVersion = DataRowVersion.Current;
+            daMain.UpdateCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@EndDate", SqlDbType.DateTime, 15, "EndDate");
             param.SourceVersion = DataRowVersion.Current;
             daMain.UpdateCommand.Parameters.Add(param);
            
@@ -785,53 +864,34 @@ namespace HomeScreen.Database_Layer
         {
             //--Create Parameters to communicate with SQL DELETE
             SqlParameter param;
-            param = new SqlParameter("@ID", SqlDbType.NVarChar, 15, "ID");
+            param = new SqlParameter("@ReservationNumber", SqlDbType.NVarChar, 15, "ReservationNumber");
             param.SourceVersion = DataRowVersion.Original;
             daMain.DeleteCommand.Parameters.Add(param);
         }
         private void Create_INSERT_Command(Booking aBooking)
         {
 
-            daMain.InsertCommand = new SqlCommand("INSERT into Bookings (ID, EMPID, Name, Phone, Role, Salary) VALUES (@ID, @EmpID, @Name, @Phone, @Role, @Salary)", cnMain);
+            daMain.InsertCommand = new SqlCommand("INSERT into Bookings (ReservationNumber, GuestID, NoOfRooms, NoOfPeople, StartDate, EndDate, SentConfirmation, ReceivedDeposit, IsCancelled) VALUES (@ReservationNumber, @GuestID, @NoOfRooms, @NoOfPeople, @StartDate, @EndDate, @SentConfirmation, @ReceivedDeposit, @IsCancelled)", cnMain);
             Build_INSERT_Parameters(aBooking);
         }
 
         private void Create_UPDATE_Command(Booking aBooking)
         {
             //Create the command that must be used to insert values into one of the three tables
-            //Assumption is that the ID and EMPID cannot be changed
 
-            switch (anEmp.role.RoleValue)
-            {
-                case Role.RoleType.Headwaiter:
-                    daMain.UpdateCommand = new SqlCommand("UPDATE HeadWaiter SET Name =@Name, Phone =@Phone, Role =@Role, Salary = @Salary " + "WHERE ID = @Original_ID", cnMain);
-                    break;
-                case Role.RoleType.Waiter:
-                    daMain.UpdateCommand = new SqlCommand("UPDATE Waiter SET Name =@Name, Phone =@Phone, Role =@Role, Tips =@Tips, DayRate =@DayRate, NoOfShifts =@NoOfShifts " + "WHERE ID = @Original_ID", cnMain);
-                    break;
-                case Role.RoleType.Runner:
-                    daMain.UpdateCommand = new SqlCommand("UPDATE Runner SET Name =@Name, Phone =@Phone, Role =@Role, DayRate =@DayRate, NoOfShifts =@NoOfShifts " + "WHERE ID = @Original_ID", cnMain);
-                    break;
-            }
-            Build_UPDATE_Parameters(anEmp);
+            daMain.UpdateCommand = new SqlCommand("UPDATE Booking SET ReservationNumber =@ReservationNumber, GuestID =@GuestID, NoOfRooms =@NoOfRooms, NoOfPeople = @NoOfPeople, StartDate = @StartDate, EndDate = @EndDate, SentConfirmation = @SentConfirmation, ReceivedDeposit = @ReceivedDeposit, IsCancelled = @IsCancelled " + "WHERE ReservationNumber = @Original_ReservationNumber", cnMain);
+            
+            
+            Build_UPDATE_Parameters(aBooking);
         }
 
         private string Create_DELETE_Command(Booking aBooking)
         {
             string errorString = null;
             //Create the command that must be used to delete values from the the appropriate table
-            switch (anEmp.role.RoleValue)
-            {
-                case Role.RoleType.Headwaiter:
-                    daMain.DeleteCommand = new SqlCommand("DELETE FROM HeadWaiter WHERE ID = @ID", cnMain);
-                    break;
-                case Role.RoleType.Waiter:
-                    daMain.DeleteCommand = new SqlCommand("DELETE FROM Waiter WHERE ID = @ID", cnMain);
-                    break;
-                case Role.RoleType.Runner:
-                    daMain.DeleteCommand = new SqlCommand("DELETE FROM Runner WHERE ID = @ID", cnMain);
-                    break;
-            }
+
+            daMain.DeleteCommand = new SqlCommand("DELETE FROM Bookings WHERE ReservationNumber = @ReservationNumber", cnMain);
+            
             try
             {
                 Build_DELETE_Parameters();
@@ -842,6 +902,7 @@ namespace HomeScreen.Database_Layer
             }
             return errorString;
         }
+
         public bool UpdateDataSource(Booking aBooking)
         {
             bool success = true;
@@ -849,11 +910,26 @@ namespace HomeScreen.Database_Layer
             Create_UPDATE_Command(aBooking);
             Create_DELETE_Command(aBooking);
 
-            success = UpdateDataSource(sqlLocal1, table1);
+            success = UpdateDataSource(sqlLocal2, table2);
 
             return success;
         }
-        #endregion */
+
+        /*public bool UpdateDataSource(Admin anAdmin)
+        {
+            bool success = true;
+            Create_INSERT_Command(anAdmin);
+            Create_UPDATE_Command(anAdmin);
+            Create_DELETE_Command(anAdmin);
+
+            success = UpdateDataSource(sqlLocal2, table2);
+
+            return success;
+        } */
+
+
+
+        #endregion
 
 
     }
