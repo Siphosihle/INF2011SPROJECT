@@ -43,13 +43,12 @@ namespace HomeScreen.Business_Layer
             {
                 foreach (Room room in hotel.Rooms)
                 {
-                    while ((index < bookings.Count + 1))
-                    {
+                    
                         if ((startDate > bookings[index].EndDate || endDate < bookings[index].StartDate))
                         {
                             roomsAvail++;
                         }
-                    }
+                    
                     index++;
                 }
             }

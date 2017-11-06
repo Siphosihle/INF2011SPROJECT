@@ -36,7 +36,7 @@ namespace HomeScreen.Business_Layer
         public void DataMaintenance(Admin anAdmin, DB.DBOperation operation)
         {
             int index = 0;
-            //perform a given database operation to the dataset in meory; 
+            //perform a given database operation to the dataset in meory;
             RestEasyDB.DataSetChange(anAdmin, operation);
             //perform operations on the collection
             switch (operation)

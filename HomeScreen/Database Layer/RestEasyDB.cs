@@ -230,46 +230,13 @@ namespace HomeScreen.Database_Layer
 
         #region Database Operations CRUD --- Add the object's values to the database
 
-        public void DataSetChange(Object obj, DB.DBOperation operation)
+        #region DataSetChange
+        public void DataSetChange(Account obj, DB.DBOperation operation)
         {
             DataRow aRow = null;
             string dataTable = table1;
 
             //setting the dataTable string property for which table to use
-            #region Set dataTable String
-            switch (obj.GetType().Name)
-            {
-                case nameof(Account):
-                    dataTable = table1;
-                    break;
-                case nameof(Admin):
-                    dataTable = table2;
-                    break;
-                case nameof(Booking):
-                    dataTable = table3;
-                    break;
-                case nameof(CC):
-                    dataTable = table4;
-                    break;
-                case nameof(Guest):
-                    dataTable = table5;
-                    break;
-                case nameof(Hotel):
-                    dataTable = table6;
-                    break;
-                case nameof(Payment):
-                    dataTable = table7;
-                    break;
-                case nameof(RoomCharge):
-                    dataTable = table8;
-                    break;
-                case nameof(Room):
-                    dataTable = table9;
-                    break;
-            }
-            #endregion
-
-
             #region DBOperation
             switch (operation)
             {
@@ -292,10 +259,230 @@ namespace HomeScreen.Database_Layer
             }
             #endregion
         }
+        public void DataSetChange(Admin obj, DB.DBOperation operation)
+        {
+            DataRow aRow = null;
+            string dataTable = table1;
 
+            //setting the dataTable string property for which table to use
+            #region DBOperation
+            switch (operation)
+            {
+                case DB.DBOperation.Add:
+                    aRow = dsMain.Tables[dataTable].NewRow();
+                    FillRow(aRow, obj, operation);
+                    //Add to the dataset
+                    dsMain.Tables[dataTable].Rows.Add(aRow);
+                    break;
+                case DB.DBOperation.Edit:
+                    // to Edit
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    FillRow(aRow, obj, operation);
+                    break;
+                case DB.DBOperation.Delete:
+                    //to delete
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    aRow.Delete();
+                    break;
+            }
+            #endregion
+        }
+        public void DataSetChange(Booking obj, DB.DBOperation operation)
+        {
+            DataRow aRow = null;
+            string dataTable = table1;
 
+            //setting the dataTable string property for which table to use
+            #region DBOperation
+            switch (operation)
+            {
+                case DB.DBOperation.Add:
+                    aRow = dsMain.Tables[dataTable].NewRow();
+                    FillRow(aRow, obj, operation);
+                    //Add to the dataset
+                    dsMain.Tables[dataTable].Rows.Add(aRow);
+                    break;
+                case DB.DBOperation.Edit:
+                    // to Edit
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    FillRow(aRow, obj, operation);
+                    break;
+                case DB.DBOperation.Delete:
+                    //to delete
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    aRow.Delete();
+                    break;
+            }
+            #endregion
+        }
+        public void DataSetChange(CC obj, DB.DBOperation operation)
+        {
+            DataRow aRow = null;
+            string dataTable = table1;
 
+            //setting the dataTable string property for which table to use
+            #region DBOperation
+            switch (operation)
+            {
+                case DB.DBOperation.Add:
+                    aRow = dsMain.Tables[dataTable].NewRow();
+                    FillRow(aRow, obj, operation);
+                    //Add to the dataset
+                    dsMain.Tables[dataTable].Rows.Add(aRow);
+                    break;
+                case DB.DBOperation.Edit:
+                    // to Edit
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    FillRow(aRow, obj, operation);
+                    break;
+                case DB.DBOperation.Delete:
+                    //to delete
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    aRow.Delete();
+                    break;
+            }
+            #endregion
+        }
+        public void DataSetChange(Guest obj, DB.DBOperation operation)
+        {
+            DataRow aRow = null;
+            string dataTable = table1;
 
+            //setting the dataTable string property for which table to use
+            #region DBOperation
+            switch (operation)
+            {
+                case DB.DBOperation.Add:
+                    aRow = dsMain.Tables[dataTable].NewRow();
+                    FillRow(aRow, obj, operation);
+                    //Add to the dataset
+                    dsMain.Tables[dataTable].Rows.Add(aRow);
+                    break;
+                case DB.DBOperation.Edit:
+                    // to Edit
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    FillRow(aRow, obj, operation);
+                    break;
+                case DB.DBOperation.Delete:
+                    //to delete
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    aRow.Delete();
+                    break;
+            }
+            #endregion
+        }
+        public void DataSetChange(Hotel obj, DB.DBOperation operation)
+        {
+            DataRow aRow = null;
+            string dataTable = table1;
+
+            //setting the dataTable string property for which table to use
+            #region DBOperation
+            switch (operation)
+            {
+                case DB.DBOperation.Add:
+                    aRow = dsMain.Tables[dataTable].NewRow();
+                    FillRow(aRow, obj, operation);
+                    //Add to the dataset
+                    dsMain.Tables[dataTable].Rows.Add(aRow);
+                    break;
+                case DB.DBOperation.Edit:
+                    // to Edit
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    FillRow(aRow, obj, operation);
+                    break;
+                case DB.DBOperation.Delete:
+                    //to delete
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    aRow.Delete();
+                    break;
+            }
+            #endregion
+        }
+        public void DataSetChange(Payment obj, DB.DBOperation operation)
+        {
+            DataRow aRow = null;
+            string dataTable = table1;
+
+            //setting the dataTable string property for which table to use
+            #region DBOperation
+            switch (operation)
+            {
+                case DB.DBOperation.Add:
+                    aRow = dsMain.Tables[dataTable].NewRow();
+                    FillRow(aRow, obj, operation);
+                    //Add to the dataset
+                    dsMain.Tables[dataTable].Rows.Add(aRow);
+                    break;
+                case DB.DBOperation.Edit:
+                    // to Edit
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    FillRow(aRow, obj, operation);
+                    break;
+                case DB.DBOperation.Delete:
+                    //to delete
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    aRow.Delete();
+                    break;
+            }
+            #endregion
+        }
+        public void DataSetChange(RoomCharge obj, DB.DBOperation operation)
+        {
+            DataRow aRow = null;
+            string dataTable = table1;
+
+            //setting the dataTable string property for which table to use
+            #region DBOperation
+            switch (operation)
+            {
+                case DB.DBOperation.Add:
+                    aRow = dsMain.Tables[dataTable].NewRow();
+                    FillRow(aRow, obj, operation);
+                    //Add to the dataset
+                    dsMain.Tables[dataTable].Rows.Add(aRow);
+                    break;
+                case DB.DBOperation.Edit:
+                    // to Edit
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    FillRow(aRow, obj, operation);
+                    break;
+                case DB.DBOperation.Delete:
+                    //to delete
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    aRow.Delete();
+                    break;
+            }
+            #endregion
+        }
+        public void DataSetChange(Room obj, DB.DBOperation operation)
+        {
+            DataRow aRow = null;
+            string dataTable = table1;
+
+            //setting the dataTable string property for which table to use
+            #region DBOperation
+            switch (operation)
+            {
+                case DB.DBOperation.Add:
+                    aRow = dsMain.Tables[dataTable].NewRow();
+                    FillRow(aRow, obj, operation);
+                    //Add to the dataset
+                    dsMain.Tables[dataTable].Rows.Add(aRow);
+                    break;
+                case DB.DBOperation.Edit:
+                    // to Edit
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    FillRow(aRow, obj, operation);
+                    break;
+                case DB.DBOperation.Delete:
+                    //to delete
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(obj, dataTable)];
+                    aRow.Delete();
+                    break;
+            }
+            #endregion
+        }
         #endregion
 
         #region Utility Methods
@@ -304,29 +491,53 @@ namespace HomeScreen.Database_Layer
             //Declare references to a myRow object and an Employee object
             DataRow myRow = null;
 
-            Booking aBooking;
-            //READ from the table  
-            foreach (DataRow myRow_loopVariable in dsMain.Tables[table].Rows)
+            switch (table)
             {
-                myRow = myRow_loopVariable;
-                if (!(myRow.RowState == DataRowState.Deleted))
-                {
-                    //Instantiate a new Employee object
-                    aBooking = new Booking();
-                    //Obtain each employee attribute from the specific field in the row in the table
-                    aBooking.ReservationNumber = Convert.ToInt32(myRow["ReservationNumber"]);
-                    aBooking.GuestID = Convert.ToString(myRow["GuestID"]);
-                    aBooking.NoOfRooms = Convert.ToInt32(myRow["NoOfRooms"]);
-                    aBooking.NoOfPeople = Convert.ToInt32(myRow["NoOfPeople"]);
-                    aBooking.StartDate = Convert.ToDateTime(myRow["StartDate"]);
-                    aBooking.EndDate = Convert.ToDateTime(myRow["EndDate"]);
-                    aBooking.SentConfirmation = Convert.ToBoolean(myRow["SentConfirmation"]);
-                    aBooking.RecievedDeposit = Convert.ToBoolean(myRow["RecievedDeposit"]);
-                    aBooking.IsCancelled = Convert.ToBoolean(myRow["IsCancelled"]);
+                case "table1":
+                    Account anAccount;
+                    foreach (DataRow myRow_loopVariable in dsMain.Tables[table].Rows)
+                    {
+                        myRow = myRow_loopVariable;
+                        if (!(myRow.RowState == DataRowState.Deleted))
+                        {
+                            anAccount = new Account();
+                            anAccount.AccountID = Convert.ToInt32(myRow[""]);
+                            anAccount.GuestID = Convert.ToInt32(myRow[""]);
+                            anAccount.Balance = Convert.ToInt32(myRow[""]);
+                        }
+                    }
+                    break;
+                case "table2":
+                case "table3":
+                    Booking aBooking;
+                    //READ from the table  
+                    foreach (DataRow myRow_loopVariable in dsMain.Tables[table].Rows)
+                    {
+                        myRow = myRow_loopVariable;
+                        if (!(myRow.RowState == DataRowState.Deleted))
+                        {
+                            aBooking = new Booking();
+                            aBooking.ReservationNumber = Convert.ToInt32(myRow["ReservationNumber"]);
+                            aBooking.GuestID = Convert.ToInt32(myRow["GuestID"]);
+                            aBooking.NoOfRooms = Convert.ToInt32(myRow["NoOfRooms"]);
+                            aBooking.NoOfPeople = Convert.ToInt32(myRow["NoOfPeople"]);
+                            aBooking.StartDate = Convert.ToDateTime(myRow["StartDate"]);
+                            aBooking.EndDate = Convert.ToDateTime(myRow["EndDate"]);
+                            aBooking.SentConfirmation = Convert.ToBoolean(myRow["SentConfirmation"]);
+                            aBooking.RecievedDeposit = Convert.ToBoolean(myRow["RecievedDeposit"]);
+                            aBooking.IsCancelled = Convert.ToBoolean(myRow["IsCancelled"]);
 
-                    bookings.Add(aBooking);
-                }
+                            bookings.Add(aBooking);
+                        }
+                    }
+                    break;
+                case "table4":
+
+                    break;
             }
+
+
+            
         }
 
         #region FillRow
@@ -335,25 +546,23 @@ namespace HomeScreen.Database_Layer
             if (operation == DB.DBOperation.Add)
             {
                 aRow["AccountID"] = anAccount.AccountID;
+                aRow["GuestID"] = anAccount.GuestID;
                 
                 //NOTE square brackets to indicate index of collections of fields in row.
             }
-            aRow["Balance"] = anAccount.NoOfRooms;
+            aRow["Balance"] = anAccount.Balance;
             
-
-
         }
         private void FillRow(DataRow aRow, Admin anAdmin, DB.DBOperation operation)
         {
             if (operation == DB.DBOperation.Add)
             {
-                aRow["ReservationNumber"] = aBooking.ReservationNumber;
+                aRow["Username"] = anAdmin.Username;
                
                 //NOTE square brackets to indicate index of collections of fields in row.
             }
-            aRow["NoOfRooms"] = aBooking.NoOfRooms;
-            
 
+            aRow["Password"] = anAdmin.Password;
 
         }
         private void FillRow(DataRow aRow, Booking aBooking, DB.DBOperation operation)
@@ -378,31 +587,28 @@ namespace HomeScreen.Database_Layer
         {
             if (operation == DB.DBOperation.Add)
             {
-                aRow["ReservationNumber"] = aBooking.ReservationNumber;
-                
+                aRow["CCID"] = aCC.CCID;
                 //NOTE square brackets to indicate index of collections of fields in row.
             }
-            aRow["NoOfRooms"] = aBooking.NoOfRooms;
-            
-
-
+            aRow["Name"] = aCC.Name;
+            aRow["CCNo"] = aCC.CCNo;
+            aRow["CVV"] = aCC.CVV;
+            aRow["ExpiryDate"] = aCC.ExpiryDate;
         }
         private void FillRow(DataRow aRow, Guest aGuest, DB.DBOperation operation)
         {
             if (operation == DB.DBOperation.Add)
             {
-                aRow["ReservationNumber"] = aBooking.ReservationNumber;
-                aRow["GuestID"] = aBooking.GuestID;
-                aRow["InvoiceNumber"] = aBooking.InvoiceNumber;
+                aRow["GuestID"] = aGuest.GuestID;
+
                 //NOTE square brackets to indicate index of collections of fields in row.
             }
-            aRow["NoOfRooms"] = aBooking.NoOfRooms;
-            aRow["NoOfPeople"] = aBooking.NoOfPeople;
-            aRow["StartDate"] = aBooking.StartDate;
-            aRow["EndDate"] = aBooking.EndDate;
-            aRow["SentConfirmation"] = aBooking.SentConfirmation;
-            aRow["RecievedDeposit"] = aBooking.RecievedDeposit;
-            aRow["IsCancelled"] = aBooking.IsCancelled;
+            aRow["Name"] = aGuest.Name;
+            aRow["Surname"] = aGuest.Surname;
+            aRow["PhoneNumber"] = aGuest.PhoneNumber;
+            aRow["Address"] = aGuest.Address;
+            aRow["Email"] = aGuest.Email;
+            aRow["Status"] = aGuest.Status;
 
 
         }
@@ -410,37 +616,25 @@ namespace HomeScreen.Database_Layer
         {
             if (operation == DB.DBOperation.Add)
             {
-                aRow["ReservationNumber"] = aBooking.ReservationNumber;
-                aRow["GuestID"] = aBooking.GuestID;
-                aRow["InvoiceNumber"] = aBooking.InvoiceNumber;
+                aRow["HotelID"] = aHotel.HotelID;
                 //NOTE square brackets to indicate index of collections of fields in row.
             }
-            aRow["NoOfRooms"] = aBooking.NoOfRooms;
-            aRow["NoOfPeople"] = aBooking.NoOfPeople;
-            aRow["StartDate"] = aBooking.StartDate;
-            aRow["EndDate"] = aBooking.EndDate;
-            aRow["SentConfirmation"] = aBooking.SentConfirmation;
-            aRow["RecievedDeposit"] = aBooking.RecievedDeposit;
-            aRow["IsCancelled"] = aBooking.IsCancelled;
-
+            aRow["HotelName"] = aHotel.HotelName;
 
         }
         private void FillRow(DataRow aRow, Payment aPayment, DB.DBOperation operation)
         {
             if (operation == DB.DBOperation.Add)
             {
-                aRow["ReservationNumber"] = aBooking.ReservationNumber;
-                aRow["GuestID"] = aBooking.GuestID;
-                aRow["InvoiceNumber"] = aBooking.InvoiceNumber;
+                aRow["InvoiceNumber"] = aPayment.InvoiceNumber;
+                aRow["CCID"] = aPayment.CCID;
+                aRow["GuestID"] = aPayment.GuestID;
+                aRow["AccountID"] = aPayment.AccountID;
+                aRow["ReservationNumber"] = aPayment.ReservationNumber;
+
                 //NOTE square brackets to indicate index of collections of fields in row.
             }
-            aRow["NoOfRooms"] = aBooking.NoOfRooms;
-            aRow["NoOfPeople"] = aBooking.NoOfPeople;
-            aRow["StartDate"] = aBooking.StartDate;
-            aRow["EndDate"] = aBooking.EndDate;
-            aRow["SentConfirmation"] = aBooking.SentConfirmation;
-            aRow["RecievedDeposit"] = aBooking.RecievedDeposit;
-            aRow["IsCancelled"] = aBooking.IsCancelled;
+            aRow["Amount"] = aPayment.Amount;
 
 
         }
@@ -448,18 +642,10 @@ namespace HomeScreen.Database_Layer
         {
             if (operation == DB.DBOperation.Add)
             {
-                aRow["ReservationNumber"] = aBooking.ReservationNumber;
-                aRow["GuestID"] = aBooking.GuestID;
-                aRow["InvoiceNumber"] = aBooking.InvoiceNumber;
+                aRow["ReservationNumber"] = aRoomCharge.roo;
                 //NOTE square brackets to indicate index of collections of fields in row.
             }
-            aRow["NoOfRooms"] = aBooking.NoOfRooms;
-            aRow["NoOfPeople"] = aBooking.NoOfPeople;
-            aRow["StartDate"] = aBooking.StartDate;
-            aRow["EndDate"] = aBooking.EndDate;
-            aRow["SentConfirmation"] = aBooking.SentConfirmation;
-            aRow["RecievedDeposit"] = aBooking.RecievedDeposit;
-            aRow["IsCancelled"] = aBooking.IsCancelled;
+            aRow["NoOfRooms"] = aRoomCharge.NoOfRooms;
 
 
         }
@@ -467,18 +653,10 @@ namespace HomeScreen.Database_Layer
         {
             if (operation == DB.DBOperation.Add)
             {
-                aRow["ReservationNumber"] = aBooking.ReservationNumber;
-                aRow["GuestID"] = aBooking.GuestID;
-                aRow["InvoiceNumber"] = aBooking.InvoiceNumber;
+                aRow["ReservationNumber"] = aRoom.ReservationNumber;
                 //NOTE square brackets to indicate index of collections of fields in row.
             }
-            aRow["NoOfRooms"] = aBooking.NoOfRooms;
-            aRow["NoOfPeople"] = aBooking.NoOfPeople;
-            aRow["StartDate"] = aBooking.StartDate;
-            aRow["EndDate"] = aBooking.EndDate;
-            aRow["SentConfirmation"] = aBooking.SentConfirmation;
-            aRow["RecievedDeposit"] = aBooking.RecievedDeposit;
-            aRow["IsCancelled"] = aBooking.IsCancelled;
+            aRow["NoOfRooms"] = aRoom.NoOfRooms;
 
 
         }
@@ -508,6 +686,28 @@ namespace HomeScreen.Database_Layer
             return returnValue;
         }
         #endregion
+
+        /*
+        #region Many-To-Many CRUD Functionality
+
+        public void InsertWithoutData(Booking bking, Payment pmt) 
+        {
+        using (manyto conn = new ManyToManyEntities())
+	    {
+		//add instances to context
+		conn.Product.Add(prod);
+		conn.Supplier.Add(sup);
+
+		// add instance to navigation property
+		prod.Supplier.Add(sup);
+
+		//call SaveChanges from context to confirm inserts
+		conn.SaveChanges();
+	    }
+        }	
+
+        #endregion
+        */
 
         /*
         #region Build Parameters, Create Commands & Update database
