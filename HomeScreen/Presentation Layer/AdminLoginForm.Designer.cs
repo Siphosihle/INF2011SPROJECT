@@ -133,6 +133,8 @@
             // 
             // btnLogIn
             // 
+            this.btnLogIn.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogIn.ForeColor = System.Drawing.Color.HotPink;
             this.btnLogIn.Location = new System.Drawing.Point(361, 355);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(123, 32);
