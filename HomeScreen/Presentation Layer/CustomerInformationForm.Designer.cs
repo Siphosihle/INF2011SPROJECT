@@ -35,8 +35,8 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lbLastName = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.picBox = new System.Windows.Forms.PictureBox();
             this.btnCheckStatus = new System.Windows.Forms.Button();
+            this.picBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +50,7 @@
             this.lblGuestDetails.Size = new System.Drawing.Size(229, 31);
             this.lblGuestDetails.TabIndex = 1;
             this.lblGuestDetails.Text = "GUEST DETAILS";
+            this.lblGuestDetails.Click += new System.EventHandler(this.lblGuestDetails_Click);
             // 
             // txtboxFirstName
             // 
@@ -106,15 +107,6 @@
             this.lblID.TabIndex = 18;
             this.lblID.Text = "ID";
             // 
-            // picBox
-            // 
-            this.picBox.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
-            this.picBox.Location = new System.Drawing.Point(0, 1);
-            this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(184, 111);
-            this.picBox.TabIndex = 26;
-            this.picBox.TabStop = false;
-            // 
             // btnCheckStatus
             // 
             this.btnCheckStatus.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,7 +119,16 @@
             this.btnCheckStatus.UseVisualStyleBackColor = true;
             this.btnCheckStatus.Click += new System.EventHandler(this.btnCheckStatus_Click);
             // 
-            // CustomerInformation
+            // picBox
+            // 
+            this.picBox.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
+            this.picBox.Location = new System.Drawing.Point(0, 1);
+            this.picBox.Name = "picBox";
+            this.picBox.Size = new System.Drawing.Size(184, 111);
+            this.picBox.TabIndex = 26;
+            this.picBox.TabStop = false;
+            // 
+            // CustomerInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,7 +143,7 @@
             this.Controls.Add(this.txtboxFirstName);
             this.Controls.Add(this.lblGuestDetails);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "CustomerInformation";
+            this.Name = "CustomerInformationForm";
             this.Text = "Rest Easy Hotel";
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.ResumeLayout(false);

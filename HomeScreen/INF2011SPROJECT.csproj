@@ -125,6 +125,12 @@
     <Compile Include="Presentation Layer\CustomerInformationForm.Designer.cs">
       <DependentUpon>CustomerInformationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\ExistingGuestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\ExistingGuestForm.Designer.cs">
+      <DependentUpon>ExistingGuestForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\HomeScreenForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\CustomerInformationForm.resx">
       <DependentUpon>CustomerInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\ExistingGuestForm.resx">
+      <DependentUpon>ExistingGuestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\HomeScreenForm.resx">
       <DependentUpon>HomeScreenForm.cs</DependentUpon>
