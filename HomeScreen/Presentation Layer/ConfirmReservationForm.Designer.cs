@@ -41,7 +41,7 @@
             // 
             this.rtbReservationDetails.Location = new System.Drawing.Point(372, 158);
             this.rtbReservationDetails.Name = "rtbReservationDetails";
-            this.rtbReservationDetails.Size = new System.Drawing.Size(243, 163);
+            this.rtbReservationDetails.Size = new System.Drawing.Size(362, 198);
             this.rtbReservationDetails.TabIndex = 2;
             this.rtbReservationDetails.Text = "";
             // 
@@ -80,7 +80,7 @@
             // 
             this.btnPrevious.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.Color.HotPink;
-            this.btnPrevious.Location = new System.Drawing.Point(372, 341);
+            this.btnPrevious.Location = new System.Drawing.Point(372, 423);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(176, 32);
             this.btnPrevious.TabIndex = 55;
@@ -91,7 +91,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.HotPink;
-            this.button1.Location = new System.Drawing.Point(372, 403);
+            this.button1.Location = new System.Drawing.Point(372, 510);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 32);
             this.button1.TabIndex = 56;
@@ -102,7 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 461);
+            this.ClientSize = new System.Drawing.Size(1092, 611);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.lbBookingDetails);
