@@ -28,6 +28,11 @@ namespace HomeScreen
         {
 
         }
+
+        private void lblGuestDetails_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }
