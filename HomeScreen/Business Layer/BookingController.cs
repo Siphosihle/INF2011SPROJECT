@@ -43,13 +43,12 @@ namespace HomeScreen.Business_Layer
             {
                 foreach (Room room in hotel.Rooms)
                 {
-                    while ((index < bookings.Count + 1))
-                    {
+                    
                         if ((startDate > bookings[index].EndDate || endDate < bookings[index].StartDate))
                         {
                             roomsAvail++;
                         }
-                    }
+                    
                     index++;
                 }
             }
@@ -66,7 +65,7 @@ namespace HomeScreen.Business_Layer
 
         
         #region Database Communication
-        public void DataMaintenance(Booking aBooking, DB.DBOperation operation)
+        /*public void DataMaintenance(Booking aBooking, DB.DBOperation operation)
         {
             int index = 0;
             //perform a given database operation to the dataset in meory; 
@@ -87,7 +86,7 @@ namespace HomeScreen.Business_Layer
                     bookings.RemoveAt(index);  // remove that employee form the collection
                     break;
             }
-        }
+        } */
         
 
         public double CalculateNoOfRooms(double noOfGuests)

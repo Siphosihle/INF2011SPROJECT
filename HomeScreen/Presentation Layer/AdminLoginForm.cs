@@ -57,35 +57,30 @@ namespace HomeScreen.Presentation_Layer
             adminLoginFormClosed = true;
         }
 
-        private void PopulateAdmin()
+        private void btnLogIn_Click_1(object sender, EventArgs e)
         {
-            admin = new Admin();
-            admin.Username = txtboxUsername.Text;
-            admin.Password = txtboxPassword.Text;
-        }
+            bool bFound = false;
+            admins = adminController.AllAdmins;
+            foreach (Admin admin in admins)
+            {
+                if (txtboxUsername.Text == admin.Username && txtboxPassword.Text == admin.Password)
+                {
+                    bFound = true;
+                }
+            }
 
-        private void btnLogIn_Click(object sender, EventArgs e)
-        {
-            PopulateAdmin();
-
-
-            /*if (Admin.accessGranted == true)
+            if (bFound==true)
             {
                 HomeScreenForm hsm = new HomeScreenForm();
                 this.Hide();
                 hsm.ShowDialog();
                 this.Close();
-                
             }
-            else if (Admin.accessGranted == false)
+            if (bFound==false)
             {
                 MessageBox.Show("The login details entered are not correct, please try again.");
-            } */
-           
-        }
 
-        private void txtboxPassword_TextChanged(object sender, EventArgs e)
-        {
+            }
 
         }
     }

@@ -39,6 +39,7 @@
             this.cmbNoOfGuests = new System.Windows.Forms.ComboBox();
             this.lblHotelName = new System.Windows.Forms.Label();
             this.cmbHotelName = new System.Windows.Forms.ComboBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,11 +151,20 @@
             this.cmbHotelName.Size = new System.Drawing.Size(200, 21);
             this.cmbHotelName.TabIndex = 46;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(722, 18);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(378, 550);
+            this.listBox1.TabIndex = 47;
+            // 
             // BookingDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 575);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.cmbHotelName);
             this.Controls.Add(this.lblHotelName);
             this.Controls.Add(this.cmbNoOfGuests);
@@ -187,5 +197,6 @@
         private System.Windows.Forms.ComboBox cmbNoOfGuests;
         private System.Windows.Forms.Label lblHotelName;
         private System.Windows.Forms.ComboBox cmbHotelName;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

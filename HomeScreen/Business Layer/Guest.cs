@@ -15,17 +15,39 @@ namespace HomeScreen.Business_Layer
         //constructors
 
         #region Members
-        public string surname;
-        public string address;
-        public string email;
-        public string name;
-        public string phoneNo;
-        public string guestID;
-        public Type type; 
+        private string guestID;
+        private string name;
+        private string surname;
+        private string phoneNo;
+        private string address;
+        private string email;
+        private string status;
+        public Type type;
         #endregion
 
         #region Properties
-
+        public string GuestID
+        {
+            get
+            {
+                return guestID;
+            }
+            set
+            {
+                guestID = value;
+            }
+        }
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
         public string Surname
         {
             get
@@ -35,6 +57,17 @@ namespace HomeScreen.Business_Layer
             set
             {
                 surname = value;
+            }
+        }
+        public string PhoneNumber
+        {
+            get
+            {
+                return phoneNo;
+            }
+            set
+            {
+                phoneNo = value;
             }
         }
         public string Address
@@ -59,40 +92,14 @@ namespace HomeScreen.Business_Layer
                 email = value;
             }
         }
-        public string Name
+        public string Status
         {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                name = value;
-            }
-        }
-        public string PhoneNumber
-        {
-            get
-            {
-                return phoneNo;
-            }
-            set
-            {
-                phoneNo = value;
-            }
-        }
-        public string GuestID
-        {
-            get
-            {
-                return guestID;
-            }
-            set
-            {
-                guestID = value;
-            }
+            get { return status; }
+            set { status = value; }
         }
         #endregion
+
+
         public Guest()
         {
             name = "";

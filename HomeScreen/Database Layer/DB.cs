@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Xml;
 using System.Windows.Forms;
 using HomeScreen.Properties; //Settings Property
+using HomeScreen.Business_Layer;
 
 namespace HomeScreen.Database_Layer
 {
@@ -25,8 +26,7 @@ namespace HomeScreen.Database_Layer
         {
             Add = 0,
             Edit = 1,
-            Delete = 2,
-            Search = 3
+            Delete = 2
         }
         public DB()
         {

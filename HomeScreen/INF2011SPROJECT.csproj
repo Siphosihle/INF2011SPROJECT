@@ -137,6 +137,18 @@
     <Compile Include="Presentation Layer\HomeScreenForm.Designer.cs">
       <DependentUpon>HomeScreenForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\NewBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\NewBooking.Designer.cs">
+      <DependentUpon>NewBooking.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\NewGuestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +204,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\HomeScreenForm.resx">
       <DependentUpon>HomeScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\NewBooking.resx">
+      <DependentUpon>NewBooking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\NewGuestForm.resx">
       <DependentUpon>NewGuestForm.cs</DependentUpon>
@@ -252,6 +270,7 @@
     </Content>
     <Content Include="RestEasySystem_log.ldf">
       <DependentUpon>RestEasySystem.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

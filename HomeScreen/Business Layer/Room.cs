@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,13 +16,12 @@ namespace HomeScreen.Business_Layer
         //constructors
 
         private int roomID;
-        private string hotelID { get; set; }
-        private string roomNo { get; set; }
-        public virtual ICollection<Booking> bookings { get; set; }
+        private int hotelID;
+        private int roomNo;
+        private Collection<Booking> bookings;
 
         public Room()
         {
-            this.bookings = new HashSet<Booking>();
         }
 
         #region Properties
@@ -38,6 +38,33 @@ namespace HomeScreen.Business_Layer
             }
         }
 
+            public int HotelID
+        {
+            get
+            {
+                return hotelID;
+            }
+            set
+            {
+                hotelID = value;
+            }
+        }
+
+        public int RoomNo
+        {
+            get
+            {
+                return roomNo;
+            }
+            set
+            {
+                roomNo = value;
+            }
+        }
+    }
+
+
+
         #endregion
 
         //public bool RoomAvailability(string roomNo, Date startDate, Date endDate)
@@ -45,4 +72,4 @@ namespace HomeScreen.Business_Layer
 
         //}
     }
-}
+

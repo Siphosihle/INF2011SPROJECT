@@ -8,7 +8,7 @@ using HomeScreen.Database_Layer;
 
 namespace HomeScreen.Business_Layer
 {
-    class AdminController
+    public class AdminController
     {
         RestEasyDB adminDB;
         Collection<Admin> admins;
@@ -33,11 +33,11 @@ namespace HomeScreen.Business_Layer
 
         
         #region Database Communication
-        public void DataMaintenance(Admin anAdmin, DB.DBOperation operation)
+        /*public void DataMaintenance(Admin anAdmin, DB.DBOperation operation)
         {
             int index = 0;
-            //perform a given database operation to the dataset in meory; 
-            RestEasyDB.DataSetChange(anAdmin, operation);
+            //perform a given database operation to the dataset in memory;
+            adminDB.DataSetChange(anAdmin, operation);
             //perform operations on the collection
             switch (operation)
             {
@@ -57,10 +57,10 @@ namespace HomeScreen.Business_Layer
         }
 
         //***Commit the changes to the database
-        public bool FinalizeChanges(Object obj)
+        /*public bool FinalizeChanges(Admin admin)
         {
             //***call the EmployeeDB method that will commit the changes to the database
-            return RestEasyDB.UpdateDataSource(obj);
+            return adminDB.UpdateDataSource(admin);
         }
         #endregion
 
@@ -94,7 +94,7 @@ namespace HomeScreen.Business_Layer
             return matches;
         }
         //This method receives a employee ID as a parameter; finds the employee object in the collection of employees and then returns this object
-        public Employee Find(string ID)
+        public Admin Find(string ID)
         {
             int index = 0;
             bool found = (employees[index].ID == ID);  //check if it is the first student
@@ -105,17 +105,17 @@ namespace HomeScreen.Business_Layer
                 found = (employees[index].ID == ID);   // this will be TRUE if found
             }
             return employees[index];  // this is the one!  
-        }
+        } */
 
-        public int FindIndex(Employee anEmp)
+        public int FindIndex(Admin anAdmin)
         {
             int counter = 0;
             bool found = false;
-            found = (anEmp.ID == employees[counter].ID);   //using a Boolean Expression to initialise found
-            while (!(found) & counter < employees.Count - 1)
+            found = (anAdmin.Username == admins[counter].Username);   //using a Boolean Expression to initialise found
+            while (!(found) & counter < admins.Count - 1)
             {
                 counter += 1;
-                found = (anEmp.ID == employees[counter].ID);
+                found = (anAdmin.Username == admins[counter].Username);
             }
             if (found)
             {

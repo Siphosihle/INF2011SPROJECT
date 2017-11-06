@@ -60,6 +60,12 @@ namespace HomeScreen.Business_Layer
 
         #endregion
 
+        public Hotel()
+        {
+
+        }
+            
+
 
     }
 }
