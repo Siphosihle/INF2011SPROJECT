@@ -8,5 +8,11 @@ namespace HomeScreen.Business_Layer
 {
     class CC
     {
+
+        //businesslayerformat
+        //variables
+        //properties
+        //constructors
+
     }
 }

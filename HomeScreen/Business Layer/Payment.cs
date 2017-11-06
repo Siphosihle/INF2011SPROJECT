@@ -8,5 +8,11 @@ namespace HomeScreen.Business_Layer
 {
     public class Payment
     {
+
+        //businesslayerformat
+        //variables
+        //properties
+        //constructors
+
     }
 }

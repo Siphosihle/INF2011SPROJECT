@@ -8,7 +8,12 @@ namespace HomeScreen.Business_Layer
 {
     public class Guest
     {
-        
+
+        //businesslayerformat
+        //variables
+        //properties
+        //constructors
+
         #region Members
         public string surname;
         public string address;

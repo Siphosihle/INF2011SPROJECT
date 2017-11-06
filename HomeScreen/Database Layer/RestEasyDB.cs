@@ -316,7 +316,6 @@ namespace HomeScreen.Database_Layer
                     //Obtain each employee attribute from the specific field in the row in the table
                     aBooking.ReservationNumber = Convert.ToInt32(myRow["ReservationNumber"]);
                     aBooking.GuestID = Convert.ToString(myRow["GuestID"]);
-                    aBooking.InvoiceNumber = Convert.ToInt32(myRow["InvoiceNumber"]);
                     aBooking.NoOfRooms = Convert.ToInt32(myRow["NoOfRooms"]);
                     aBooking.NoOfPeople = Convert.ToInt32(myRow["NoOfPeople"]);
                     aBooking.StartDate = Convert.ToDateTime(myRow["StartDate"]);
@@ -335,7 +334,7 @@ namespace HomeScreen.Database_Layer
         {
             if (operation == DB.DBOperation.Add)
             {
-                aRow["AccountID"] = anAccount;
+                aRow["AccountID"] = anAccount.AccountID;
                 
                 //NOTE square brackets to indicate index of collections of fields in row.
             }
@@ -363,7 +362,6 @@ namespace HomeScreen.Database_Layer
             {
                 aRow["ReservationNumber"] = aBooking.ReservationNumber;
                 aRow["GuestID"] = aBooking.GuestID;
-                aRow["InvoiceNumber"] = aBooking.InvoiceNumber;
                 //NOTE square brackets to indicate index of collections of fields in row.
             }
             aRow["NoOfRooms"] = aBooking.NoOfRooms;
