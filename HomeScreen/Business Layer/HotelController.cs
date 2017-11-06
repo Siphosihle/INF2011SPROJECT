@@ -47,7 +47,7 @@ namespace HomeScreen.Business_Layer
             }
             catch (Exception e)
             {
-                
+                return null;
             }
             
         }

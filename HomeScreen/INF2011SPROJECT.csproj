@@ -89,8 +89,6 @@
     <Compile Include="Database Layer\RestEasyDB.cs" />
     <Compile Include="Database Layer\DB.cs" />
     <Compile Include="Database Layer\GuestDB.cs" />
-    <Compile Include="Database Layer\HotelDB.cs" />
-    <Compile Include="Database Layer\RoomAvailabilityDB.cs" />
     <Compile Include="Presentation Layer\AdminLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
