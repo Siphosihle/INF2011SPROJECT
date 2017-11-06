@@ -32,10 +32,9 @@ namespace HomeScreen.Business_Layer
             bookings = bookingDB.AllBookings;
         }
 
-        internal void CheckAvailability()
+        public void CheckAvailability(DateTime startDate, DateTime endDate)
         {
-
-            throw new NotImplementedException();
+            
         }
 
         internal void CalculateDeposit()
@@ -43,7 +42,7 @@ namespace HomeScreen.Business_Layer
             throw new NotImplementedException();
         }
 
-        /*
+        
         #region Database Communication
         public void DataMaintenance(Booking aBooking, DB.DBOperation operation)
         {
@@ -67,7 +66,7 @@ namespace HomeScreen.Business_Layer
                     break;
             }
         }
-        */
+        
 
         public double CalculateNoOfRooms(double noOfGuests)
         {
@@ -88,18 +87,19 @@ namespace HomeScreen.Business_Layer
             throw new NotImplementedException();
         }
 
-        /*
+
         //***Commit the changes to the database
-        public bool FinalizeChanges(Booking employee)
+        /*
+        public bool FinalizeChanges(Booking booking)
         {
             //***call the EmployeeDB method that will commit the changes to the database
-            return employeeDB.UpdateDataSource(employee);
-        }
+            return bookingDB.UpdateDataSource(booking);
+        } */
         #endregion
 
         #region Search Methods
         //This method  (function) searched through all the employess to finds onlly those with the required role
-        public Collection<Booking> FindByRole(Collection<Booking> emps, Role.RoleType roleVal)
+        /*public Collection<Booking> FindByRole(Collection<Booking> emps, Role.RoleType roleVal)
         {
             Collection<Booking> matches = new Collection<Booking>();
 
@@ -111,19 +111,19 @@ namespace HomeScreen.Business_Layer
                 }
             }
             return matches;
-        }
+        }*/
 
         
         //This method receives a employee ID as a parameter; finds the employee object in the collection of employees and then returns this object
-        public Booking Find(string ID)
+        public Booking Find(int resNo)
         {
             int index = 0;
-            bool found = (bookings[index].ID == ID);  //check if it is the first student
+            bool found = (bookings[index].ReservationNumber == resNo);  //check if it is the first student
             int count = bookings.Count;
             while (!(found) && (index < bookings.Count - 1))  //if not "this" student and you are not at the end of the list 
             {
                 index = index + 1;
-                found = (bookings[index].ID == ID);   // this will be TRUE if found
+                found = (bookings[index].ReservationNumber == resNo);   // this will be TRUE if found
             }
             return bookings[index];  // this is the one!  
         }
@@ -132,11 +132,11 @@ namespace HomeScreen.Business_Layer
         {
             int counter = 0;
             bool found = false;
-            found = (anEmp.ID == bookings[counter].ID);   //using a Boolean Expression to initialise found
+            found = (aBooking.ReservationNumber == bookings[counter].ReservationNumber);   //using a Boolean Expression to initialise found
             while (!(found) & counter < bookings.Count - 1)
             {
                 counter += 1;
-                found = (anEmp.ID == bookings[counter].ID);
+                found = (aBooking.ReservationNumber == bookings[counter].ReservationNumber);
             }
             if (found)
             {
@@ -147,7 +147,7 @@ namespace HomeScreen.Business_Layer
                 return -1;
             }
     }
-    #endregion */
+    #endregion 
 
     }
 }

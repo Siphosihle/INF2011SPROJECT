@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HomeScreen.Business_Layer;
 
 namespace HomeScreen.Business_Layer
 {
@@ -14,6 +17,9 @@ namespace HomeScreen.Business_Layer
         bool sentConfirmation, receivedDeposit, isCancelled;
 
         public virtual ICollection<Room> rooms { get; set; }
+
+        private Calendar myCal = CultureInfo.InvariantCulture.Calendar;
+        private DateTime date;
 
 
         #region Properties

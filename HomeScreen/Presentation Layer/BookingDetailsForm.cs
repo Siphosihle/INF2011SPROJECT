@@ -21,13 +21,12 @@ namespace HomeScreen.Presentation_Layer
         private BookingController bookingController;
         private Booking booking;
         private Collection<Booking> bookings;
+        private Collection<Room> rooms; 
 
 
         private int count = 0;
-        private string inDate;
-        private string outDate;
-        private string roomNum;
-        private string guestNum;
+        private DateTime startDate, endDate;
+        private int noOfGuests, noOfRoomsNeeded;
         #endregion
 
         #region Contructors
@@ -46,48 +45,48 @@ namespace HomeScreen.Presentation_Layer
         #endregion
 
         #region Properties
-        public string InDate
+        public DateTime StartDate
         {
             get
             {
-                return inDate;
+                return startDate;
             }
             set
             {
-                inDate = value;
+                startDate = value;
             }
         }
-        public string OutDate
+        public DateTime EndDate
         {
             get
             {
-                return outDate;
+                return endDate;
             }
             set
             {
-                outDate = value;
+                endDate = value;
             }
         }
-        public string RoomNum
+        public int NoOfRoomsNeeded
         {
             get
             {
-                return roomNum;
+                return noOfRoomsNeeded;
             }
             set
             {
-                roomNum = value;
+                noOfRoomsNeeded = value;
             }
         }
-        public string GuestNum
+        public int NoOfGuests
         {
             get
             {
-                return guestNum;
+                return noOfGuests;
             }
             set
             {
-                guestNum = value;
+                noOfGuests = value;
             }
         }
         #endregion
@@ -106,7 +105,14 @@ namespace HomeScreen.Presentation_Layer
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             //PopulateObject();
-            bookingController.CheckAvailability();
+
+            startDate = dtpCheckInDate.Value;
+            endDate = dtpCheckOutDate.Value;
+            noOfGuests = Convert.ToInt32(cmbNoOfGuests.Text);
+
+            noOfRoomsNeeded = Convert.ToInt32(bookingController.CalculateNoOfRooms(noOfGuests));
+
+            bookingController.CheckAvailability(startDate, endDate);
             bookingController.CalculateDeposit();
             //bookingcontroller.DataMaintenance(booking, Database_Layer.DB);   CRUD
             //bookingcontroller.FinalizeChanges(booking); 
@@ -205,7 +211,7 @@ namespace HomeScreen.Presentation_Layer
                 PopulateObject();
 
             }
-        */
+        
 
         /*
 private class Number
