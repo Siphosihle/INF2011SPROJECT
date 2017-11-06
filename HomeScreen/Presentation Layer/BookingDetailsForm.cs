@@ -20,13 +20,20 @@ namespace HomeScreen.Presentation_Layer
         public bool bookingFormClosed = false;
         private BookingController bookingController;
         private Booking booking;
+        private Hotel hotel;
+        private Room room;
         private Collection<Booking> bookings;
-        private Collection<Room> rooms; 
-
+        private Collection<Room> rooms;
+        private Collection<Hotel> hotels;
 
         private int count = 0;
+
         private DateTime startDate, endDate;
         private int noOfGuests, noOfRoomsNeeded;
+        private string hotelName;
+
+
+
         #endregion
 
         #region Contructors
@@ -106,14 +113,16 @@ namespace HomeScreen.Presentation_Layer
         {
             //PopulateObject();
 
+            hotelName = cmbHotelName.Text;
             startDate = dtpCheckInDate.Value;
             endDate = dtpCheckOutDate.Value;
             noOfGuests = Convert.ToInt32(cmbNoOfGuests.Text);
-
             noOfRoomsNeeded = Convert.ToInt32(bookingController.CalculateNoOfRooms(noOfGuests));
 
-            bookingController.CheckAvailability(startDate, endDate);
-            bookingController.CalculateDeposit();
+            if (bookingController.CheckAvailability(hotelName, startDate, endDate, noOfRoomsNeeded))
+            {
+                MessageBox.Show("Rooms Are Available!");
+            }
             //bookingcontroller.DataMaintenance(booking, Database_Layer.DB);   CRUD
             //bookingcontroller.FinalizeChanges(booking); 
             ClearAll();
@@ -187,7 +196,20 @@ namespace HomeScreen.Presentation_Layer
 
         }
 
+        public void PopulateHotelObject()
+        {
 
+            hotel = new Hotel();
+
+            booking = new Booking();
+            booking.ReservationNumber = bookingController.GenerateReferenceNumber();
+            booking.NoOfRooms = Convert.ToInt32(bookingController.CalculateNoOfRooms(Convert.ToDouble(cmbNoOfGuests.Text)));
+            booking.StartDate = dtpCheckInDate.Value;
+            booking.EndDate = dtpCheckOutDate.Value;
+            booking.SentConfirmation = false;
+            booking.RecievedDeposit = false;
+            booking.IsCancelled = false;
+        }
 
 
         

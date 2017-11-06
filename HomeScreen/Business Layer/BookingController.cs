@@ -14,7 +14,9 @@ namespace HomeScreen.Business_Layer
         
 
         Collection<Booking> bookings;
-        Collection<Room> rooms;
+        private Hotel hotel;
+        Collection<Room> bookingRooms;
+        Collection<Room> hotelRooms;
 
         #region Properties
         public Collection<Booking> AllBookings
@@ -32,9 +34,31 @@ namespace HomeScreen.Business_Layer
             bookings = bookingDB.AllBookings;
         }
 
-        public void CheckAvailability(DateTime startDate, DateTime endDate)
+        public bool CheckAvailability(string hotelName, DateTime startDate, DateTime endDate, int roomsNeeded)
         {
-            
+            int roomsAvail = 0;
+            int index = 0;
+
+
+
+            while ((index < bookings.Count + 1))
+            {
+                foreach (Room room in hotel.Rooms)
+                {
+                    while ((index < bookings.Count + 1))
+                    {
+                        if ((startDate > bookings[index].EndDate || endDate < bookings[index].StartDate))
+                        {
+                            roomsAvail++;
+                        }
+                    }
+                    index++;
+                }
+            }
+
+            return (roomsAvail >= roomsNeeded);
+
+
         }
 
         internal void CalculateDeposit()
@@ -98,10 +122,17 @@ namespace HomeScreen.Business_Layer
         #endregion
 
         #region Search Methods
-        //This method  (function) searched through all the employess to finds onlly those with the required role
-        /*public Collection<Booking> FindByRole(Collection<Booking> emps, Role.RoleType roleVal)
+        /*
+         //This method  (function) searched through all the employess to finds onlly those with the required role
+        public Collection<Booking> FindByAvailability(Collection<Booking> bkings)
         {
             Collection<Booking> matches = new Collection<Booking>();
+
+            foreach (Booking bking in bkings)
+            {
+
+            }
+                
 
             foreach (Booking emp in emps)
             {
@@ -111,7 +142,7 @@ namespace HomeScreen.Business_Layer
                 }
             }
             return matches;
-        }*/
+        } */
 
         
         //This method receives a employee ID as a parameter; finds the employee object in the collection of employees and then returns this object

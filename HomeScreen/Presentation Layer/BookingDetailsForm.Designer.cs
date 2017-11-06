@@ -39,6 +39,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.cmbNoOfGuests = new System.Windows.Forms.ComboBox();
+            this.lblHotelName = new System.Windows.Forms.Label();
+            this.cmbHotelName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,14 +66,14 @@
             // 
             // dtpCheckInDate
             // 
-            this.dtpCheckInDate.Location = new System.Drawing.Point(510, 165);
+            this.dtpCheckInDate.Location = new System.Drawing.Point(510, 214);
             this.dtpCheckInDate.Name = "dtpCheckInDate";
             this.dtpCheckInDate.Size = new System.Drawing.Size(200, 20);
             this.dtpCheckInDate.TabIndex = 33;
             // 
             // dtpCheckOutDate
             // 
-            this.dtpCheckOutDate.Location = new System.Drawing.Point(510, 232);
+            this.dtpCheckOutDate.Location = new System.Drawing.Point(510, 268);
             this.dtpCheckOutDate.Name = "dtpCheckOutDate";
             this.dtpCheckOutDate.Size = new System.Drawing.Size(200, 20);
             this.dtpCheckOutDate.TabIndex = 34;
@@ -81,7 +83,7 @@
             this.lbCheckInDate.AutoSize = true;
             this.lbCheckInDate.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCheckInDate.ForeColor = System.Drawing.Color.HotPink;
-            this.lbCheckInDate.Location = new System.Drawing.Point(418, 170);
+            this.lbCheckInDate.Location = new System.Drawing.Point(418, 219);
             this.lbCheckInDate.Name = "lbCheckInDate";
             this.lbCheckInDate.Size = new System.Drawing.Size(86, 15);
             this.lbCheckInDate.TabIndex = 37;
@@ -92,7 +94,7 @@
             this.lbCheckOutDate.AutoSize = true;
             this.lbCheckOutDate.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCheckOutDate.ForeColor = System.Drawing.Color.HotPink;
-            this.lbCheckOutDate.Location = new System.Drawing.Point(408, 237);
+            this.lbCheckOutDate.Location = new System.Drawing.Point(408, 273);
             this.lbCheckOutDate.Name = "lbCheckOutDate";
             this.lbCheckOutDate.Size = new System.Drawing.Size(96, 15);
             this.lbCheckOutDate.TabIndex = 38;
@@ -103,7 +105,7 @@
             this.lbNumberOfGuests.AutoSize = true;
             this.lbNumberOfGuests.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNumberOfGuests.ForeColor = System.Drawing.Color.HotPink;
-            this.lbNumberOfGuests.Location = new System.Drawing.Point(399, 304);
+            this.lbNumberOfGuests.Location = new System.Drawing.Point(399, 327);
             this.lbNumberOfGuests.Name = "lbNumberOfGuests";
             this.lbNumberOfGuests.Size = new System.Drawing.Size(105, 15);
             this.lbNumberOfGuests.TabIndex = 40;
@@ -146,16 +148,37 @@
             // cmbNoOfGuests
             // 
             this.cmbNoOfGuests.FormattingEnabled = true;
-            this.cmbNoOfGuests.Location = new System.Drawing.Point(510, 302);
+            this.cmbNoOfGuests.Location = new System.Drawing.Point(510, 325);
             this.cmbNoOfGuests.Name = "cmbNoOfGuests";
             this.cmbNoOfGuests.Size = new System.Drawing.Size(200, 21);
             this.cmbNoOfGuests.TabIndex = 44;
+            // 
+            // lblHotelName
+            // 
+            this.lblHotelName.AutoSize = true;
+            this.lblHotelName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHotelName.ForeColor = System.Drawing.Color.HotPink;
+            this.lblHotelName.Location = new System.Drawing.Point(418, 165);
+            this.lblHotelName.Name = "lblHotelName";
+            this.lblHotelName.Size = new System.Drawing.Size(86, 15);
+            this.lblHotelName.TabIndex = 45;
+            this.lblHotelName.Text = "Check-In Date";
+            // 
+            // cmbHotelName
+            // 
+            this.cmbHotelName.FormattingEnabled = true;
+            this.cmbHotelName.Location = new System.Drawing.Point(510, 163);
+            this.cmbHotelName.Name = "cmbHotelName";
+            this.cmbHotelName.Size = new System.Drawing.Size(200, 21);
+            this.cmbHotelName.TabIndex = 46;
             // 
             // BookingDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 575);
+            this.Controls.Add(this.cmbHotelName);
+            this.Controls.Add(this.lblHotelName);
             this.Controls.Add(this.cmbNoOfGuests);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnSave);
@@ -188,5 +211,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.ComboBox cmbNoOfGuests;
+        private System.Windows.Forms.Label lblHotelName;
+        private System.Windows.Forms.ComboBox cmbHotelName;
     }
 }
