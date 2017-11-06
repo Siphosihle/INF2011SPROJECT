@@ -18,10 +18,14 @@ namespace HomeScreen.Presentation_Layer
         #region Members
 
         public bool bookingFormClosed = false;
+        private AvailableRoomsForm availableRoomsForm;
+
         private BookingController bookingController;
+        private HotelController hotelController;
         private Booking booking;
         private Hotel hotel;
         private Room room;
+
         private Collection<Booking> bookings;
         private Collection<Room> rooms;
         private Collection<Hotel> hotels;
@@ -37,11 +41,12 @@ namespace HomeScreen.Presentation_Layer
         #endregion
 
         #region Contructors
-        public BookingDetailsForm(BookingController aController)
+        public BookingDetailsForm(BookingController bkController, HotelController htlController)
         {
             InitializeComponent();
 
-            bookingController = aController;
+            bookingController = bkController;
+            hotelController = htlController;
 
             for (int s = 1; s < 21; s++)
             {
@@ -119,12 +124,26 @@ namespace HomeScreen.Presentation_Layer
             noOfGuests = Convert.ToInt32(cmbNoOfGuests.Text);
             noOfRoomsNeeded = Convert.ToInt32(bookingController.CalculateNoOfRooms(noOfGuests));
 
-            if (bookingController.CheckAvailability(hotelName, startDate, endDate, noOfRoomsNeeded))
+            hotel = hotelController.Find(hotelName);
+
+            if (bookingController.CheckAvailability(hotel, startDate, endDate, noOfRoomsNeeded))
             {
                 MessageBox.Show("Rooms Are Available!");
+
+                bookingFormClosed = true;
+                this.Close();
+
+                availableRoomsForm = new AvailableRoomsForm(bookingController);
+                availableRoomsForm.MdiParent = this.MdiParent;
+                availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
+        
+
+    }
+            else
+            {
+                MessageBox.Show("There are no rooms available for the selected dates");
             }
-            //bookingcontroller.DataMaintenance(booking, Database_Layer.DB);   CRUD
-            //bookingcontroller.FinalizeChanges(booking); 
+
             ClearAll();
         }
 
@@ -217,9 +236,9 @@ namespace HomeScreen.Presentation_Layer
             {
                 if (count == 1)
                 {
-                    AvailableRoomsForm hs = new AvailableRoomsForm();
+                    //AvailableRoomsForm hs = new AvailableRoomsForm();
                     this.Hide();
-                    hs.ShowDialog();
+                    //hs.ShowDialog();
                     this.Close();
                 }
                 else

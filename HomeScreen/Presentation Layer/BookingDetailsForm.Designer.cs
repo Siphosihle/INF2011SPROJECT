@@ -160,13 +160,15 @@
             this.lblHotelName.ForeColor = System.Drawing.Color.HotPink;
             this.lblHotelName.Location = new System.Drawing.Point(418, 165);
             this.lblHotelName.Name = "lblHotelName";
-            this.lblHotelName.Size = new System.Drawing.Size(86, 15);
+            this.lblHotelName.Size = new System.Drawing.Size(36, 15);
             this.lblHotelName.TabIndex = 45;
-            this.lblHotelName.Text = "Check-In Date";
+            this.lblHotelName.Text = "Hotel";
             // 
             // cmbHotelName
             // 
             this.cmbHotelName.FormattingEnabled = true;
+            this.cmbHotelName.Items.AddRange(new object[] {
+            "RestEasy Cape Town CBD"});
             this.cmbHotelName.Location = new System.Drawing.Point(510, 163);
             this.cmbHotelName.Name = "cmbHotelName";
             this.cmbHotelName.Size = new System.Drawing.Size(200, 21);
