@@ -282,7 +282,7 @@ namespace HomeScreen.Presentation_Layer
 
             for(int i=0;i<noOfHotelRooms;i++)
             {
-                cmbNoOfGuests.Items.Add(i);
+                cmbNoOfGuests.Items.Add(i+1);
             }
 
 

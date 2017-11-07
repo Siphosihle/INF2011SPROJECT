@@ -49,6 +49,8 @@ namespace HomeScreen.Business_Layer
             int x = 0, y = 0;
             bool bOccupied = false;
 
+            //assuming 1 person per room
+
             while ((roomsAvail < roomsNeeded) && (x < hotel.Rooms.Count))
             {
                 while((y < bookings.Count) && (bOccupied == false))

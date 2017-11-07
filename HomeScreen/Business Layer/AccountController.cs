@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HomeScreen.Business_Layer
 {
-    class AccountController
+    public class AccountController
     {
         AccountDB accountDB;
         Collection<Account> accounts;

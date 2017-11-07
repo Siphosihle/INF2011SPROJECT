@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using HomeScreen.Database_Layer;
 using HomeScreen.Business_Layer;
 
-namespace HomeScreen.Database_Layer
+namespace HomeScreen.Business_Layer
 {
-    class RoomController
+    public class RoomController
     {
         RoomDB roomDB;
         Collection<Room> rooms;   //***W3

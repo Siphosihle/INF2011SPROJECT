@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HomeScreen.Business_Layer;
+using HomeScreen.Database_Layer;
 
 namespace HomeScreen.Business_Layer
 {
@@ -19,6 +21,7 @@ namespace HomeScreen.Business_Layer
         private string hotelName;
 
         private Collection<Room> rooms;
+        private RoomController roomController;
 
         #region Properties
 
@@ -62,7 +65,7 @@ namespace HomeScreen.Business_Layer
 
         public Hotel()
         {
-
+            rooms = ;
         }
             
 
