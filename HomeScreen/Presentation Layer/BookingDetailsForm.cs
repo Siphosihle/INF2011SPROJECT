@@ -24,6 +24,7 @@ namespace HomeScreen.Presentation_Layer
         private BookingController bookingController;
         private HotelController hotelController;
         private RoomController roomController;
+        private RoomAllocationController rAllController;
 
         private Booking booking;
         private Hotel hotel;
@@ -49,14 +50,15 @@ namespace HomeScreen.Presentation_Layer
             bookingController = new BookingController();
             hotelController = new HotelController();
             roomController = new RoomController();
+            rAllController = new RoomAllocationController();
 
             this.FormClosed += Form_Closed;
 
-            for (int s = 1; s < 21; s++)
+            /*for (int s = 1; s < 21; s++)
             {
                 string strt = s.ToString();
                 cmbNoOfGuests.Items.Add(strt);
-            }
+            } */
         }
         #endregion
 
@@ -142,7 +144,7 @@ namespace HomeScreen.Presentation_Layer
                 bookingFormClosed = true;
                 this.Close();
 
-                availableRoomsForm = new AvailableRoomsForm(bookingController);
+                availableRoomsForm = new AvailableRoomsForm();
                 availableRoomsForm.MdiParent = this.MdiParent;
                 availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
         
@@ -231,10 +233,7 @@ namespace HomeScreen.Presentation_Layer
             {
                 string htlName = hotel.HotelName;
                 cmbHotelName.Items.Add(htlName);
-            }
-
-
-            
+            }            
 
             /*
             for (int s = 1; s < 21; s++)
@@ -288,29 +287,7 @@ namespace HomeScreen.Presentation_Layer
 
         }
 
-        private void btnCheckBooking_Click(object sender, EventArgs e)
-            {
-
-                int count = 1;
-                
-                if (count == 1)
-                {
-                    //AvailableRoomsForm hs = new AvailableRoomsForm();
-                    this.Hide();
-                    //hs.ShowDialog();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Please save the Booking Details first before you continue!");
-                }
-            }
-
-            private void btnSave_Click(object sender, EventArgs e)
-            {
-                PopulateObject();
-
-            }
+        
         
 
         /*

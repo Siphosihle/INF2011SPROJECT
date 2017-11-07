@@ -12,8 +12,7 @@ namespace HomeScreen.Business_Layer
     {
         private BookingDB bookingDB;
         private Collection<Booking> bookings;
-
-        private Collection<Room> rooms;
+        private RoomAllocationController rAllController;
 
         private List<Int32> availableRooms;
 
@@ -24,14 +23,6 @@ namespace HomeScreen.Business_Layer
             get
             {
                 return bookings;
-            }
-        }
-
-        public Collection<Room> AllRooms
-        {
-            get
-            {
-                return rooms;
             }
         }
 
@@ -50,8 +41,33 @@ namespace HomeScreen.Business_Layer
             bool bOccupied = false;
 
             //assuming 1 person per room
-            
             //for each booking in rooms.bookings
+
+            //for each room in hotel
+
+            //if startdate is earlier than end date of abooking
+            //or enddate is later than the startdate of abooking
+            //where abooking.bookingID = rAll.bookingID
+            //and where the room.roomID = rAll.roomID
+            //and 
+
+            /* room1
+             *      
+             * room2
+             * room3
+             * room4
+             */
+
+            for (int i = 0; i < roomAllocations.Count; i++)
+            {
+
+            }
+
+                Collection<Booking> bkngs = rAllController.FindBookingsByRoom();
+
+            for(int i = 0; i < )
+
+
 
             while ((roomsAvail < roomsNeeded) && (x < hotel.Rooms.Count))
             {
@@ -198,33 +214,7 @@ namespace HomeScreen.Business_Layer
             }
     }
 
-        public Collection<Booking> FindByRoom(Collection<Booking> bkings, int roomID)
-        {
-            Collection<Booking> matches = new Collection<Booking>();
-            Collection<RoomAllocation>
-
-            int x = 0, y = 0;
-
-            foreach()
-
-            //if roomallocation1.roomID = roomID
-            //do this
-            //
-
-            //if booking1.bookingID = roomallocation1.bookingID
-            //
-
-                //if booking1.bookingID = roomallocation2.bookingID
-
-                foreach (Employee emp in emps)
-            {
-                if (emp.role.RoleValue == roomID)
-                {
-                    matches.Add(emp);
-                }
-            }
-            return matches;
-        }
+        
 
         #endregion
 

@@ -32,7 +32,47 @@ namespace HomeScreen.Business_Layer
             roomAllocations = roomAllocationDB.AllRoomAllocations;
         }
 
+        public Collection<Booking> FindBookingsByRoom(Collection<Booking> bkings, int roomID)
+        {
+            Collection<Booking> matches = new Collection<Booking>();
 
+            for (int i = 0; i < roomAllocations.Count;i++)
+            {
+                if(roomAllocations[i].RoomID == roomID)
+                {
+                    for (int j = 0; i < roomAllocations.Count; i++)
+                    {
+                        if (roomAllocations[i].ReservationNumber == bkings[i].ReservationNumber)
+                        {
+                            matches.Add(bkings[i]);
+                        }
+                    }
+                }
+            }
+
+            return matches;
+        }
+
+        public Collection<Room> FindRoomByBookings(Collection<Room> rms, int resNo)
+        {
+            Collection<Room> matches = new Collection<Room>();
+
+            for (int i = 0; i < roomAllocations.Count; i++)
+            {
+                if (roomAllocations[i].ReservationNumber == resNo)
+                {
+                    for (int j = 0; i < roomAllocations.Count; i++)
+                    {
+                        if (roomAllocations[i].RoomID == rms[i].RoomID)
+                        {
+                            matches.Add(rms[i]);
+                        }
+                    }
+                }
+            }
+
+            return matches;
+        }
 
         /*public RoomAllocation Find(string htlName)
         {
@@ -67,7 +107,7 @@ namespace HomeScreen.Business_Layer
             }
         }
         */
-        
+
 
     }
 }

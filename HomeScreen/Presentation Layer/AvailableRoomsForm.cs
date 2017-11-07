@@ -14,7 +14,7 @@ namespace HomeScreen.Presentation_Layer
     public partial class AvailableRoomsForm : Form
     {
         private BookingDetailsForm bookingDetails; 
-        public AvailableRoomsForm(BookingController bookingController)
+        public AvailableRoomsForm()
         {
             InitializeComponent();
         }
