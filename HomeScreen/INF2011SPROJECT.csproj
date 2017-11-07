@@ -95,6 +95,7 @@
     <Compile Include="Database Layer\DB.cs" />
     <Compile Include="Database Layer\GuestDB.cs" />
     <Compile Include="Database Layer\RoomChargeDB.cs" />
+    <Compile Include="Business Layer\RoomController.cs" />
     <Compile Include="Database Layer\RoomDB.cs" />
     <Compile Include="Presentation Layer\AdminLoginForm.cs">
       <SubType>Form</SubType>

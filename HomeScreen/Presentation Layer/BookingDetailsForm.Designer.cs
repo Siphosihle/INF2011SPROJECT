@@ -39,7 +39,6 @@
             this.cmbNoOfGuests = new System.Windows.Forms.ComboBox();
             this.lblHotelName = new System.Windows.Forms.Label();
             this.cmbHotelName = new System.Windows.Forms.ComboBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,6 +128,7 @@
             this.cmbNoOfGuests.Name = "cmbNoOfGuests";
             this.cmbNoOfGuests.Size = new System.Drawing.Size(200, 21);
             this.cmbNoOfGuests.TabIndex = 44;
+            this.cmbNoOfGuests.SelectedIndexChanged += new System.EventHandler(this.cmbNoOfGuests_SelectedIndexChanged);
             // 
             // lblHotelName
             // 
@@ -150,21 +150,13 @@
             this.cmbHotelName.Name = "cmbHotelName";
             this.cmbHotelName.Size = new System.Drawing.Size(200, 21);
             this.cmbHotelName.TabIndex = 46;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(722, 18);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(378, 550);
-            this.listBox1.TabIndex = 47;
+            this.cmbHotelName.SelectedIndexChanged += new System.EventHandler(this.cmbHotelName_SelectedIndexChanged);
             // 
             // BookingDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 575);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.cmbHotelName);
             this.Controls.Add(this.lblHotelName);
             this.Controls.Add(this.cmbNoOfGuests);
@@ -178,6 +170,7 @@
             this.Controls.Add(this.picBox);
             this.Name = "BookingDetailsForm";
             this.Text = "BookingDetailsForm";
+            this.Load += new System.EventHandler(this.BookingDetailsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -197,6 +190,5 @@
         private System.Windows.Forms.ComboBox cmbNoOfGuests;
         private System.Windows.Forms.Label lblHotelName;
         private System.Windows.Forms.ComboBox cmbHotelName;
-        private System.Windows.Forms.ListBox listBox1;
     }
 }

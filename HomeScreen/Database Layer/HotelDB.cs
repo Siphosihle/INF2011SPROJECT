@@ -21,8 +21,6 @@ namespace HomeScreen.Database_Layer
 
         private Collection<Hotel> hotels;
 
-
-
         public HotelDB(): base()
         {
             hotels = new Collection<Hotel>();
@@ -48,7 +46,6 @@ namespace HomeScreen.Database_Layer
         {
             //Declare references to a myRow object and an Employee object
             DataRow myRow = null;
-
             Hotel aHotel;
             foreach (DataRow myRow_loopVariable in dsMain.Tables[table].Rows)
             {

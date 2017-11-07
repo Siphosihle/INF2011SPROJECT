@@ -18,6 +18,8 @@ namespace HomeScreen.Business_Layer
         private int roomID;
         private int hotelID;
         private int roomNo;
+        private int noOfPeople;
+
         private Collection<Booking> bookings;
 
         public Room()
@@ -62,6 +64,13 @@ namespace HomeScreen.Business_Layer
                 roomNo = value;
             }
         }
+
+        public int NoOfPeople
+        {
+            get { return noOfPeople; }
+            set { noOfPeople = value; }
+        }
+
     }
 
 
