@@ -12,9 +12,8 @@ namespace HomeScreen.Business_Layer
     {
         private RestEasyDB bookingDB;
         private Collection<Booking> bookings;
-        private Hotel hotel;
-        private Collection<Room> bookingRooms;
-        private Collection<Room> hotelRooms;
+        private List<Int32> availableRooms;
+
 
         #region Properties
         public Collection<Booking> AllBookings
@@ -39,13 +38,16 @@ namespace HomeScreen.Business_Layer
 
 
 
+            bool bOccupied
+
             while ((index < bookings.Count + 1))
             {
-                foreach (Room room in hotel.Rooms)
+                for(int i = 0; i < hotel.Rooms.Count +1; i++)
                 {
                     
                         if ((startDate > bookings[index].EndDate || endDate < bookings[index].StartDate))
                         {
+                            availableRooms[i] = i+1;
                             roomsAvail++;
                         }
                     

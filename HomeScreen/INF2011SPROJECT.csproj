@@ -85,7 +85,12 @@
     <Compile Include="Business Layer\Payment.cs" />
     <Compile Include="Business Layer\Room.cs" />
     <Compile Include="Business Layer\RoomCharge.cs" />
+    <Compile Include="Database Layer\AccountDB.cs" />
     <Compile Include="Database Layer\AdminDB.cs" />
+    <Compile Include="Database Layer\BookingDB.cs" />
+    <Compile Include="Database Layer\CCDetailsDB.cs" />
+    <Compile Include="Database Layer\HotelPaymentDB.cs" />
+    <Compile Include="Database Layer\PaymentDB.cs" />
     <Compile Include="Database Layer\RestEasyDB.cs" />
     <Compile Include="Database Layer\DB.cs" />
     <Compile Include="Database Layer\GuestDB.cs" />
