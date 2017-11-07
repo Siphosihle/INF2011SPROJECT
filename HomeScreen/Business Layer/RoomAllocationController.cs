@@ -80,6 +80,47 @@ namespace HomeScreen.Business_Layer
             return matches;
         }
 
+        public bool Checkavailability(Hotel hotel, DateTime startDate, DateTime endDate, int roomsNeeded)
+        {
+            Collection<Room> matches = new Collection<Room>();
+
+            for (int i = 0; i < roomcontroller.AllRooms.Count; i++)
+            {
+                bool roomAvailable = true;
+                Collection<Booking> roomBookings = FindBookingsByRoom(bookingController.AllBookings, i);
+                if (roomBookings.Count < 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    for (int j = 0; i < roomBookings.Count; i++)
+                    {
+                        if ((startDate < roomBookings[i].EndDate || endDate > roomBookings[i].StartDate))
+                        {
+                            roomAvailable = false;
+                        }
+                    }
+                    if (roomAvailable == true)
+                    {
+                        matches.Add(roomcontroller.AllRooms[i]);
+                    }
+                }
+
+            }
+
+            if (matches.Count > roomsNeeded-1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
+
 
         public Collection<Room> AvailableRooms(Hotel hotel, DateTime startDate, DateTime endDate, int roomsNeeded)
         {
@@ -169,6 +210,8 @@ namespace HomeScreen.Business_Layer
              */
 
         }
+        
+
 
         /*public RoomAllocation Find(string htlName)
         {
