@@ -21,6 +21,7 @@ namespace HomeScreen.Presentation_Layer
         }
 
         private int childFormNumber = 0;
+
         private AdminLoginForm adminForm;
         private AvailableRoomsForm availableRoomsForm;
         private BookingDetailsForm bookingEnquiryForm;
@@ -37,6 +38,8 @@ namespace HomeScreen.Presentation_Layer
         private AdminController admincontroller;
         private BookingController bookingController;
         private HotelController hotelController;
+
+
 
         private FormState frmState;
 

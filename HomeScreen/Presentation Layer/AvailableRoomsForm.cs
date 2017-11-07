@@ -38,5 +38,10 @@ namespace HomeScreen.Presentation_Layer
             //hs.ShowDialog();
             this.Close();
         }
+
+        private void AvailableRoomsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

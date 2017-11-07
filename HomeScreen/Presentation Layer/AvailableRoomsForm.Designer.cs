@@ -136,6 +136,7 @@
             this.Controls.Add(this.picBox);
             this.Name = "AvailableRoomsForm";
             this.Text = "Rest easy Hotel";
+            this.Load += new System.EventHandler(this.AvailableRoomsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.pnlAvailability.ResumeLayout(false);
             this.pnlAvailability.PerformLayout();
