@@ -59,7 +59,6 @@ namespace HomeScreen.Database_Layer
                     anAccount.AccountID = Convert.ToInt32(myRow["AccountID"]);
                     anAccount.GuestID = Convert.ToInt32(myRow["GuestID"]);
                     anAccount.Balance = Convert.ToDecimal(myRow["Balance"]);
-
                     accounts.Add(anAccount);
 
 

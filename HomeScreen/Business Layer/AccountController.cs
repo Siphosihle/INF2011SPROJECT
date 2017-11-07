@@ -8,27 +8,27 @@ using System.Threading.Tasks;
 
 namespace HomeScreen.Business_Layer
 {
-    public class BillingController
+    class AccountController
     {
-        PaymentDB paymentDB;
-        Collection<Payment> payments;
+        AccountDB accountDB;
+        Collection<Account> accounts;
 
         #region Properties
 
-        public Collection<Payment> AllPayments
+        public Collection<Account> AllAccounts
         {
             get
             {
-                return payments;
+                return accounts;
             }
         }
 
         #endregion
 
-        public BillingController()
+        public AccountController()
         {
-            paymentDB = new PaymentDB();
-            payments = paymentDB.AllPayments;
+            accountDB = new AccountDB();
+            accounts = accountDB.AllAccounts;
         }
 
 
@@ -37,7 +37,7 @@ namespace HomeScreen.Business_Layer
         {
             int index = 0;
             //perform a given database operation to the dataset in memory;
-            adminDB.DataSetChange(anAdmin, operation);
+            accountDB.DataSetChange(anAdmin, operation);
             //perform operations on the collection
             switch (operation)
             {
@@ -107,15 +107,15 @@ namespace HomeScreen.Business_Layer
             return employees[index];  // this is the one!  
         } */
 
-        public int FindIndex(Payment aPayment)
+        public int FindIndex(Account anAccount)
         {
             int counter = 0;
             bool found = false;
-            found = (aPayment.InvoiceNumber == payments[counter].InvoiceNumber);   //using a Boolean Expression to initialise found
-            while (!(found) & counter < payments.Count - 1)
+            found = (anAccount.AccountID == accounts[counter].AccountID);   //using a Boolean Expression to initialise found
+            while (!(found) & counter < accounts.Count - 1)
             {
                 counter += 1;
-                found = (aPayment.InvoiceNumber == payments[counter].InvoiceNumber);
+                found = (anAccount.AccountID == accounts[counter].AccountID);
             }
             if (found)
             {
