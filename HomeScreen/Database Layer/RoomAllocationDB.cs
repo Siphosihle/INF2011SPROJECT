@@ -19,18 +19,18 @@ namespace HomeScreen.Database_Layer
         private string table1 = "RoomAllocation";
         private string sqlLocal1 = "SELECT * FROM RoomAllocation";
 
-        private Collection<Room> roomAllocations;
+        private Collection<RoomAllocation> roomAllocations;
 
         public RoomAllocationDB(): base()
         {
-            roomAllocations = new Collection<Hotel>();
+            roomAllocations = new Collection<RoomAllocation>();
             FillDataSet(sqlLocal1, table1);
             Add2Collection(table1);
         }
 
         #region Properties
 
-        public Collection<Hotel> AllHotels
+        public Collection<RoomAllocation> AllRoomAllocations
         {
             get { return roomAllocations; }
         }
@@ -46,18 +46,18 @@ namespace HomeScreen.Database_Layer
         {
             //Declare references to a myRow object and an Employee object
             DataRow myRow = null;
-            Hotel aHotel;
+            RoomAllocation aRoomAllocation;
             foreach (DataRow myRow_loopVariable in dsMain.Tables[table].Rows)
             {
                 myRow = myRow_loopVariable;
                 if (!(myRow.RowState == DataRowState.Deleted))
                 {
-                    aHotel = new Hotel();
+                    aRoomAllocation = new RoomAllocation();
 
-                    aHotel.HotelID = Convert.ToInt32(myRow["HotelID"]);
-                    aHotel.HotelName = Convert.ToString(myRow["HotelName"]);
+                    aRoomAllocation.BookingID = Convert.ToInt32(myRow["BookingID"]);
+                    aRoomAllocation.RoomID = Convert.ToInt32(myRow["RoomID"]);
 
-                    hotels.Add(aHotel);
+                    roomAllocations.Add(aRoomAllocation);
 
 
                 }

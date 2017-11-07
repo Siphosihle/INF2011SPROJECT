@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace HomeScreen.RoomAllocation
+namespace HomeScreen.BlockArray
 {
     public class BlockArray : System.Collections.CollectionBase
     {

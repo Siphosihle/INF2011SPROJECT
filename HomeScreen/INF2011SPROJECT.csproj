@@ -90,6 +90,7 @@
     <Compile Include="Business Layer\Payment.cs" />
     <Compile Include="Business Layer\Room.cs" />
     <Compile Include="Business Layer\RoomAllocation.cs" />
+    <Compile Include="Business Layer\RoomAllocationController.cs" />
     <Compile Include="Business Layer\RoomCharge.cs" />
     <Compile Include="Database Layer\AccountDB.cs" />
     <Compile Include="Database Layer\AdminDB.cs" />

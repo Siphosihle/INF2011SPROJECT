@@ -19,23 +19,9 @@ namespace HomeScreen.Business_Layer
 
         private int hotelID;
         private string hotelName;
-
-        private Collection<Room> rooms;
-        private RoomController roomController;
+        
 
         #region Properties
-
-        public Collection<Room> Rooms
-        {
-            get
-            {
-                return rooms;
-            }
-            set
-            {
-                rooms = value;
-            }
-        }
 
         public int HotelID
         {
@@ -63,9 +49,9 @@ namespace HomeScreen.Business_Layer
 
         #endregion
 
-        public Hotel(int hotelID)
+        public Hotel()
         {
-            rooms = roomController.FindByHotel(hotelID);
+            
         }
             
 
