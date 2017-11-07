@@ -22,7 +22,18 @@ namespace HomeScreen.Presentation_Layer
 
         private int childFormNumber = 0;
         private AdminLoginForm adminForm;
+        private AvailableRoomsForm availableRoomsForm;
         private BookingDetailsForm bookingEnquiryForm;
+        private ConfirmGuestForm confirmGuestForm;
+        private ConfirmReservationForm confirmReservationForm;
+        private CreditCardPaymentForm ccPaymentForm;
+        private CustomerInformationForm custInfoForm;
+        private ExistingGuestForm existingGuest;
+        private HomeScreenForm homeScreenForm;
+        private ListForm lstForm;
+        private NewBooking newBookingForm;
+        private NewGuestForm newGuestForm;
+        private PaymentForm paymentForm;
 
         private AdminController admincontroller;
         private BookingController bookingController;
@@ -89,11 +100,79 @@ namespace HomeScreen.Presentation_Layer
             adminForm.StartPosition = FormStartPosition.CenterParent;
         }
 
+        public void CreateNewAvailRoomForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+
         public void CreateNewBookingEnquiryForm()
         {
             bookingEnquiryForm = new BookingDetailsForm();
             bookingEnquiryForm.MdiParent = this;
             bookingEnquiryForm.StartPosition = FormStartPosition.CenterParent;
+        }
+
+        public void CreateNewConfirmGuest()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
         }
 
         #endregion

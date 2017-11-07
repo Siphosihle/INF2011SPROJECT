@@ -128,7 +128,35 @@ namespace HomeScreen.Presentation_Layer
         #endregion
 
 
+        #region GUI Events
+        private void cmbNoOfGuests_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+        private void cmbHotelName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            cmbNoOfGuests.Items.Clear();
+
+            Hotel hotel = hotelController.Find(cmbHotelName.Text);
+
+            Collection<Room> rooms = null;
+            rooms = roomController.FindByHotel(roomController.AllRooms, Convert.ToInt32(hotel.HotelID));
+
+            int noOfHotelRooms = 0;
+
+            foreach (Room room in rooms)
+            {
+                noOfHotelRooms = noOfHotelRooms + room.NoOfPeople;
+            }
+
+            for (int i = 0; i < noOfHotelRooms; i++)
+            {
+                cmbNoOfGuests.Items.Add(i + 1);
+            }
+
+
+        }
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             hotelName = cmbHotelName.Text;
@@ -139,11 +167,23 @@ namespace HomeScreen.Presentation_Layer
 
             hotel = hotelController.Find(hotelName);
 
-            try
-            {
-                availableRooms = rAllController.AvailableRooms(hotel, startDate, endDate, noOfRoomsNeeded);
+            
+            availableRooms = rAllController.AvailableRooms(hotel, startDate, endDate, noOfRoomsNeeded);
 
+            if (rAllController.Checkavailability(hotel, startDate, endDate, noOfRoomsNeeded))
+            {
                 MessageBox.Show("Rooms Are Available!");
+
+                bookingFormClosed = true;
+                this.Close();
+
+                availableRoomsForm = new AvailableRoomsForm();
+                availableRoomsForm.MdiParent = this.MdiParent;
+                availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
+            }
+            else
+            {
+                MessageBox.Show("There are no rooms available for the selected dates");
 
                 bookingFormClosed = true;
                 this.Close();
@@ -153,21 +193,16 @@ namespace HomeScreen.Presentation_Layer
                 availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
 
             }
-            catch
-            {
-                MessageBox.Show("There are no rooms available for the selected dates");
-
-            }
 
             ClearAll();
         }
+        #endregion
 
-
+        #region Methods
         private void ClearAll()
         {
             //throw new NotImplementedException();
         }
-
         public void PopulateObject()
         {
 
@@ -229,7 +264,6 @@ namespace HomeScreen.Presentation_Layer
             } */
 
         }
-
         public void PopulateForm()
         {
             hotels = hotelController.AllHotels;
@@ -258,38 +292,10 @@ namespace HomeScreen.Presentation_Layer
             booking.IsCancelled = false; */
 
         }
+        #endregion
 
-        private void cmbNoOfGuests_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        
 
-            
-
-        }
-
-        private void cmbHotelName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            cmbNoOfGuests.Items.Clear();
-
-            Hotel hotel = hotelController.Find(cmbHotelName.Text);
-
-            Collection<Room> rooms = null;
-            rooms = roomController.FindByHotel(roomController.AllRooms, Convert.ToInt32(hotel.HotelID));
-
-            int noOfHotelRooms = 0;
-
-            foreach (Room room in rooms)
-            {
-                noOfHotelRooms = noOfHotelRooms + room.NoOfPeople;
-            }
-
-            for(int i=0;i<noOfHotelRooms;i++)
-            {
-                cmbNoOfGuests.Items.Add(i+1);
-            }
-
-
-        }
 
         
         
