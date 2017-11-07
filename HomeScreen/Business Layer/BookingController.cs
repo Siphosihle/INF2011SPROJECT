@@ -198,14 +198,24 @@ namespace HomeScreen.Business_Layer
             }
     }
 
-        public Collection<Booking> FindByRoom(Collection<Booking> bkings, int roomID)
+        public Collection<Booking> FindByRoom(Collection<Booking> bkings, Collection<RoomAllocation> rmAlls, int roomID)
         {
             Collection<Booking> matches = new Collection<Booking>();
-            Collection<RoomAllocation>
+            Collection<RoomAllocation> 
 
             int x = 0, y = 0;
 
-            foreach()
+            foreach(RoomAllocation rmAll in rmAlls)
+            {
+                if(rmAll.RoomID == roomID)
+                {
+                    foreach (RoomAllocation rmAll in rmAlls)
+                    {
+                        int x = 0;
+                        if(rmAll.ReservationNumber == bkings[x].ReservationNumber)
+                    }
+                }
+            }
 
             //if roomallocation1.roomID = roomID
             //do this
@@ -214,7 +224,7 @@ namespace HomeScreen.Business_Layer
             //if booking1.bookingID = roomallocation1.bookingID
             //
 
-                //if booking1.bookingID = roomallocation2.bookingID
+            //if booking1.bookingID = roomallocation2.bookingID
 
                 foreach (Employee emp in emps)
             {
