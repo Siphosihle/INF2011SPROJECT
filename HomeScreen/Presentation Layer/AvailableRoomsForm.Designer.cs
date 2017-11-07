@@ -35,6 +35,7 @@
             this.pnlAvailability = new System.Windows.Forms.Panel();
             this.rtbAvailableRooms = new System.Windows.Forms.RichTextBox();
             this.lblTheFollowing = new System.Windows.Forms.Label();
+            this.btnHome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.pnlAvailability.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +64,7 @@
             // 
             this.btnNext.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.HotPink;
-            this.btnNext.Location = new System.Drawing.Point(748, 447);
+            this.btnNext.Location = new System.Drawing.Point(614, 420);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(123, 48);
             this.btnNext.TabIndex = 29;
@@ -75,7 +76,7 @@
             // 
             this.btnPrevious.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.Color.HotPink;
-            this.btnPrevious.Location = new System.Drawing.Point(145, 447);
+            this.btnPrevious.Location = new System.Drawing.Point(296, 420);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(123, 48);
             this.btnPrevious.TabIndex = 30;
@@ -111,11 +112,23 @@
             this.lblTheFollowing.TabIndex = 0;
             this.lblTheFollowing.Text = "The Following Rooms Are Availabe";
             // 
+            // btnHome
+            // 
+            this.btnHome.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.HotPink;
+            this.btnHome.Location = new System.Drawing.Point(425, 420);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(183, 48);
+            this.btnHome.TabIndex = 33;
+            this.btnHome.Text = "Home";
+            this.btnHome.UseVisualStyleBackColor = true;
+            // 
             // AvailableRoomsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 581);
+            this.Controls.Add(this.btnHome);
             this.Controls.Add(this.pnlAvailability);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
@@ -123,6 +136,7 @@
             this.Controls.Add(this.picBox);
             this.Name = "AvailableRoomsForm";
             this.Text = "Rest easy Hotel";
+            this.Load += new System.EventHandler(this.AvailableRoomsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.pnlAvailability.ResumeLayout(false);
             this.pnlAvailability.PerformLayout();
@@ -140,5 +154,6 @@
         private System.Windows.Forms.Panel pnlAvailability;
         private System.Windows.Forms.Label lblTheFollowing;
         private System.Windows.Forms.RichTextBox rtbAvailableRooms;
+        private System.Windows.Forms.Button btnHome;
     }
 }
