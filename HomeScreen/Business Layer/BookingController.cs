@@ -12,6 +12,9 @@ namespace HomeScreen.Business_Layer
     {
         private BookingDB bookingDB;
         private Collection<Booking> bookings;
+
+        private Collection<Room> rooms;
+
         private List<Int32> availableRooms;
 
 
@@ -23,6 +26,15 @@ namespace HomeScreen.Business_Layer
                 return bookings;
             }
         }
+
+        public Collection<Room> AllRooms
+        {
+            get
+            {
+                return rooms;
+            }
+        }
+
         #endregion
 
         public BookingController()

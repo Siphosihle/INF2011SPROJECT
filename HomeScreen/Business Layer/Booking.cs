@@ -144,6 +144,9 @@ namespace HomeScreen.Business_Layer
 
         public Booking()
         {
+
+            this.rooms = new Collection<Room>();
+
         }
 
         #endregion

@@ -22,6 +22,7 @@ namespace HomeScreen.Business_Layer
 
         public Room()
         {
+            this.bookings = new Collection<Booking>();
         }
 
         #region Properties
