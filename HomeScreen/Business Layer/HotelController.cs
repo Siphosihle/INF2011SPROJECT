@@ -11,8 +11,8 @@ namespace HomeScreen.Business_Layer
     public class HotelController
     {
 
-        HotelDB hotelDB;
-        Collection<Hotel> hotels;   //***W3
+        private HotelDB hotelDB;
+        private Collection<Hotel> hotels;   //***W3
 
         #region Properties
         public Collection<Hotel> AllHotels
@@ -31,25 +31,37 @@ namespace HomeScreen.Business_Layer
             hotels = hotelDB.AllHotels;
         }
 
-        public Hotel Find(string hotelName)
+        public Hotel Find(string htlName)
         {
             int index = 0;
-            try
+            bool found = (hotels[index].HotelName == htlName);  //check if it is the first student
+            int count = hotels.Count;
+            while (!(found) && (index < hotels.Count - 1))  //if not "this" student and you are not at the end of the list 
             {
-                bool found = (hotels[index].HotelName == hotelName);  //check if it is the first student
-                int count = hotels.Count;
-                while (!(found) && (index < hotels.Count - 1))  //if not "this" student and you are not at the end of the list 
-                {
-                    index = index + 1;
-                    found = (hotels[index].HotelName == hotelName);   // this will be TRUE if found
-                }
-                return hotels[index];  // this is the one!  
+                index = index + 1;
+                found = (hotels[index].HotelName == htlName);   // this will be TRUE if found
             }
-            catch (Exception e)
+            return hotels[index];  // this is the one!  
+        }
+
+        public int FindIndex(Hotel aHotel)
+        {
+            int counter = 0;
+            bool found = false;
+            found = (aHotel.HotelID == hotels[counter].HotelID);   //using a Boolean Expression to initialise found
+            while (!(found) & counter < hotels.Count - 1)
             {
-                return null;
+                counter += 1;
+                found = (aHotel.HotelID == hotels[counter].HotelID);
             }
-            
+            if (found)
+            {
+                return counter;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
     }

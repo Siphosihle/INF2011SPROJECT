@@ -71,7 +71,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bin\Debug\RestEasySystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestEasySystemDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Business Layer\Account.cs" />
+    <Compile Include="Business Layer\AccountController.cs" />
     <Compile Include="Business Layer\Admin.cs" />
     <Compile Include="Business Layer\AdminController.cs" />
     <Compile Include="Business Layer\BillingController.cs" />
@@ -83,6 +89,7 @@
     <Compile Include="Business Layer\Hotel.cs" />
     <Compile Include="Business Layer\HotelController.cs" />
     <Compile Include="Business Layer\Payment.cs" />
+    <Compile Include="Business Layer\PaymentController.cs" />
     <Compile Include="Business Layer\Room.cs" />
     <Compile Include="Business Layer\RoomCharge.cs" />
     <Compile Include="Database Layer\AccountDB.cs" />
@@ -241,6 +248,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="bin\Debug\RestEasySystemDataSet.xsc">
+      <DependentUpon>RestEasySystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bin\Debug\RestEasySystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RestEasySystemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bin\Debug\RestEasySystemDataSet.xss">
+      <DependentUpon>RestEasySystemDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

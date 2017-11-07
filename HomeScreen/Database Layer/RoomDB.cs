@@ -57,9 +57,10 @@ namespace HomeScreen.Database_Layer
                 {
 
                     aRoom = new Room();
-                    aRoom.RoomID = Convert.ToInt32(myRow["AccountID"]);
-                    aRoom.HotelID = Convert.ToInt32(myRow["AccountID"]);
-                    aRoom.RoomNo = Convert.ToInt32(myRow["AccountID"]);
+                    aRoom.RoomID = Convert.ToInt32(myRow["RoomID"]);
+                    aRoom.HotelID = Convert.ToInt32(myRow["HotelID"]);
+                    aRoom.RoomNo = Convert.ToInt32(myRow["RoomNo"]);
+                    aRoom.NoOfPeople = Convert.ToInt32(myRow["NoOfPeople"]);
 
                     rooms.Add(aRoom);
 

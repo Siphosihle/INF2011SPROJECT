@@ -33,8 +33,6 @@ namespace HomeScreen.Presentation_Layer
         private Collection<Room> rooms;
         private Collection<Hotel> hotels;
 
-        private int count = 0;
-
         private DateTime startDate, endDate;
         private int noOfGuests, noOfRoomsNeeded;
         private string hotelName;
@@ -47,7 +45,12 @@ namespace HomeScreen.Presentation_Layer
         public BookingDetailsForm()
         {
             InitializeComponent();
-            
+
+            bookingController = new BookingController();
+            hotelController = new HotelController();
+            roomController = new RoomController();
+
+            this.FormClosed += Form_Closed;
 
             for (int s = 1; s < 21; s++)
             {
@@ -262,6 +265,9 @@ namespace HomeScreen.Presentation_Layer
 
         private void cmbHotelName_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            cmbNoOfGuests.Items.Clear();
+
             Hotel hotel = hotelController.Find(cmbHotelName.Text);
 
             Collection<Room> rooms = null;
@@ -284,6 +290,9 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnCheckBooking_Click(object sender, EventArgs e)
             {
+
+                int count = 1;
+                
                 if (count == 1)
                 {
                     //AvailableRoomsForm hs = new AvailableRoomsForm();
