@@ -32,10 +32,18 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.paymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roomRatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -44,6 +52,7 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileMenu,
+            this.databaseToolStripMenuItem,
             this.reportsToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -67,6 +76,44 @@
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
             // 
+            // databaseToolStripMenuItem
+            // 
+            this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.accountToolStripMenuItem,
+            this.adminToolStripMenuItem,
+            this.cCToolStripMenuItem,
+            this.guestToolStripMenuItem,
+            this.paymentsToolStripMenuItem,
+            this.roomsToolStripMenuItem,
+            this.roomRatesToolStripMenuItem});
+            this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.databaseToolStripMenuItem.Text = "Database";
+            // 
+            // accountToolStripMenuItem
+            // 
+            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.accountToolStripMenuItem.Text = "Accounts";
+            // 
+            // adminToolStripMenuItem
+            // 
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.adminToolStripMenuItem.Text = "Admins";
+            // 
+            // cCToolStripMenuItem
+            // 
+            this.cCToolStripMenuItem.Name = "cCToolStripMenuItem";
+            this.cCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cCToolStripMenuItem.Text = "Guests";
+            // 
+            // guestToolStripMenuItem
+            // 
+            this.guestToolStripMenuItem.Name = "guestToolStripMenuItem";
+            this.guestToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.guestToolStripMenuItem.Text = "Hotels";
+            // 
             // reportsToolStripMenuItem
             // 
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
@@ -88,6 +135,24 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
+            // 
+            // paymentsToolStripMenuItem
+            // 
+            this.paymentsToolStripMenuItem.Name = "paymentsToolStripMenuItem";
+            this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.paymentsToolStripMenuItem.Text = "Payments";
+            // 
+            // roomsToolStripMenuItem
+            // 
+            this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.roomsToolStripMenuItem.Text = "Rooms";
+            // 
+            // roomRatesToolStripMenuItem
+            // 
+            this.roomRatesToolStripMenuItem.Name = "roomRatesToolStripMenuItem";
+            this.roomRatesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.roomRatesToolStripMenuItem.Text = "Room Rates";
             // 
             // RestEasyMDIParent
             // 
@@ -119,6 +184,14 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem paymentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem roomsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem roomRatesToolStripMenuItem;
     }
 }
 

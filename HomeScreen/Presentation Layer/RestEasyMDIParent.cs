@@ -28,7 +28,6 @@ namespace HomeScreen.Presentation_Layer
         private ConfirmReservationForm confirmReservationForm;
         private CreditCardPaymentForm ccPaymentForm;
         private CustomerInformationForm custInfoForm;
-        private ExistingGuestForm existingGuest;
         private HomeScreenForm homeScreenForm;
         private ListForm lstForm;
         private NewBooking newBookingForm;
@@ -102,9 +101,9 @@ namespace HomeScreen.Presentation_Layer
 
         public void CreateNewAvailRoomForm()
         {
-            adminForm = new AdminLoginForm();
-            adminForm.MdiParent = this;
-            adminForm.StartPosition = FormStartPosition.CenterParent;
+            availableRoomsForm = new AvailableRoomsForm();
+            availableRoomsForm.MdiParent = this;
+            availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
         }
 
         public void CreateNewBookingEnquiryForm()
@@ -116,35 +115,35 @@ namespace HomeScreen.Presentation_Layer
 
         public void CreateNewConfirmGuest()
         {
-            adminForm = new AdminLoginForm();
-            adminForm.MdiParent = this;
-            adminForm.StartPosition = FormStartPosition.CenterParent;
+            confirmGuestForm = new ConfirmGuestForm();
+            confirmGuestForm.MdiParent = this;
+            confirmGuestForm.StartPosition = FormStartPosition.CenterParent;
         }
-        public void CreateNewAdminForm()
+        public void CreateNewConfirmReservationForm()
         {
-            adminForm = new AdminLoginForm();
-            adminForm.MdiParent = this;
-            adminForm.StartPosition = FormStartPosition.CenterParent;
+            confirmReservationForm = new ConfirmReservationForm();
+            confirmReservationForm.MdiParent = this;
+            confirmReservationForm.StartPosition = FormStartPosition.CenterParent;
         }
-        public void CreateNewAdminForm()
+        public void CreateNewCreditCardPaymentForm()
         {
-            adminForm = new AdminLoginForm();
-            adminForm.MdiParent = this;
-            adminForm.StartPosition = FormStartPosition.CenterParent;
+            ccPaymentForm = new CreditCardPaymentForm();
+            ccPaymentForm.MdiParent = this;
+            ccPaymentForm.StartPosition = FormStartPosition.CenterParent;
         }
-        public void CreateNewAdminForm()
+        public void CreateNewCustomerInformationForm()
         {
-            adminForm = new AdminLoginForm();
-            adminForm.MdiParent = this;
-            adminForm.StartPosition = FormStartPosition.CenterParent;
+            custInfoForm = new CustomerInformationForm();
+            custInfoForm.MdiParent = this;
+            custInfoForm.StartPosition = FormStartPosition.CenterParent;
         }
-        public void CreateNewAdminForm()
+        public void CreateNewHomeScreenForm()
         {
-            adminForm = new AdminLoginForm();
-            adminForm.MdiParent = this;
-            adminForm.StartPosition = FormStartPosition.CenterParent;
+            homeScreenForm = new HomeScreenForm();
+            homeScreenForm.MdiParent = this;
+            homeScreenForm.StartPosition = FormStartPosition.CenterParent;
         }
-        public void CreateNewAdminForm()
+        public void CreateNewListForm()
         {
             adminForm = new AdminLoginForm();
             adminForm.MdiParent = this;
@@ -266,5 +265,7 @@ namespace HomeScreen.Presentation_Layer
         {
 
         }
+
+        
     }
 }

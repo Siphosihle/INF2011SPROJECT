@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 
-namespace HomeScreen.BlockArray
+namespace HomeScreen.BlockArray_Layer
 {
     public class BlockArray : System.Collections.CollectionBase
     {
