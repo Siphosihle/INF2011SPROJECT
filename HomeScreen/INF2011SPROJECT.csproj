@@ -89,11 +89,14 @@
     <Compile Include="Database Layer\AdminDB.cs" />
     <Compile Include="Database Layer\BookingDB.cs" />
     <Compile Include="Database Layer\CCDetailsDB.cs" />
+    <Compile Include="Database Layer\Hotel.cs" />
     <Compile Include="Database Layer\HotelPaymentDB.cs" />
     <Compile Include="Database Layer\PaymentDB.cs" />
     <Compile Include="Database Layer\RestEasyDB.cs" />
     <Compile Include="Database Layer\DB.cs" />
     <Compile Include="Database Layer\GuestDB.cs" />
+    <Compile Include="Database Layer\RoomChargeDB.cs" />
+    <Compile Include="Database Layer\RoomDB.cs" />
     <Compile Include="Presentation Layer\AdminLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

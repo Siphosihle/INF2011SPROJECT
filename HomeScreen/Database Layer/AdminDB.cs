@@ -20,13 +20,6 @@ namespace HomeScreen.Database_Layer
 
         private Collection<Admin> admins;
 
-        public struct ColumnAttribs
-        {
-            public string myName;
-            public SqlDbType myType;
-            public int mySize;
-        }
-
         public AdminDB(): base()
         {
             admins = new Collection<Admin>();

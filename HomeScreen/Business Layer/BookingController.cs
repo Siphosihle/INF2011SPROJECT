@@ -38,7 +38,7 @@ namespace HomeScreen.Business_Layer
 
 
 
-            bool bOccupied
+            //bool bOccupied
 
             while ((index < bookings.Count + 1))
             {

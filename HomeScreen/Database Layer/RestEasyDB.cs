@@ -16,20 +16,8 @@ namespace HomeScreen.Database_Layer
     class RestEasyDB: DB
     {
         #region sql strings
-        private string table1 = "Accounts";
-        private string sqlLocal1 = "SELECT * FROM Accounts";
-        private string table2 = "Admins";
-        private string sqlLocal2 = "SELECT * FROM Admins";
-        private string table3 = "BookingPayments";
-        private string sqlLocal3 = "SELECT * FROM BookingPayments";
-        private string table4 = "Bookings";
-        private string sqlLocal4 = "SELECT * FROM Bookings";
-        private string table5 = "CCDetails";
-        private string sqlLocal5 = "SELECT * FROM CCDetails";
         private string table6 = "Guests";
         private string sqlLocal6 = "SELECT * FROM Guests";
-        private string table7 = "Hotels";
-        private string sqlLocal7 = "SELECT * FROM Hotels";
         private string table8 = "Payments";
         private string sqlLocal8 = "SELECT * FROM Payments";
         private string table9 = "RoomAllocation";
@@ -50,7 +38,6 @@ namespace HomeScreen.Database_Layer
 
         private Collection<Object> objects;
 
-        private Collection<Account> accounts;
         private Collection<Admin> admins;
         private Collection<Booking> bookings;
         private Collection<CC> ccs;
@@ -92,7 +79,6 @@ namespace HomeScreen.Database_Layer
 
             
 
-            accounts = new Collection<Account>();
             admins = new Collection<Admin>();
             bookings = new Collection<Booking>();
             ccs = new Collection<CC>();
@@ -106,8 +92,8 @@ namespace HomeScreen.Database_Layer
             //{
                 string s1 = "sqlLocal" + Convert.ToString(2);
                 string s2 = "table" + Convert.ToString(2);
-                FillDataSet(sqlLocal2, table2);
-                Add2Collection(table2);
+                FillDataSet(sqlLocal1, table1);
+                Add2Collection(table1);
             //}
 
         }

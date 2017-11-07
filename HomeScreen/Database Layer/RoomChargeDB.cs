@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace HomeScreen.Database_Layer
 {
-    class CCDetailsDB
+    class RoomChargeDB
     {
-
-        private string table5 = "CCDetails";
-        private string sqlLocal5 = "SELECT * FROM CCDetails";
-
     }
 }
