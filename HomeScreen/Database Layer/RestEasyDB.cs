@@ -79,7 +79,6 @@ namespace HomeScreen.Database_Layer
 
             
 
-            admins = new Collection<Admin>();
             bookings = new Collection<Booking>();
             ccs = new Collection<CC>();
             guests = new Collection<Guest>();
@@ -525,22 +524,7 @@ namespace HomeScreen.Database_Layer
                     break;
             } */
 
-            Admin anAdmin;
-            foreach (DataRow myRow_loopVariable in dsMain.Tables[table].Rows)
-            {
-                myRow = myRow_loopVariable;
-                if (!(myRow.RowState == DataRowState.Deleted))
-                {
-                    anAdmin = new Admin();
-                    anAdmin.Username = Convert.ToString(myRow["Username"]).TrimEnd();
-                    anAdmin.Password = Convert.ToString(myRow["Password"]).TrimEnd();
-
-                    admins.Add(anAdmin);
-
-
-                }
-            }
-
+            
 
 
             

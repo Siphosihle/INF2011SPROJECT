@@ -1,15 +1,24 @@
-﻿using HomeScreen.Business_Layer;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Text;
 using System.Data;
-using System;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
+using System.Xml;
+//namespaces
+using HomeScreen.Business_Layer;
+using HomeScreen.Database_Layer;
 
 namespace HomeScreen.Database_Layer
 {
-    class GuestDB : DB
+    public class GuestDB : DB
     {
         private string table = "Guests";
         private string sqlLocal = "SELECT * FROM Guests";
+
+
         private Collection<Guest> guest;
 
         public struct ColumnAttribs
@@ -63,6 +72,7 @@ namespace HomeScreen.Database_Layer
             }
         }
         #endregion
+
         #region Methods
         private int FindRow(Guest gst, string dataTable)
         {
@@ -120,6 +130,7 @@ namespace HomeScreen.Database_Layer
             }
         }
         #endregion
+
         #region Build Parameters, Create Commands & Update database
         private void Build_INSERT_Parameters(Guest gst)
         {

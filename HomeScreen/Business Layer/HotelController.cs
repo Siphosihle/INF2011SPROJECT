@@ -27,7 +27,7 @@ namespace HomeScreen.Business_Layer
         public HotelController()
         {
             //***instantiate the EmployeeDB object to communicate with the database
-            hotelDB = new RestEasyDB();
+            hotelDB = new HotelDB();
             hotels = hotelDB.AllHotels;
         }
 

@@ -10,7 +10,7 @@ namespace HomeScreen.Business_Layer
 {
     public class AdminController
     {
-        RestEasyDB adminDB;
+        AdminDB adminDB;
         Collection<Admin> admins;
 
         #region Properties
@@ -27,7 +27,7 @@ namespace HomeScreen.Business_Layer
 
         public AdminController()
         {
-            adminDB = new RestEasyDB();
+            adminDB = new AdminDB();
             admins = adminDB.AllAdmins;
         }
 

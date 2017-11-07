@@ -13,28 +13,28 @@ using HomeScreen.Database_Layer;
 
 namespace HomeScreen.Database_Layer
 {
-    public class CCDetailsDB: DB
+    public class HotelDB: DB
     {
 
-        private string table1 = "CCDetails";
-        private string sqlLocal1 = "SELECT * FROM CCDetails";
+        private string table1 = "Hotels";
+        private string sqlLocal1 = "SELECT * FROM Hotels";
 
-        private Collection<CC> creditCards;
+        private Collection<Hotel> hotels;
 
 
 
-        public CCDetailsDB(): base()
+        public HotelDB(): base()
         {
-            creditCards = new Collection<CC>();
+            hotels = new Collection<Hotel>();
             FillDataSet(sqlLocal1, table1);
             Add2Collection(table1);
         }
 
         #region Properties
 
-        public Collection<CC> AllCCs
+        public Collection<Hotel> AllHotels
         {
-            get { return creditCards; }
+            get { return hotels; }
         }
 
         #endregion
@@ -49,20 +49,18 @@ namespace HomeScreen.Database_Layer
             //Declare references to a myRow object and an Employee object
             DataRow myRow = null;
 
-            CC aCreditCard;
+            Hotel aHotel;
             foreach (DataRow myRow_loopVariable in dsMain.Tables[table].Rows)
             {
                 myRow = myRow_loopVariable;
                 if (!(myRow.RowState == DataRowState.Deleted))
                 {
-                    aCreditCard = new CC();
-                    aCreditCard.CCID = Convert.ToInt32(myRow["CCID"]);
-                    aCreditCard.Name = Convert.ToString(myRow["Name"]);
-                    aCreditCard.CCNo = Convert.ToString(myRow["CCNo"]);
-                    aCreditCard.CVV = Convert.ToString(myRow["CVV"]);
-                    aCreditCard.ExpiryDate = Convert.ToDateTime(myRow["ExpiryDate"]);
+                    aHotel = new Hotel();
 
-                    creditCards.Add(aCreditCard);
+                    aHotel.HotelID = Convert.ToInt32(myRow["HotelID"]);
+                    aHotel.HotelName = Convert.ToString(myRow["HotelName"]);
+
+                    hotels.Add(aHotel);
 
 
                 }

@@ -13,12 +13,13 @@ using HomeScreen.Database_Layer;
 
 namespace HomeScreen.Database_Layer
 {
-    class AdminDB: DB
+    public class AdminDB: DB
     {
         private string table1 = "Admins";
         private string sqlLocal1 = "SELECT * FROM Admins";
 
         private Collection<Admin> admins;
+        
 
         public AdminDB(): base()
         {
@@ -54,21 +55,20 @@ namespace HomeScreen.Database_Layer
                 {
 
                     anAdmin = new Admin();
-                    anAdmin.Username = Convert.ToString(myRow["Username"]);
-                    anAdmin.Password = Convert.ToString(myRow["Password"]);
+                    anAdmin.Username = Convert.ToString(myRow["Username"]).TrimEnd();
+                    anAdmin.Password = Convert.ToString(myRow["Password"]).TrimEnd();
+
                     admins.Add(anAdmin);
                 }
             }
         }
-        private void FillRow(DataRow aRow, Booking aBooking, DB.DBOperation operation)
+        private void FillRow(DataRow aRow, Admin anAdmin, DB.DBOperation operation)
         {
             if (operation == DB.DBOperation.Add)
             {
-                aRow["ReservationNumber"] = aBooking.ReservationNumber;  //NOTE square brackets to indicate index of collections of fields in row.
+                aRow["Username"] = anAdmin.Username;  //NOTE square brackets to indicate index of collections of fields in row.
             }
-            aRow["NoOfRooms"] = aBooking.NoOfRooms;
-            aRow["StartDate"] = aBooking.StartDate;
-            aRow["EndDate"] = aBooking.EndDate;
+            aRow["Password"] = anAdmin.Password;
 
         }
 
@@ -93,7 +93,7 @@ namespace HomeScreen.Database_Layer
             }
             return returnValue;
         }
-#endregion
+        #endregion
 
 
     }

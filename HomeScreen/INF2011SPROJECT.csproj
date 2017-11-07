@@ -89,8 +89,7 @@
     <Compile Include="Database Layer\AdminDB.cs" />
     <Compile Include="Database Layer\BookingDB.cs" />
     <Compile Include="Database Layer\CCDetailsDB.cs" />
-    <Compile Include="Database Layer\Hotel.cs" />
-    <Compile Include="Database Layer\HotelPaymentDB.cs" />
+    <Compile Include="Database Layer\HotelDB.cs" />
     <Compile Include="Database Layer\PaymentDB.cs" />
     <Compile Include="Database Layer\RestEasyDB.cs" />
     <Compile Include="Database Layer\DB.cs" />

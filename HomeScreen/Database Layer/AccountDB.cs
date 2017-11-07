@@ -21,6 +21,8 @@ namespace HomeScreen.Database_Layer
 
         private Collection<Account> accounts;
 
+
+
         public AccountDB(): base()
         {
             accounts = new Collection<Account>();
