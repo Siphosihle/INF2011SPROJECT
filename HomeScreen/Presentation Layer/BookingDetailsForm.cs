@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HomeScreen.Business_Layer;
+using HomeScreen.Database_Layer;
 
 namespace HomeScreen.Presentation_Layer
 {
@@ -22,6 +23,8 @@ namespace HomeScreen.Presentation_Layer
 
         private BookingController bookingController;
         private HotelController hotelController;
+        private RoomController roomController;
+
         private Booking booking;
         private Hotel hotel;
         private Room room;
@@ -29,8 +32,6 @@ namespace HomeScreen.Presentation_Layer
         private Collection<Booking> bookings;
         private Collection<Room> rooms;
         private Collection<Hotel> hotels;
-
-        private int count = 0;
 
         private DateTime startDate, endDate;
         private int noOfGuests, noOfRoomsNeeded;
@@ -44,7 +45,12 @@ namespace HomeScreen.Presentation_Layer
         public BookingDetailsForm()
         {
             InitializeComponent();
-            
+
+            bookingController = new BookingController();
+            hotelController = new HotelController();
+            roomController = new RoomController();
+
+            this.FormClosed += Form_Closed;
 
             for (int s = 1; s < 21; s++)
             {
@@ -102,6 +108,13 @@ namespace HomeScreen.Presentation_Layer
         #endregion
 
         #region FormEvents
+
+        private void BookingDetailsForm_Load(object sender, EventArgs e)
+        {
+            PopulateForm();
+
+        }
+
         private void Form_Closed(object sender, FormClosedEventArgs e)
         {
             bookingFormClosed = true;
@@ -211,8 +224,24 @@ namespace HomeScreen.Presentation_Layer
 
         }
 
-        public void PopulateHotelObject()
+        public void PopulateForm()
         {
+            hotels = hotelController.AllHotels;
+            foreach (Hotel hotel in hotels)
+            {
+                string htlName = hotel.HotelName;
+                cmbHotelName.Items.Add(htlName);
+            }
+
+
+            
+
+            /*
+            for (int s = 1; s < 21; s++)
+            {
+                string strt = s.ToString();
+                cmbNoOfGuests.Items.Add(strt);
+            }
 
             hotel = new Hotel();
 
@@ -223,16 +252,47 @@ namespace HomeScreen.Presentation_Layer
             booking.EndDate = dtpCheckOutDate.Value;
             booking.SentConfirmation = false;
             booking.RecievedDeposit = false;
-            booking.IsCancelled = false;
+            booking.IsCancelled = false; */
+
+        }
+
+        private void cmbNoOfGuests_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            
+
         }
 
         private void cmbHotelName_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            cmbNoOfGuests.Items.Clear();
+
+            Hotel hotel = hotelController.Find(cmbHotelName.Text);
+
+            Collection<Room> rooms = null;
+            rooms = roomController.FindByHotel(roomController.AllRooms, Convert.ToInt32(hotel.HotelID));
+
+            int noOfHotelRooms = 0;
+
+            foreach (Room room in rooms)
+            {
+                noOfHotelRooms = noOfHotelRooms + room.NoOfPeople;
+            }
+
+            for(int i=0;i<noOfHotelRooms;i++)
+            {
+                cmbNoOfGuests.Items.Add(i);
+            }
+
+
         }
 
         private void btnCheckBooking_Click(object sender, EventArgs e)
             {
+
+                int count = 1;
+                
                 if (count == 1)
                 {
                     //AvailableRoomsForm hs = new AvailableRoomsForm();
