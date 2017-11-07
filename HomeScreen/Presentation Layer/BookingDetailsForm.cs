@@ -165,7 +165,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void ClearAll()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void PopulateObject()
