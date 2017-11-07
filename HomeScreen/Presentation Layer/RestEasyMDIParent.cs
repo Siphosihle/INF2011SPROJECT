@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -20,6 +21,7 @@ namespace HomeScreen.Presentation_Layer
             LoggedOn = 1
         }
 
+        #region Properties
         private int childFormNumber = 0;
 
         private AdminLoginForm adminForm;
@@ -39,23 +41,35 @@ namespace HomeScreen.Presentation_Layer
         private BookingController bookingController;
         private HotelController hotelController;
 
-
+        private Collection<Room> availableRooms;
 
         private FormState frmState;
+
+        #endregion
 
         #region Constructors
         public RestEasyMDIParent()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+
             admincontroller = new AdminController();
             bookingController = new BookingController();
             hotelController = new HotelController();
+
+            availableRooms = new Collection<Room>();
+
             frmState = FormState.LoggedOff;
         }
         #endregion
 
         #region Properties
+
+        public Collection<Room> AvailableRooms
+        {
+            get { return availableRooms; }
+            set { availableRooms = value; }
+        }
 
         public AdminLoginForm AdminForm
         {

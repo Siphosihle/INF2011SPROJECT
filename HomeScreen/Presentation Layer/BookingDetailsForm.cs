@@ -18,6 +18,9 @@ namespace HomeScreen.Presentation_Layer
 
         #region Members
 
+        public event  DatabaseChanged;
+        public delegate void DatabaseChangeHandler(string newDatabaseName);
+
         public bool bookingFormClosed = false;
         private AvailableRoomsForm availableRoomsForm;
 
@@ -177,6 +180,8 @@ namespace HomeScreen.Presentation_Layer
                 bookingFormClosed = true;
                 this.Close();
 
+                this.MdiParent.
+
                 availableRoomsForm = new AvailableRoomsForm();
                 availableRoomsForm.MdiParent = this.MdiParent;
                 availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
@@ -184,13 +189,6 @@ namespace HomeScreen.Presentation_Layer
             else
             {
                 MessageBox.Show("There are no rooms available for the selected dates");
-
-                bookingFormClosed = true;
-                this.Close();
-
-                availableRoomsForm = new AvailableRoomsForm();
-                availableRoomsForm.MdiParent = this.MdiParent;
-                availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
 
             }
 
