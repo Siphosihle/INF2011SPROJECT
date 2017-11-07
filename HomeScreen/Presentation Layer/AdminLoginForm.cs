@@ -71,9 +71,9 @@ namespace HomeScreen.Presentation_Layer
 
             if (bFound==true)
             {
-                HomeScreenForm hsm = new HomeScreenForm();
+                HomeScreenForm hsf = new HomeScreenForm();
                 this.Hide();
-                hsm.ShowDialog();
+                hsf.ShowDialog();
                 this.Close();
             }
             if (bFound==false)
