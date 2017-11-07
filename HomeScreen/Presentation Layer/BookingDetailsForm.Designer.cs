@@ -150,6 +150,7 @@
             this.cmbHotelName.Name = "cmbHotelName";
             this.cmbHotelName.Size = new System.Drawing.Size(200, 21);
             this.cmbHotelName.TabIndex = 46;
+            this.cmbHotelName.SelectedIndexChanged += new System.EventHandler(this.cmbHotelName_SelectedIndexChanged);
             // 
             // listBox1
             // 

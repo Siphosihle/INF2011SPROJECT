@@ -226,9 +226,12 @@ namespace HomeScreen.Presentation_Layer
             booking.IsCancelled = false;
         }
 
+        private void cmbHotelName_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-        
-            private void btnCheckBooking_Click(object sender, EventArgs e)
+        }
+
+        private void btnCheckBooking_Click(object sender, EventArgs e)
             {
                 if (count == 1)
                 {
