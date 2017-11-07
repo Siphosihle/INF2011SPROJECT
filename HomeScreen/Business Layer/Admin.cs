@@ -16,7 +16,6 @@ namespace HomeScreen.Business_Layer
 
         private string username;
         private string password;
-        public static bool accessGranted;
 
         #region Properties
         
@@ -49,18 +48,6 @@ namespace HomeScreen.Business_Layer
 
         }
 
-        /*public bool Login(string name, string password)
-        {
-            if (((admin1.Equals(name)) || (admin2.Equals(name))) && (adminPassword.Equals(password)))
-            {
-                accessGranted = true;
-
-            }
-            else
-            {
-                accessGranted =  false;
-            }
-            return accessGranted; 
-        }*/
+        
     }
 }

@@ -12,11 +12,8 @@ namespace HomeScreen.Business_Layer
     {
         private BookingDB bookingDB;
         private Collection<Booking> bookings;
-
-        private Collection<Room> rooms;
-
-        private List<Int32> availableRooms;
-
+        private Collection<Room> availableRooms;
+        private RoomAllocationController rAllController;
 
         #region Properties
         public Collection<Booking> AllBookings
@@ -24,14 +21,6 @@ namespace HomeScreen.Business_Layer
             get
             {
                 return bookings;
-            }
-        }
-
-        public Collection<Room> AllRooms
-        {
-            get
-            {
-                return rooms;
             }
         }
 
@@ -43,34 +32,7 @@ namespace HomeScreen.Business_Layer
             bookings = bookingDB.AllBookings;
         }
 
-        public bool CheckAvailability(Hotel hotel, DateTime startDate, DateTime endDate, int roomsNeeded)
-        {
-            int roomsAvail = 0;
-            int x = 0, y = 0;
-            bool bOccupied = false;
-
-            while ((roomsAvail < roomsNeeded) && (x < hotel.Rooms.Count))
-            {
-                while((y < bookings.Count) && (bOccupied == false))
-                {
-                    if ((startDate < bookings[y].EndDate || endDate > bookings[y].StartDate))
-                    {
-                        bOccupied = true;
-                    }
-                    y++;
-                }
-                if (bOccupied == false)
-                {
-                    availableRooms[x] = x + 1;
-                    roomsAvail++;
-                }
-                x++;
-            }
-
-            return (roomsAvail >= roomsNeeded);
-
-
-        }
+        
 
         internal void CalculateDeposit()
         {
@@ -158,8 +120,9 @@ namespace HomeScreen.Business_Layer
             return matches;
         } */
 
-        
+
         //This method receives a employee ID as a parameter; finds the employee object in the collection of employees and then returns this object
+
         public Booking Find(int resNo)
         {
             int index = 0;
@@ -192,7 +155,10 @@ namespace HomeScreen.Business_Layer
                 return -1;
             }
     }
-    #endregion 
+
+        
+
+        #endregion
 
     }
 }

@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HomeScreen.Business_Layer;
+using HomeScreen.Database_Layer;
 
 namespace HomeScreen.Business_Layer
 {
@@ -17,22 +19,9 @@ namespace HomeScreen.Business_Layer
 
         private int hotelID;
         private string hotelName;
-
-        private Collection<Room> rooms;
+        
 
         #region Properties
-
-        public Collection<Room> Rooms
-        {
-            get
-            {
-                return rooms;
-            }
-            set
-            {
-                rooms = value;
-            }
-        }
 
         public int HotelID
         {
@@ -62,7 +51,7 @@ namespace HomeScreen.Business_Layer
 
         public Hotel()
         {
-
+            
         }
             
 

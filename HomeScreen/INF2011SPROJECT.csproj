@@ -77,7 +77,6 @@
       <DependentUpon>RestEasySystemDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Business Layer\Account.cs" />
-    <Compile Include="Business Layer\AccountController.cs" />
     <Compile Include="Business Layer\Admin.cs" />
     <Compile Include="Business Layer\AdminController.cs" />
     <Compile Include="Business Layer\BillingController.cs" />
@@ -89,8 +88,9 @@
     <Compile Include="Business Layer\Hotel.cs" />
     <Compile Include="Business Layer\HotelController.cs" />
     <Compile Include="Business Layer\Payment.cs" />
-    <Compile Include="Business Layer\PaymentController.cs" />
     <Compile Include="Business Layer\Room.cs" />
+    <Compile Include="Business Layer\RoomAllocation.cs" />
+    <Compile Include="Business Layer\RoomAllocationController.cs" />
     <Compile Include="Business Layer\RoomCharge.cs" />
     <Compile Include="Database Layer\AccountDB.cs" />
     <Compile Include="Database Layer\AdminDB.cs" />
@@ -101,6 +101,7 @@
     <Compile Include="Database Layer\RestEasyDB.cs" />
     <Compile Include="Database Layer\DB.cs" />
     <Compile Include="Database Layer\GuestDB.cs" />
+    <Compile Include="Database Layer\RoomAllocationDB.cs" />
     <Compile Include="Database Layer\RoomChargeDB.cs" />
     <Compile Include="Business Layer\RoomController.cs" />
     <Compile Include="Database Layer\RoomDB.cs" />
@@ -139,12 +140,6 @@
     </Compile>
     <Compile Include="Presentation Layer\CustomerInformationForm.Designer.cs">
       <DependentUpon>CustomerInformationForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentation Layer\ExistingGuestForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentation Layer\ExistingGuestForm.Designer.cs">
-      <DependentUpon>ExistingGuestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Layer\HomeScreenForm.cs">
       <SubType>Form</SubType>
@@ -190,7 +185,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoomAllocation\BlockArray.cs" />
+    <Compile Include="BlockArray\BlockArray.cs" />
     <Compile Include="RestEasySystemDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -213,9 +208,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\CustomerInformationForm.resx">
       <DependentUpon>CustomerInformationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentation Layer\ExistingGuestForm.resx">
-      <DependentUpon>ExistingGuestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\HomeScreenForm.resx">
       <DependentUpon>HomeScreenForm.cs</DependentUpon>
