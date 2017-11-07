@@ -10,7 +10,7 @@ namespace HomeScreen.Business_Layer
 {
     public class BookingController
     {
-        private RestEasyDB bookingDB;
+        private BookingDB bookingDB;
         private Collection<Booking> bookings;
         private List<Int32> availableRooms;
 
@@ -27,32 +27,32 @@ namespace HomeScreen.Business_Layer
 
         public BookingController()
         {
-            bookingDB = new RestEasyDB();
+            bookingDB = new BookingDB();
             bookings = bookingDB.AllBookings;
         }
 
         public bool CheckAvailability(Hotel hotel, DateTime startDate, DateTime endDate, int roomsNeeded)
         {
             int roomsAvail = 0;
-            int index = 0;
+            int x = 0, y = 0;
+            bool bOccupied = false;
 
-
-
-            //bool bOccupied
-
-            while ((index < bookings.Count + 1))
+            while ((roomsAvail < roomsNeeded) && (x < hotel.Rooms.Count))
             {
-                for(int i = 0; i < hotel.Rooms.Count +1; i++)
+                while((y < bookings.Count) && (bOccupied == false))
                 {
-                    
-                        if ((startDate > bookings[index].EndDate || endDate < bookings[index].StartDate))
-                        {
-                            availableRooms[i] = i+1;
-                            roomsAvail++;
-                        }
-                    
-                    index++;
+                    if ((startDate < bookings[y].EndDate || endDate > bookings[y].StartDate))
+                    {
+                        bOccupied = true;
+                    }
+                    y++;
                 }
+                if (bOccupied == false)
+                {
+                    availableRooms[x] = x + 1;
+                    roomsAvail++;
+                }
+                x++;
             }
 
             return (roomsAvail >= roomsNeeded);

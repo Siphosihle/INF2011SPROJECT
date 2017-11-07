@@ -41,12 +41,10 @@ namespace HomeScreen.Presentation_Layer
         #endregion
 
         #region Contructors
-        public BookingDetailsForm(BookingController bkController, HotelController htlController)
+        public BookingDetailsForm()
         {
             InitializeComponent();
-
-            bookingController = bkController;
-            hotelController = htlController;
+            
 
             for (int s = 1; s < 21; s++)
             {
@@ -116,13 +114,11 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //PopulateObject();
-
             hotelName = cmbHotelName.Text;
             startDate = dtpCheckInDate.Value;
             endDate = dtpCheckOutDate.Value;
             noOfGuests = Convert.ToInt32(cmbNoOfGuests.Text);
-            noOfRoomsNeeded = Convert.ToInt32(bookingController.CalculateNoOfRooms(noOfGuests));
+            noOfRoomsNeeded = noOfGuests;
 
             hotel = hotelController.Find(hotelName);
 
@@ -138,7 +134,7 @@ namespace HomeScreen.Presentation_Layer
                 availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
         
 
-    }
+            }
             else
             {
                 MessageBox.Show("There are no rooms available for the selected dates");

@@ -35,7 +35,7 @@
             this.lbCheckInDate = new System.Windows.Forms.Label();
             this.lbCheckOutDate = new System.Windows.Forms.Label();
             this.lbNumberOfGuests = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.cmbNoOfGuests = new System.Windows.Forms.ComboBox();
             this.lblHotelName = new System.Windows.Forms.Label();
             this.cmbHotelName = new System.Windows.Forms.ComboBox();
@@ -110,17 +110,17 @@
             this.lbNumberOfGuests.TabIndex = 40;
             this.lbNumberOfGuests.Text = "Number of Guests";
             // 
-            // btnSave
+            // btnSubmit
             // 
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.HotPink;
-            this.btnSave.Location = new System.Drawing.Point(545, 438);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(123, 48);
-            this.btnSave.TabIndex = 42;
-            this.btnSave.Text = "Submit";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSubmit.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.Color.HotPink;
+            this.btnSubmit.Location = new System.Drawing.Point(545, 438);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(123, 48);
+            this.btnSubmit.TabIndex = 42;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // cmbNoOfGuests
             // 
@@ -168,7 +168,7 @@
             this.Controls.Add(this.cmbHotelName);
             this.Controls.Add(this.lblHotelName);
             this.Controls.Add(this.cmbNoOfGuests);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.lbNumberOfGuests);
             this.Controls.Add(this.lbCheckOutDate);
             this.Controls.Add(this.lbCheckInDate);
@@ -193,7 +193,7 @@
         private System.Windows.Forms.Label lbCheckInDate;
         private System.Windows.Forms.Label lbCheckOutDate;
         private System.Windows.Forms.Label lbNumberOfGuests;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.ComboBox cmbNoOfGuests;
         private System.Windows.Forms.Label lblHotelName;
         private System.Windows.Forms.ComboBox cmbHotelName;

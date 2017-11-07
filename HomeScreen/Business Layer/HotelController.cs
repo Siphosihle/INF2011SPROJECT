@@ -11,7 +11,7 @@ namespace HomeScreen.Business_Layer
     public class HotelController
     {
 
-        RestEasyDB hotelDB;
+        HotelDB hotelDB;
         Collection<Hotel> hotels;   //***W3
 
         #region Properties
