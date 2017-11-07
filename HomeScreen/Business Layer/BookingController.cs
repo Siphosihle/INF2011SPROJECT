@@ -50,6 +50,8 @@ namespace HomeScreen.Business_Layer
             bool bOccupied = false;
 
             //assuming 1 person per room
+            
+            //for each booking in rooms.bookings
 
             while ((roomsAvail < roomsNeeded) && (x < hotel.Rooms.Count))
             {
@@ -160,8 +162,9 @@ namespace HomeScreen.Business_Layer
             return matches;
         } */
 
-        
+
         //This method receives a employee ID as a parameter; finds the employee object in the collection of employees and then returns this object
+
         public Booking Find(int resNo)
         {
             int index = 0;
@@ -194,7 +197,36 @@ namespace HomeScreen.Business_Layer
                 return -1;
             }
     }
-    #endregion 
+
+        public Collection<Booking> FindByRoom(Collection<Booking> bkings, int roomID)
+        {
+            Collection<Booking> matches = new Collection<Booking>();
+            Collection<RoomAllocation>
+
+            int x = 0, y = 0;
+
+            foreach()
+
+            //if roomallocation1.roomID = roomID
+            //do this
+            //
+
+            //if booking1.bookingID = roomallocation1.bookingID
+            //
+
+                //if booking1.bookingID = roomallocation2.bookingID
+
+                foreach (Employee emp in emps)
+            {
+                if (emp.role.RoleValue == roomID)
+                {
+                    matches.Add(emp);
+                }
+            }
+            return matches;
+        }
+
+        #endregion
 
     }
 }

@@ -89,6 +89,7 @@
     <Compile Include="Business Layer\HotelController.cs" />
     <Compile Include="Business Layer\Payment.cs" />
     <Compile Include="Business Layer\Room.cs" />
+    <Compile Include="Business Layer\RoomAllocation.cs" />
     <Compile Include="Business Layer\RoomCharge.cs" />
     <Compile Include="Database Layer\AccountDB.cs" />
     <Compile Include="Database Layer\AdminDB.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Database Layer\RestEasyDB.cs" />
     <Compile Include="Database Layer\DB.cs" />
     <Compile Include="Database Layer\GuestDB.cs" />
+    <Compile Include="Database Layer\RoomAllocationDB.cs" />
     <Compile Include="Database Layer\RoomChargeDB.cs" />
     <Compile Include="Business Layer\RoomController.cs" />
     <Compile Include="Database Layer\RoomDB.cs" />
@@ -188,7 +190,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoomAllocation\BlockArray.cs" />
+    <Compile Include="BlockArray\BlockArray.cs" />
     <Compile Include="RestEasySystemDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

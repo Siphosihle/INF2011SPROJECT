@@ -63,9 +63,9 @@ namespace HomeScreen.Business_Layer
 
         #endregion
 
-        public Hotel()
+        public Hotel(int hotelID)
         {
-            rooms = ;
+            rooms = roomController.FindByHotel(hotelID);
         }
             
 
