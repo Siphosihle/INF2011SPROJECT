@@ -15,7 +15,7 @@ namespace HomeScreen.Business_Layer
         //constructors
 
         private int roomID;
-        private int reservationNumber;
+        private int bookingID;
 
         #region Properties
 
@@ -30,15 +30,15 @@ namespace HomeScreen.Business_Layer
                 roomID = value;
             }
         }
-        public int ReservationNumber
+        public int BookingID
         {
             get
             {
-                return reservationNumber;
+                return bookingID;
             }
             set
             {
-                reservationNumber = value;
+                bookingID = value;
             }
         }
         #endregion
