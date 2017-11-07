@@ -12,10 +12,8 @@ namespace HomeScreen.Business_Layer
     {
         private BookingDB bookingDB;
         private Collection<Booking> bookings;
+        private Collection<Room> availableRooms;
         private RoomAllocationController rAllController;
-
-        private List<Int32> availableRooms;
-
 
         #region Properties
         public Collection<Booking> AllBookings
@@ -34,63 +32,7 @@ namespace HomeScreen.Business_Layer
             bookings = bookingDB.AllBookings;
         }
 
-        public bool CheckAvailability(Hotel hotel, DateTime startDate, DateTime endDate, int roomsNeeded)
-        {
-            int roomsAvail = 0;
-            int x = 0, y = 0;
-            bool bOccupied = false;
-
-            //assuming 1 person per room
-            //for each booking in rooms.bookings
-
-            //for each room in hotel
-
-            //if startdate is earlier than end date of abooking
-            //or enddate is later than the startdate of abooking
-            //where abooking.bookingID = rAll.bookingID
-            //and where the room.roomID = rAll.roomID
-            //and 
-
-            /* room1
-             *      
-             * room2
-             * room3
-             * room4
-             */
-
-            for (int i = 0; i < roomAllocations.Count; i++)
-            {
-
-            }
-
-                Collection<Booking> bkngs = rAllController.FindBookingsByRoom();
-
-            for(int i = 0; i < )
-
-
-
-            while ((roomsAvail < roomsNeeded) && (x < hotel.Rooms.Count))
-            {
-                while((y < bookings.Count) && (bOccupied == false))
-                {
-                    if ((startDate < bookings[y].EndDate || endDate > bookings[y].StartDate))
-                    {
-                        bOccupied = true;
-                    }
-                    y++;
-                }
-                if (bOccupied == false)
-                {
-                    availableRooms[x] = x + 1;
-                    roomsAvail++;
-                }
-                x++;
-            }
-
-            return (roomsAvail >= roomsNeeded);
-
-
-        }
+        
 
         internal void CalculateDeposit()
         {

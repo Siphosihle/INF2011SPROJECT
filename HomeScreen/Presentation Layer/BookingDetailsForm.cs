@@ -33,6 +33,8 @@ namespace HomeScreen.Presentation_Layer
         private Collection<Booking> bookings;
         private Collection<Room> rooms;
         private Collection<Hotel> hotels;
+        private Collection<Room> availableRooms;
+
 
         private DateTime startDate, endDate;
         private int noOfGuests, noOfRoomsNeeded;
@@ -137,8 +139,10 @@ namespace HomeScreen.Presentation_Layer
 
             hotel = hotelController.Find(hotelName);
 
-            if (bookingController.CheckAvailability(hotel, startDate, endDate, noOfRoomsNeeded))
+            try
             {
+                availableRooms = rAllController.AvailableRooms(hotel, startDate, endDate, noOfRoomsNeeded);
+
                 MessageBox.Show("Rooms Are Available!");
 
                 bookingFormClosed = true;
@@ -147,12 +151,12 @@ namespace HomeScreen.Presentation_Layer
                 availableRoomsForm = new AvailableRoomsForm();
                 availableRoomsForm.MdiParent = this.MdiParent;
                 availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
-        
 
             }
-            else
+            catch
             {
                 MessageBox.Show("There are no rooms available for the selected dates");
+
             }
 
             ClearAll();

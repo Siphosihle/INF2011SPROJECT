@@ -11,8 +11,8 @@ namespace HomeScreen.Business_Layer
 {
     public class RoomController
     {
-        RoomDB roomDB;
-        Collection<Room> rooms;   //***W3
+        private RoomDB roomDB;
+        private Collection<Room> rooms;   //***W3
 
         #region Properties
         public Collection<Room> AllRooms

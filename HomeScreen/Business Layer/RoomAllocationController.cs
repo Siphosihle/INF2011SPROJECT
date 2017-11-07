@@ -14,6 +14,9 @@ namespace HomeScreen.Business_Layer
         private RoomAllocationDB roomAllocationDB;
         private Collection<RoomAllocation> roomAllocations;   //***W3
 
+        private RoomController roomcontroller;
+        private BookingController bookingController;
+
         #region Properties
         public Collection<RoomAllocation> AllRoomAllocations
         {
@@ -30,6 +33,9 @@ namespace HomeScreen.Business_Layer
             //***instantiate the EmployeeDB object to communicate with the database
             roomAllocationDB = new RoomAllocationDB();
             roomAllocations = roomAllocationDB.AllRoomAllocations;
+
+            roomcontroller = new RoomController();
+            bookingController = new BookingController();
         }
 
         public Collection<Booking> FindBookingsByRoom(Collection<Booking> bkings, int roomID)
@@ -53,7 +59,7 @@ namespace HomeScreen.Business_Layer
             return matches;
         }
 
-        public Collection<Room> FindRoomByBookings(Collection<Room> rms, int resNo)
+        public Collection<Room> FindRoomsByBooking(Collection<Room> rms, int resNo)
         {
             Collection<Room> matches = new Collection<Room>();
 
@@ -72,6 +78,96 @@ namespace HomeScreen.Business_Layer
             }
 
             return matches;
+        }
+
+
+        public Collection<Room> AvailableRooms(Hotel hotel, DateTime startDate, DateTime endDate, int roomsNeeded)
+        {
+            //for each room in HotelRooms
+
+            Collection<Room> matches = new Collection<Room>();
+
+            for (int i = 0; i < roomcontroller.AllRooms.Count;i++)
+            {
+                bool roomAvailable = true;
+                Collection<Booking> roomBookings = FindBookingsByRoom(bookingController.AllBookings, i);
+                for (int j = 0; i < roomBookings.Count; i++)
+                {
+                    if ((startDate < roomBookings[i].EndDate || endDate > roomBookings[i].StartDate))
+                    {
+                        roomAvailable = false;
+                    }
+                }
+                if (roomAvailable == true)
+                {
+                    matches.Add(roomcontroller.AllRooms[i]);
+                }
+            }
+
+            return matches;
+
+
+            /*
+
+
+            Collection<Room> htlRooms = roomcontroller.FindByHotel(hotel.HotelID);  //all rooms in hotel
+
+            for (int i = 0; i < bookings.Count; i++)
+            {
+                if ()
+            }
+
+            //assuming 1 person per room
+            //for each booking in rooms.bookings
+
+            //for each room in hotel
+
+            //if startdate is earlier than end date of abooking
+            //or enddate is later than the startdate of abooking
+            //where abooking.bookingID = rAll.bookingID
+            //and where the room.roomID = rAll.roomID
+            //and 
+
+            /* room1
+             *      
+             * room2
+             * room3
+             * room4
+
+            for (int i = 0; i < roomAllocations.Count; i++)
+            {
+
+            }
+
+            Collection<Booking> bkngs = rAllController.FindBookingsByRoom();
+
+            for (int i = 0; i < )
+
+
+
+                while ((roomsAvail < roomsNeeded) && (x < hotel.Rooms.Count))
+                {
+                    while ((y < bookings.Count) && (bOccupied == false))
+                    {
+                        if ((startDate < bookings[y].EndDate || endDate > bookings[y].StartDate))
+                        {
+                            bOccupied = true;
+                        }
+                        y++;
+                    }
+                    if (bOccupied == false)
+                    {
+                        availableRooms[x] = x + 1;
+                        roomsAvail++;
+                    }
+                    x++;
+                }
+
+            return (roomsAvail >= roomsNeeded);
+
+            
+             */
+
         }
 
         /*public RoomAllocation Find(string htlName)
