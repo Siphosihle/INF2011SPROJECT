@@ -83,5 +83,10 @@ namespace HomeScreen.Presentation_Layer
             }
 
         }
+
+        private void txtboxUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
