@@ -64,7 +64,7 @@ namespace HomeScreen.Database_Layer
                     aBooking.StartDate = Convert.ToDateTime(myRow["StartDate"]);
                     aBooking.EndDate = Convert.ToDateTime(myRow["EndDate"]);
                     aBooking.SentConfirmation = Convert.ToBoolean(myRow["SentConfirmation"]);
-                    aBooking.RecievedDeposit = Convert.ToBoolean(myRow["RecievedDeposit"]);
+                    aBooking.RecievedDeposit = Convert.ToBoolean(myRow["ReceiveDeposit"]);
                     aBooking.IsCancelled = Convert.ToBoolean(myRow["IsCancelled"]);
 
                     bookings.Add(aBooking);

@@ -14,5 +14,7 @@ using HomeScreen.Database_Layer;
 namespace HomeScreen.Database_Layer
 {
     class RestEasyDB : DB
-    { }
+    {
+
+    }
 }
