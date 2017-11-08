@@ -148,6 +148,8 @@ namespace HomeScreen.Business_Layer
                 }
             }
 
+            OnAvailRoomsInst(Collection<Room> availrms);
+
             return matches;
 
 
@@ -214,7 +216,13 @@ namespace HomeScreen.Business_Layer
 
         }
         
-
+        protected virtual void OnAvailRoomsInst(Collection<Room> availrms)
+        {
+            if(AvailRoomsInst != null)
+            {
+                AvailRoomsInst();
+            }
+        }
 
         /*public RoomAllocation Find(string htlName)
         {
