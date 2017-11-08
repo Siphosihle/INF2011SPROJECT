@@ -128,12 +128,12 @@ namespace HomeScreen.Business_Layer
         public Booking Find(int resNo)
         {
             int index = 0;
-            bool found = (bookings[index].ReservationNumber == resNo);  //check if it is the first student
+            bool found = (bookings[index].ReservationNumber.Equals(resNo));  //check if it is the first student
             int count = bookings.Count;
             while (!(found) && (index < bookings.Count - 1))  //if not "this" student and you are not at the end of the list 
             {
                 index = index + 1;
-                found = (bookings[index].ReservationNumber == resNo);   // this will be TRUE if found
+                found = (bookings[index].ReservationNumber.Equals(resNo));   // this will be TRUE if found
             }
             return bookings[index];  // this is the one!  
         }
