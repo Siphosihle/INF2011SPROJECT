@@ -82,7 +82,7 @@ namespace HomeScreen
                 MessageBox.Show("The Guest Exist");
                 status = true;
             }
-            else
+            else if(!(id.Equals(guestController.Find(id))))
             {
                 MessageBox.Show("This is a New Guest");
                 status = false;
@@ -110,7 +110,7 @@ namespace HomeScreen
                 cgf.ShowDialog();
                 this.Close();
             }
-            else
+            else if(status == false)
             {
                 NewGuestForm ngf = new NewGuestForm();
                 this.Hide();
