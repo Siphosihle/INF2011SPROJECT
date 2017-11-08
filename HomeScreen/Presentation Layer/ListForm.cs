@@ -41,7 +41,10 @@ namespace HomeScreen.Presentation_Layer
             this.FormClosed += ListForm_FormClosed;
             state = FormStates.View;
         }
+        public ListForm()
+        {
 
+        }
         private void ListForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             formClosed = true;

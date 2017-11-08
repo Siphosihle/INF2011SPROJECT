@@ -84,6 +84,10 @@ namespace HomeScreen
             hotel = htl;
 
         }
+        public CustomerInformationForm()
+        {
+
+        }
         public void CheckGuest()
         {
             
@@ -135,6 +139,11 @@ namespace HomeScreen
         }
 
         private void lblGuestDetails_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtboxFirstName_TextChanged_1(object sender, EventArgs e)
         {
 
         }
