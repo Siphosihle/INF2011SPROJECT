@@ -169,30 +169,30 @@ namespace HomeScreen.Presentation_Layer
             adminForm.MdiParent = this;
             adminForm.StartPosition = FormStartPosition.CenterParent;
         }
-        public void CreateNewAdminForm()
-        {
-            adminForm = new AdminLoginForm();
-            adminForm.MdiParent = this;
-            adminForm.StartPosition = FormStartPosition.CenterParent;
-        }
-        public void CreateNewAdminForm()
-        {
-            adminForm = new AdminLoginForm();
-            adminForm.MdiParent = this;
-            adminForm.StartPosition = FormStartPosition.CenterParent;
-        }
-        public void CreateNewAdminForm()
-        {
-            adminForm = new AdminLoginForm();
-            adminForm.MdiParent = this;
-            adminForm.StartPosition = FormStartPosition.CenterParent;
-        }
-        public void CreateNewAdminForm()
-        {
-            adminForm = new AdminLoginForm();
-            adminForm.MdiParent = this;
-            adminForm.StartPosition = FormStartPosition.CenterParent;
-        }
+        //public void CreateNewAdminForm()
+        //{
+        //    adminForm = new AdminLoginForm();
+        //    adminForm.MdiParent = this;
+        //    adminForm.StartPosition = FormStartPosition.CenterParent;
+        //}
+        //public void CreateNewAdminForm()
+        //{
+        //    adminForm = new AdminLoginForm();
+        //    adminForm.MdiParent = this;
+        //    adminForm.StartPosition = FormStartPosition.CenterParent;
+        //}
+        //public void CreateNewAdminForm()
+        //{
+        //    adminForm = new AdminLoginForm();
+        //    adminForm.MdiParent = this;
+        //    adminForm.StartPosition = FormStartPosition.CenterParent;
+        //}
+        //public void CreateNewAdminForm()
+        //{
+        //    adminForm = new AdminLoginForm();
+        //    adminForm.MdiParent = this;
+        //    adminForm.StartPosition = FormStartPosition.CenterParent;
+        //}
 
         #endregion
 
@@ -246,18 +246,18 @@ namespace HomeScreen.Presentation_Layer
 
 
 
-        private void DisplayAdminForm()
-        {
-            if (adminForm == null)
-            {
-                CreateNewAdminForm();
-            }
-            if (adminForm.adminLoginFormClosed)
-            {
-                CreateNewAdminForm();
-            }
-            adminForm.Show();
-        }
+        //private void DisplayAdminForm()
+        //{
+        //    if (adminForm == null)
+        //    {
+        //        CreateNewAdminForm();
+        //    }
+        //    if (adminForm.adminLoginFormClosed)
+        //    {
+        //        CreateNewAdminForm();
+        //    }
+        //    adminForm.Show();
+        //}
 
         private void DisplayBookingEnquiryForm()
         {
@@ -276,10 +276,10 @@ namespace HomeScreen.Presentation_Layer
 
         #endregion
 
-        private void RestEasyMDIParent_Load(object sender, EventArgs e)
-        {
-            DisplayAdminForm();
-        }
+        //private void RestEasyMDIParent_Load(object sender, EventArgs e)
+        //{
+        //    DisplayAdminForm();
+        //}
 
         private void makeABookingToolStripMenuItem_Click(object sender, EventArgs e)
         {

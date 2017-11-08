@@ -64,7 +64,7 @@ namespace HomeScreen.Business_Layer
             return matches;
         }
 
-        public Collection<Guest> FindByRole(Guest gst)
+        public Collection<Guest> FindByGuestID(Guest gst)
         {
             Collection<Guest> matches = new Collection<Guest>();
 
