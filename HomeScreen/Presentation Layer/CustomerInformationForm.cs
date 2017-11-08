@@ -23,7 +23,21 @@ namespace HomeScreen
         private Collection<Guest> guests;
         private Guest gst;
         public ConfirmGuestForm confirm;
+        public string myID;
+
         #region Properties
+        public string MyID
+        {
+            get
+            {
+                return myID;
+            }
+            set
+            {
+                myID = value;
+            }
+        }
+
         public string Name
         {
             get
@@ -74,26 +88,33 @@ namespace HomeScreen
             InitializeComponent();
             guestController = new GuestController();
             gst = new Guest();
+            name = "";
         }
         public void CheckGuest()
         {
             
         }
-        private void txtboxFirstName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //private void txtboxFirstName_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrEmpty(txtboxFirstName.Text))
+        //    {
+        //        txtboxGuestID.Clear();
+        //        return;
+        //    }
+        //}
         private void btnCheckStatus_Click(object sender, EventArgs e)
         {
             int count = 0;
             bool bFound = false;
             guests = guestController.AllGuests;
+            
+            name = txtboxFirstName.Text;
             foreach (Guest guest in guests)
             {
                 if (txtboxID.Text == guest.GuestID)
                 {
                     bFound = true;
+                    myID = txtboxID.Text;
                     count++;
                 }
             }
@@ -125,6 +146,10 @@ namespace HomeScreen
         private void lblGuestDetails_Click(object sender, EventArgs e)
         {
 
+        }
+        public override string ToString()
+        {
+            return name;
         }
     }
     

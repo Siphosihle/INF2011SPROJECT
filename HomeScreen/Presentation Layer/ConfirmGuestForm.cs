@@ -23,13 +23,21 @@ namespace HomeScreen.Presentation_Layer
             InitializeComponent();
             guestController = new GuestController();
             guests = guestController.AllGuests;
+            cust = new CustomerInformationForm();
 
         }
         public void ShowData()
         {
             foreach (Guest guest in guests)
             {
-                txtboxGuestID.Text = guest.GuestID;
+                //string str = txtboxID.Text;
+                lbInvisible.Text = guest.GuestID;
+                //txtboxID.Text = txtboxGuestID.Text;
+                //txtboxGuestID.Text = cust.MyID;
+                lbInvisible.Visible = true;
+                //txtboxGuestID.Text = str;
+                //txtboxName.Text = cust.Name;
+                //cust.MyID = txtboxGuestID.Text;
             }             
         }
 
@@ -44,6 +52,11 @@ namespace HomeScreen.Presentation_Layer
             this.Hide();
             cif.ShowDialog();
             this.Close();
+        }
+
+        public void txtboxGuestID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -53,6 +53,7 @@
             this.lbGuestIDResults = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.txtboxGuestID = new System.Windows.Forms.TextBox();
+            this.lbInvisible = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -299,12 +300,24 @@
             this.txtboxGuestID.Name = "txtboxGuestID";
             this.txtboxGuestID.Size = new System.Drawing.Size(100, 20);
             this.txtboxGuestID.TabIndex = 57;
+            this.txtboxGuestID.TextChanged += new System.EventHandler(this.txtboxGuestID_TextChanged);
+            // 
+            // lbInvisible
+            // 
+            this.lbInvisible.AutoSize = true;
+            this.lbInvisible.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInvisible.ForeColor = System.Drawing.Color.HotPink;
+            this.lbInvisible.Location = new System.Drawing.Point(292, 154);
+            this.lbInvisible.Name = "lbInvisible";
+            this.lbInvisible.Size = new System.Drawing.Size(0, 15);
+            this.lbInvisible.TabIndex = 58;
             // 
             // ConfirmGuestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1130, 563);
+            this.Controls.Add(this.lbInvisible);
             this.Controls.Add(this.txtboxGuestID);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lbGuestIDResults);
@@ -365,5 +378,6 @@
         private System.Windows.Forms.Label lbGuestIDResults;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtboxGuestID;
+        private System.Windows.Forms.Label lbInvisible;
     }
 }
