@@ -28,7 +28,7 @@ namespace HomeScreen.Business_Layer
 
         public BookingController()
         {
-            bookingDB = new BookingDB();
+            bookingDB = new BookingDB("all","");
             bookings = bookingDB.AllBookings;
         }
 
@@ -41,7 +41,7 @@ namespace HomeScreen.Business_Layer
 
         
         #region Database Communication
-        /*public void DataMaintenance(Booking aBooking, DB.DBOperation operation)
+        public void DataMaintenance(Booking aBooking, DB.DBOperation operation)
         {
             int index = 0;
             //perform a given database operation to the dataset in meory; 
@@ -62,7 +62,7 @@ namespace HomeScreen.Business_Layer
                     bookings.RemoveAt(index);  // remove that employee form the collection
                     break;
             }
-        } */
+        } 
         
 
         public double CalculateNoOfRooms(double noOfGuests)
@@ -86,6 +86,8 @@ namespace HomeScreen.Business_Layer
         {
             return noOfBookings + 1;
         }
+
+
 
 
         //***Commit the changes to the database
@@ -134,11 +136,6 @@ namespace HomeScreen.Business_Layer
                 found = (bookings[index].ReservationNumber == resNo);   // this will be TRUE if found
             }
             return bookings[index];  // this is the one!  
-        }
-
-        internal void DataMaintenance(Booking booking, DB.DBOperation edit)
-        {
-            throw new NotImplementedException();
         }
 
         public int FindIndex(Booking aBooking)

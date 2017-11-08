@@ -19,11 +19,15 @@ namespace HomeScreen.Database_Layer
         private string table1 = "Bookings";
         private string sqlLocal1 = "SELECT * FROM Bookings";
 
+        private string paymentQuery = "SELECT * FROM Bookings WHERE InvoiceNummber = ";
+        private string guestQuery = "SELECT * FROM Bookings WHERE GuestID = ";
+        private string roomQuery = "SELECT * FROM Bookings WHERE RoomID = ";
+
         private Collection<Booking> bookings;
 
 
 
-        public BookingDB(string field): base()
+        public BookingDB(string field, string searchBy): base()
         {
             bookings = new Collection<Booking>();
 
@@ -33,7 +37,18 @@ namespace HomeScreen.Database_Layer
                     FillDataSet(sqlLocal1, table1);
                     Add2Collection(table1);
                     break;
-                case ""
+                case "payment":
+                    FillDataSet(paymentQuery+searchBy, table1);
+                    Add2Collection(table1);
+                    break;
+                case "guest":
+                    FillDataSet(guestQuery + searchBy, table1);
+                    Add2Collection(table1);
+                    break;
+                case "room":
+                    FillDataSet(roomQuery + searchBy, table1);
+                    Add2Collection(table1);
+                    break;
 
             }
             
@@ -53,6 +68,42 @@ namespace HomeScreen.Database_Layer
             return dsMain;
         }
 
+        #region Database Operations CRUD --- Add the object's values to the database
+        public void DataSetChange(Booking aBooking, DB.DBOperation operation)
+        {
+            DataRow aRow = null;
+            string dataTable = table1;
+            //***In this case the dataset change refers to adding to a database table
+            //***We now have  3 tables.. once they are placed in an array .. this becomes easier 
+
+            dataTable = table1;
+            switch (operation)
+            {
+                case DB.DBOperation.Add:
+                    aRow = dsMain.Tables[dataTable].NewRow();
+                    FillRow(aRow, aBooking, operation);
+                    //Add to the dataset
+                    dsMain.Tables[dataTable].Rows.Add(aRow);
+                    break;
+                case DB.DBOperation.Edit:
+                    // to Edit
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(aBooking, dataTable)];
+                    FillRow(aRow, aBooking, operation);
+                    break;
+                case DB.DBOperation.Delete:
+                    //to delete
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(aBooking, dataTable)];
+                    aRow.Delete();
+                    break;
+            }
+        }
+        #endregion
+
+
+
+
+
+        #region Utility Functions
         private void Add2Collection(string table)
         {
             //Declare references to a myRow object and an Employee object
@@ -83,6 +134,46 @@ namespace HomeScreen.Database_Layer
             }
 
         }
+        private void FillRow(DataRow aRow, Booking aBooking, DB.DBOperation operation)
+        {
+            if (operation == DB.DBOperation.Add)
+            {
+                aRow["ReservationNumber"] = aBooking.ReservationNumber;  //NOTE square brackets to indicate index of collections of fields in row.
+            }
+
+            aRow["GuestID"] = aBooking.GuestID;
+            aRow["NoOfRooms"] = aBooking.NoOfRooms;
+            aRow["NoOfPeople"] = aBooking.NoOfPeople;
+            aRow["StartDate"] = aBooking.StartDate;
+            aRow["EndDate"] = aBooking.EndDate;
+            aRow["SentConfirmation"] = aBooking.SentConfirmation;
+            aRow["RecievedDeposit"] = aBooking.RecievedDeposit;
+            aRow["IsCancelled"] = aBooking.IsCancelled;
+
+            
+        }
+        private int FindRow(Booking aBooking, string table)
+        {
+            int rowIndex = 0;
+            DataRow myRow;
+            int returnValue = -1;
+            foreach (DataRow myRow_loopVariable in dsMain.Tables[table].Rows)
+            {
+                myRow = myRow_loopVariable;
+                //Ignore rows marked as deleted in dataset
+                if (!(myRow.RowState == DataRowState.Deleted))
+                {
+                    //In c# there is no item property (but we use the 2-dim array) it is automatically known to the compiler when used as below
+                    if (aBooking.ReservationNumber == Convert.ToInt32(dsMain.Tables[table].Rows[rowIndex]["ReservationNumber"]))
+                    {
+                        returnValue = rowIndex;
+                    }
+                }
+                rowIndex += 1;
+            }
+            return returnValue;
+        }
+        #endregion
 
         private void SearchByRoom()
         {

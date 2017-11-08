@@ -68,6 +68,7 @@
             this.dtpCheckInDate.Name = "dtpCheckInDate";
             this.dtpCheckInDate.Size = new System.Drawing.Size(200, 20);
             this.dtpCheckInDate.TabIndex = 33;
+            this.dtpCheckInDate.ValueChanged += new System.EventHandler(this.dtpCheckInDate_ValueChanged);
             // 
             // dtpCheckOutDate
             // 
@@ -75,6 +76,7 @@
             this.dtpCheckOutDate.Name = "dtpCheckOutDate";
             this.dtpCheckOutDate.Size = new System.Drawing.Size(200, 20);
             this.dtpCheckOutDate.TabIndex = 34;
+            this.dtpCheckOutDate.ValueChanged += new System.EventHandler(this.dtpCheckOutDate_ValueChanged);
             // 
             // lbCheckInDate
             // 
@@ -144,8 +146,6 @@
             // cmbHotelName
             // 
             this.cmbHotelName.FormattingEnabled = true;
-            this.cmbHotelName.Items.AddRange(new object[] {
-            "RestEasy Cape Town CBD"});
             this.cmbHotelName.Location = new System.Drawing.Point(510, 163);
             this.cmbHotelName.Name = "cmbHotelName";
             this.cmbHotelName.Size = new System.Drawing.Size(200, 21);
