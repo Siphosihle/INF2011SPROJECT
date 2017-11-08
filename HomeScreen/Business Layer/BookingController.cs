@@ -136,6 +136,11 @@ namespace HomeScreen.Business_Layer
             return bookings[index];  // this is the one!  
         }
 
+        internal void DataMaintenance(Booking booking, DB.DBOperation edit)
+        {
+            throw new NotImplementedException();
+        }
+
         public int FindIndex(Booking aBooking)
         {
             int counter = 0;

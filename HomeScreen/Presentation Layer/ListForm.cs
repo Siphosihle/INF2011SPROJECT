@@ -17,7 +17,7 @@ namespace HomeScreen.Presentation_Layer
     {
         private string formstate;
 
-        list
+        ListViewItem bookingDetails;
 
         private BookingController bookingcontroller;
         private Booking booking;
@@ -79,31 +79,21 @@ namespace HomeScreen.Presentation_Layer
             foreach(Booking booking in bookings)
             {
                 bookingDetails = new ListViewItem();
+                bookingdetails.Text = booking.GuestID.ToString();
+                bookingdetails.SubItems.Add(booking.GuestID.ToString());
+                bookingdetails.SubItems.Add(booking.NoOfRooms.ToString());
+                bookingdetails.SubItems.Add(booking.NoOfPeople.ToString());
+                bookingdetails.SubItems.Add(booking.StartDate.ToString());
+                bookingdetails.SubItems.Add(booking.EndDate.ToString());
+                bookingdetails.SubItems.Add(booking.SentConfirmation.ToString());
+                bookingdetails.SubItems.Add(booking.RecievedDeposit.ToString());
+                bookingdetails.SubItems.Add(booking.IsCancelled.ToString());
 
-                employeeDetails = new ListViewItem();
-                employeeDetails.Text = employee.ID.ToString();
-                // Do the same for Gender, HomeLanguage, PopGroup and SA_Citizenship_Status
-                employeeDetails.SubItems.Add(employee.EmpID);
-                employeeDetails.SubItems.Add(employee.Name);
-                employeeDetails.SubItems.Add(employee.Phone);
-                switch (employee.role.RoleValue)
-                {
-                    case Role.RoleType.Headwaiter:
-                        headW = (HeadWaiter)employee.role;
-                        employeeDetails.SubItems.Add(headW.Salary.ToString());
-                        break;
-                    case Role.RoleType.Waiter:
-                        waiter = (Waiter)employee.role;
-                        employeeDetails.SubItems.Add(waiter.Rate.ToString());
-                        employeeDetails.SubItems.Add(waiter.NumberOfShifts.ToString());
-                        break;
-                    case Role.RoleType.Runner:
-                        runner = (Runner)employee.role;
-                        employeeDetails.SubItems.Add(runner.Rate.ToString());
-                        employeeDetails.SubItems.Add(runner.NumberOfShifts.ToString());
-                        break;
-                }
-                listView1.Items.Add(employeeDetails);
+
+
+
+                
+                listView1.Items.Add(bookingdetails);
 
 
 
@@ -140,6 +130,26 @@ namespace HomeScreen.Presentation_Layer
                 btnUpdate.Enabled = false;
             }
             
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            PopulateObject();
+            bookingcontroller.DataMaintenance(booking, Database_Layer.DB.DBOperation.Edit)
+        }
+
+        private void PopulateObject()
+        {
+            booking = new Booking();
+            booking.ReservationNumber = txtResNo.text;
+            booking.GuestID = txtIsCancelled.Text;
+            booking.NoOfPeople = txtNoOfPeople.Text;
+            booking.StartDate
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            bookingcontroller.DataMaintenance(booking, Database_Layer.DB.DBOperation.Delete)
         }
     }
 }
