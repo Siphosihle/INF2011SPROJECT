@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -14,7 +15,7 @@ namespace HomeScreen.Presentation_Layer
     public partial class AvailableRoomsForm : Form
     {
         private BookingDetailsForm bookingDetails; 
-        public AvailableRoomsForm()
+        public AvailableRoomsForm(Collection<Room> available rooms)
         {
             InitializeComponent();
         }
