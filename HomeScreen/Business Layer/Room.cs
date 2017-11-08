@@ -21,6 +21,8 @@ namespace HomeScreen.Business_Layer
         private int roomNo;
         private int noOfPeople;
 
+        private string st;
+
         private BookingController bookingController;
         private Collection<Booking> bookings;
 

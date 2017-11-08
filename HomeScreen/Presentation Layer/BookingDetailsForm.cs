@@ -50,6 +50,10 @@ namespace HomeScreen.Presentation_Layer
         {
             InitializeComponent();
 
+            dtpCheckInDate.Enabled = false;
+            dtpCheckOutDate.Enabled = false;
+            cmbNoOfGuests.Enabled = false;
+
             bookingController = new BookingController();
             hotelController = new HotelController();
             roomController = new RoomController();
@@ -57,11 +61,7 @@ namespace HomeScreen.Presentation_Layer
 
             this.FormClosed += Form_Closed;
 
-            /*for (int s = 1; s < 21; s++)
-            {
-                string strt = s.ToString();
-                cmbNoOfGuests.Items.Add(strt);
-            } */
+
         }
         #endregion
 
@@ -128,7 +128,6 @@ namespace HomeScreen.Presentation_Layer
 
         #endregion
 
-
         #region GUI Events
         private void cmbNoOfGuests_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -138,6 +137,10 @@ namespace HomeScreen.Presentation_Layer
         {
 
             cmbNoOfGuests.Items.Clear();
+            dtpCheckInDate.Enabled = true;
+            dtpCheckInDate.MinDate = DateTime.Today;
+            dtpCheckOutDate.Enabled = false;
+            cmbNoOfGuests.Enabled = false;
 
             Hotel hotel = hotelController.Find(cmbHotelName.Text);
 
@@ -188,7 +191,7 @@ namespace HomeScreen.Presentation_Layer
                 MessageBox.Show("There are no rooms available for the selected dates");
                 this.Close();
 
-                availableRoomsForm = new AvailableRoomsForm(availableRooms, hotel);
+                availableRoomsForm = new AvailableRoomsForm(availableRooms, hotel, booking);
                 availableRoomsForm.MdiParent = this.MdiParent;
                 availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
                 availableRoomsForm.Show();
@@ -203,6 +206,19 @@ namespace HomeScreen.Presentation_Layer
         {
             //throw new NotImplementedException();
         }
+
+        private void dtpCheckInDate_ValueChanged(object sender, EventArgs e)
+        {
+            dtpCheckOutDate.Enabled = true;
+            dtpCheckOutDate.MinDate = dtpCheckInDate.Value.AddDays(1);
+            dtpCheckOutDate.MaxDate = new DateTime(2017,12,31);
+        }
+
+        private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
         public void PopulateObject()
         {
 
@@ -247,6 +263,7 @@ namespace HomeScreen.Presentation_Layer
             booking.IsCancelled = false; */
 
         }
+
         #endregion
 
         

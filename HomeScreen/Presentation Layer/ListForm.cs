@@ -104,7 +104,7 @@ namespace HomeScreen.Presentation_Layer
             if (listView1.SelectedItems.Count > 0)   // if you selected an item 
             {
                 booking = bookingController.Find(Convert.ToInt32(listView1.SelectedItems[0].Text));  //selected student becoms current student
-                                                                                             // Show the details of the selected student in the controls
+                                                                                                     // Show the details of the selected student in the controls
                 PopulateTextBoxes(booking);
             }
         }
@@ -142,7 +142,7 @@ namespace HomeScreen.Presentation_Layer
             deleteButton.Visible = value;
             editButton.Visible = value;
         }
-        
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             PopulateObject();
@@ -221,5 +221,11 @@ namespace HomeScreen.Presentation_Layer
             setUpListView();   //refresh List View
             booking = null;
         }
+
+        private void editButton_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

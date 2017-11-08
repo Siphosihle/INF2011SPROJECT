@@ -144,9 +144,19 @@ namespace HomeScreen.Business_Layer
 
         public Collection<Room> AvailableRooms(Hotel hotel, DateTime startDate, DateTime endDate)
         {
+
             //for each room in HotelRooms
 
             Collection<Room> matches = new Collection<Room>();
+
+
+            //available rooms collection = 
+            //available = for A hotel, if roomavailable = true for number of rooms required
+
+            //if roomID = hotel.RoomID
+
+            //roomavailable
+            //
 
             for (int i = 0; i < roomcontroller.FindByHotel(hotel.HotelID).Count;i++)
             {
