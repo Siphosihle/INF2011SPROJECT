@@ -152,6 +152,19 @@ namespace HomeScreen.Business_Layer
         #endregion
 
         #region Methods
+        public void CreateBooking(DateTime start, DateTime end, string duration, int no)
+        {
+
+        }
+        public double CalculateDeposit(string reservation, string refNo)
+        {
+            double amount = 0;
+            return amount;
+        }
+        public bool GenerateConfirmationLetter(string refNo)
+        {
+            return true;
+        }
         #endregion
 
     }

@@ -94,7 +94,7 @@ namespace HomeScreen.Business_Layer
             return matches;
         }
 
-        public bool Checkavailability(Hotel hotel, DateTime startDate, DateTime endDate, int roomsNeeded)
+        public bool CheckAvailability(Hotel hotel, DateTime startDate, DateTime endDate, int roomsNeeded)
         {
             Collection<Room> matches = new Collection<Room>();
 

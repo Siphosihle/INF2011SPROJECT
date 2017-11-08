@@ -83,6 +83,7 @@
     <Compile Include="Business Layer\Booking.cs" />
     <Compile Include="Business Layer\BookingController.cs" />
     <Compile Include="Business Layer\CC.cs" />
+    <Compile Include="Business Layer\Date.cs" />
     <Compile Include="Business Layer\Guest.cs" />
     <Compile Include="Business Layer\GuestController.cs" />
     <Compile Include="Business Layer\Hotel.cs" />
