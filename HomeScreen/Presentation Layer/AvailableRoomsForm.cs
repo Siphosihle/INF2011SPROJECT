@@ -21,9 +21,10 @@ namespace HomeScreen.Presentation_Layer
         public bool availableRoomsFormClosed = false;
         private BookingDetailsForm bookingDetails;
         private Collection<Room> availableRooms;
+
         private Hotel hotel;
         private Booking booking;
-
+        private Guest guest;
 
         public AvailableRoomsForm(Collection<Room> availrooms, Hotel htl, Booking bking)
         {

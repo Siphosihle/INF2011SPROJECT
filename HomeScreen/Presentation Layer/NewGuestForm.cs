@@ -22,9 +22,9 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            CustomerInformationForm cif = new CustomerInformationForm();
+            //CustomerInformationForm cif = new CustomerInformationForm(booking, guest, hotel);
             this.Hide();
-            cif.ShowDialog();
+            //cif.ShowDialog();
             this.Close();
         }
     }

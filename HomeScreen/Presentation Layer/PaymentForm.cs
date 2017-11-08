@@ -17,6 +17,9 @@ namespace HomeScreen.Presentation_Layer
     {
         private RestEasyMDIParent mdiParent;
 
+        private Guest guest;
+        private Booking booking;
+
         public PaymentForm()
         {
             InitializeComponent();
@@ -44,7 +47,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void button2_Click(object sender, EventArgs e)
         {
-            NewBooking nb = new NewBooking();
+            NewBooking nb = new NewBooking(guest, booking);
             this.Hide();
             nb.MdiParent = mdiParent;
             nb.StartPosition = FormStartPosition.CenterParent;

@@ -24,6 +24,7 @@ namespace HomeScreen.Presentation_Layer
         private Collection<Guest> guests;
         private GuestController guestController;
         CustomerInformationForm cust;
+
         public ConfirmGuestForm(Guest guest, Booking bking, Hotel htl)
         {
             InitializeComponent();
@@ -50,7 +51,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CustomerInformationForm cif = new CustomerInformationForm();
+            CustomerInformationForm cif = new CustomerInformationForm(booking, gst, hotel);
             this.Hide();
             cif.ShowDialog();
             this.Close();
@@ -58,7 +59,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            NewBooking nb = new NewBooking(gst);
+            NewBooking nb = new NewBooking(gst, booking);
             this.Hide();
             nb.MdiParent = mdiParent;
             nb.StartPosition = FormStartPosition.CenterParent;

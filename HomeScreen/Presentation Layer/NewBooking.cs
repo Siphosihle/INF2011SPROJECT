@@ -21,6 +21,8 @@ namespace HomeScreen.Presentation_Layer
         private Guest guest;
         private Account account;
 
+        private string st;
+
         public NewBooking(Guest gst, Booking bking)
         {
             InitializeComponent();
@@ -73,12 +75,7 @@ namespace HomeScreen.Presentation_Layer
         private void CreateBooking()
         {
 
-            PopulateObject(bking);
-            MessageBox.Show("To be submitted to the Database!");
-            employeeController.DataMaintenance(employee, DatabaseLayer.DB.DBOperation.Add);
-            employeeController.FinalizeChanges(employee);
-            ClearAll();
-            ShowAll(false, roleValue);
+            
 
             throw new NotImplementedException();
         }
