@@ -30,7 +30,7 @@ namespace HomeScreen.Presentation_Layer
             bookingcontroller = new BookingController();
             bookings = bookingcontroller.AllBookings;
 
-            this.Activated += EmployeeListForm_Activated;
+            this.Activated += ListForm_Activated;
 
             formstate = frmstate;
 

@@ -49,7 +49,7 @@ namespace HomeScreen.Presentation_Layer
         {
 
             bool bFound = false;
-            Collection<Guest> guests = new Collection<Guest>(guestcontroller.AllAdmins);
+            Collection<Guest> guests = new Collection<Guest>(guestcontroller.AllGuests);
             
 
         }

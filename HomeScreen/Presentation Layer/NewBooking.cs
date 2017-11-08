@@ -73,12 +73,7 @@ namespace HomeScreen.Presentation_Layer
         private void CreateBooking()
         {
 
-            PopulateObject(bking);
-            MessageBox.Show("To be submitted to the Database!");
-            employeeController.DataMaintenance(employee, DatabaseLayer.DB.DBOperation.Add);
-            employeeController.FinalizeChanges(employee);
-            ClearAll();
-            ShowAll(false, roleValue);
+            
 
             throw new NotImplementedException();
         }
