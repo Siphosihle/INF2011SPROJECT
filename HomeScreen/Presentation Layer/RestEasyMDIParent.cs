@@ -170,7 +170,7 @@ namespace HomeScreen.Presentation_Layer
             adminForm.MdiParent = this;
             adminForm.StartPosition = FormStartPosition.CenterParent;
         }
-        public void CreateNewAdminForm()
+        /*public void CreateNewAdminForm()
         {
             adminForm = new AdminLoginForm();
             adminForm.MdiParent = this;
@@ -194,6 +194,8 @@ namespace HomeScreen.Presentation_Layer
             adminForm.MdiParent = this;
             adminForm.StartPosition = FormStartPosition.CenterParent;
         }
+
+    */
 
         #endregion
 

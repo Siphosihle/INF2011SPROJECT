@@ -178,8 +178,6 @@ namespace HomeScreen.Presentation_Layer
                 bookingFormClosed = true;
                 this.Close();
 
-                this.MdiParent.
-
                 availableRoomsForm = new AvailableRoomsForm();
                 availableRoomsForm.MdiParent = this.MdiParent;
                 availableRoomsForm.StartPosition = FormStartPosition.CenterParent;

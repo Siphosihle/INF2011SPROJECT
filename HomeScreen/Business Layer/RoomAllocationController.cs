@@ -11,7 +11,7 @@ namespace HomeScreen.Business_Layer
     public class RoomAllocationController
     {
 
-        public delegate void AvailRoomsInstEventHandler();
+        public delegate void AvailRoomsInstEventHandler(Collection<Room> availrms);
         public event AvailRoomsInstEventHandler AvailRoomsInst;
 
         private RoomAllocationDB roomAllocationDB;
@@ -148,7 +148,7 @@ namespace HomeScreen.Business_Layer
                 }
             }
 
-            OnAvailRoomsInst(Collection<Room> availrms);
+            OnAvailRoomsInst(matches);
 
             return matches;
 
@@ -220,7 +220,7 @@ namespace HomeScreen.Business_Layer
         {
             if(AvailRoomsInst != null)
             {
-                AvailRoomsInst();
+                AvailRoomsInst(availrms);
             }
         }
 
