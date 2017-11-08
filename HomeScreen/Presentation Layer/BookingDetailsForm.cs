@@ -18,8 +18,6 @@ namespace HomeScreen.Presentation_Layer
 
         #region Members
 
-        public event  DatabaseChanged;
-        public delegate void DatabaseChangeHandler(string newDatabaseName);
 
         public bool bookingFormClosed = false;
         private AvailableRoomsForm availableRoomsForm;

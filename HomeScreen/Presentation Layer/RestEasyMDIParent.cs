@@ -21,6 +21,8 @@ namespace HomeScreen.Presentation_Layer
             LoggedOn = 1
         }
 
+
+
         #region Properties
         private int childFormNumber = 0;
 
@@ -59,6 +61,7 @@ namespace HomeScreen.Presentation_Layer
 
             availableRooms = new Collection<Room>();
 
+            rall
             frmState = FormState.LoggedOff;
         }
         #endregion

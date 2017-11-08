@@ -11,6 +11,9 @@ namespace HomeScreen.Business_Layer
     public class RoomAllocationController
     {
 
+        public delegate void AvailRoomsInstEventHandler();
+        public event AvailRoomsInstEventHandler AvailRoomsInst;
+
         private RoomAllocationDB roomAllocationDB;
         private Collection<RoomAllocation> roomAllocations;   //***W3
 
