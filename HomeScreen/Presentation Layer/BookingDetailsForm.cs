@@ -165,13 +165,12 @@ namespace HomeScreen.Presentation_Layer
             endDate = dtpCheckOutDate.Value;
             noOfGuests = Convert.ToInt32(cmbNoOfGuests.Text);
             noOfRoomsNeeded = noOfGuests;
-
             hotel = hotelController.Find(hotelName);
 
             
-            availableRooms = rAllController.AvailableRooms(hotel, startDate, endDate, noOfRoomsNeeded);
+            availableRooms = rAllController.AvailableRooms(hotel, startDate, endDate);
 
-            if (rAllController.Checkavailability(hotel, startDate, endDate, noOfRoomsNeeded))
+            if (availableRooms.Count > noOfRoomsNeeded)
             {
                 MessageBox.Show("Rooms Are Available!");
 

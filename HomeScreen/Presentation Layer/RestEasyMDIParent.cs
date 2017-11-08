@@ -62,7 +62,7 @@ namespace HomeScreen.Presentation_Layer
 
             availableRooms = new Collection<Room>();
 
-            rAllController.AvailRoomsInst += RoomAllocationController_AvailRoomsInst;
+            //rAllController.AvailRoomsInst += RoomAllocationController_AvailRoomsInst;
             frmState = FormState.LoggedOff;
         }
         #endregion
