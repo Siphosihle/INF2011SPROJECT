@@ -177,14 +177,21 @@ namespace HomeScreen.Presentation_Layer
                 bookingFormClosed = true;
                 this.Close();
 
-                availableRoomsForm = new AvailableRoomsForm(availableRooms);
+                availableRoomsForm = new AvailableRoomsForm(availableRooms, hotel);
                 availableRoomsForm.MdiParent = this.MdiParent;
                 availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
+
+                availableRoomsForm.Show();
             }
             else
             {
                 MessageBox.Show("There are no rooms available for the selected dates");
+                this.Close();
 
+                availableRoomsForm = new AvailableRoomsForm(availableRooms, hotel);
+                availableRoomsForm.MdiParent = this.MdiParent;
+                availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
+                availableRoomsForm.Show();
             }
 
             ClearAll();

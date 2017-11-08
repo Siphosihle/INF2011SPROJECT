@@ -45,6 +45,7 @@ namespace HomeScreen.Presentation_Layer
         private RoomAllocationController rAllController;
 
         private Collection<Room> availableRooms;
+        private Hotel hotel;
 
         private FormState frmState;
 
@@ -62,6 +63,7 @@ namespace HomeScreen.Presentation_Layer
             rAllController = new RoomAllocationController();
 
             availableRooms = new Collection<Room>();
+            hotel = new Business_Layer.Hotel();
 
             //rAllController.AvailRoomsInst += RoomAllocationController_AvailRoomsInst;
             frmState = FormState.LoggedOff;
@@ -123,7 +125,7 @@ namespace HomeScreen.Presentation_Layer
 
         public void CreateNewAvailRoomForm()
         {
-            availableRoomsForm = new AvailableRoomsForm(availableRooms);
+            availableRoomsForm = new AvailableRoomsForm(availableRooms, hotel);
             availableRoomsForm.MdiParent = this;
             availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
         }

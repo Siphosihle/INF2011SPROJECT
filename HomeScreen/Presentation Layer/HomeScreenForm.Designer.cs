@@ -68,6 +68,7 @@
             this.btnUpdateBooking.TabIndex = 28;
             this.btnUpdateBooking.Text = "Update Booking";
             this.btnUpdateBooking.UseVisualStyleBackColor = true;
+            this.btnUpdateBooking.Click += new System.EventHandler(this.btnUpdateBooking_Click);
             // 
             // btnBookingEnquiry
             // 
@@ -79,6 +80,7 @@
             this.btnBookingEnquiry.TabIndex = 29;
             this.btnBookingEnquiry.Text = "Guest Booking Enquiry";
             this.btnBookingEnquiry.UseVisualStyleBackColor = true;
+            this.btnBookingEnquiry.Click += new System.EventHandler(this.btnBookingEnquiry_Click);
             // 
             // btnCancelBooking
             // 
@@ -90,6 +92,7 @@
             this.btnCancelBooking.TabIndex = 30;
             this.btnCancelBooking.Text = "Cancel Booking";
             this.btnCancelBooking.UseVisualStyleBackColor = true;
+            this.btnCancelBooking.Click += new System.EventHandler(this.btnCancelBooking_Click);
             // 
             // lbBookingDetails
             // 

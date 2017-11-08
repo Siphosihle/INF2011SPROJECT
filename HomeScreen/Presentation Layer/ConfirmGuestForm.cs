@@ -1,5 +1,4 @@
-﻿using HomeScreen.Business_Layer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -9,11 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HomeScreen.Business_Layer;
+using HomeScreen.Database_Layer;
 
 namespace HomeScreen.Presentation_Layer
 {
     public partial class ConfirmGuestForm : Form
     {
+        private RestEasyMDIParent mdiParent;
+
         private Guest gst;
         private Collection<Guest> guests;
         private GuestController guestController;
@@ -43,6 +46,16 @@ namespace HomeScreen.Presentation_Layer
             CustomerInformationForm cif = new CustomerInformationForm();
             this.Hide();
             cif.ShowDialog();
+            this.Close();
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            NewBooking nb = new NewBooking();
+            this.Hide();
+            nb.MdiParent = mdiParent;
+            nb.StartPosition = FormStartPosition.CenterParent;
+            nb.ShowDialog();
             this.Close();
         }
     }

@@ -71,6 +71,8 @@
             // cmbPaymentType
             // 
             this.cmbPaymentType.FormattingEnabled = true;
+            this.cmbPaymentType.Items.AddRange(new object[] {
+            "Credit Card"});
             this.cmbPaymentType.Location = new System.Drawing.Point(452, 218);
             this.cmbPaymentType.Name = "cmbPaymentType";
             this.cmbPaymentType.Size = new System.Drawing.Size(183, 21);
@@ -184,6 +186,7 @@
             this.button1.TabIndex = 51;
             this.button1.Text = "Make Payment";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -195,6 +198,7 @@
             this.button2.TabIndex = 52;
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // picBox
             // 
