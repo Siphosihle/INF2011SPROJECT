@@ -164,7 +164,7 @@ namespace HomeScreen.Database_Layer
                 if (!(myRow.RowState == DataRowState.Deleted))
                 {
                     //In c# there is no item property (but we use the 2-dim array) it is automatically known to the compiler when used as below
-                    if (aBooking.ReservationNumber == Convert.ToInt32(dsMain.Tables[table].Rows[rowIndex]["ReservationNumber"]))
+                    if (aBooking.ReservationNumber.Equals(Convert.ToInt32(dsMain.Tables[table].Rows[rowIndex]["ReservationNumber"])))
                     {
                         returnValue = rowIndex;
                     }
