@@ -11,11 +11,19 @@ namespace HomeScreen.Business_Layer
     public class GuestController
     {
         GuestDB guestDB;
-        Collection<Guest> guest;
+        Collection<Guest> guests;
+
+        public Collection<Guest> AllGuests
+        {
+            get
+            {
+                return guests;
+            }
+        }
         public GuestController()
         {
             guestDB = new GuestDB();
-            guest = guestDB.AllGuests;
+            guests = guestDB.AllGuests;
         }
         public void DataMaintenance(Guest gst, DB.DBOperation operation)
         {
@@ -27,15 +35,15 @@ namespace HomeScreen.Business_Layer
             {
                 case DB.DBOperation.Add:
                     //*** Add the employee to the Collection
-                    guest.Add(gst);
+                    guests.Add(gst);
                     break;
                 case DB.DBOperation.Edit:
                     index = FindIndex(gst);
-                    guest[index] = gst;  // replace employee at this index with the updated employee
+                    guests[index] = gst;  // replace employee at this index with the updated employee
                     break;
                 case DB.DBOperation.Delete:
                     index = FindIndex(gst);  // find the index of the specific employee in collection
-                    guest.RemoveAt(index);  // remove that employee form the collection
+                    guests.RemoveAt(index);  // remove that employee form the collection
                     break;
             }
         }
@@ -68,7 +76,7 @@ namespace HomeScreen.Business_Layer
         {
             Collection<Guest> matches = new Collection<Guest>();
 
-            foreach (Guest gstt in guest)
+            foreach (Guest gstt in guests)
             {
                 if (guestDB.AllGuests.Equals(gst))
                 {
@@ -81,25 +89,25 @@ namespace HomeScreen.Business_Layer
         public Guest Find(string ID)
         {
             int index = 0;
-            bool found = (guest[index].GuestID == ID);  //check if it is the first student
-            int count = guest.Count;
-            while (!(found) && (index < guest.Count - 1))  //if not "this" student and you are not at the end of the list 
+            bool found = (guests[index].GuestID == ID);  //check if it is the first student
+            int count = guests.Count;
+            while (!(found) && (index < guests.Count - 1))  //if not "this" student and you are not at the end of the list 
             {
                 index = index + 1;
-                found = (guest[index].GuestID == ID);   // this will be TRUE if found
+                found = (guests[index].GuestID == ID);   // this will be TRUE if found
             }
-            return guest[index];  // this is the one!  
+            return guests[index];  // this is the one!  
         }
 
         public int FindIndex(Guest gst)
         {
             int counter = 0;
             bool found = false;
-            found = (gst.GuestID == guest[counter].GuestID);   //using a Boolean Expression to initialise found
-            while (!(found) & counter < guest.Count - 1)
+            found = (gst.GuestID == guests[counter].GuestID);   //using a Boolean Expression to initialise found
+            while (!(found) & counter < guests.Count - 1)
             {
                 counter += 1;
-                found = (gst.GuestID == guest[counter].GuestID);
+                found = (gst.GuestID == guests[counter].GuestID);
             }
             if (found)
             {

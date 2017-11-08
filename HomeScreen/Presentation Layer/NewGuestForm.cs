@@ -17,9 +17,12 @@ namespace HomeScreen.Presentation_Layer
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-
+            CustomerInformationForm cif = new CustomerInformationForm();
+            this.Hide();
+            cif.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using HomeScreen.Business_Layer;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -12,24 +14,36 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class ConfirmGuestForm : Form
     {
+        private Guest gst;
+        private Collection<Guest> guests;
+        private GuestController guestController;
+        CustomerInformationForm cust;
         public ConfirmGuestForm()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
+            guestController = new GuestController();
+            guests = guestController.AllGuests;
 
         }
-
-        private void label10_Click(object sender, EventArgs e)
+        public void ShowData()
         {
-
+            foreach (Guest guest in guests)
+            {
+                txtboxGuestID.Text = guest.GuestID;
+            }             
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void ConfirmGuestForm_Load(object sender, EventArgs e)
         {
+            ShowData();
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CustomerInformationForm cif = new CustomerInformationForm();
+            this.Hide();
+            cif.ShowDialog();
+            this.Close();
         }
     }
 }

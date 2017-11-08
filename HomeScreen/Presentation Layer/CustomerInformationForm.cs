@@ -15,34 +15,35 @@ namespace HomeScreen
 {
     public partial class CustomerInformationForm : Form
     {
-        private string firstName;
-        private string lastName;
+        private string name;
+        private string surname;
         private string id;
         private bool status;
         private GuestController guestController;
         private Collection<Guest> guests;
         private Guest gst;
-
-        public string FirstName
+        public ConfirmGuestForm confirm;
+        #region Properties
+        public string Name
         {
             get
             {
-                return firstName;
+                return name;
             }
             set
             {
-                firstName = value;
+                name = value;
             }
         }
-        public string LastName
+        public string Surname
         {
             get
             {
-                return lastName;
+                return surname;
             }
             set
             {
-                lastName = value;
+                surname = value;
             }
         }
         public string ID
@@ -67,34 +68,16 @@ namespace HomeScreen
                 status = value;
             }
         }
+        #endregion
         public CustomerInformationForm()
         {
             InitializeComponent();
             guestController = new GuestController();
+            gst = new Guest();
         }
-        public bool CheckGuest(string name, string surname, string id)
+        public void CheckGuest()
         {
-            name = txtboxFirstName.Text;
-            surname = txtboxLastName.Text;
-            id = txtboxID.Text;
-            if(id.Equals(guestController.Find(id)))
-            {
-                MessageBox.Show("The Guest Exist");
-                status = true;
-            }
-            else if(!(id.Equals(guestController.Find(id))))
-            {
-                MessageBox.Show("This is a New Guest");
-                status = false;
-            }
-            return status;
-        }
-        public void CreateGuest()
-        {
-            NewGuestForm ngf = new NewGuestForm();
-            this.Hide();
-            ngf.ShowDialog();
-            this.Close();
+            
         }
         private void txtboxFirstName_TextChanged(object sender, EventArgs e)
         {
@@ -103,22 +86,40 @@ namespace HomeScreen
 
         private void btnCheckStatus_Click(object sender, EventArgs e)
         {
-            if(status == true)
+            int count = 0;
+            bool bFound = false;
+            guests = guestController.AllGuests;
+            foreach (Guest guest in guests)
             {
+                if (txtboxID.Text == guest.GuestID)
+                {
+                    bFound = true;
+                    count++;
+                }
+            }
+
+            if ((bFound == true))
+            {
+                MessageBox.Show("Existing Guest");
                 ConfirmGuestForm cgf = new ConfirmGuestForm();
                 this.Hide();
                 cgf.ShowDialog();
                 this.Close();
+                //confirm.ShowData(); 
             }
-            else if(status == false)
+            if ((bFound == false) && (count == 1))
             {
+                MessageBox.Show("New Guest");
                 NewGuestForm ngf = new NewGuestForm();
                 this.Hide();
                 ngf.ShowDialog();
                 this.Close();
             }
+            if(count == 0)
+            {
+                MessageBox.Show("Please enter all the details");
+            }
 
-            
         }
 
         private void lblGuestDetails_Click(object sender, EventArgs e)
