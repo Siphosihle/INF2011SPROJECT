@@ -20,7 +20,7 @@ namespace HomeScreen.Presentation_Layer
 
 
         public bool bookingFormClosed = false;
-        private AvailableRoomsForm availableRoomsForm;
+        public AvailableRoomsForm availableRoomsForm;
 
         private BookingController bookingController;
         private HotelController hotelController;
@@ -178,7 +178,7 @@ namespace HomeScreen.Presentation_Layer
                 bookingFormClosed = true;
                 this.Close();
 
-                this.MdiParent.
+                //this.MdiParent;
 
                 availableRoomsForm = new AvailableRoomsForm();
                 availableRoomsForm.MdiParent = this.MdiParent;

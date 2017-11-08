@@ -59,6 +59,7 @@
             this.lblAvailableRooms.Size = new System.Drawing.Size(275, 31);
             this.lblAvailableRooms.TabIndex = 28;
             this.lblAvailableRooms.Text = "AVAILABLE ROOMS";
+            this.lblAvailableRooms.Click += new System.EventHandler(this.lblAvailableRooms_Click);
             // 
             // btnNext
             // 

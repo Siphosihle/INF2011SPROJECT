@@ -61,7 +61,7 @@ namespace HomeScreen.Presentation_Layer
 
             availableRooms = new Collection<Room>();
 
-            rall
+            //rall
             frmState = FormState.LoggedOff;
         }
         #endregion
@@ -169,11 +169,11 @@ namespace HomeScreen.Presentation_Layer
             adminForm.MdiParent = this;
             adminForm.StartPosition = FormStartPosition.CenterParent;
         }
-        //public void CreateNewAdminForm()
+        //public void createnewadminform()
         //{
-        //    adminForm = new AdminLoginForm();
-        //    adminForm.MdiParent = this;
-        //    adminForm.StartPosition = FormStartPosition.CenterParent;
+        //    adminform = new adminloginform();
+        //    adminform.mdiparent = this;
+        //    adminform.startposition = formstartposition.centerparent;
         //}
         //public void CreateNewAdminForm()
         //{
@@ -246,18 +246,18 @@ namespace HomeScreen.Presentation_Layer
 
 
 
-        //private void DisplayAdminForm()
-        //{
-        //    if (adminForm == null)
-        //    {
-        //        CreateNewAdminForm();
-        //    }
-        //    if (adminForm.adminLoginFormClosed)
-        //    {
-        //        CreateNewAdminForm();
-        //    }
-        //    adminForm.Show();
-        //}
+        private void DisplayAdminForm()
+        {
+            if (adminForm == null)
+            {
+                CreateNewAdminForm();
+            }
+            if (adminForm.adminLoginFormClosed)
+            {
+                CreateNewAdminForm();
+            }
+            adminForm.Show();
+        }
 
         private void DisplayBookingEnquiryForm()
         {
@@ -276,10 +276,10 @@ namespace HomeScreen.Presentation_Layer
 
         #endregion
 
-        //private void RestEasyMDIParent_Load(object sender, EventArgs e)
-        //{
-        //    DisplayAdminForm();
-        //}
+        private void RestEasyMDIParent_Load(object sender, EventArgs e)
+        {
+               DisplayAdminForm();
+        }
 
         private void makeABookingToolStripMenuItem_Click(object sender, EventArgs e)
         {
