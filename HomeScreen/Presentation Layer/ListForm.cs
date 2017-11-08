@@ -15,25 +15,36 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class ListForm : Form
     {
-        private string formstate;
-
-        ListViewItem bookingDetails;
-
-        private BookingController bookingcontroller;
+        public enum FormStates
+        {
+            View = 0,
+            Add = 1,
+            Edit = 2,
+            Delete = 3
+        }
+        public bool formClosed = false;
+        private GuestController guestController;
+        private BookingController bookingController;
+        private Guest guest;
         private Booking booking;
-        private Collection<Booking> bookings;
+        private Collection<Guest> guests;
+        private FormStates state;
 
-        public ListForm(string frmstate)
+        public ListForm(GuestController aController)
         {
             InitializeComponent();
-
-            bookingcontroller = new BookingController();
-            bookings = bookingcontroller.AllBookings;
-
+            guestController = aController;
+            guests = guestController.AllGuests;
+            //Set up Event Handlers for some form events in code rather than trhough the designer
+            this.Load += ListForm_Load;
             this.Activated += ListForm_Activated;
+            this.FormClosed += ListForm_FormClosed;
+            state = FormStates.View;
+        }
 
-            formstate = frmstate;
-
+        private void ListForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            formClosed = true;
         }
 
         private void ListForm_Load(object sender, EventArgs e)
@@ -51,110 +62,170 @@ namespace HomeScreen.Presentation_Layer
         private void setUpListView()
         {
 
-            ListViewItem bookingdetails;
-            Booking bking;
+            ListViewItem bookingDetails;
+            Booking booking;
             listView1.Clear();
 
-            listView1.Columns.Insert(0, "ReservationNumber", 120, HorizontalAlignment.Left);
-            listView1.Columns.Insert(0, "GuestID", 120, HorizontalAlignment.Left);
-            listView1.Columns.Insert(0, "NoOfRooms", 120, HorizontalAlignment.Left);
-            listView1.Columns.Insert(0, "NoOfPeople", 120, HorizontalAlignment.Left);
-            listView1.Columns.Insert(0, "StartDate", 120, HorizontalAlignment.Left);
-            listView1.Columns.Insert(0, "EndDate", 120, HorizontalAlignment.Left);
-            listView1.Columns.Insert(0, "SentConfirmation", 120, HorizontalAlignment.Left);
-            listView1.Columns.Insert(0, "ReceivedConfirmation", 120, HorizontalAlignment.Left);
-            listView1.Columns.Insert(0, "IsCancelled", 120, HorizontalAlignment.Left);
+            listView1.Columns.Insert(0, "GuestIDr", 120, HorizontalAlignment.Left);
+            listView1.Columns.Insert(1, "ReservationNumber", 120, HorizontalAlignment.Left);
+            listView1.Columns.Insert(2, "NoOfRooms", 120, HorizontalAlignment.Left);
+            listView1.Columns.Insert(3, "NoOfPeople", 120, HorizontalAlignment.Left);
+            listView1.Columns.Insert(4, "StartDate", 120, HorizontalAlignment.Left);
+            listView1.Columns.Insert(5, "EndDate", 120, HorizontalAlignment.Left);
+            listView1.Columns.Insert(6, "SentConfirmation", 120, HorizontalAlignment.Left);
+            listView1.Columns.Insert(7, "ReceivedConfirmation", 120, HorizontalAlignment.Left);
+            listView1.Columns.Insert(8, "IsCancelled", 120, HorizontalAlignment.Left);
 
 
-            Collection<Booking> bookings = null;
-            switch (formstate)
-            {
-                case "Enquiry":
-                case "Update":
-                case "Delete":
-                    bookings = bookingcontroller.AllBookings;
-                    break;
-            }
-            
-            foreach(Booking booking in bookings)
+            Collection<Guest> guests = null;
+
+            guests = guestController.AllGuests;
+            listView1.Text = "Listing of all Guests";
+
+            foreach (Guest guest in guests)
             {
                 bookingDetails = new ListViewItem();
-                bookingdetails.Text = booking.GuestID.ToString();
-                bookingdetails.SubItems.Add(booking.GuestID.ToString());
-                bookingdetails.SubItems.Add(booking.NoOfRooms.ToString());
-                bookingdetails.SubItems.Add(booking.NoOfPeople.ToString());
-                bookingdetails.SubItems.Add(booking.StartDate.ToString());
-                bookingdetails.SubItems.Add(booking.EndDate.ToString());
-                bookingdetails.SubItems.Add(booking.SentConfirmation.ToString());
-                bookingdetails.SubItems.Add(booking.RecievedDeposit.ToString());
-                bookingdetails.SubItems.Add(booking.IsCancelled.ToString());
-
-
-
-
-                
-                listView1.Items.Add(bookingdetails);
-
-
-
+                bookingDetails.Text = guest.GuestID.ToString();
+                // Do the same for Gender, HomeLanguage, PopGroup and SA_Citizenship_Status
+                bookingDetails.SubItems.Add(guest.Name);
+                bookingDetails.SubItems.Add(guest.Surname);
+                bookingDetails.SubItems.Add(guest.PhoneNumber);
+                bookingDetails.SubItems.Add(guest.Address);
+                listView1.Items.Add(bookingDetails);
             }
-
             listView1.Refresh();
             listView1.GridLines = true;
-
-
         }
-
-
-
-    
-
-        private void ShowAll(bool v)
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            label1.Visible = v;
-            label2.Visible = v;
-            label3.Visible = v;
-            label4.Visible = v;
-            label5.Visible = v;
-            label6.Visible = v;
-            label7.Visible = v;
-            label8.Visible = v;
-            label9.Visible = v;
-
-            if(formstate == "Update")
+            ShowAll(true);
+            state = FormStates.View;
+            ShowAll(false);
+            if (listView1.SelectedItems.Count > 0)   // if you selected an item 
             {
-                btnDelete.Enabled = false;
+                booking = bookingController.Find(Convert.ToInt32(listView1.SelectedItems[0].Text));  //selected student becoms current student
+                                                                                                     // Show the details of the selected student in the controls
+                PopulateTextBoxes(booking);
             }
-            if(formstate == "Delete")
+        }
+        private void ShowAll(bool value)
+        {
+            label1.Visible = value;
+            label2.Visible = value;
+            label3.Visible = value;
+            label4.Visible = value;
+            label5.Visible = value;
+            label6.Visible = value;
+            label7.Visible = value;
+            label8.Visible = value;
+            label9.Visible = value;
+            txtResNo.Visible = value;
+            txtEndDate.Visible = value;
+            txtGuestID.Visible = value;
+            txtIsCancelled.Visible = value;
+            txtNoOfPeople.Visible = value;
+            txtNoOfRooms.Visible = value;
+            txtReceiveDeposit.Visible = value;
+            txtStartDate.Visible = value;
+            txtSentConfirmation.Visible = value;
+            if (state == FormStates.Delete)
             {
-                btnUpdate.Enabled = false;
+                cancelButton.Visible = !value;
+                submitButton.Visible = !value;
+                updateButton.Visible = !value;
             }
-            
+            else
+            {
+                cancelButton.Visible = value;
+                submitButton.Visible = value;
+            }
+            deleteButton.Visible = value;
+            editButton.Visible = value;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             PopulateObject();
-            bookingcontroller.DataMaintenance(booking, Database_Layer.DB.DBOperation.Edit);
+            bookingController.DataMaintenance(booking, Database_Layer.DB.DBOperation.Edit);
         }
-
+        private void ClearAll()
+        {
+            txtEndDate.Text = "";
+            txtGuestID.Text = "";
+            txtIsCancelled.Text = "";
+            txtNoOfPeople.Text = "";
+            txtNoOfRooms.Text = "";
+            txtReceiveDeposit.Text = "";
+            txtResNo.Text = "";
+            txtSentConfirmation.Text = "";
+            txtStartDate.Text = "";
+        }
         private void PopulateObject()
         {
             booking = new Booking();
-            /*booking.ReservationNumber = txtResNo.text;
+            booking.ReservationNumber = txtResNo.Text;
             booking.GuestID = txtIsCancelled.Text;
             booking.NoOfPeople = txtNoOfPeople.Text;
-            booking.StartDate */
+            booking.StartDate = Convert.ToDateTime(txtStartDate.Text);
+            booking.EndDate = Convert.ToDateTime(txtEndDate.Text);
+            booking.NoOfRooms = txtNoOfRooms.Text;
+            booking.RecievedDeposit = Convert.ToBoolean(txtReceiveDeposit.Text);
+            booking.IsCancelled = Convert.ToBoolean(txtIsCancelled.Text);
+            booking.SentConfirmation = Convert.ToBoolean(txtSentConfirmation.Text);
         }
+        private void PopulateTextBoxes(Booking bkg)
+        {
+            txtGuestID.Text = bkg.GuestID;
+            txtEndDate.Text = Convert.ToString(bkg.EndDate);
+            txtResNo.Text = bkg.ReservationNumber;
+            txtReceiveDeposit.Text = Convert.ToString(bkg.RecievedDeposit);
+            txtNoOfRooms.Text = bkg.NoOfRooms;
+            txtNoOfPeople.Text = bkg.NoOfPeople;
+            txtSentConfirmation.Text = Convert.ToString(bkg.SentConfirmation);
+            txtStartDate.Text = Convert.ToString(bkg.StartDate);
+            txtIsCancelled.Text = Convert.ToString(bkg.IsCancelled);
 
+        }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            bookingcontroller.DataMaintenance(booking, Database_Layer.DB.DBOperation.Delete);
+            bookingController.DataMaintenance(booking, Database_Layer.DB.DBOperation.Delete);
+        }
+
+        private void txtResNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            state = FormStates.Edit;
+            deleteButton.Visible = false;
+            ShowAll(true);
         }
 
         private void submitButton_Click(object sender, EventArgs e)
+        {
+            if (state == FormStates.Edit)
+            {
+                PopulateObject();
+                bookingController.DataMaintenance(booking, DB.DBOperation.Edit);
+            }
+            else
+            {
+                bookingController.DataMaintenance(booking, DB.DBOperation.Delete);
+            }
+            bookingController.FinalizeChanges(booking);
+            ClearAll();
+            state = FormStates.View;
+            ShowAll(false);
+            setUpListView();   //refresh List View
+            booking = null;
+        }
+
+        private void editButton_Click_1(object sender, EventArgs e)
         {
 
         }
     }
 }
+

@@ -141,6 +141,7 @@
             this.txtResNo.Name = "txtResNo";
             this.txtResNo.Size = new System.Drawing.Size(100, 20);
             this.txtResNo.TabIndex = 10;
+            this.txtResNo.TextChanged += new System.EventHandler(this.txtResNo_TextChanged);
             // 
             // txtIsCancelled
             // 
@@ -253,6 +254,7 @@
             this.editButton.TabIndex = 24;
             this.editButton.Text = "Edit";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click_1);
             // 
             // ListForm
             // 
