@@ -165,20 +165,19 @@ namespace HomeScreen.Presentation_Layer
             endDate = dtpCheckOutDate.Value;
             noOfGuests = Convert.ToInt32(cmbNoOfGuests.Text);
             noOfRoomsNeeded = noOfGuests;
-
             hotel = hotelController.Find(hotelName);
 
             
-            availableRooms = rAllController.AvailableRooms(hotel, startDate, endDate, noOfRoomsNeeded);
+            availableRooms = rAllController.AvailableRooms(hotel, startDate, endDate);
 
-            if (rAllController.CheckAvailability(hotel, startDate, endDate, noOfRoomsNeeded) == true)
+            if (availableRooms.Count > noOfRoomsNeeded)
             {
                 MessageBox.Show("Rooms Are Available!");
 
                 bookingFormClosed = true;
                 this.Close();
 
-                availableRoomsForm = new AvailableRoomsForm();
+                availableRoomsForm = new AvailableRoomsForm(availableRooms);
                 availableRoomsForm.MdiParent = this.MdiParent;
                 availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
             }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -13,11 +14,25 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class AvailableRoomsForm : Form
     {
-        private BookingDetailsForm bookingDetails; 
-        public AvailableRoomsForm()
+
+        public bool availableRoomsFormClosed = false;
+        private BookingDetailsForm bookingDetails;
+        private Collection<Room> availableRooms;
+
+
+        public AvailableRoomsForm(Collection<Room> availrooms)
         {
             InitializeComponent();
+            this.FormClosed += AvailableRoomsForm_Closed;
+
+            availableRooms = availrooms;
         }
+
+        private void AvailableRoomsForm_Closed(object sender, FormClosedEventArgs e)
+        {
+            availableRoomsFormClosed = true;
+        }
+
         private void rtbAvailableRooms_TextChanged(object sender, EventArgs e)
         {
             
@@ -41,7 +56,8 @@ namespace HomeScreen.Presentation_Layer
 
         private void AvailableRoomsForm_Load(object sender, EventArgs e)
         {
-
+            string sAvailRoom;
+            rtbAvailableRooms.Text = "";
         }
 
         private void lblAvailableRooms_Click(object sender, EventArgs e)

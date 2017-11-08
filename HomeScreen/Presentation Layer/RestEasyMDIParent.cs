@@ -63,7 +63,7 @@ namespace HomeScreen.Presentation_Layer
 
             availableRooms = new Collection<Room>();
 
-            rAllController.AvailRoomsInst += RoomAllocationController_AvailRoomsInst;
+            //rAllController.AvailRoomsInst += RoomAllocationController_AvailRoomsInst;
             frmState = FormState.LoggedOff;
         }
         #endregion
@@ -123,7 +123,7 @@ namespace HomeScreen.Presentation_Layer
 
         public void CreateNewAvailRoomForm()
         {
-            availableRoomsForm = new AvailableRoomsForm();
+            availableRoomsForm = new AvailableRoomsForm(availableRooms);
             availableRoomsForm.MdiParent = this;
             availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
         }
@@ -270,6 +270,19 @@ namespace HomeScreen.Presentation_Layer
                 CreateNewBookingEnquiryForm();
             }
             if (bookingEnquiryForm.bookingFormClosed == true)
+            {
+                CreateNewBookingEnquiryForm();
+            }
+            bookingEnquiryForm.Show();
+        }
+
+        private void DisplayAvailableRoomsForm()
+        {
+            if (availableRoomsForm == null)
+            {
+                CreateNewBookingEnquiryForm();
+            }
+            if (availableRoomsForm.availableRoomsFormClosed == true)
             {
                 CreateNewBookingEnquiryForm();
             }
