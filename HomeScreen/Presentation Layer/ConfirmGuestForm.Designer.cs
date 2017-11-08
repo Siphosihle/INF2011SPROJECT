@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtboxGuestID = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtboxName = new System.Windows.Forms.TextBox();
             this.txtboxSurname = new System.Windows.Forms.TextBox();
             this.txtboxID = new System.Windows.Forms.TextBox();
@@ -47,9 +49,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lbBookingDetails = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbGuestIDResults = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtboxGuestID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -64,13 +67,38 @@
             this.panel1.Size = new System.Drawing.Size(455, 225);
             this.panel1.TabIndex = 9;
             // 
-            // txtboxGuestID
+            // label7
             // 
-            this.txtboxGuestID.Location = new System.Drawing.Point(158, 151);
-            this.txtboxGuestID.Name = "txtboxGuestID";
-            this.txtboxGuestID.ReadOnly = true;
-            this.txtboxGuestID.Size = new System.Drawing.Size(100, 20);
-            this.txtboxGuestID.TabIndex = 10;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.HotPink;
+            this.label7.Location = new System.Drawing.Point(3, 2);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 15);
+            this.label7.TabIndex = 54;
+            this.label7.Text = "Guest Status";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.HotPink;
+            this.label8.Location = new System.Drawing.Point(30, 37);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 15);
+            this.label8.TabIndex = 55;
+            this.label8.Text = "Account Balance";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.HotPink;
+            this.label9.Location = new System.Drawing.Point(30, 82);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 15);
+            this.label9.TabIndex = 56;
+            this.label9.Text = "Status";
             // 
             // txtboxName
             // 
@@ -122,13 +150,12 @@
             this.pictureBox1.Size = new System.Drawing.Size(194, 111);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnPrevious
             // 
             this.btnPrevious.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.Color.HotPink;
-            this.btnPrevious.Location = new System.Drawing.Point(489, 443);
+            this.btnPrevious.Location = new System.Drawing.Point(783, 460);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(123, 32);
             this.btnPrevious.TabIndex = 44;
@@ -139,7 +166,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.HotPink;
-            this.button1.Location = new System.Drawing.Point(158, 443);
+            this.button1.Location = new System.Drawing.Point(399, 460);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 32);
             this.button1.TabIndex = 45;
@@ -234,44 +261,54 @@
             this.lbBookingDetails.TabIndex = 53;
             this.lbBookingDetails.Text = "GUEST DETAILS VERIFICATION";
             // 
-            // label7
+            // label10
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.HotPink;
-            this.label7.Location = new System.Drawing.Point(3, 2);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 15);
-            this.label7.TabIndex = 54;
-            this.label7.Text = "Guest Status";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.HotPink;
+            this.label10.Location = new System.Drawing.Point(178, 154);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(0, 15);
+            this.label10.TabIndex = 54;
             // 
-            // label8
+            // lbGuestIDResults
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.HotPink;
-            this.label8.Location = new System.Drawing.Point(30, 37);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 15);
-            this.label8.TabIndex = 55;
-            this.label8.Text = "Account Balance";
+            this.lbGuestIDResults.AutoSize = true;
+            this.lbGuestIDResults.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGuestIDResults.ForeColor = System.Drawing.Color.HotPink;
+            this.lbGuestIDResults.Location = new System.Drawing.Point(178, 154);
+            this.lbGuestIDResults.Name = "lbGuestIDResults";
+            this.lbGuestIDResults.Size = new System.Drawing.Size(0, 15);
+            this.lbGuestIDResults.TabIndex = 55;
             // 
-            // label9
+            // button2
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.HotPink;
-            this.label9.Location = new System.Drawing.Point(30, 82);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 15);
-            this.label9.TabIndex = 56;
-            this.label9.Text = "Status";
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.HotPink;
+            this.button2.Location = new System.Drawing.Point(55, 460);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(123, 32);
+            this.button2.TabIndex = 56;
+            this.button2.Text = "Back";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtboxGuestID
+            // 
+            this.txtboxGuestID.Location = new System.Drawing.Point(158, 149);
+            this.txtboxGuestID.Name = "txtboxGuestID";
+            this.txtboxGuestID.Size = new System.Drawing.Size(100, 20);
+            this.txtboxGuestID.TabIndex = 57;
             // 
             // ConfirmGuestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1130, 563);
+            this.Controls.Add(this.txtboxGuestID);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.lbGuestIDResults);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.lbBookingDetails);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -288,11 +325,11 @@
             this.Controls.Add(this.txtboxID);
             this.Controls.Add(this.txtboxSurname);
             this.Controls.Add(this.txtboxName);
-            this.Controls.Add(this.txtboxGuestID);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "ConfirmGuestForm";
             this.Text = "ConfirmGuest";
+            this.Load += new System.EventHandler(this.ConfirmGuestForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -305,7 +342,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtboxGuestID;
         private System.Windows.Forms.TextBox txtboxName;
         private System.Windows.Forms.TextBox txtboxSurname;
         private System.Windows.Forms.TextBox txtboxID;
@@ -325,5 +361,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lbBookingDetails;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbGuestIDResults;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtboxGuestID;
     }
 }

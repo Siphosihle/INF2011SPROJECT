@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -20,29 +21,60 @@ namespace HomeScreen.Presentation_Layer
             LoggedOn = 1
         }
 
+
+
+        #region Data Members
         private int childFormNumber = 0;
+
         private AdminLoginForm adminForm;
+        private AvailableRoomsForm availableRoomsForm;
         private BookingDetailsForm bookingEnquiryForm;
+        private ConfirmGuestForm confirmGuestForm;
+        private ConfirmReservationForm confirmReservationForm;
+        private CreditCardPaymentForm ccPaymentForm;
+        private CustomerInformationForm custInfoForm;
+        private HomeScreenForm homeScreenForm;
+        private ListForm lstForm;
+        private NewBooking newBookingForm;
+        private NewGuestForm newGuestForm;
+        private PaymentForm paymentForm;
 
         private AdminController admincontroller;
         private BookingController bookingController;
         private HotelController hotelController;
+        private RoomAllocationController rAllController;
+
+        private Collection<Room> availableRooms;
 
         private FormState frmState;
+
+        #endregion
 
         #region Constructors
         public RestEasyMDIParent()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+
             admincontroller = new AdminController();
             bookingController = new BookingController();
             hotelController = new HotelController();
+            rAllController = new RoomAllocationController();
+
+            availableRooms = new Collection<Room>();
+
+            //rAllController.AvailRoomsInst += RoomAllocationController_AvailRoomsInst;
             frmState = FormState.LoggedOff;
         }
         #endregion
 
         #region Properties
+
+        public Collection<Room> AvailableRooms
+        {
+            get { return availableRooms; }
+            set { availableRooms = value; }
+        }
 
         public AdminLoginForm AdminForm
         {
@@ -89,12 +121,82 @@ namespace HomeScreen.Presentation_Layer
             adminForm.StartPosition = FormStartPosition.CenterParent;
         }
 
+        public void CreateNewAvailRoomForm()
+        {
+            availableRoomsForm = new AvailableRoomsForm();
+            availableRoomsForm.MdiParent = this;
+            availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
+        }
+
         public void CreateNewBookingEnquiryForm()
         {
             bookingEnquiryForm = new BookingDetailsForm();
             bookingEnquiryForm.MdiParent = this;
             bookingEnquiryForm.StartPosition = FormStartPosition.CenterParent;
         }
+
+        public void CreateNewConfirmGuest()
+        {
+            confirmGuestForm = new ConfirmGuestForm();
+            confirmGuestForm.MdiParent = this;
+            confirmGuestForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewConfirmReservationForm()
+        {
+            confirmReservationForm = new ConfirmReservationForm();
+            confirmReservationForm.MdiParent = this;
+            confirmReservationForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewCreditCardPaymentForm()
+        {
+            ccPaymentForm = new CreditCardPaymentForm();
+            ccPaymentForm.MdiParent = this;
+            ccPaymentForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewCustomerInformationForm()
+        {
+            custInfoForm = new CustomerInformationForm();
+            custInfoForm.MdiParent = this;
+            custInfoForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewHomeScreenForm()
+        {
+            homeScreenForm = new HomeScreenForm();
+            homeScreenForm.MdiParent = this;
+            homeScreenForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewListForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        /*public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+
+    */
 
         #endregion
 
@@ -178,6 +280,17 @@ namespace HomeScreen.Presentation_Layer
 
         #endregion
 
+        #region Methods
+
+        private void RoomAllocationController_AvailRoomsInst(Collection<Room> availrms)
+        {
+
+            availableRooms = availrms;
+
+        }
+
+        #endregion
+
         private void RestEasyMDIParent_Load(object sender, EventArgs e)
         {
             DisplayAdminForm();
@@ -187,5 +300,7 @@ namespace HomeScreen.Presentation_Layer
         {
 
         }
+
+        
     }
 }

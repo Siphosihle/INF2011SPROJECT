@@ -54,7 +54,7 @@ namespace HomeScreen.Database_Layer
                 {
                     aRoomAllocation = new RoomAllocation();
 
-                    aRoomAllocation.ReservationNumber = Convert.ToInt32(myRow["BookingID"]);
+                    aRoomAllocation.ReservationNumber = Convert.ToInt32(myRow["ReservationNumber"]);
                     aRoomAllocation.RoomID = Convert.ToInt32(myRow["RoomID"]);
 
                     roomAllocations.Add(aRoomAllocation);

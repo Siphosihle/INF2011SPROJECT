@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace HomeScreen {
+/*namespace HomeScreen {
     
     
     /// <summary>
@@ -237,6 +237,6 @@ namespace HomeScreen {
             return type;
         }
     }
-}
+}*/
 
 #pragma warning restore 1591

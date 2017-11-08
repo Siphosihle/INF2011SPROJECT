@@ -90,6 +90,7 @@
             this.txtboxUsername.Name = "txtboxUsername";
             this.txtboxUsername.Size = new System.Drawing.Size(199, 20);
             this.txtboxUsername.TabIndex = 35;
+            this.txtboxUsername.TextChanged += new System.EventHandler(this.txtboxUsername_TextChanged);
             // 
             // txtboxPassword
             // 
