@@ -148,9 +148,7 @@ namespace HomeScreen.Business_Layer
 
             Collection<Room> matches = new Collection<Room>();
 
-
-
-            for (int i = 0; i < roomcontroller.AllRooms.Count;i++)
+            for (int i = 0; i < roomcontroller.FindByHotel(hotel.HotelID).Count;i++)
             {
                 bool roomAvailable = true;
                 Collection<Booking> roomBookings = FindBookingsByRoom(bookingController.AllBookings, hotel);
@@ -163,7 +161,7 @@ namespace HomeScreen.Business_Layer
                 }
                 if (roomAvailable == true)
                 {
-                    matches.Add(roomcontroller.AllRooms[i]);
+                    matches.Add(roomcontroller.FindByHotel(hotel.HotelID)[i]);
                 }
             }
 
