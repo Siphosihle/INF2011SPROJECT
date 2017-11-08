@@ -27,7 +27,7 @@ namespace HomeScreen.Presentation_Layer
         {
             InitializeComponent();
 
-            bookingcontroller = new BookingController;
+            bookingcontroller = new BookingController();
             bookings = bookingcontroller.AllBookings;
 
             this.Activated += EmployeeListForm_Activated;
@@ -135,21 +135,21 @@ namespace HomeScreen.Presentation_Layer
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             PopulateObject();
-            bookingcontroller.DataMaintenance(booking, Database_Layer.DB.DBOperation.Edit)
+            bookingcontroller.DataMaintenance(booking, Database_Layer.DB.DBOperation.Edit);
         }
 
         private void PopulateObject()
         {
             booking = new Booking();
-            booking.ReservationNumber = txtResNo.text;
+            /*booking.ReservationNumber = txtResNo.text;
             booking.GuestID = txtIsCancelled.Text;
             booking.NoOfPeople = txtNoOfPeople.Text;
-            booking.StartDate
+            booking.StartDate */
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            bookingcontroller.DataMaintenance(booking, Database_Layer.DB.DBOperation.Delete)
+            bookingcontroller.DataMaintenance(booking, Database_Layer.DB.DBOperation.Delete);
         }
     }
 }
