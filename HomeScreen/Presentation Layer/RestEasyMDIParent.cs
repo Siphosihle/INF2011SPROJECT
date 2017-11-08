@@ -23,7 +23,7 @@ namespace HomeScreen.Presentation_Layer
 
 
 
-        #region Properties
+        #region Data Members
         private int childFormNumber = 0;
 
         private AdminLoginForm adminForm;
@@ -42,6 +42,7 @@ namespace HomeScreen.Presentation_Layer
         private AdminController admincontroller;
         private BookingController bookingController;
         private HotelController hotelController;
+        private RoomAllocationController rAllController;
 
         private Collection<Room> availableRooms;
 
@@ -61,7 +62,7 @@ namespace HomeScreen.Presentation_Layer
 
             availableRooms = new Collection<Room>();
 
-            //rall
+            rAllController.AvailRoomsInst += RoomAllocationController_AvailRoomsInst;
             frmState = FormState.LoggedOff;
         }
         #endregion
@@ -169,30 +170,32 @@ namespace HomeScreen.Presentation_Layer
             adminForm.MdiParent = this;
             adminForm.StartPosition = FormStartPosition.CenterParent;
         }
-        //public void createnewadminform()
-        //{
-        //    adminform = new adminloginform();
-        //    adminform.mdiparent = this;
-        //    adminform.startposition = formstartposition.centerparent;
-        //}
-        //public void CreateNewAdminForm()
-        //{
-        //    adminForm = new AdminLoginForm();
-        //    adminForm.MdiParent = this;
-        //    adminForm.StartPosition = FormStartPosition.CenterParent;
-        //}
-        //public void CreateNewAdminForm()
-        //{
-        //    adminForm = new AdminLoginForm();
-        //    adminForm.MdiParent = this;
-        //    adminForm.StartPosition = FormStartPosition.CenterParent;
-        //}
-        //public void CreateNewAdminForm()
-        //{
-        //    adminForm = new AdminLoginForm();
-        //    adminForm.MdiParent = this;
-        //    adminForm.StartPosition = FormStartPosition.CenterParent;
-        //}
+        /*public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+        public void CreateNewAdminForm()
+        {
+            adminForm = new AdminLoginForm();
+            adminForm.MdiParent = this;
+            adminForm.StartPosition = FormStartPosition.CenterParent;
+        }
+
+    */
 
         #endregion
 
@@ -276,9 +279,20 @@ namespace HomeScreen.Presentation_Layer
 
         #endregion
 
+        #region Methods
+
+        private void RoomAllocationController_AvailRoomsInst(Collection<Room> availrms)
+        {
+
+            availableRooms = availrms;
+
+        }
+
+        #endregion
+
         private void RestEasyMDIParent_Load(object sender, EventArgs e)
         {
-               DisplayAdminForm();
+            DisplayAdminForm();
         }
 
         private void makeABookingToolStripMenuItem_Click(object sender, EventArgs e)
