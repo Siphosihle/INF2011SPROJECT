@@ -301,7 +301,6 @@
             this.txtboxGuestID.Name = "txtboxGuestID";
             this.txtboxGuestID.Size = new System.Drawing.Size(100, 20);
             this.txtboxGuestID.TabIndex = 57;
-            this.txtboxGuestID.TextChanged += new System.EventHandler(this.txtboxGuestID_TextChanged);
             // 
             // lbInvisible
             // 
