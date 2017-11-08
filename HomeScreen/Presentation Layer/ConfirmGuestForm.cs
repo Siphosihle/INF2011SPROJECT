@@ -1,5 +1,4 @@
-﻿using HomeScreen.Business_Layer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -9,35 +8,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HomeScreen.Business_Layer;
+using HomeScreen.Database_Layer;
 
 namespace HomeScreen.Presentation_Layer
 {
     public partial class ConfirmGuestForm : Form
     {
+        private RestEasyMDIParent mdiParent;
+
         private Guest gst;
+        private Booking booking;
+        private Hotel hotel;
+
         private Collection<Guest> guests;
         private GuestController guestController;
         CustomerInformationForm cust;
-        public ConfirmGuestForm()
+        public ConfirmGuestForm(Guest guest, Booking bking, Hotel htl)
         {
             InitializeComponent();
             guestController = new GuestController();
             guests = guestController.AllGuests;
-            cust = new CustomerInformationForm();
+
+            gst = guest;
+            booking = bking;
+            hotel = htl;
 
         }
         public void ShowData()
         {
             foreach (Guest guest in guests)
             {
-                //string str = txtboxID.Text;
-                lbInvisible.Text = guest.GuestID;
-                //txtboxID.Text = txtboxGuestID.Text;
-                //txtboxGuestID.Text = cust.MyID;
-                lbInvisible.Visible = true;
-                //txtboxGuestID.Text = str;
-                //txtboxName.Text = cust.Name;
-                //cust.MyID = txtboxGuestID.Text;
+                txtboxGuestID.Text = guest.GuestID;
             }             
         }
 
@@ -54,9 +56,14 @@ namespace HomeScreen.Presentation_Layer
             this.Close();
         }
 
-        public void txtboxGuestID_TextChanged(object sender, EventArgs e)
+        private void btnPrevious_Click(object sender, EventArgs e)
         {
-
+            NewBooking nb = new NewBooking(gst);
+            this.Hide();
+            nb.MdiParent = mdiParent;
+            nb.StartPosition = FormStartPosition.CenterParent;
+            nb.ShowDialog();
+            this.Close();
         }
     }
 }

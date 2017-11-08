@@ -162,6 +162,7 @@
             this.btnPrevious.TabIndex = 44;
             this.btnPrevious.Text = "Proceed to Booking";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // button1
             // 

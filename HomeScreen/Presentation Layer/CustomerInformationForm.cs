@@ -1,6 +1,4 @@
-﻿using HomeScreen.Business_Layer;
-using HomeScreen.Presentation_Layer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -10,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HomeScreen.Business_Layer;
+using HomeScreen.Database_Layer;
+using HomeScreen.Presentation_Layer;
 
 namespace HomeScreen
 {
@@ -19,25 +20,16 @@ namespace HomeScreen
         private string surname;
         private string id;
         private bool status;
+
+        private ConfirmGuestForm cgf;
+
         private GuestController guestController;
         private Collection<Guest> guests;
         private Guest gst;
-        public ConfirmGuestForm confirm;
-        public string myID;
+        private Booking booking;
+        private Hotel hotel;
 
         #region Properties
-        public string MyID
-        {
-            get
-            {
-                return myID;
-            }
-            set
-            {
-                myID = value;
-            }
-        }
-
         public string Name
         {
             get
@@ -83,46 +75,45 @@ namespace HomeScreen
             }
         }
         #endregion
-        public CustomerInformationForm()
+        public CustomerInformationForm(Booking bking, Guest gst, Hotel htl)
         {
             InitializeComponent();
             guestController = new GuestController();
             gst = new Guest();
-            name = "";
+            booking = bking;
+            hotel = htl;
+
         }
         public void CheckGuest()
         {
             
         }
-        //private void txtboxFirstName_TextChanged(object sender, EventArgs e)
-        //{
-        //    if (string.IsNullOrEmpty(txtboxFirstName.Text))
-        //    {
-        //        txtboxGuestID.Clear();
-        //        return;
-        //    }
-        //}
+        private void txtboxFirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnCheckStatus_Click(object sender, EventArgs e)
         {
             int count = 0;
             bool bFound = false;
             guests = guestController.AllGuests;
-            
-            name = txtboxFirstName.Text;
             foreach (Guest guest in guests)
             {
                 if (txtboxID.Text == guest.GuestID)
                 {
                     bFound = true;
-                    myID = txtboxID.Text;
                     count++;
                 }
             }
 
             if ((bFound == true))
             {
+
+                gst = guestController.Find(txtboxID.Text);
+
                 MessageBox.Show("Existing Guest");
-                ConfirmGuestForm cgf = new ConfirmGuestForm();
+                ConfirmGuestForm cgf = new ConfirmGuestForm(gst, booking, hotel);
                 this.Hide();
                 cgf.ShowDialog();
                 this.Close();
@@ -146,10 +137,6 @@ namespace HomeScreen
         private void lblGuestDetails_Click(object sender, EventArgs e)
         {
 
-        }
-        public override string ToString()
-        {
-            return name;
         }
     }
     

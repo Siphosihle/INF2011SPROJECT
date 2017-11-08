@@ -86,6 +86,7 @@
             this.btnProceed.TabIndex = 59;
             this.btnProceed.Text = "Proceed with Booking";
             this.btnProceed.UseVisualStyleBackColor = true;
+            this.btnProceed.Click += new System.EventHandler(this.btnProceed_Click);
             // 
             // NewBooking
             // 

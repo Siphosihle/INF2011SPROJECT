@@ -14,6 +14,8 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class AdminLoginForm : Form
     {
+        private RestEasyMDIParent midParent;
+
         private Collection<Admin> admins;
         private Admin admin;
         private AdminController adminController;
@@ -73,8 +75,13 @@ namespace HomeScreen.Presentation_Layer
             {
                 HomeScreenForm hsf = new HomeScreenForm();
                 this.Hide();
+                hsf.MdiParent = midParent;
+                hsf.StartPosition = FormStartPosition.CenterParent;
                 hsf.ShowDialog();
+
                 this.Close();
+
+
             }
             if (bFound==false)
             {

@@ -14,18 +14,25 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class AvailableRoomsForm : Form
     {
+        private RestEasyMDIParent mdiParent;
+        private HomeScreenForm homescreenform;
+        private CustomerInformationForm custInfoForm;
 
         public bool availableRoomsFormClosed = false;
         private BookingDetailsForm bookingDetails;
         private Collection<Room> availableRooms;
+        private Hotel hotel;
+        private Booking booking;
 
 
-        public AvailableRoomsForm(Collection<Room> availrooms)
+        public AvailableRoomsForm(Collection<Room> availrooms, Hotel htl, Booking bking)
         {
             InitializeComponent();
             this.FormClosed += AvailableRoomsForm_Closed;
 
             availableRooms = availrooms;
+            hotel = htl;
+            booking = bking;
         }
 
         private void AvailableRoomsForm_Closed(object sender, FormClosedEventArgs e)
@@ -42,27 +49,45 @@ namespace HomeScreen.Presentation_Layer
         {
             BookingDetailsForm hs = new BookingDetailsForm();
             this.Hide();
-            hs.ShowDialog();
+            hs.Show();
+            hs.MdiParent = this;
+            hs.StartPosition = FormStartPosition.CenterParent;
             this.Close();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            CustomerInformationForm hs = new CustomerInformationForm();
+            CustomerInformationForm hs = new CustomerInformationForm(booking, hotel);
             this.Hide();
-            //hs.ShowDialog();
+            hs.Show();
+            hs.MdiParent = mdiParent;
+            hs.StartPosition = FormStartPosition.CenterParent;
             this.Close();
         }
 
         private void AvailableRoomsForm_Load(object sender, EventArgs e)
         {
-            string sAvailRoom;
-            rtbAvailableRooms.Text = "";
+            string sAvailRoom = "The following rooms are available for " + hotel.HotelName ;
+            for(int i = 0; i < availableRooms.Count;i++)
+            {
+                sAvailRoom += "Room No " + availableRooms[i].RoomNo + "\n";
+            }
+            rtbAvailableRooms.Text = sAvailRoom;
         }
 
         private void lblAvailableRooms_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            homescreenform = new HomeScreenForm();
+            homescreenform.MdiParent = this.MdiParent;
+            homescreenform.StartPosition = FormStartPosition.CenterParent;
+            homescreenform.Show();
         }
     }
 }

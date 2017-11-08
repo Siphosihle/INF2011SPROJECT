@@ -82,9 +82,9 @@ namespace HomeScreen.Business_Layer
 
         }
 
-        internal int GenerateReferenceNumber()
+        internal int GenerateReferenceNumber(int noOfBookings)
         {
-            throw new NotImplementedException();
+            return noOfBookings + 1;
         }
 
 
@@ -134,6 +134,11 @@ namespace HomeScreen.Business_Layer
                 found = (bookings[index].ReservationNumber == resNo);   // this will be TRUE if found
             }
             return bookings[index];  // this is the one!  
+        }
+
+        internal void DataMaintenance(Booking booking, DB.DBOperation edit)
+        {
+            throw new NotImplementedException();
         }
 
         public int FindIndex(Booking aBooking)
