@@ -141,6 +141,7 @@
     <Compile Include="Presentation Layer\CustomerInformationForm.Designer.cs">
       <DependentUpon>CustomerInformationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\DatabaseChanged.cs" />
     <Compile Include="Presentation Layer\HomeScreenForm.cs">
       <SubType>Form</SubType>
     </Compile>

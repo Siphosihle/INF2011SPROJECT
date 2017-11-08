@@ -43,5 +43,10 @@ namespace HomeScreen.Presentation_Layer
         {
 
         }
+
+        private void lblAvailableRooms_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
