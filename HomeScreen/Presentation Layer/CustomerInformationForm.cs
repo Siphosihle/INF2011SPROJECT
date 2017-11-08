@@ -18,6 +18,7 @@ namespace HomeScreen
         private string firstName;
         private string lastName;
         private string id;
+        private bool status;
         private GuestController guestController;
         private Collection<Guest> guests;
         private Guest gst;
@@ -55,12 +56,23 @@ namespace HomeScreen
                 id = value;
             }
         }
+        public bool Status
+        {
+            get
+            {
+                return status;
+            }
+            set
+            {
+                status = value;
+            }
+        }
         public CustomerInformationForm()
         {
             InitializeComponent();
             guestController = new GuestController();
         }
-        public void CheckGuest(string name, string surname, string id)
+        public bool CheckGuest(string name, string surname, string id)
         {
             name = txtboxFirstName.Text;
             surname = txtboxLastName.Text;
@@ -68,16 +80,14 @@ namespace HomeScreen
             if(id.Equals(guestController.Find(id)))
             {
                 MessageBox.Show("The Guest Exist");
-                ConfirmGuestForm cgf = new ConfirmGuestForm();
-                this.Hide();
-                cgf.ShowDialog();
-                this.Close();
+                status = true;
             }
             else
             {
                 MessageBox.Show("This is a New Guest");
-                CreateGuest();
+                status = false;
             }
+            return status;
         }
         public void CreateGuest()
         {
@@ -93,7 +103,22 @@ namespace HomeScreen
 
         private void btnCheckStatus_Click(object sender, EventArgs e)
         {
+            if(status == true)
+            {
+                ConfirmGuestForm cgf = new ConfirmGuestForm();
+                this.Hide();
+                cgf.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                NewGuestForm ngf = new NewGuestForm();
+                this.Hide();
+                ngf.ShowDialog();
+                this.Close();
+            }
 
+            
         }
 
         private void lblGuestDetails_Click(object sender, EventArgs e)
