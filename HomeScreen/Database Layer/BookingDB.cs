@@ -23,11 +23,20 @@ namespace HomeScreen.Database_Layer
 
 
 
-        public BookingDB(): base()
+        public BookingDB(string field): base()
         {
             bookings = new Collection<Booking>();
-            FillDataSet(sqlLocal1, table1);
-            Add2Collection(table1);
+
+            switch(field)
+            {
+                case "All":
+                    FillDataSet(sqlLocal1, table1);
+                    Add2Collection(table1);
+                    break;
+                case ""
+
+            }
+            
         }
 
         #region Properties
@@ -124,7 +133,10 @@ namespace HomeScreen.Database_Layer
 
         }
 
+        private void SearchByRoom()
+        {
 
+        }
 
 
     }

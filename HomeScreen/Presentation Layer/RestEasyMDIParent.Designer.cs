@@ -44,6 +44,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.listAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -92,44 +93,46 @@
             // 
             // accountToolStripMenuItem
             // 
+            this.accountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listAllToolStripMenuItem});
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.accountToolStripMenuItem.Text = "Accounts";
             // 
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.adminToolStripMenuItem.Text = "Admins";
             // 
             // cCToolStripMenuItem
             // 
             this.cCToolStripMenuItem.Name = "cCToolStripMenuItem";
-            this.cCToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.cCToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cCToolStripMenuItem.Text = "Guests";
             // 
             // guestToolStripMenuItem
             // 
             this.guestToolStripMenuItem.Name = "guestToolStripMenuItem";
-            this.guestToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.guestToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.guestToolStripMenuItem.Text = "Hotels";
             // 
             // paymentsToolStripMenuItem
             // 
             this.paymentsToolStripMenuItem.Name = "paymentsToolStripMenuItem";
-            this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.paymentsToolStripMenuItem.Text = "Payments";
             // 
             // roomsToolStripMenuItem
             // 
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.roomsToolStripMenuItem.Text = "Rooms";
             // 
             // roomRatesToolStripMenuItem
             // 
             this.roomRatesToolStripMenuItem.Name = "roomRatesToolStripMenuItem";
-            this.roomRatesToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.roomRatesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.roomRatesToolStripMenuItem.Text = "Room Rates";
             // 
             // reportsToolStripMenuItem
@@ -153,6 +156,12 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
+            // 
+            // listAllToolStripMenuItem
+            // 
+            this.listAllToolStripMenuItem.Name = "listAllToolStripMenuItem";
+            this.listAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.listAllToolStripMenuItem.Text = "List All";
             // 
             // RestEasyMDIParent
             // 
@@ -194,6 +203,7 @@
         private System.Windows.Forms.ToolStripMenuItem paymentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem roomsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem roomRatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listAllToolStripMenuItem;
     }
 }
 
