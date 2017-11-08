@@ -49,7 +49,7 @@ namespace HomeScreen.Business_Layer
             {
                 if(roomAllocations[i].RoomID == roomID)
                 {
-                    for (int j = 0; i < roomAllocations.Count; i++)
+                    for (int j = 0; j < roomAllocations.Count; i++)
                     {
                         if (roomAllocations[i].ReservationNumber == bkings[i].ReservationNumber)
                         {
@@ -70,7 +70,7 @@ namespace HomeScreen.Business_Layer
             {
                 if (roomAllocations[i].ReservationNumber == resNo)
                 {
-                    for (int j = 0; i < roomAllocations.Count; i++)
+                    for (int j = 0; j < roomAllocations.Count; i++)
                     {
                         if (roomAllocations[i].RoomID == rms[i].RoomID)
                         {
@@ -97,7 +97,7 @@ namespace HomeScreen.Business_Layer
                 }
                 else
                 {
-                    for (int j = 0; i < roomBookings.Count; i++)
+                    for (int j = 0; j < roomBookings.Count; i++)
                     {
                         if ((startDate < roomBookings[i].EndDate || endDate > roomBookings[i].StartDate))
                         {
@@ -135,7 +135,7 @@ namespace HomeScreen.Business_Layer
             {
                 bool roomAvailable = true;
                 Collection<Booking> roomBookings = FindBookingsByRoom(bookingController.AllBookings, i);
-                for (int j = 0; i < roomBookings.Count; i++)
+                for (int j = 0; j < roomBookings.Count; i++)
                 {
                     if ((startDate < roomBookings[i].EndDate || endDate > roomBookings[i].StartDate))
                     {
