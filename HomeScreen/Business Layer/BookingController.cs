@@ -95,7 +95,8 @@ namespace HomeScreen.Business_Layer
         public bool FinalizeChanges(Booking booking)
         {
             //***call the EmployeeDB method that will commit the changes to the database
-            return bookingDB.UpdateDataSource(booking);
+            //return bookingDB.UpdateDataSource(booking);
+            return false;
         } 
         #endregion
 

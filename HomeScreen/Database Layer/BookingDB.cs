@@ -117,10 +117,10 @@ namespace HomeScreen.Database_Layer
                 {
                     aBooking = new Booking();
 
-                    aBooking.ReservationNumber = Convert.ToString(myRow["ReservationNumber"]);
-                    aBooking.GuestID = Convert.ToString(myRow["GuestID"]);
-                    aBooking.NoOfRooms = Convert.ToString(myRow["NoOfRooms"]);
-                    aBooking.NoOfPeople = Convert.ToString(myRow["NoOfPeople"]);
+                    aBooking.ReservationNumber = Convert.ToInt32(myRow["ReservationNumber"]);
+                    aBooking.GuestID = Convert.ToInt32(myRow["GuestID"]);
+                    aBooking.NoOfRooms = Convert.ToInt32(myRow["NoOfRooms"]);
+                    aBooking.NoOfPeople = Convert.ToInt32(myRow["NoOfPeople"]);
                     aBooking.StartDate = Convert.ToDateTime(myRow["StartDate"]);
                     aBooking.EndDate = Convert.ToDateTime(myRow["EndDate"]);
                     aBooking.SentConfirmation = Convert.ToBoolean(myRow["SentConfirmation"]);

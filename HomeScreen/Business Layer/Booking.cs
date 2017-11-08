@@ -16,10 +16,10 @@ namespace HomeScreen.Business_Layer
         //properties
         //constructors
 
-        private string reservationNumber;
-        private string guestID;
-        private string noOfPeople;
-        private string noOfRooms;
+        private int reservationNumber;
+        private int guestID;
+        private int noOfPeople;
+        private int noOfRooms;
         private DateTime startDate;
         private DateTime endDate;
         bool sentConfirmation, receivedDeposit, isCancelled;
@@ -39,7 +39,7 @@ namespace HomeScreen.Business_Layer
                 return rooms;
             }
         }
-        public string ReservationNumber
+        public int ReservationNumber
         {
             get
             {
@@ -50,7 +50,7 @@ namespace HomeScreen.Business_Layer
                 reservationNumber = value;
             }
         }
-        public string GuestID
+        public int GuestID
         {
             get
             {
@@ -61,7 +61,7 @@ namespace HomeScreen.Business_Layer
                 guestID = value;
             }
         }
-        public string NoOfPeople
+        public int NoOfPeople
         {
             get
             {
@@ -72,7 +72,7 @@ namespace HomeScreen.Business_Layer
                 noOfPeople = value;
             }
         }
-        public string NoOfRooms
+        public int NoOfRooms
         {
             get
             {

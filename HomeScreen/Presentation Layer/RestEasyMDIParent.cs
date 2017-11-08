@@ -48,6 +48,8 @@ namespace HomeScreen.Presentation_Layer
         private Hotel hotel;
 
         private FormState frmState;
+        private Booking booking;
+        private Guest guest;
 
         #endregion
 
@@ -125,7 +127,7 @@ namespace HomeScreen.Presentation_Layer
 
         public void CreateNewAvailRoomForm()
         {
-            availableRoomsForm = new AvailableRoomsForm(availableRooms, hotel);
+            availableRoomsForm = new AvailableRoomsForm(availableRooms, hotel, booking);
             availableRoomsForm.MdiParent = this;
             availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
         }
@@ -139,7 +141,7 @@ namespace HomeScreen.Presentation_Layer
 
         public void CreateNewConfirmGuest()
         {
-            confirmGuestForm = new ConfirmGuestForm();
+            confirmGuestForm = new ConfirmGuestForm(guest, booking, hotel);
             confirmGuestForm.MdiParent = this;
             confirmGuestForm.StartPosition = FormStartPosition.CenterParent;
         }
@@ -157,7 +159,7 @@ namespace HomeScreen.Presentation_Layer
         }
         public void CreateNewCustomerInformationForm()
         {
-            custInfoForm = new CustomerInformationForm();
+            custInfoForm = new CustomerInformationForm(booking, guest, hotel);
             custInfoForm.MdiParent = this;
             custInfoForm.StartPosition = FormStartPosition.CenterParent;
         }

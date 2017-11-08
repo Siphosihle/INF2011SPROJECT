@@ -60,7 +60,7 @@ namespace HomeScreen.Database_Layer
             }
         }
 
-        protected bool UpdateDataSource(string sqlLocal, string table)
+        public bool UpdateDataSource(string sqlLocal, string table)
         {
             bool success;
             try
