@@ -107,10 +107,18 @@ namespace HomeScreen.Business_Layer
             guestID = "";
         }
 
-        public void CheckGuest()
+        public void GuestDetails(string name, string surname, int phone, string address)
         {
 
         }
-        
+        public string PaymentMethod()
+        {
+            string type = "Credit card";
+            return type;
+        }
+        public bool Status1(string id)
+        {
+            return true;
+        }
     }
 }

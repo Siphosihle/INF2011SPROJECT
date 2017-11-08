@@ -171,7 +171,7 @@ namespace HomeScreen.Presentation_Layer
             
             availableRooms = rAllController.AvailableRooms(hotel, startDate, endDate, noOfRoomsNeeded);
 
-            if (rAllController.Checkavailability(hotel, startDate, endDate, noOfRoomsNeeded))
+            if (rAllController.CheckAvailability(hotel, startDate, endDate, noOfRoomsNeeded) == true)
             {
                 MessageBox.Show("Rooms Are Available!");
 

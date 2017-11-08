@@ -19,6 +19,8 @@ namespace HomeScreen.Business_Layer
 
         private int hotelID;
         private string hotelName;
+        private string address;
+        private int noOfRooms;
         
 
         #region Properties
@@ -53,8 +55,14 @@ namespace HomeScreen.Business_Layer
         {
             
         }
+        public string SelectHotelName(string name)
+        {
+            return name;
+        }   
+        public void HotelDetails(string address, int id)
+        {
             
-
+        }
 
     }
 }
