@@ -15,9 +15,18 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class ListForm : Form
     {
-        public ListForm()
+        private string formstate;
+
+        public ListForm(string frmstate)
         {
             InitializeComponent();
+
+            formstate = frmstate;
+
         }
+
+
+
+
     }
 }

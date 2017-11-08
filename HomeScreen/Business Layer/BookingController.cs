@@ -82,9 +82,9 @@ namespace HomeScreen.Business_Layer
 
         }
 
-        internal int GenerateReferenceNumber()
+        internal int GenerateReferenceNumber(int noOfBookings)
         {
-            throw new NotImplementedException();
+            return noOfBookings + 1;
         }
 
 

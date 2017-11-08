@@ -22,15 +22,17 @@ namespace HomeScreen.Presentation_Layer
         private BookingDetailsForm bookingDetails;
         private Collection<Room> availableRooms;
         private Hotel hotel;
+        private Booking booking;
 
 
-        public AvailableRoomsForm(Collection<Room> availrooms, Hotel htl)
+        public AvailableRoomsForm(Collection<Room> availrooms, Hotel htl, Booking bking)
         {
             InitializeComponent();
             this.FormClosed += AvailableRoomsForm_Closed;
 
             availableRooms = availrooms;
             hotel = htl;
+            booking = bking;
         }
 
         private void AvailableRoomsForm_Closed(object sender, FormClosedEventArgs e)
@@ -55,7 +57,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            CustomerInformationForm hs = new CustomerInformationForm();
+            CustomerInformationForm hs = new CustomerInformationForm(booking, hotel);
             this.Hide();
             hs.Show();
             hs.MdiParent = mdiParent;

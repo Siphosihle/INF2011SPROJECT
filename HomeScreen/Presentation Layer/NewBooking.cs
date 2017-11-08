@@ -17,9 +17,16 @@ namespace HomeScreen.Presentation_Layer
     {
         private RestEasyMDIParent mdiParent;
 
-        public NewBooking()
+        private Booking booking;
+        private Guest guest;
+        private Account account;
+
+        public NewBooking(Guest gst, Booking bking)
         {
             InitializeComponent();
+            guest = gst;
+            booking = bking;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,11 +43,11 @@ namespace HomeScreen.Presentation_Layer
         {
 
             CreateBooking();
-            if(CheckGuestAccount(guest.GuestID) == false)
+            if (CheckGuestAccount(guest.GuestID) == false)
             {
                 CreateGuestAccount();
             }
-            
+
 
 
 
@@ -51,6 +58,35 @@ namespace HomeScreen.Presentation_Layer
             nb.StartPosition = FormStartPosition.CenterParent;
             nb.ShowDialog();
             this.Close();
+        }
+
+        private void CreateGuestAccount()
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool CheckGuestAccount(object guestID)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CreateBooking()
+        {
+
+            PopulateObject(bking);
+            MessageBox.Show("To be submitted to the Database!");
+            employeeController.DataMaintenance(employee, DatabaseLayer.DB.DBOperation.Add);
+            employeeController.FinalizeChanges(employee);
+            ClearAll();
+            ShowAll(false, roleValue);
+
+            throw new NotImplementedException();
+        }
+
+        private void PopulateObject(Booking bking)
+        {
+            booking = bking;
+
         }
     }
 }

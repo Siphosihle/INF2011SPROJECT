@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HomeScreen.Business_Layer;
 using HomeScreen.Database_Layer;
+using HomeScreen.Presentation_Layer;
 
 namespace HomeScreen
 {
@@ -19,10 +20,15 @@ namespace HomeScreen
         private string surname;
         private string id;
         private bool status;
+
+        private ConfirmGuestForm cgf;
+
         private GuestController guestController;
         private Collection<Guest> guests;
         private Guest gst;
-        public ConfirmGuestForm confirm;
+        private Booking booking;
+        private Hotel hotel;
+
         #region Properties
         public string Name
         {
@@ -69,11 +75,14 @@ namespace HomeScreen
             }
         }
         #endregion
-        public CustomerInformationForm()
+        public CustomerInformationForm(Booking bking, Guest gst, Hotel htl)
         {
             InitializeComponent();
             guestController = new GuestController();
             gst = new Guest();
+            booking = bking;
+            hotel = htl;
+
         }
         public void CheckGuest()
         {
@@ -100,8 +109,11 @@ namespace HomeScreen
 
             if ((bFound == true))
             {
+
+                gst = guestController.Find(txtboxID.Text);
+
                 MessageBox.Show("Existing Guest");
-                ConfirmGuestForm cgf = new ConfirmGuestForm();
+                ConfirmGuestForm cgf = new ConfirmGuestForm(gst, booking, hotel);
                 this.Hide();
                 cgf.ShowDialog();
                 this.Close();

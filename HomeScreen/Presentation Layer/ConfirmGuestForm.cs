@@ -18,14 +18,21 @@ namespace HomeScreen.Presentation_Layer
         private RestEasyMDIParent mdiParent;
 
         private Guest gst;
+        private Booking booking;
+        private Hotel hotel;
+
         private Collection<Guest> guests;
         private GuestController guestController;
         CustomerInformationForm cust;
-        public ConfirmGuestForm()
+        public ConfirmGuestForm(Guest guest, Booking bking, Hotel htl)
         {
             InitializeComponent();
             guestController = new GuestController();
             guests = guestController.AllGuests;
+
+            gst = guest;
+            booking = bking;
+            hotel = htl;
 
         }
         public void ShowData()
@@ -51,7 +58,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            NewBooking nb = new NewBooking();
+            NewBooking nb = new NewBooking(gst);
             this.Hide();
             nb.MdiParent = mdiParent;
             nb.StartPosition = FormStartPosition.CenterParent;
