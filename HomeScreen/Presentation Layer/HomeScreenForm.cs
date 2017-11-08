@@ -10,11 +10,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HomeScreen.Business_Layer;
 using HomeScreen.Database_Layer;
+using HomeScreen.Presentation_Layer;
 
 namespace HomeScreen.Presentation_Layer
 {
     public partial class HomeScreenForm : Form
     {
+        private GuestController guestcontroller;
+
         private RestEasyMDIParent mdiParent;
 
         public HomeScreenForm()
@@ -34,7 +37,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnUpdateBooking_Click(object sender, EventArgs e)
         {
-            ListForm bdf = new ListForm();
+            ListForm bdf = new ListForm("Update");
             this.Hide();
             bdf.Show();
             bdf.MdiParent = mdiParent;
@@ -46,20 +49,14 @@ namespace HomeScreen.Presentation_Layer
         {
 
             bool bFound = false;
-            Collection<Guest> guests = adminController.AllAdmins;
-            foreach (Admin admin in admins)
-            {
-                if (txtboxUsername.Text == admin.Username && txtboxPassword.Text == admin.Password)
-                {
-                    bFound = true;
-                }
-            }
+            Collection<Guest> guests = new Collection<Guest>(guestcontroller.AllAdmins);
+            
 
         }
 
         private void btnCancelBooking_Click(object sender, EventArgs e)
         {
-            ListForm bdf = new ListForm(formstate);
+            ListForm bdf = new ListForm("Delete");
             this.Hide();
             bdf.Show();
             bdf.MdiParent = mdiParent;
