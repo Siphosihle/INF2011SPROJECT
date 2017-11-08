@@ -27,15 +27,15 @@ namespace HomeScreen.Database_Layer
         {
             bookings = new Collection<Booking>();
 
-            switch(field)
-            {
-                case "All":
-                    FillDataSet(sqlLocal1, table1);
-                    Add2Collection(table1);
-                    break;
-                case ""
+            //switch(field)
+            //{
+            //    case "All":
+            //        FillDataSet(sqlLocal1, table1);
+            //        Add2Collection(table1);
+            //        break;
+            //    case ""
 
-            }
+            //}
             
         }
 
