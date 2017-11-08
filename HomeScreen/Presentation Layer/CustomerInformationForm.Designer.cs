@@ -101,11 +101,11 @@
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.ForeColor = System.Drawing.Color.HotPink;
-            this.lblID.Location = new System.Drawing.Point(388, 303);
+            this.lblID.Location = new System.Drawing.Point(356, 303);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(20, 15);
+            this.lblID.Size = new System.Drawing.Size(52, 15);
             this.lblID.TabIndex = 18;
-            this.lblID.Text = "ID";
+            this.lblID.Text = "GuestID";
             // 
             // btnCheckStatus
             // 

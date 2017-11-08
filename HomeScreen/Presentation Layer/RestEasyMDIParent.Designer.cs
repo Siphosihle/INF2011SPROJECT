@@ -159,6 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
+            this.BackgroundImage = global::HomeScreen.Properties.Resources.Screenshot__1_;
             this.ClientSize = new System.Drawing.Size(1130, 590);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);

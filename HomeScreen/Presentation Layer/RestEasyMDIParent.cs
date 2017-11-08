@@ -59,6 +59,7 @@ namespace HomeScreen.Presentation_Layer
             admincontroller = new AdminController();
             bookingController = new BookingController();
             hotelController = new HotelController();
+            rAllController = new RoomAllocationController();
 
             availableRooms = new Collection<Room>();
 
