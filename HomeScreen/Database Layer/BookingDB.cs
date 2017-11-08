@@ -43,7 +43,56 @@ namespace HomeScreen.Database_Layer
         {
             return dsMain;
         }
+        #region Database Operations CRUD --- Add the object's values to the database
+        public void DataSetChange(Guest gst, DB.DBOperation operation)
+        {
+            DataRow aRow = null;
+            string dataTable = table1;
+            //***In this case the dataset change refers to adding to a database table
+            //***We now have  3 tables.. once they are placed in an array .. this becomes easier 
+            //switch (gst.role.RoleValue)
+            //{
+            //    case Role.RoleType.Headwaiter:
+            //        dataTable = table1;
+            //        break;
+            //    case Role.RoleType.Waiter:
+            //        dataTable = table2;
+            //        break;
+            //    case Role.RoleType.Runner:
+            //        dataTable = table3;
+            //        break;
+            //}
+            switch (operation)
+            {
+                case DB.DBOperation.Add:
+                    aRow = dsMain.Tables[dataTable].NewRow();
+                    FillRow(aRow, gst, operation);
+                    //Add to the dataset
+                    dsMain.Tables[dataTable].Rows.Add(aRow);
+                    break;
+                case DB.DBOperation.Edit:
+                    // to Edit
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(gst, dataTable)];
+                    FillRow(aRow, gst, operation);
+                    break;
+                case DB.DBOperation.Delete:
+                    //to delete
+                    aRow = dsMain.Tables[dataTable].Rows[FindRow(gst, dataTable)];
+                    aRow.Delete();
+                    break;
+            }
+        }
 
+        private int FindRow(Guest gst, string dataTable)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void FillRow(DataRow aRow, Guest gst, DBOperation operation)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
         private void Add2Collection(string table)
         {
             //Declare references to a myRow object and an Employee object
@@ -57,10 +106,10 @@ namespace HomeScreen.Database_Layer
                 {
                     aBooking = new Booking();
 
-                    aBooking.ReservationNumber = Convert.ToInt32(myRow["ReservationNumber"]);
-                    aBooking.GuestID = Convert.ToInt32(myRow["GuestID"]);
-                    aBooking.NoOfRooms = Convert.ToInt32(myRow["NoOfRooms"]);
-                    aBooking.NoOfPeople = Convert.ToInt32(myRow["NoOfPeople"]);
+                    aBooking.ReservationNumber = Convert.ToString(myRow["ReservationNumber"]);
+                    aBooking.GuestID = Convert.ToString(myRow["GuestID"]);
+                    aBooking.NoOfRooms = Convert.ToString(myRow["NoOfRooms"]);
+                    aBooking.NoOfPeople = Convert.ToString(myRow["NoOfPeople"]);
                     aBooking.StartDate = Convert.ToDateTime(myRow["StartDate"]);
                     aBooking.EndDate = Convert.ToDateTime(myRow["EndDate"]);
                     aBooking.SentConfirmation = Convert.ToBoolean(myRow["SentConfirmation"]);

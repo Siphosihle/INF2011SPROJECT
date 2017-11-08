@@ -89,12 +89,12 @@ namespace HomeScreen.Business_Layer
 
 
         //***Commit the changes to the database
-        /*
+        
         public bool FinalizeChanges(Booking booking)
         {
             //***call the EmployeeDB method that will commit the changes to the database
             return bookingDB.UpdateDataSource(booking);
-        } */
+        } 
         #endregion
 
         #region Search Methods
