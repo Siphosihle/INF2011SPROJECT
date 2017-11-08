@@ -21,6 +21,8 @@ namespace HomeScreen.Presentation_Layer
         private Guest guest;
         private Account account;
 
+        private string st;
+
         public NewBooking(Guest gst, Booking bking)
         {
             InitializeComponent();
