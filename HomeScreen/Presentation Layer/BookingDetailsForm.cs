@@ -180,7 +180,7 @@ namespace HomeScreen.Presentation_Layer
                 bookingFormClosed = true;
                 this.Close();
 
-                availableRoomsForm = new AvailableRoomsForm(availableRooms, hotel, bking);
+                availableRoomsForm = new AvailableRoomsForm(availableRooms, hotel, booking);
                 availableRoomsForm.MdiParent = this.MdiParent;
                 availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
 

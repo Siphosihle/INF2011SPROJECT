@@ -163,24 +163,24 @@ namespace HomeScreen.Presentation_Layer
         private void PopulateObject()
         {
             booking = new Booking();
-            booking.ReservationNumber = txtResNo.Text;
-            booking.GuestID = txtIsCancelled.Text;
-            booking.NoOfPeople = txtNoOfPeople.Text;
+            booking.ReservationNumber = Convert.ToInt32(txtResNo.Text);
+            booking.GuestID = Convert.ToInt32(txtIsCancelled.Text);
+            booking.NoOfPeople = Convert.ToInt32(txtNoOfPeople.Text);
             booking.StartDate = Convert.ToDateTime(txtStartDate.Text);
             booking.EndDate = Convert.ToDateTime(txtEndDate.Text);
-            booking.NoOfRooms = txtNoOfRooms.Text;
+            booking.NoOfRooms = Convert.ToInt32(txtNoOfRooms.Text);
             booking.RecievedDeposit = Convert.ToBoolean(txtReceiveDeposit.Text);
             booking.IsCancelled = Convert.ToBoolean(txtIsCancelled.Text);
             booking.SentConfirmation = Convert.ToBoolean(txtSentConfirmation.Text);
         }
         private void PopulateTextBoxes(Booking bkg)
         {
-            txtGuestID.Text = bkg.GuestID;
+            txtGuestID.Text = Convert.ToString(bkg.GuestID);
             txtEndDate.Text = Convert.ToString(bkg.EndDate);
-            txtResNo.Text = bkg.ReservationNumber;
+            txtResNo.Text = Convert.ToString(bkg.ReservationNumber);
             txtReceiveDeposit.Text = Convert.ToString(bkg.RecievedDeposit);
-            txtNoOfRooms.Text = bkg.NoOfRooms;
-            txtNoOfPeople.Text = bkg.NoOfPeople;
+            txtNoOfRooms.Text = Convert.ToString(bkg.NoOfRooms);
+            txtNoOfPeople.Text = Convert.ToString(bkg.NoOfPeople);
             txtSentConfirmation.Text = Convert.ToString(bkg.SentConfirmation);
             txtStartDate.Text = Convert.ToString(bkg.StartDate);
             txtIsCancelled.Text = Convert.ToString(bkg.IsCancelled);

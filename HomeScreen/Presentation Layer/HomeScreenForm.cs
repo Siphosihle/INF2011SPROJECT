@@ -37,7 +37,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnUpdateBooking_Click(object sender, EventArgs e)
         {
-            ListForm bdf = new ListForm("Update");
+            ListForm bdf = new ListForm(guestcontroller);
             this.Hide();
             bdf.Show();
             bdf.MdiParent = mdiParent;
@@ -56,7 +56,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnCancelBooking_Click(object sender, EventArgs e)
         {
-            ListForm bdf = new ListForm("Delete");
+            ListForm bdf = new ListForm(guestcontroller);
             this.Hide();
             bdf.Show();
             bdf.MdiParent = mdiParent;
