@@ -114,7 +114,7 @@ namespace HomeScreen.Presentation_Layer
             this.Activated += ListForm_Activated;
             this.FormClosed += ListForm_FormClosed;
 
-            switch(crudFunction)
+            switch (crudFunction)
             {
                 case "read":
                     state = FormStates.View;
@@ -154,7 +154,7 @@ namespace HomeScreen.Presentation_Layer
             listView1.Clear();
 
 
-            switch(table)
+            switch (table)
             {
                 #region Guest Setup
                 case "Guest":
@@ -295,7 +295,7 @@ namespace HomeScreen.Presentation_Layer
                 btnSubmit.Visible = value;
             }
 
-            switch(tbl)
+            switch (tbl)
             {
                 case "guest":
                     lbl1.Text = "GuestID";
@@ -313,7 +313,7 @@ namespace HomeScreen.Presentation_Layer
 
                     break;
             }
-                
+
 
 
 
@@ -324,7 +324,7 @@ namespace HomeScreen.Presentation_Layer
         {
             if ((state == FormStates.Edit) && value)
             {
-                switch(tbl)
+                switch (tbl)
                 {
                     case "bookings":
                         txt1.Enabled = !value;
@@ -332,7 +332,7 @@ namespace HomeScreen.Presentation_Layer
                         txt2.Enabled = !value;
                         break;
                 }
-                
+
             }
             else
             {
@@ -384,7 +384,7 @@ namespace HomeScreen.Presentation_Layer
         }
         private void PopulateObject(string table)
         {
-            switch(table)
+            switch (table)
             {
                 case "booking":
                     booking = new Booking();
@@ -399,7 +399,7 @@ namespace HomeScreen.Presentation_Layer
                     booking.IsCancelled = Convert.ToBoolean(txt9.Text);
                     break;
             }
-            
+
         }
         private void PopulateTextBoxes(Guest gst, Booking bkg)
         {
@@ -427,7 +427,7 @@ namespace HomeScreen.Presentation_Layer
                     txt9.Text = Convert.ToString(bkg.IsCancelled);
                     break;
             }
-            
+
 
         }
         private void btnDelete_Click(object sender, EventArgs e)
@@ -438,7 +438,7 @@ namespace HomeScreen.Presentation_Layer
             setUpListView();
         }
 
-       
+
         private void submitButton_Click(object sender, EventArgs e)
         {
             if (state == FormStates.Edit)
