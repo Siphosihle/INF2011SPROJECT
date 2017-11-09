@@ -25,6 +25,8 @@ namespace HomeScreen.Presentation_Layer
         private GuestController guestController;
         CustomerInformationForm cust;
 
+        public bool confirmFormClosed = false;
+
         public ConfirmGuestForm(Guest guest, Booking bking, Hotel htl)
         {
             InitializeComponent();
@@ -35,7 +37,15 @@ namespace HomeScreen.Presentation_Layer
             booking = bking;
             hotel = htl;
 
+            this.FormClosed += Form_Closed;
+
         }
+
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            confirmFormClosed = true;
+        }
+
         public void ShowData()
         {
             foreach (Guest guest in guests)

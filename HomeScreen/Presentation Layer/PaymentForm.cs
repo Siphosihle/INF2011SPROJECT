@@ -20,9 +20,18 @@ namespace HomeScreen.Presentation_Layer
         private Guest guest;
         private Booking booking;
 
+        public bool confirmFormClosed;
+
         public PaymentForm()
         {
             InitializeComponent();
+
+            this.FormClosed += Form_Closed;
+        }
+
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            confirmFormClosed = true;
         }
 
         private void label2_Click(object sender, EventArgs e)

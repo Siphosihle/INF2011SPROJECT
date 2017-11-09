@@ -46,12 +46,11 @@
             this.txt4 = new System.Windows.Forms.TextBox();
             this.txt3 = new System.Windows.Forms.TextBox();
             this.txt2 = new System.Windows.Forms.TextBox();
-            this.updateButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.submitButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.editButton = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl1
@@ -75,7 +74,7 @@
             // lbl9
             // 
             this.lbl9.AutoSize = true;
-            this.lbl9.Location = new System.Drawing.Point(522, 373);
+            this.lbl9.Location = new System.Drawing.Point(544, 373);
             this.lbl9.Name = "lbl9";
             this.lbl9.Size = new System.Drawing.Size(62, 13);
             this.lbl9.TabIndex = 3;
@@ -141,83 +140,82 @@
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(100, 20);
             this.txt1.TabIndex = 10;
-            this.txt1.TextChanged += new System.EventHandler(this.txtResNo_TextChanged);
             // 
             // txt9
             // 
-            this.txt9.Location = new System.Drawing.Point(590, 370);
+            this.txt9.Location = new System.Drawing.Point(612, 370);
             this.txt9.Name = "txt9";
             this.txt9.Size = new System.Drawing.Size(100, 20);
             this.txt9.TabIndex = 11;
             // 
             // txt8
             // 
-            this.txt8.Location = new System.Drawing.Point(418, 485);
+            this.txt8.Location = new System.Drawing.Point(416, 484);
             this.txt8.Name = "txt8";
             this.txt8.Size = new System.Drawing.Size(100, 20);
             this.txt8.TabIndex = 12;
             // 
             // txt7
             // 
-            this.txt7.Location = new System.Drawing.Point(422, 444);
+            this.txt7.Location = new System.Drawing.Point(416, 447);
             this.txt7.Name = "txt7";
             this.txt7.Size = new System.Drawing.Size(100, 20);
             this.txt7.TabIndex = 13;
             // 
             // txt6
             // 
-            this.txt6.Location = new System.Drawing.Point(387, 411);
+            this.txt6.Location = new System.Drawing.Point(416, 410);
             this.txt6.Name = "txt6";
             this.txt6.Size = new System.Drawing.Size(100, 20);
             this.txt6.TabIndex = 14;
             // 
             // txt5
             // 
-            this.txt5.Location = new System.Drawing.Point(387, 370);
+            this.txt5.Location = new System.Drawing.Point(416, 373);
             this.txt5.Name = "txt5";
             this.txt5.Size = new System.Drawing.Size(100, 20);
             this.txt5.TabIndex = 15;
             // 
             // txt4
             // 
-            this.txt4.Location = new System.Drawing.Point(139, 477);
+            this.txt4.Location = new System.Drawing.Point(139, 475);
             this.txt4.Name = "txt4";
             this.txt4.Size = new System.Drawing.Size(100, 20);
             this.txt4.TabIndex = 16;
             // 
             // txt3
             // 
-            this.txt3.Location = new System.Drawing.Point(139, 444);
+            this.txt3.Location = new System.Drawing.Point(139, 440);
             this.txt3.Name = "txt3";
             this.txt3.Size = new System.Drawing.Size(100, 20);
             this.txt3.TabIndex = 17;
             // 
             // txt2
             // 
-            this.txt2.Location = new System.Drawing.Point(139, 411);
+            this.txt2.Location = new System.Drawing.Point(139, 405);
             this.txt2.Name = "txt2";
             this.txt2.Size = new System.Drawing.Size(100, 20);
             this.txt2.TabIndex = 18;
             // 
-            // updateButton
+            // btnUpdate
             // 
-            this.updateButton.Location = new System.Drawing.Point(35, 568);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(75, 23);
-            this.updateButton.TabIndex = 19;
-            this.updateButton.Text = "Update";
-            this.updateButton.UseVisualStyleBackColor = true;
-            this.updateButton.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.Location = new System.Drawing.Point(558, 426);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 19;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // cancelButton
+            // btnCancel
             // 
-            this.cancelButton.Location = new System.Drawing.Point(631, 568);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 20;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnCancel.Location = new System.Drawing.Point(657, 470);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 20;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // listView1
             // 
@@ -228,46 +226,36 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
-            // submitButton
+            // btnSubmit
             // 
-            this.submitButton.Location = new System.Drawing.Point(885, 568);
-            this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(75, 23);
-            this.submitButton.TabIndex = 22;
-            this.submitButton.Text = "Submit";
-            this.submitButton.UseVisualStyleBackColor = true;
-            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
+            this.btnSubmit.Location = new System.Drawing.Point(558, 470);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 22;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.submitButton_Click);
             // 
-            // deleteButton
+            // btnDelete
             // 
-            this.deleteButton.Location = new System.Drawing.Point(748, 447);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteButton.TabIndex = 23;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            // 
-            // editButton
-            // 
-            this.editButton.Location = new System.Drawing.Point(908, 447);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(75, 23);
-            this.editButton.TabIndex = 24;
-            this.editButton.Text = "Edit";
-            this.editButton.UseVisualStyleBackColor = true;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click_1);
+            this.btnDelete.Location = new System.Drawing.Point(657, 426);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 23;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
             // ListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1144, 644);
-            this.Controls.Add(this.editButton);
-            this.Controls.Add(this.deleteButton);
-            this.Controls.Add(this.submitButton);
+            this.ClientSize = new System.Drawing.Size(1144, 531);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.cancelButton);
-            this.Controls.Add(this.updateButton);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txt2);
             this.Controls.Add(this.txt3);
             this.Controls.Add(this.txt4);
@@ -313,11 +301,10 @@
         private System.Windows.Forms.TextBox txt4;
         private System.Windows.Forms.TextBox txt3;
         private System.Windows.Forms.TextBox txt2;
-        private System.Windows.Forms.Button updateButton;
-        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button submitButton;
-        private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.Button editButton;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

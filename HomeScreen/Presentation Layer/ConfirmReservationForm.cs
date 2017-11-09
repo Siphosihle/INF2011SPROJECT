@@ -15,9 +15,19 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class ConfirmReservationForm : Form
     {
+
+        public bool confirmFormClosed = false;
+
         public ConfirmReservationForm()
         {
             InitializeComponent();
+
+            this.FormClosed += Form_Closed;
+        }
+
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            confirmFormClosed = true;
         }
     }
 }

@@ -29,6 +29,9 @@ namespace HomeScreen
         private Booking booking;
         private Hotel hotel;
 
+        public bool confirmFormClosed = false;
+
+
         #region Properties
         public string Name
         {
@@ -83,7 +86,15 @@ namespace HomeScreen
             booking = bking;
             hotel = htl;
 
+            this.FormClosed += Form_Closed;
+
         }
+
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            confirmFormClosed = true;
+        }
+
         public CustomerInformationForm()
         {
 

@@ -19,33 +19,33 @@ namespace HomeScreen.Database_Layer
         private string table1 = "Bookings";
         private string sqlLocal1 = "SELECT * FROM Bookings";
 
-        private string paymentQuery = "SELECT * FROM Bookings WHERE InvoiceNummber = ";
-        private string guestQuery = "SELECT * FROM Bookings WHERE GuestID = ";
-        private string roomQuery = "SELECT * FROM Bookings WHERE RoomID = ";
+        private string paymentQuery =   "SELECT Bookings.* FROM Bookings INNER JOIN BookingPayments ON Bookings.ReservationNumber = BookingPayments.ReservationNumber WHERE BookingPayments.InvoiceNumber = ";
+        private string guestQuery =     "SELECT * FROM Bookings WHERE GuestID = ";
+        private string roomQuery = "SELECT Bookings.* FROM Bookings INNER JOIN RoomAllocation ON Bookings.ReservationNumber = RoomAllocation.ReservationNumber WHERE RoomAllocation.RoomID = ";
 
         private Collection<Booking> bookings;
 
 
 
-        public BookingDB(string field, string searchBy): base()
+        public BookingDB(string tbl, string searchBy): base()
         {
             bookings = new Collection<Booking>();
 
-            switch(field)
+            switch(tbl)
             {
-                case "All":
+                case "all":
                     FillDataSet(sqlLocal1, table1);
                     Add2Collection(table1);
                     break;
-                case "payment":
-                    FillDataSet(paymentQuery+searchBy, table1);
+                case "payments":
+                    FillDataSet(paymentQuery+ searchBy, table1);
                     Add2Collection(table1);
                     break;
                 case "guest":
                     FillDataSet(guestQuery + searchBy, table1);
                     Add2Collection(table1);
                     break;
-                case "room":
+                case "rooms":
                     FillDataSet(roomQuery + searchBy, table1);
                     Add2Collection(table1);
                     break;
@@ -117,6 +117,11 @@ namespace HomeScreen.Database_Layer
                 {
                     aBooking = new Booking();
 
+
+                    int iDefault = 0;
+                    DateTime dt1Default = DateTime.Today;
+                    DateTime dt2Default = DateTime.Today.AddDays(1);
+
                     aBooking.ReservationNumber = Convert.ToInt32(myRow["ReservationNumber"]);
                     aBooking.GuestID = Convert.ToInt32(myRow["GuestID"]);
                     aBooking.NoOfRooms = Convert.ToInt32(myRow["NoOfRooms"]);
@@ -124,7 +129,7 @@ namespace HomeScreen.Database_Layer
                     aBooking.StartDate = Convert.ToDateTime(myRow["StartDate"]);
                     aBooking.EndDate = Convert.ToDateTime(myRow["EndDate"]);
                     aBooking.SentConfirmation = Convert.ToBoolean(myRow["SentConfirmation"]);
-                    aBooking.RecievedDeposit = Convert.ToBoolean(myRow["ReceiveDeposit"]);
+                    aBooking.RecievedDeposit = Convert.ToBoolean(myRow["RecieveDeposit"]);
                     aBooking.IsCancelled = Convert.ToBoolean(myRow["IsCancelled"]);
 
                     bookings.Add(aBooking);
@@ -147,7 +152,7 @@ namespace HomeScreen.Database_Layer
             aRow["StartDate"] = aBooking.StartDate;
             aRow["EndDate"] = aBooking.EndDate;
             aRow["SentConfirmation"] = aBooking.SentConfirmation;
-            aRow["RecievedDeposit"] = aBooking.RecievedDeposit;
+            aRow["RecieveDeposit"] = aBooking.RecievedDeposit;
             aRow["IsCancelled"] = aBooking.IsCancelled;
 
             

@@ -15,9 +15,18 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class CreditCardPaymentForm : Form
     {
+        public bool confirmFormClosed = false;
+
         public CreditCardPaymentForm()
         {
             InitializeComponent();
+
+            this.FormClosed += Form_Closed;
+        }
+
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            confirmFormClosed = true;
         }
     }
 }
