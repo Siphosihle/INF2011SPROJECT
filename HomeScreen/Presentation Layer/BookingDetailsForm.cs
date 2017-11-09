@@ -264,9 +264,9 @@ namespace HomeScreen.Presentation_Layer
 
 
 
-            //availableRooms = rAllController.AvailableRooms(hotel, startDate, endDate);
+            availableRooms = rAllController.AvailableRooms(hotel, startDate, endDate);
 
-            if (cmbHotelName.Text != "")
+            if (availableRooms.Count > noOfRoomsNeeded)
             {
                 MessageBox.Show("Rooms Are Available!");
 
