@@ -58,7 +58,7 @@
             this.txtboxFirstName.Name = "txtboxFirstName";
             this.txtboxFirstName.Size = new System.Drawing.Size(162, 22);
             this.txtboxFirstName.TabIndex = 2;
-            //this.txtboxFirstName.TextChanged += new System.EventHandler(this.txtboxFirstName_TextChanged);
+            this.txtboxFirstName.TextChanged += new System.EventHandler(this.txtboxFirstName_TextChanged_1);
             // 
             // txtboxLastName
             // 

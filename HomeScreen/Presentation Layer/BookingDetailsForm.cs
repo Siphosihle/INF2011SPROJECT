@@ -40,6 +40,7 @@ namespace HomeScreen.Presentation_Layer
         private DateTime startDate, endDate;
         private int noOfGuests, noOfRoomsNeeded;
         private string hotelName;
+        private Booking bking;
 
 
 
@@ -225,7 +226,7 @@ namespace HomeScreen.Presentation_Layer
 
 
             booking = new Booking();
-            booking.ReservationNumber = bookingController.GenerateReferenceNumber(bookingController.AllBookings.Count);
+            booking.ReservationNumber = Convert.ToInt32(bookingController.GenerateReferenceNumber(bookingController.AllBookings.Count));
             booking.NoOfRooms = Convert.ToInt32(bookingController.CalculateNoOfRooms(Convert.ToDouble(cmbNoOfGuests.Text)));
             booking.StartDate = dtpCheckInDate.Value;
             booking.EndDate = dtpCheckOutDate.Value;

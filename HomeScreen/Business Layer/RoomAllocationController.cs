@@ -57,7 +57,7 @@ namespace HomeScreen.Business_Layer
 
                         for (int j = 0; j < roomAllocations.Count; j++)
                         {
-                            if (roomAllocations[j].ReservationNumber == bkings[j].ReservationNumber)
+                            if (roomAllocations[j].ReservationNumber.Equals(bkings[j].ReservationNumber))
                             {
 
                                 matches.Add(bkings[j]);
