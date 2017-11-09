@@ -45,14 +45,19 @@ namespace HomeScreen.Business_Layer
         {
             Collection<Booking> matches = new Collection<Booking>();
 
-            for (int i = 0; i < roomAllocations.Count; i++)
-            {
+            Collection<Room> hotelRooms = roomcontroller.FindByHotel(roomcontroller.AllRooms, htl.HotelID);
 
-                for (int h = 0; h < roomcontroller.FindByHotel(roomcontroller.AllRooms, htl.HotelID).Count;h++)
+            //room1 A1
+            //room1 A2
+
+
+
+            
+                for (int h = 0; h < hotelRooms.Count;h++)
                 {
 
-                    int roomID = roomcontroller.FindByHotel(roomcontroller.AllRooms, htl.HotelID)[h].RoomID;
-                    if (roomAllocations[i].RoomID == roomID)
+                    int roomID = hotelRooms[h].RoomID;
+                    if (roomAllocations[h].RoomID == roomID)
                     {
 
                         for (int j = 0; j < roomAllocations.Count; j++)
@@ -67,7 +72,7 @@ namespace HomeScreen.Business_Layer
 
                 }
 
-            }
+            
 
             return matches;
 
@@ -148,30 +153,22 @@ namespace HomeScreen.Business_Layer
             //for each room in HotelRooms
 
             Collection<Room> matches = new Collection<Room>();
-
-
-            //available rooms collection = 
-            //available = for A hotel, if roomavailable = true for number of rooms required
-
-            //if roomID = hotel.RoomID
-
-            //roomavailable
-            //
-
-            for (int i = 0; i < roomcontroller.FindByHotel(hotel.HotelID).Count;i++)
+            Collection<Room> hotelRooms = roomcontroller.FindByHotel(hotel.HotelID);
+            
+            for (int i = 0; i < hotelRooms.Count;i++)
             {
-                bool roomAvailable = true;
-                Collection<Booking> roomBookings = FindBookingsByRoom(bookingController.AllBookings, hotel);
+                Collection<bool> roomAvailable = new Collection<bool>();
+                Collection<Booking> roomBookings = bookingController.FindByRoom("room", hotelRooms[i].RoomID.ToString());
                 for (int j = 0; j < roomBookings.Count; j++)
                 {
                     if ((startDate < roomBookings[j].EndDate || endDate > roomBookings[j].StartDate))
                     {
-                        roomAvailable = false;
+                        roomAvailable[i] = false;
                     }
                 }
-                if (roomAvailable == true)
+                if (roomAvailable[i] == true)
                 {
-                    matches.Add(roomcontroller.FindByHotel(hotel.HotelID)[i]);
+                    matches.Add(hotelRooms[i]);
                 }
             }
 

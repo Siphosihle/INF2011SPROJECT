@@ -18,50 +18,98 @@ namespace HomeScreen.Presentation_Layer
     {
         private GuestController guestcontroller;
 
-        private RestEasyMDIParent mdiParent;
+        private BookingDetailsForm bdForm;
+        private ListForm lvForm;
+
+        public bool confirmFormClosed = false;
 
         public HomeScreenForm()
         {
             InitializeComponent();
+
+
+            this.FormClosed += Form_Closed;
+        }
+
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            confirmFormClosed = true;
         }
 
         private void btnMakeaBooking_Click(object sender, EventArgs e)
         {
-            BookingDetailsForm bdf = new BookingDetailsForm();
+
+            if(bdForm == null)
+            {
+                CreateNewBDForm();
+            }
+            if (bdForm.confirmFormClosed)
+            {
+                CreateNewBDForm();
+            }
             this.Hide();
-            bdf.Show();
-            bdf.MdiParent = mdiParent;
-            bdf.StartPosition = FormStartPosition.CenterParent;
+            bdForm.Show();
+            this.Close();
+
+            
+        }
+
+
+
+        #region new forms
+        private void CreateNewBDForm()
+        {
+            bdForm = new BookingDetailsForm();
+            bdForm.MdiParent = this.MdiParent;
+            bdForm.StartPosition = FormStartPosition.CenterParent;
+        }
+
+        private void CreateNewLVForm(string tbl)
+        {
+            if (lvForm == null)
+            {
+                lvForm = new ListForm(tbl);
+                lvForm.MdiParent = this.MdiParent;
+                lvForm.StartPosition = FormStartPosition.CenterParent;
+            }
+            if (lvForm.confirmFormClosed)
+            {
+                lvForm = new ListForm(tbl);
+                lvForm.MdiParent = this.MdiParent;
+                lvForm.StartPosition = FormStartPosition.CenterParent;
+            }
+            this.Hide();
+            lvForm.Show();
             this.Close();
         }
 
+        #endregion
+
+        #region Button Events
+
         private void btnUpdateBooking_Click(object sender, EventArgs e)
         {
-            ListForm bdf = new ListForm(guestcontroller);
-            this.Hide();
-            bdf.Show();
-            bdf.MdiParent = mdiParent;
-            bdf.StartPosition = FormStartPosition.CenterParent;
-            this.Close();
+            CreateNewLVForm("Booking");
         }
+
 
         private void btnBookingEnquiry_Click(object sender, EventArgs e)
         {
 
-            bool bFound = false;
-            Collection<Guest> guests = new Collection<Guest>(guestcontroller.AllGuests);
-            
-
+            CreateNewLVForm("Guest");
         }
 
         private void btnCancelBooking_Click(object sender, EventArgs e)
         {
-            ListForm bdf = new ListForm(guestcontroller);
-            this.Hide();
-            bdf.Show();
-            bdf.MdiParent = mdiParent;
-            bdf.StartPosition = FormStartPosition.CenterParent;
-            this.Close();
+            CreateNewLVForm("Booking");
+
         }
+
+        
+
+
+        #endregion
+
+
     }
 }

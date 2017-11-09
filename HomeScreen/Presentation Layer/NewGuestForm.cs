@@ -18,6 +18,8 @@ namespace HomeScreen.Presentation_Layer
         public NewGuestForm()
         {
             InitializeComponent();
+
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)

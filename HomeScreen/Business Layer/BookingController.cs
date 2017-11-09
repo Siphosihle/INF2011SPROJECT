@@ -36,7 +36,7 @@ namespace HomeScreen.Business_Layer
 
         internal void CalculateDeposit()
         {
-            throw new NotImplementedException();
+
         }
 
         
@@ -101,6 +101,14 @@ namespace HomeScreen.Business_Layer
         #endregion
 
         #region Search Methods
+
+        public Collection<Booking> FindByRoom(string table, string searchBy)
+        {
+            BookingDB roomBookingDB = new BookingDB(table, searchBy);
+
+            return roomBookingDB.AllBookings;
+        }
+
         /*
          //This method  (function) searched through all the employess to finds onlly those with the required role
         public Collection<Booking> FindByAvailability(Collection<Booking> bkings)

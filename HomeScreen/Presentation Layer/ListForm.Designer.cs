@@ -50,8 +50,6 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.submitButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
-            this.editButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl1
@@ -141,7 +139,6 @@
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(100, 20);
             this.txt1.TabIndex = 10;
-            this.txt1.TextChanged += new System.EventHandler(this.txtResNo_TextChanged);
             // 
             // txt9
             // 
@@ -201,7 +198,7 @@
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(35, 568);
+            this.updateButton.Location = new System.Drawing.Point(142, 545);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(75, 23);
             this.updateButton.TabIndex = 19;
@@ -211,11 +208,11 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(631, 568);
+            this.cancelButton.Location = new System.Drawing.Point(257, 545);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 20;
-            this.cancelButton.Text = "Cancel";
+            this.cancelButton.Text = "Delete";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -230,7 +227,7 @@
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(885, 568);
+            this.submitButton.Location = new System.Drawing.Point(35, 545);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(75, 23);
             this.submitButton.TabIndex = 22;
@@ -238,32 +235,11 @@
             this.submitButton.UseVisualStyleBackColor = true;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
-            // deleteButton
-            // 
-            this.deleteButton.Location = new System.Drawing.Point(748, 447);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteButton.TabIndex = 23;
-            this.deleteButton.Text = "Delete";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            // 
-            // editButton
-            // 
-            this.editButton.Location = new System.Drawing.Point(908, 447);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(75, 23);
-            this.editButton.TabIndex = 24;
-            this.editButton.Text = "Edit";
-            this.editButton.UseVisualStyleBackColor = true;
-            this.editButton.Click += new System.EventHandler(this.editButton_Click_1);
-            // 
             // ListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 644);
-            this.Controls.Add(this.editButton);
-            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.cancelButton);
@@ -317,7 +293,5 @@
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button submitButton;
-        private System.Windows.Forms.Button deleteButton;
-        private System.Windows.Forms.Button editButton;
     }
 }

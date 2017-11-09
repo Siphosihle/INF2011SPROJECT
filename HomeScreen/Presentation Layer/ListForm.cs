@@ -23,7 +23,7 @@ namespace HomeScreen.Presentation_Layer
             Delete = 3
         }
 
-        public bool formClosed = false;
+        public bool confirmFormClosed = false;
         private GuestController guestController;
         private BookingController bookingController;
 
@@ -77,7 +77,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void ListForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            formClosed = true;
+            confirmFormClosed = true;
         }
 
         private void ListForm_Load(object sender, EventArgs e)
@@ -226,8 +226,6 @@ namespace HomeScreen.Presentation_Layer
                 cancelButton.Visible = value;
                 submitButton.Visible = value;
             }
-            deleteButton.Visible = value;
-            editButton.Visible = value;
 
             switch(tbl)
             {
@@ -318,18 +316,7 @@ namespace HomeScreen.Presentation_Layer
             bookingController.DataMaintenance(booking, Database_Layer.DB.DBOperation.Delete);
         }
 
-        private void txtResNo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void editButton_Click(object sender, EventArgs e)
-        {
-            state = FormStates.Edit;
-            deleteButton.Visible = false;
-            ShowAll(true, table);
-        }
-
+       
         private void submitButton_Click(object sender, EventArgs e)
         {
             if (state == FormStates.Edit)
@@ -349,10 +336,7 @@ namespace HomeScreen.Presentation_Layer
             booking = null;
         }
 
-        private void editButton_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
 

@@ -29,6 +29,13 @@ namespace HomeScreen.Presentation_Layer
             guest = gst;
             booking = bking;
 
+            this.FormClosed += Form_Closed;
+
+        }
+
+        private void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            this.FormClosed += Form_Closed;
         }
 
         private void button1_Click(object sender, EventArgs e)

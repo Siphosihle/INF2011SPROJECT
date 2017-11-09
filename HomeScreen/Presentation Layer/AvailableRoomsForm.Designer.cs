@@ -32,12 +32,9 @@
             this.lblAvailableRooms = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
-            this.pnlAvailability = new System.Windows.Forms.Panel();
-            this.rtbAvailableRooms = new System.Windows.Forms.RichTextBox();
-            this.lblTheFollowing = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
-            this.pnlAvailability.SuspendLayout();
             this.SuspendLayout();
             // 
             // picBox
@@ -65,7 +62,7 @@
             // 
             this.btnNext.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.HotPink;
-            this.btnNext.Location = new System.Drawing.Point(614, 420);
+            this.btnNext.Location = new System.Drawing.Point(613, 495);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(123, 48);
             this.btnNext.TabIndex = 29;
@@ -77,7 +74,7 @@
             // 
             this.btnPrevious.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.Color.HotPink;
-            this.btnPrevious.Location = new System.Drawing.Point(296, 420);
+            this.btnPrevious.Location = new System.Drawing.Point(295, 495);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(123, 48);
             this.btnPrevious.TabIndex = 30;
@@ -85,39 +82,11 @@
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
-            // pnlAvailability
-            // 
-            this.pnlAvailability.Controls.Add(this.rtbAvailableRooms);
-            this.pnlAvailability.Controls.Add(this.lblTheFollowing);
-            this.pnlAvailability.Location = new System.Drawing.Point(293, 139);
-            this.pnlAvailability.Name = "pnlAvailability";
-            this.pnlAvailability.Size = new System.Drawing.Size(447, 241);
-            this.pnlAvailability.TabIndex = 32;
-            // 
-            // rtbAvailableRooms
-            // 
-            this.rtbAvailableRooms.Location = new System.Drawing.Point(3, 18);
-            this.rtbAvailableRooms.Name = "rtbAvailableRooms";
-            this.rtbAvailableRooms.Size = new System.Drawing.Size(441, 220);
-            this.rtbAvailableRooms.TabIndex = 1;
-            this.rtbAvailableRooms.Text = "";
-            this.rtbAvailableRooms.TextChanged += new System.EventHandler(this.rtbAvailableRooms_TextChanged);
-            // 
-            // lblTheFollowing
-            // 
-            this.lblTheFollowing.AutoSize = true;
-            this.lblTheFollowing.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTheFollowing.Location = new System.Drawing.Point(3, 0);
-            this.lblTheFollowing.Name = "lblTheFollowing";
-            this.lblTheFollowing.Size = new System.Drawing.Size(194, 15);
-            this.lblTheFollowing.TabIndex = 0;
-            this.lblTheFollowing.Text = "The Following Rooms Are Availabe";
-            // 
             // btnHome
             // 
             this.btnHome.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.Color.HotPink;
-            this.btnHome.Location = new System.Drawing.Point(425, 420);
+            this.btnHome.Location = new System.Drawing.Point(424, 495);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(183, 48);
             this.btnHome.TabIndex = 33;
@@ -125,13 +94,21 @@
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(12, 118);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(1008, 371);
+            this.listView1.TabIndex = 34;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // AvailableRoomsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 581);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.pnlAvailability);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.lblAvailableRooms);
@@ -140,8 +117,6 @@
             this.Text = "Rest easy Hotel";
             this.Load += new System.EventHandler(this.AvailableRoomsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
-            this.pnlAvailability.ResumeLayout(false);
-            this.pnlAvailability.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,9 +128,7 @@
         private System.Windows.Forms.Label lblAvailableRooms;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevious;
-        private System.Windows.Forms.Panel pnlAvailability;
-        private System.Windows.Forms.Label lblTheFollowing;
-        private System.Windows.Forms.RichTextBox rtbAvailableRooms;
         private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.ListView listView1;
     }
 }

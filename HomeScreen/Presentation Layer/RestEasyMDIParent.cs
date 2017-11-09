@@ -125,83 +125,6 @@ namespace HomeScreen.Presentation_Layer
             adminForm.StartPosition = FormStartPosition.CenterParent;
         }
 
-        public void CreateNewAvailRoomForm()
-        {
-            availableRoomsForm = new AvailableRoomsForm(availableRooms, hotel, booking);
-            availableRoomsForm.MdiParent = this;
-            availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
-        }
-
-        public void CreateNewBookingEnquiryForm()
-        {
-            bookingEnquiryForm = new BookingDetailsForm();
-            bookingEnquiryForm.MdiParent = this;
-            bookingEnquiryForm.StartPosition = FormStartPosition.CenterParent;
-        }
-
-        public void CreateNewConfirmGuest()
-        {
-            confirmGuestForm = new ConfirmGuestForm(guest, booking, hotel);
-            confirmGuestForm.MdiParent = this;
-            confirmGuestForm.StartPosition = FormStartPosition.CenterParent;
-        }
-        public void CreateNewConfirmReservationForm()
-        {
-            confirmReservationForm = new ConfirmReservationForm();
-            confirmReservationForm.MdiParent = this;
-            confirmReservationForm.StartPosition = FormStartPosition.CenterParent;
-        }
-        public void CreateNewCreditCardPaymentForm()
-        {
-            ccPaymentForm = new CreditCardPaymentForm();
-            ccPaymentForm.MdiParent = this;
-            ccPaymentForm.StartPosition = FormStartPosition.CenterParent;
-        }
-        public void CreateNewCustomerInformationForm()
-        {
-            custInfoForm = new CustomerInformationForm(booking, guest, hotel);
-            custInfoForm.MdiParent = this;
-            custInfoForm.StartPosition = FormStartPosition.CenterParent;
-        }
-        public void CreateNewHomeScreenForm()
-        {
-            homeScreenForm = new HomeScreenForm();
-            homeScreenForm.MdiParent = this;
-            homeScreenForm.StartPosition = FormStartPosition.CenterParent;
-        }
-        public void CreateNewListForm()
-        {
-            adminForm = new AdminLoginForm();
-            adminForm.MdiParent = this;
-            adminForm.StartPosition = FormStartPosition.CenterParent;
-        }
-        /*public void CreateNewAdminForm()
-        {
-            adminForm = new AdminLoginForm();
-            adminForm.MdiParent = this;
-            adminForm.StartPosition = FormStartPosition.CenterParent;
-        }
-        public void CreateNewAdminForm()
-        {
-            adminForm = new AdminLoginForm();
-            adminForm.MdiParent = this;
-            adminForm.StartPosition = FormStartPosition.CenterParent;
-        }
-        public void CreateNewAdminForm()
-        {
-            adminForm = new AdminLoginForm();
-            adminForm.MdiParent = this;
-            adminForm.StartPosition = FormStartPosition.CenterParent;
-        }
-        public void CreateNewAdminForm()
-        {
-            adminForm = new AdminLoginForm();
-            adminForm.MdiParent = this;
-            adminForm.StartPosition = FormStartPosition.CenterParent;
-        }
-
-    */
-
         #endregion
 
         #region ToolStripMenu Items
@@ -254,44 +177,19 @@ namespace HomeScreen.Presentation_Layer
 
 
 
-        private void DisplayAdminForm()
+        private void DisplayAdminForm(RestEasyMDIParent prntfrm)
         {
             if (adminForm == null)
             {
                 CreateNewAdminForm();
             }
-            if (adminForm.adminLoginFormClosed)
+            if (adminForm.confirmFormClosed)
             {
                 CreateNewAdminForm();
             }
             adminForm.Show();
         }
-
-        private void DisplayBookingEnquiryForm()
-        {
-            if (bookingEnquiryForm == null)
-            {
-                CreateNewBookingEnquiryForm();
-            }
-            if (bookingEnquiryForm.bookingFormClosed == true)
-            {
-                CreateNewBookingEnquiryForm();
-            }
-            bookingEnquiryForm.Show();
-        }
-
-        private void DisplayAvailableRoomsForm()
-        {
-            if (availableRoomsForm == null)
-            {
-                CreateNewBookingEnquiryForm();
-            }
-            if (availableRoomsForm.availableRoomsFormClosed == true)
-            {
-                CreateNewBookingEnquiryForm();
-            }
-            bookingEnquiryForm.Show();
-        }
+        
 
 
 
@@ -310,7 +208,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void RestEasyMDIParent_Load(object sender, EventArgs e)
         {
-            DisplayAdminForm();
+            DisplayAdminForm(this);
         }
 
         private void makeABookingToolStripMenuItem_Click(object sender, EventArgs e)

@@ -14,11 +14,11 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class AvailableRoomsForm : Form
     {
-        private RestEasyMDIParent mdiParent;
+        public bool confirmFormClosed = false;
+
         private HomeScreenForm homescreenform;
         private CustomerInformationForm custInfoForm;
 
-        public bool availableRoomsFormClosed = false;
         private BookingDetailsForm bookingDetails;
         private Collection<Room> availableRooms;
 
@@ -38,7 +38,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void AvailableRoomsForm_Closed(object sender, FormClosedEventArgs e)
         {
-            availableRoomsFormClosed = true;
+            confirmFormClosed = true;
         }
 
         private void rtbAvailableRooms_TextChanged(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace HomeScreen.Presentation_Layer
             CustomerInformationForm hs = new CustomerInformationForm(booking, guest, hotel);
             this.Hide();
             hs.Show();
-            hs.MdiParent = mdiParent;
+            hs.MdiParent = this.MdiParent;
             hs.StartPosition = FormStartPosition.CenterParent;
             this.Close();
         }
@@ -73,7 +73,10 @@ namespace HomeScreen.Presentation_Layer
             {
                 sAvailRoom += "Room No " + availableRooms[i].RoomNo + "\n";
             }
-            rtbAvailableRooms.Text = sAvailRoom;
+
+
+
+
         }
 
         private void lblAvailableRooms_Click(object sender, EventArgs e)

@@ -19,33 +19,33 @@ namespace HomeScreen.Database_Layer
         private string table1 = "Bookings";
         private string sqlLocal1 = "SELECT * FROM Bookings";
 
-        private string paymentQuery = "SELECT * FROM Bookings WHERE InvoiceNummber = ";
-        private string guestQuery = "SELECT * FROM Bookings WHERE GuestID = ";
-        private string roomQuery = "SELECT * FROM Bookings WHERE RoomID = ";
+        private string paymentQuery =   "SELECT * FROM Bookings INNER JOIN BookingPayments ON BookingPayments.ReservationNumber = Bookings.ReservationNumber WHERE BookingPayments.InvoiceNumber = ";
+        private string guestQuery =     "SELECT * FROM Bookings WHERE GuestID = ";
+        private string roomQuery =      "SELECT * FROM Bookings INNER JOIN RoomAllocation ON RoomAllocation.ReservationNumber = Bookings.ReservationNumber WHERE RoomAllocation.RoomID = ";
 
         private Collection<Booking> bookings;
 
 
 
-        public BookingDB(string field, string searchBy): base()
+        public BookingDB(string tbl, string searchBy): base()
         {
             bookings = new Collection<Booking>();
 
-            switch(field)
+            switch(tbl)
             {
                 case "All":
                     FillDataSet(sqlLocal1, table1);
                     Add2Collection(table1);
                     break;
-                case "payment":
-                    FillDataSet(paymentQuery+searchBy, table1);
+                case "payments":
+                    FillDataSet(paymentQuery+ searchBy, table1);
                     Add2Collection(table1);
                     break;
                 case "guest":
                     FillDataSet(guestQuery + searchBy, table1);
                     Add2Collection(table1);
                     break;
-                case "room":
+                case "rooms":
                     FillDataSet(roomQuery + searchBy, table1);
                     Add2Collection(table1);
                     break;

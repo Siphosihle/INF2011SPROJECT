@@ -14,14 +14,14 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class AdminLoginForm : Form
     {
-        private RestEasyMDIParent midParent;
+        private HomeScreenForm hsf;
 
         private Collection<Admin> admins;
         private Admin admin;
         private AdminController adminController;
         private string name;
         private string password;
-        public bool adminLoginFormClosed = false;
+        public bool confirmFormClosed = false;
 
         #region Properties
         public new string Name
@@ -50,13 +50,14 @@ namespace HomeScreen.Presentation_Layer
         public AdminLoginForm()
         {
             InitializeComponent();
+
             adminController = new AdminController();
             this.FormClosed += AdminLoginForm_Closed;
         }
 
         private void AdminLoginForm_Closed(object sender, FormClosedEventArgs e)
         {
-            adminLoginFormClosed = true;
+            confirmFormClosed = true;
         }
 
         private void btnLogIn_Click_1(object sender, EventArgs e)
@@ -73,13 +74,19 @@ namespace HomeScreen.Presentation_Layer
 
             if (bFound==true)
             {
-                HomeScreenForm hsf = new HomeScreenForm();
-                this.Hide();
-                hsf.MdiParent = midParent;
-                hsf.StartPosition = FormStartPosition.CenterParent;
-                hsf.ShowDialog();
 
+                if (hsf == null)
+                {
+                    CreateNewHSF();
+                }
+                if (hsf.confirmFormClosed)
+                {
+                    CreateNewHSF();
+                }
+                this.Hide();
+                hsf.Show();
                 this.Close();
+                
 
 
             }
@@ -89,6 +96,13 @@ namespace HomeScreen.Presentation_Layer
 
             }
 
+        }
+
+        private void CreateNewHSF( )
+        {
+            hsf = new HomeScreenForm();
+            hsf.MdiParent = this.MdiParent;
+            hsf.StartPosition = FormStartPosition.CenterParent;
         }
 
         private void txtboxUsername_TextChanged(object sender, EventArgs e)

@@ -19,7 +19,8 @@ namespace HomeScreen.Presentation_Layer
         #region Members
 
 
-        public bool bookingFormClosed = false;
+        public bool confirmFormClosed = false;
+
         private AvailableRoomsForm availableRoomsForm;
 
         private BookingController bookingController;
@@ -41,6 +42,7 @@ namespace HomeScreen.Presentation_Layer
         private int noOfGuests, noOfRoomsNeeded;
         private string hotelName;
         private Booking bking;
+        private RestEasyMDIParent mdiParent;
 
 
 
@@ -123,7 +125,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void Form_Closed(object sender, FormClosedEventArgs e)
         {
-            bookingFormClosed = true;
+            confirmFormClosed = true;
         }
 
 
@@ -141,7 +143,7 @@ namespace HomeScreen.Presentation_Layer
             dtpCheckInDate.Enabled = true;
             dtpCheckInDate.MinDate = DateTime.Today;
             dtpCheckOutDate.Enabled = false;
-            cmbNoOfGuests.Enabled = false;
+            cmbNoOfGuests.Enabled = true;
 
             Hotel hotel = hotelController.Find(cmbHotelName.Text);
 
@@ -178,13 +180,11 @@ namespace HomeScreen.Presentation_Layer
             {
                 MessageBox.Show("Rooms Are Available!");
 
-                bookingFormClosed = true;
+                confirmFormClosed = true;
                 this.Close();
 
-                availableRoomsForm = new AvailableRoomsForm(availableRooms, hotel, booking);
-                availableRoomsForm.MdiParent = this.MdiParent;
-                availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
-
+                CheckFormExist();
+               
                 availableRoomsForm.Show();
             }
             else
@@ -192,13 +192,32 @@ namespace HomeScreen.Presentation_Layer
                 MessageBox.Show("There are no rooms available for the selected dates");
                 this.Close();
 
-                availableRoomsForm = new AvailableRoomsForm(availableRooms, hotel, booking);
-                availableRoomsForm.MdiParent = this.MdiParent;
-                availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
+                CheckFormExist();
+
                 availableRoomsForm.Show();
             }
 
             ClearAll();
+        }
+
+        private void CheckFormExist()
+        {
+            if (availableRoomsForm == null)
+            {
+                CreatNewAvailableRoomsForm();
+            }
+            if (availableRoomsForm.confirmFormClosed)
+            {
+                CreatNewAvailableRoomsForm();
+
+            }
+        }
+
+        private void CreatNewAvailableRoomsForm()
+        {
+            availableRoomsForm = new AvailableRoomsForm(availableRooms, hotel, booking);
+            availableRoomsForm.MdiParent = this.MdiParent;
+            availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
         }
         #endregion
 
@@ -217,7 +236,6 @@ namespace HomeScreen.Presentation_Layer
 
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
-
         }
 
         public void PopulateObject()
