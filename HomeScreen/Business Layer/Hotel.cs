@@ -19,8 +19,6 @@ namespace HomeScreen.Business_Layer
 
         private int hotelID;
         private string hotelName;
-        private string address;
-        private int noOfRooms;
         
 
         #region Properties

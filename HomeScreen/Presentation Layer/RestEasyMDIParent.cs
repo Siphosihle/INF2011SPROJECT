@@ -47,14 +47,14 @@ namespace HomeScreen.Presentation_Layer
         private Collection<Room> availableRooms;
         private Hotel hotel;
 
-        private FormState frmState;
+        public FormState frmState;
         private Booking booking;
         private Guest guest;
 
         #endregion
 
         #region Constructors
-        public RestEasyMDIParent()
+        public RestEasyMDIParent(string LggdIn)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
@@ -69,6 +69,14 @@ namespace HomeScreen.Presentation_Layer
 
             //rAllController.AvailRoomsInst += RoomAllocationController_AvailRoomsInst;
             frmState = FormState.LoggedOff;
+            this.accountsToolStripMenuItem.Enabled = false;
+            this.adminsToolStripMenuItem.Enabled = false;
+            this.hotelsToolStripMenuItem.Enabled = false;
+            this.hotelsToolStripMenuItem.Enabled = false;
+            this.paymentsToolStripMenuItem.Enabled = false;
+            this.roomsToolStripMenuItem.Enabled = false;
+            this.roomRatesToolStripMenuItem.Enabled = false;
+
         }
         #endregion
 
@@ -120,7 +128,7 @@ namespace HomeScreen.Presentation_Layer
 
         public void CreateNewAdminForm()
         {
-            adminForm = new AdminLoginForm();
+            adminForm = new AdminLoginForm(this);
             adminForm.MdiParent = this;
             adminForm.StartPosition = FormStartPosition.CenterParent;
         }
@@ -206,16 +214,28 @@ namespace HomeScreen.Presentation_Layer
 
         #endregion
 
+        #region FormEvents
         private void RestEasyMDIParent_Load(object sender, EventArgs e)
         {
             DisplayAdminForm(this);
         }
 
-        private void makeABookingToolStripMenuItem_Click(object sender, EventArgs e)
+        private void logInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            DisplayAdminForm(this);
         }
 
-        
+        protected virtual void OnLogIn(EventArgs e)
+        {
+            EventHandler handler = LogIn;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+        }
+
+        public event EventHandler LogIn;
+
+        #endregion
     }
 }

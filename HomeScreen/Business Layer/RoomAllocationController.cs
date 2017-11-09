@@ -158,7 +158,7 @@ namespace HomeScreen.Business_Layer
             for (int i = 0; i < hotelRooms.Count;i++)
             {
                 Collection<bool> roomAvailable = new Collection<bool>();
-                Collection<Booking> roomBookings = bookingController.FindByRoom("room", hotelRooms[i].RoomID.ToString());
+                Collection<Booking> roomBookings = bookingController.FindByRoom("rooms", hotelRooms[i].RoomID.ToString());
                 for (int j = 0; j < roomBookings.Count; j++)
                 {
                     if ((startDate < roomBookings[j].EndDate || endDate > roomBookings[j].StartDate))

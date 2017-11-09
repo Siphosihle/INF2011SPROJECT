@@ -14,6 +14,8 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class AdminLoginForm : Form
     {
+
+        private RestEasyMDIParent mdiParent;
         private HomeScreenForm hsf;
 
         private Collection<Admin> admins;
@@ -47,9 +49,11 @@ namespace HomeScreen.Presentation_Layer
             }
         }
         #endregion
-        public AdminLoginForm()
+        public AdminLoginForm(RestEasyMDIParent prntfrm)
         {
             InitializeComponent();
+
+            mdiParent = prntfrm;
 
             adminController = new AdminController();
             this.FormClosed += AdminLoginForm_Closed;
@@ -74,6 +78,9 @@ namespace HomeScreen.Presentation_Layer
 
             if (bFound==true)
             {
+
+                mdiParent.frmState = RestEasyMDIParent.FormState.LoggedOn;
+
 
                 if (hsf == null)
                 {

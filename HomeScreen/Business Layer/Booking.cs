@@ -24,21 +24,12 @@ namespace HomeScreen.Business_Layer
         private DateTime endDate;
         bool sentConfirmation, receivedDeposit, isCancelled;
 
-        public Collection<Room> rooms;
-
         private Calendar myCal = CultureInfo.InvariantCulture.Calendar;
         private DateTime date;
 
 
         #region Properties
 
-        public Collection<Room> Rooms
-        {
-            get
-            {
-                return rooms;
-            }
-        }
         public int ReservationNumber
         {
             get
@@ -144,8 +135,6 @@ namespace HomeScreen.Business_Layer
 
         public Booking()
         {
-
-            this.rooms = new Collection<Room>();
 
         }
 
