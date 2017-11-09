@@ -125,6 +125,8 @@ namespace HomeScreen.Database_Layer
                     aGuest.Surname = Convert.ToString(myRow["Surname"]).TrimEnd();
                     aGuest.PhoneNumber = Convert.ToString(myRow["PhoneNo"]).TrimEnd();
                     aGuest.Address = Convert.ToString(myRow["Address"]).TrimEnd();
+                    aGuest.Email = Convert.ToString(myRow["Email"]).TrimEnd();
+                    aGuest.Status = Convert.ToString(myRow["Status"]).TrimEnd();
                     guest.Add(aGuest);
                 }
             }

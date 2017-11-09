@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HomeScreen.Business_Layer;
+using HomeScreen.Presentation_Layer;
 
 namespace HomeScreen.Presentation_Layer
 {
@@ -22,6 +23,8 @@ namespace HomeScreen.Presentation_Layer
         private BookingDetailsForm bookingDetails;
         private Collection<Room> availableRooms;
 
+        private RoomController roomcontroller;
+
         private Hotel hotel;
         private Booking booking;
         private Guest guest;
@@ -31,9 +34,64 @@ namespace HomeScreen.Presentation_Layer
             InitializeComponent();
             this.FormClosed += AvailableRoomsForm_Closed;
 
+            roomcontroller = new RoomController();
+
             availableRooms = availrooms;
             hotel = htl;
             booking = bking;
+
+            this.Load += AvailableRoomsForm_Load;
+            this.Activated += AvailableRoomsForm_Activated;
+            this.FormClosed += AvailableRoomsForm_FormClosed;
+
+        }
+
+        private void AvailableRoomsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+        }
+
+        private void AvailableRoomsForm_Activated(object sender, EventArgs e)
+        {
+
+            listView1.View = View.Details;
+            setUpListView();
+            ShowAll1(false);
+
+        }
+
+        private void ShowAll1(bool v)
+        {
+        }
+
+        private void setUpListView()
+        {
+
+            ListViewItem sDetails;
+            listView1.Clear();
+
+                    listView1.Columns.Insert(0, "HotelID", 120, HorizontalAlignment.Left);
+                    listView1.Columns.Insert(1, "RoomID", 120, HorizontalAlignment.Left);
+                    listView1.Columns.Insert(2, "RoomNo", 120, HorizontalAlignment.Left);
+                    listView1.Columns.Insert(3, "NoOfPeople", 120, HorizontalAlignment.Left);
+
+                    
+                    listView1.Text = "Listing of all Guests";
+
+                    foreach (Room r in availableRooms)
+                    {
+                        sDetails = new ListViewItem();
+                        sDetails.Text = r.RoomID.ToString();
+                        sDetails.SubItems.Add(r.HotelID.ToString());
+                        sDetails.SubItems.Add(r.RoomNo.ToString());
+                        sDetails.SubItems.Add(r.NoOfPeople.ToString());
+
+
+                        listView1.Items.Add(sDetails);
+                    }
+
+            listView1.Refresh();
+            listView1.GridLines = true;
+
         }
 
         private void AvailableRoomsForm_Closed(object sender, FormClosedEventArgs e)
@@ -58,7 +116,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            CustomerInformationForm hs = new CustomerInformationForm(booking, guest, hotel);
+            ListForm hs = new ListForm(booking, guest, hotel);
             this.Hide();
             hs.Show();
             hs.MdiParent = this.MdiParent;

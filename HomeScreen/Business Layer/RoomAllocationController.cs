@@ -152,25 +152,146 @@ namespace HomeScreen.Business_Layer
 
             //for each room in HotelRooms
 
-            Collection<Room> matches = new Collection<Room>();
             Collection<Room> hotelRooms = roomcontroller.FindByHotel(hotel.HotelID);
+
+            //roomallocations
+            //SELECT Bookings.* FROM Bookings INNER JOIN RoomAllocation ON Bookings.ReservationNumber = RoomAllocation.ReservationNumber WHERE RoomAllocation.RoomID = 
+
+            Collection<Booking> bookings = bookingController.AllBookings;
+
             
-            for (int i = 0; i < hotelRooms.Count;i++)
-            {
-                Collection<bool> roomAvailable = new Collection<bool>();
-                Collection<Booking> roomBookings = bookingController.FindByRoom("rooms", hotelRooms[i].RoomID.ToString());
-                for (int j = 0; j < roomBookings.Count; j++)
+
+                Collection<RoomAllocation> roomMatches = new Collection<RoomAllocation>();
+
+                for (int i = 0; i < hotelRooms.Count;i++)
                 {
-                    if ((startDate < roomBookings[j].EndDate || endDate > roomBookings[j].StartDate))
+                    foreach (RoomAllocation r in roomAllocations)
                     {
-                        roomAvailable[i] = false;
+                        if (r.RoomID == hotelRooms[i].RoomID)
+                        {
+                            roomMatches.Add(r);
+                        }
                     }
                 }
-                if (roomAvailable[i] == true)
+
+                Collection<RoomAllocation> bookingsMatch = new Collection<RoomAllocation>();
+
+                for (int i = 0; i < bookings.Count; i++)
                 {
-                    matches.Add(hotelRooms[i]);
+                    foreach (RoomAllocation r in roomAllocations)
+                    {
+                        if (r.ReservationNumber == bookings[i].ReservationNumber)
+                        {
+                            bookingsMatch.Add(r);
+                        }
+                    }
                 }
+
+                Collection<RoomAllocation> roomAllocationsByRoom = new Collection<RoomAllocation>();
+
+                for (int i = 0; i < roomMatches.Count; i++)
+                {
+                    foreach (RoomAllocation r in bookingsMatch)
+                    {
+                        if (r == bookingsMatch[i])
+                        {
+                            roomAllocationsByRoom.Add(r);
+                        }
+                    }
+                }
+
+                Collection<Booking> roomBookings = new Collection<Booking>();
+
+                for (int i = 0; i < roomAllocationsByRoom.Count; i++)
+                {
+                    foreach (Booking b in bookings)
+                    {
+                        if (b.ReservationNumber == roomAllocationsByRoom[i].ReservationNumber)
+                        {
+                            roomBookings.Add(b);
+                        }
+                    }
+                }
+
+            Collection<Room> matches = new Collection<Room>();
+            //Collection<bool> roomAvailable = new Collection<bool>();
+            bool roomAvailable = true;
+
+            for (int j = 0; j < hotelRooms.Count; j++)
+            {
+                for (int k = 0; k < roomAllocationsByRoom.Count; k++)
+                {
+                    if (hotelRooms[j].RoomID == roomAllocationsByRoom[k].RoomID)
+                    {
+                        for (int i = 0; i < roomBookings.Count; i++)
+                        {
+                            for (int l = 0; l < roomAllocationsByRoom.Count; l++)
+                            {
+                                if (roomBookings[i].ReservationNumber == roomAllocationsByRoom[l].ReservationNumber)
+                                {
+                                    if ((startDate < roomBookings[i].EndDate || endDate > roomBookings[i].StartDate))
+                                    {
+                                        roomAvailable = false;
+                                    }
+                                    else
+                                    {
+                                        roomAvailable = true;
+                                    }
+
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+
+                if (roomAvailable == true)
+                {
+                    matches.Add(hotelRooms[j]);
+                }
+
             }
+
+            return matches;
+
+            /*
+
+
+
+
+                    for (int i = 0; i < roomBookings.Count; i++)
+                {
+                    if ((startDate < roomBookings[i].EndDate || endDate > roomBookings[i].StartDate))
+                    {
+                        foreach (Booking b in roomBookings)
+                        {
+                            if (b.ReservationNumber == roomAllocationsByRoom[i].ReservationNumber)
+                            {
+                                for(int k=0;k<hotelRooms.Count;k++)
+                                {
+                                    if (hotelRooms[k].RoomID == roomAllocationsByRoom[i].RoomID)
+                                    {
+                                        roomAvailable[j] = false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        roomAvailable[j] = true;
+                    }
+                }
+
+                    if (roomAvailable[j] == true)
+                    {
+                        matches.Add(hotelRooms[j]);
+                    }
+                
+            }
+
+            */
 
             return matches;
 

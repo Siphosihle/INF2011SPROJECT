@@ -31,12 +31,12 @@ namespace HomeScreen.Presentation_Layer
         private Booking booking;
         private Hotel hotel;
         private Room room;
+        private Room availableroom;
 
         private Collection<Booking> bookings;
         private Collection<Room> rooms;
         private Collection<Hotel> hotels;
         private Collection<Room> availableRooms;
-
 
         private DateTime startDate, endDate;
         private int noOfGuests, noOfRoomsNeeded;
@@ -56,6 +56,10 @@ namespace HomeScreen.Presentation_Layer
             dtpCheckInDate.Enabled = false;
             dtpCheckOutDate.Enabled = false;
             cmbNoOfGuests.Enabled = false;
+
+            dtpCheckInDate.MinDate = DateTime.Today;
+            dtpCheckInDate.MaxDate = new DateTime(2017, 12, 31);
+            dtpCheckOutDate.MaxDate = new DateTime(2017, 12, 31);
 
             bookingController = new BookingController();
             hotelController = new HotelController();
@@ -141,7 +145,6 @@ namespace HomeScreen.Presentation_Layer
 
             cmbNoOfGuests.Items.Clear();
             dtpCheckInDate.Enabled = true;
-            dtpCheckInDate.MinDate = DateTime.Today;
             dtpCheckOutDate.Enabled = false;
             cmbNoOfGuests.Enabled = true;
 
@@ -231,11 +234,60 @@ namespace HomeScreen.Presentation_Layer
         {
             dtpCheckOutDate.Enabled = true;
             dtpCheckOutDate.MinDate = dtpCheckInDate.Value.AddDays(1);
-            dtpCheckOutDate.MaxDate = new DateTime(2017,12,31);
+
         }
 
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            hotelName = cmbHotelName.Text;
+            startDate = dtpCheckInDate.Value;
+            endDate = dtpCheckOutDate.Value;
+            noOfGuests = Convert.ToInt32(cmbNoOfGuests.Text);
+            noOfRoomsNeeded = noOfGuests;
+            hotel = hotelController.Find(hotelName);
+
+            PopulateObject();
+
+            //bool bFound = false;
+            //admins = adminController.AllAdmins;
+            //foreach (Admin admin in admins)
+           // {
+           //     if (txtboxUsername.Text == admin.Username && txtboxPassword.Text == admin.Password)
+            //    {
+             //       bFound = true;
+            //    }
+            //}
+
+
+
+            availableRooms = rAllController.AvailableRooms(hotel, startDate, endDate);
+
+            if (availableRooms.Count > noOfRoomsNeeded)
+            {
+                MessageBox.Show("Rooms Are Available!");
+
+                confirmFormClosed = true;
+                this.Close();
+
+                CheckFormExist();
+
+                availableRoomsForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("There are no rooms available for the selected dates");
+                this.Close();
+
+                CheckFormExist();
+
+                availableRoomsForm.Show();
+            }
+
+            ClearAll();
         }
 
         public void PopulateObject()
