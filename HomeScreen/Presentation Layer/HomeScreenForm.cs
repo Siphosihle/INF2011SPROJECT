@@ -87,23 +87,23 @@ namespace HomeScreen.Presentation_Layer
 
         #region Button Events
 
-        //private void btnUpdateBooking_Click(object sender, EventArgs e)
-        //{
-        //    CreateNewLVForm("booking", "update");
-        //}
+        private void btnUpdateBooking_Click(object sender, EventArgs e)
+        {
+            //CreateNewLVForm("booking", "update");
+        }
 
 
-        //private void btnBookingEnquiry_Click(object sender, EventArgs e)
-        //{
+        private void btnBookingEnquiry_Click(object sender, EventArgs e)
+        {
 
-        //    CreateNewLVForm("guest", "read");
-        //}
+            /*CreateNewLVForm("guest", "read")*/;
+        }
 
-        //private void btnCancelBooking_Click(object sender, EventArgs e)
-        //{
-        //    CreateNewLVForm("booking", "delete");
+        private void btnCancelBooking_Click(object sender, EventArgs e)
+        {
+            //CreateNewLVForm("booking", "delete");
 
-        //}
+        }
 
         
 
