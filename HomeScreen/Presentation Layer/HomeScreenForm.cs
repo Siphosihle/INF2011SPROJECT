@@ -64,17 +64,17 @@ namespace HomeScreen.Presentation_Layer
             bdForm.StartPosition = FormStartPosition.CenterParent;
         }
 
-        private void CreateNewLVForm(string tbl)
+        private void CreateNewLVForm(string tbl, string crudFunction)
         {
             if (lvForm == null)
             {
-                lvForm = new ListForm(tbl);
+                lvForm = new ListForm(tbl, crudFunction);
                 lvForm.MdiParent = this.MdiParent;
                 lvForm.StartPosition = FormStartPosition.CenterParent;
             }
             if (lvForm.confirmFormClosed)
             {
-                lvForm = new ListForm(tbl);
+                lvForm = new ListForm(tbl, crudFunction);
                 lvForm.MdiParent = this.MdiParent;
                 lvForm.StartPosition = FormStartPosition.CenterParent;
             }

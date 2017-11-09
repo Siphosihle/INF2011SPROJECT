@@ -21,7 +21,7 @@ namespace HomeScreen.Database_Layer
 
         private string paymentQuery =   "SELECT Bookings.* FROM Bookings INNER JOIN BookingPayments ON Bookings.ReservationNumber = BookingPayments.ReservationNumber WHERE BookingPayments.InvoiceNumber = ";
         private string guestQuery =     "SELECT * FROM Bookings WHERE GuestID = ";
-        private string roomQuery = "SELECT Bookings.* FROM Bookings INNER JOIN RoomAllocation ON Bookings.ReservationNumber = RoomAllocation.ReservationNumber WHERE RoomAllocation.RoomID = ";
+        private string roomQuery =      "SELECT Bookings.* FROM Bookings INNER JOIN RoomAllocation ON Bookings.ReservationNumber = RoomAllocation.ReservationNumber WHERE RoomAllocation.RoomID = ";
 
         private Collection<Booking> bookings;
 

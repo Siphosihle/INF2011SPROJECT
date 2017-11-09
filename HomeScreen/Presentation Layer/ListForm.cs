@@ -59,7 +59,22 @@ namespace HomeScreen.Presentation_Layer
             state = FormStates.View;
         }
 
-        public ListForm(string tbl)
+        public ListForm(Booking bking, Guest gst, Hotel htl)
+        {
+            InitializeComponent();
+
+            guests = guestController.AllGuests;
+            bookingController = new BookingController();
+            bookings = bookingController.AllBookings;
+
+            //Set up Event Handlers for some form events in code rather than trhough the designer
+            this.Load += ListForm_Load;
+            this.Activated += ListForm_Activated;
+            this.FormClosed += ListForm_FormClosed;
+            state = FormStates.View;
+        }
+
+        public ListForm(string tbl, string crudFunction)
         {
             InitializeComponent();
 
@@ -98,7 +113,20 @@ namespace HomeScreen.Presentation_Layer
             this.Load += ListForm_Load;
             this.Activated += ListForm_Activated;
             this.FormClosed += ListForm_FormClosed;
-            state = FormStates.View;
+
+            switch(crudFunction)
+            {
+                case "read":
+                    state = FormStates.View;
+                    break;
+                case "update":
+                    state = FormStates.Edit;
+                    break;
+                case "delete":
+                    state = FormStates.Delete;
+                    break;
+
+            }
         }
 
 
