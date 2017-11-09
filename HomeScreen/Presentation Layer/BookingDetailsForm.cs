@@ -179,23 +179,29 @@ namespace HomeScreen.Presentation_Layer
             PopulateObject();
             availableRooms = rAllController.AvailableRooms(hotel, startDate, endDate);
 
+            bool bAvail;
+
             if (availableRooms.Count > noOfRoomsNeeded)
             {
                 MessageBox.Show("Rooms Are Available!");
 
+                bAvail = true;
+
                 confirmFormClosed = true;
                 this.Close();
 
-                CheckFormExist();
+                CheckFormExist(bAvail);
                
                 availableRoomsForm.Show();
             }
             else
             {
+                bAvail = false;
+
                 MessageBox.Show("There are no rooms available for the selected dates");
                 this.Close();
 
-                CheckFormExist();
+                CheckFormExist(bAvail);
 
                 availableRoomsForm.Show();
             }
@@ -203,22 +209,22 @@ namespace HomeScreen.Presentation_Layer
             ClearAll();
         }
 
-        private void CheckFormExist()
+        private void CheckFormExist(bool bA)
         {
             if (availableRoomsForm == null)
             {
-                CreatNewAvailableRoomsForm();
+                CreatNewAvailableRoomsForm(bA);
             }
             if (availableRoomsForm.confirmFormClosed)
             {
-                CreatNewAvailableRoomsForm();
+                CreatNewAvailableRoomsForm(bA);
 
             }
         }
 
-        private void CreatNewAvailableRoomsForm()
+        private void CreatNewAvailableRoomsForm(bool bA )
         {
-            availableRoomsForm = new AvailableRoomsForm(availableRooms, hotel, booking);
+            availableRoomsForm = new AvailableRoomsForm(availableRooms, hotel, booking, bA);
             availableRoomsForm.MdiParent = this.MdiParent;
             availableRoomsForm.StartPosition = FormStartPosition.CenterParent;
         }
@@ -241,54 +247,7 @@ namespace HomeScreen.Presentation_Layer
         {
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            hotelName = cmbHotelName.Text;
-            startDate = dtpCheckInDate.Value;
-            endDate = dtpCheckOutDate.Value;
-            noOfGuests = Convert.ToInt32(cmbNoOfGuests.Text);
-            noOfRoomsNeeded = noOfGuests;
-            hotel = hotelController.Find(hotelName);
-
-            PopulateObject();
-
-            //bool bFound = false;
-            //admins = adminController.AllAdmins;
-            //foreach (Admin admin in admins)
-           // {
-           //     if (txtboxUsername.Text == admin.Username && txtboxPassword.Text == admin.Password)
-            //    {
-             //       bFound = true;
-            //    }
-            //}
-
-
-
-            availableRooms = rAllController.AvailableRooms(hotel, startDate, endDate);
-
-            if (availableRooms.Count > noOfRoomsNeeded)
-            {
-                MessageBox.Show("Rooms Are Available!");
-
-                confirmFormClosed = true;
-                this.Close();
-
-                CheckFormExist();
-
-                availableRoomsForm.Show();
-            }
-            else
-            {
-                MessageBox.Show("There are no rooms available for the selected dates");
-                this.Close();
-
-                CheckFormExist();
-
-                availableRoomsForm.Show();
-            }
-
-            ClearAll();
-        }
+        
 
         public void PopulateObject()
         {

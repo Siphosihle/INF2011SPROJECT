@@ -260,9 +260,9 @@ namespace HomeScreen.Presentation_Layer
             lbl3.Visible = value;
             lbl4.Visible = value;
 
-            txt1.Visible = value;
+            i1.Visible = value;
             txt6.Visible = value;
-            txt2.Visible = value;
+            i2.Visible = value;
             txt9.Visible = value;
             txt4.Visible = value;
             txt3.Visible = value;
@@ -272,14 +272,14 @@ namespace HomeScreen.Presentation_Layer
 
             if ((state == FormStates.Edit) && value)
             {
-                txt1.Enabled = !value;
+                i1.Enabled = !value;
                 //do the same for all buttons & textboxes
-                txt2.Enabled = !value;
+                i2.Enabled = !value;
             }
             else
             {
-                txt1.Enabled = value;
-                txt1.Enabled = value;
+                i1.Enabled = value;
+                i1.Enabled = value;
             }
 
 
@@ -327,17 +327,17 @@ namespace HomeScreen.Presentation_Layer
                 switch (tbl)
                 {
                     case "bookings":
-                        txt1.Enabled = !value;
+                        i1.Enabled = !value;
                         //do the same for all buttons & textboxes
-                        txt2.Enabled = !value;
+                        i2.Enabled = !value;
                         break;
                 }
 
             }
             else
             {
-                txt1.Enabled = value;
-                txt2.Enabled = value;
+                i1.Enabled = value;
+                i2.Enabled = value;
             }
             txt3.Enabled = value;
             txt4.Enabled = value;
@@ -373,12 +373,12 @@ namespace HomeScreen.Presentation_Layer
         private void ClearAll()
         {
             txt6.Text = "";
-            txt2.Text = "";
+            i2.Text = "";
             txt9.Text = "";
             txt4.Text = "";
             txt3.Text = "";
             txt8.Text = "";
-            txt1.Text = "";
+            i1.Text = "";
             txt7.Text = "";
             txt5.Text = "";
         }
@@ -388,8 +388,8 @@ namespace HomeScreen.Presentation_Layer
             {
                 case "booking":
                     booking = new Booking();
-                    booking.ReservationNumber = Convert.ToInt32(txt1.Text);
-                    booking.GuestID = Convert.ToInt32(txt2.Text);
+                    booking.ReservationNumber = Convert.ToInt32(i1.Text);
+                    booking.GuestID = Convert.ToInt32(i2.Text);
                     booking.NoOfRooms = Convert.ToInt32(txt3.Text);
                     booking.NoOfPeople = Convert.ToInt32(txt4.Text);
                     booking.StartDate = Convert.ToDateTime(txt5.Text);
@@ -407,8 +407,8 @@ namespace HomeScreen.Presentation_Layer
             switch (table)
             {
                 case "Guest":
-                    txt1.Text = Convert.ToString(gst.GuestID);
-                    txt2.Text = Convert.ToString(gst.Name);
+                    i1.Text = Convert.ToString(gst.GuestID);
+                    i2.Text = Convert.ToString(gst.Name);
                     txt3.Text = Convert.ToString(gst.Surname);
                     txt4.Text = Convert.ToString(gst.PhoneNumber);
                     txt5.Text = Convert.ToString(gst.Address);
@@ -416,8 +416,8 @@ namespace HomeScreen.Presentation_Layer
                     txt7.Text = Convert.ToString(gst.Status);
                     break;
                 case "booking":
-                    txt1.Text = Convert.ToString(bkg.ReservationNumber);
-                    txt2.Text = Convert.ToString(bkg.GuestID);
+                    i1.Text = Convert.ToString(bkg.ReservationNumber);
+                    i2.Text = Convert.ToString(bkg.GuestID);
                     txt3.Text = Convert.ToString(bkg.NoOfRooms);
                     txt4.Text = Convert.ToString(bkg.NoOfPeople);
                     txt5.Text = Convert.ToString(bkg.StartDate);

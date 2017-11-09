@@ -217,41 +217,46 @@ namespace HomeScreen.Business_Layer
             //Collection<bool> roomAvailable = new Collection<bool>();
             bool roomAvailable = true;
 
-            for (int j = 0; j < hotelRooms.Count; j++)
-            {
-                for (int k = 0; k < roomAllocationsByRoom.Count; k++)
-                {
-                    if (hotelRooms[j].RoomID == roomAllocationsByRoom[k].RoomID)
-                    {
-                        for (int i = 0; i < roomBookings.Count; i++)
-                        {
-                            for (int l = 0; l < roomAllocationsByRoom.Count; l++)
-                            {
-                                if (roomBookings[i].ReservationNumber == roomAllocationsByRoom[l].ReservationNumber)
-                                {
-                                    if ((startDate < roomBookings[i].EndDate || endDate > roomBookings[i].StartDate))
-                                    {
-                                        roomAvailable = false;
-                                    }
-                                    else
-                                    {
-                                        roomAvailable = true;
-                                    }
+            //if (hotelRooms[j].RoomID == roomAllocationsByRoom[k].RoomID)
+            //{
+            //}
 
+            for (int i = 0; i < roomBookings.Count; i++)
+            {
+                if ((startDate < roomBookings[i].EndDate || endDate > roomBookings[i].StartDate))
+                {
+                    for (int j = 0; j < hotelRooms.Count; j++)
+                    {
+                        for (int k = 0; k < roomAllocationsByRoom.Count; k++)
+                        {
+                            if (hotelRooms[j].RoomID == roomAllocationsByRoom[k].RoomID)
+                            {
+
+                                if (roomBookings[i].ReservationNumber == roomAllocationsByRoom[k].ReservationNumber)
+                                {
+                                    roomAvailable = false;
+                                }
+                                else
+                                {
+                                    roomAvailable = true;
                                 }
 
                             }
+
+
 
                         }
                     }
                 }
 
+
                 if (roomAvailable == true)
                 {
-                    matches.Add(hotelRooms[j]);
+                    matches.Add(hotelRooms[i]);
                 }
-
             }
+
+            
 
             return matches;
 
@@ -292,9 +297,6 @@ namespace HomeScreen.Business_Layer
             }
 
             */
-
-            return matches;
-
 
             /*
 

@@ -29,7 +29,7 @@ namespace HomeScreen.Presentation_Layer
         private Booking booking;
         private Guest guest;
 
-        public AvailableRoomsForm(Collection<Room> availrooms, Hotel htl, Booking bking)
+        public AvailableRoomsForm(Collection<Room> availrooms, Hotel htl, Booking bking, bool bAvailability)
         {
             InitializeComponent();
             this.FormClosed += AvailableRoomsForm_Closed;
@@ -39,6 +39,15 @@ namespace HomeScreen.Presentation_Layer
             availableRooms = availrooms;
             hotel = htl;
             booking = bking;
+
+            switch(bAvailability)
+            {
+                case true:
+                    break;
+                case false:
+                    btnNext.Enabled = false;
+                    break;
+            }
 
             this.Load += AvailableRoomsForm_Load;
             this.Activated += AvailableRoomsForm_Activated;
@@ -80,8 +89,8 @@ namespace HomeScreen.Presentation_Layer
                     foreach (Room r in availableRooms)
                     {
                         sDetails = new ListViewItem();
-                        sDetails.Text = r.RoomID.ToString();
-                        sDetails.SubItems.Add(r.HotelID.ToString());
+                        sDetails.Text = r.HotelID.ToString();
+                        sDetails.SubItems.Add(r.RoomID.ToString());
                         sDetails.SubItems.Add(r.RoomNo.ToString());
                         sDetails.SubItems.Add(r.NoOfPeople.ToString());
 
