@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtResNo = new System.Windows.Forms.TextBox();
-            this.txtIsCancelled = new System.Windows.Forms.TextBox();
-            this.txtReceiveDeposit = new System.Windows.Forms.TextBox();
-            this.txtSentConfirmation = new System.Windows.Forms.TextBox();
-            this.txtEndDate = new System.Windows.Forms.TextBox();
-            this.txtStartDate = new System.Windows.Forms.TextBox();
-            this.txtNoOfPeople = new System.Windows.Forms.TextBox();
-            this.txtNoOfRooms = new System.Windows.Forms.TextBox();
-            this.txtGuestID = new System.Windows.Forms.TextBox();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lbl6 = new System.Windows.Forms.Label();
+            this.lbl9 = new System.Windows.Forms.Label();
+            this.lbl5 = new System.Windows.Forms.Label();
+            this.lbl8 = new System.Windows.Forms.Label();
+            this.lbl7 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lbl3 = new System.Windows.Forms.Label();
+            this.lbl4 = new System.Windows.Forms.Label();
+            this.txt1 = new System.Windows.Forms.TextBox();
+            this.txt9 = new System.Windows.Forms.TextBox();
+            this.txt8 = new System.Windows.Forms.TextBox();
+            this.txt7 = new System.Windows.Forms.TextBox();
+            this.txt6 = new System.Windows.Forms.TextBox();
+            this.txt5 = new System.Windows.Forms.TextBox();
+            this.txt4 = new System.Windows.Forms.TextBox();
+            this.txt3 = new System.Windows.Forms.TextBox();
+            this.txt2 = new System.Windows.Forms.TextBox();
             this.updateButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -54,150 +54,150 @@
             this.editButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 373);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ReservationNumber";
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(32, 373);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(101, 13);
+            this.lbl1.TabIndex = 1;
+            this.lbl1.Text = "ReservationNumber";
             // 
-            // label2
+            // lbl6
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(329, 414);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "EndDate";
+            this.lbl6.AutoSize = true;
+            this.lbl6.Location = new System.Drawing.Point(329, 414);
+            this.lbl6.Name = "lbl6";
+            this.lbl6.Size = new System.Drawing.Size(49, 13);
+            this.lbl6.TabIndex = 2;
+            this.lbl6.Text = "EndDate";
             // 
-            // label3
+            // lbl9
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(522, 373);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "IsCancelled";
+            this.lbl9.AutoSize = true;
+            this.lbl9.Location = new System.Drawing.Point(522, 373);
+            this.lbl9.Name = "lbl9";
+            this.lbl9.Size = new System.Drawing.Size(62, 13);
+            this.lbl9.TabIndex = 3;
+            this.lbl9.Text = "IsCancelled";
             // 
-            // label4
+            // lbl5
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(329, 373);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "StartDate";
+            this.lbl5.AutoSize = true;
+            this.lbl5.Location = new System.Drawing.Point(329, 373);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(52, 13);
+            this.lbl5.TabIndex = 4;
+            this.lbl5.Text = "StartDate";
             // 
-            // label5
+            // lbl8
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(329, 488);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "ReceiveDeposit";
+            this.lbl8.AutoSize = true;
+            this.lbl8.Location = new System.Drawing.Point(329, 488);
+            this.lbl8.Name = "lbl8";
+            this.lbl8.Size = new System.Drawing.Size(83, 13);
+            this.lbl8.TabIndex = 5;
+            this.lbl8.Text = "ReceiveDeposit";
             // 
-            // label6
+            // lbl7
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(329, 447);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "SentConfirmation";
+            this.lbl7.AutoSize = true;
+            this.lbl7.Location = new System.Drawing.Point(329, 447);
+            this.lbl7.Name = "lbl7";
+            this.lbl7.Size = new System.Drawing.Size(87, 13);
+            this.lbl7.TabIndex = 6;
+            this.lbl7.Text = "SentConfirmation";
             // 
-            // label7
+            // lbl2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(32, 414);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "GuestID";
+            this.lbl2.AutoSize = true;
+            this.lbl2.Location = new System.Drawing.Point(32, 414);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(46, 13);
+            this.lbl2.TabIndex = 7;
+            this.lbl2.Text = "GuestID";
             // 
-            // label8
+            // lbl3
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(32, 447);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 13);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "NoOfRooms";
+            this.lbl3.AutoSize = true;
+            this.lbl3.Location = new System.Drawing.Point(32, 447);
+            this.lbl3.Name = "lbl3";
+            this.lbl3.Size = new System.Drawing.Size(65, 13);
+            this.lbl3.TabIndex = 8;
+            this.lbl3.Text = "NoOfRooms";
             // 
-            // label9
+            // lbl4
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(32, 480);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 13);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "NoOfPeople";
+            this.lbl4.AutoSize = true;
+            this.lbl4.Location = new System.Drawing.Point(32, 480);
+            this.lbl4.Name = "lbl4";
+            this.lbl4.Size = new System.Drawing.Size(65, 13);
+            this.lbl4.TabIndex = 9;
+            this.lbl4.Text = "NoOfPeople";
             // 
-            // txtResNo
+            // txt1
             // 
-            this.txtResNo.Location = new System.Drawing.Point(139, 370);
-            this.txtResNo.Name = "txtResNo";
-            this.txtResNo.Size = new System.Drawing.Size(100, 20);
-            this.txtResNo.TabIndex = 10;
-            this.txtResNo.TextChanged += new System.EventHandler(this.txtResNo_TextChanged);
+            this.txt1.Location = new System.Drawing.Point(139, 370);
+            this.txt1.Name = "txt1";
+            this.txt1.Size = new System.Drawing.Size(100, 20);
+            this.txt1.TabIndex = 10;
+            this.txt1.TextChanged += new System.EventHandler(this.txtResNo_TextChanged);
             // 
-            // txtIsCancelled
+            // txt9
             // 
-            this.txtIsCancelled.Location = new System.Drawing.Point(590, 370);
-            this.txtIsCancelled.Name = "txtIsCancelled";
-            this.txtIsCancelled.Size = new System.Drawing.Size(100, 20);
-            this.txtIsCancelled.TabIndex = 11;
+            this.txt9.Location = new System.Drawing.Point(590, 370);
+            this.txt9.Name = "txt9";
+            this.txt9.Size = new System.Drawing.Size(100, 20);
+            this.txt9.TabIndex = 11;
             // 
-            // txtReceiveDeposit
+            // txt8
             // 
-            this.txtReceiveDeposit.Location = new System.Drawing.Point(418, 485);
-            this.txtReceiveDeposit.Name = "txtReceiveDeposit";
-            this.txtReceiveDeposit.Size = new System.Drawing.Size(100, 20);
-            this.txtReceiveDeposit.TabIndex = 12;
+            this.txt8.Location = new System.Drawing.Point(418, 485);
+            this.txt8.Name = "txt8";
+            this.txt8.Size = new System.Drawing.Size(100, 20);
+            this.txt8.TabIndex = 12;
             // 
-            // txtSentConfirmation
+            // txt7
             // 
-            this.txtSentConfirmation.Location = new System.Drawing.Point(422, 444);
-            this.txtSentConfirmation.Name = "txtSentConfirmation";
-            this.txtSentConfirmation.Size = new System.Drawing.Size(100, 20);
-            this.txtSentConfirmation.TabIndex = 13;
+            this.txt7.Location = new System.Drawing.Point(422, 444);
+            this.txt7.Name = "txt7";
+            this.txt7.Size = new System.Drawing.Size(100, 20);
+            this.txt7.TabIndex = 13;
             // 
-            // txtEndDate
+            // txt6
             // 
-            this.txtEndDate.Location = new System.Drawing.Point(387, 411);
-            this.txtEndDate.Name = "txtEndDate";
-            this.txtEndDate.Size = new System.Drawing.Size(100, 20);
-            this.txtEndDate.TabIndex = 14;
+            this.txt6.Location = new System.Drawing.Point(387, 411);
+            this.txt6.Name = "txt6";
+            this.txt6.Size = new System.Drawing.Size(100, 20);
+            this.txt6.TabIndex = 14;
             // 
-            // txtStartDate
+            // txt5
             // 
-            this.txtStartDate.Location = new System.Drawing.Point(387, 370);
-            this.txtStartDate.Name = "txtStartDate";
-            this.txtStartDate.Size = new System.Drawing.Size(100, 20);
-            this.txtStartDate.TabIndex = 15;
+            this.txt5.Location = new System.Drawing.Point(387, 370);
+            this.txt5.Name = "txt5";
+            this.txt5.Size = new System.Drawing.Size(100, 20);
+            this.txt5.TabIndex = 15;
             // 
-            // txtNoOfPeople
+            // txt4
             // 
-            this.txtNoOfPeople.Location = new System.Drawing.Point(139, 477);
-            this.txtNoOfPeople.Name = "txtNoOfPeople";
-            this.txtNoOfPeople.Size = new System.Drawing.Size(100, 20);
-            this.txtNoOfPeople.TabIndex = 16;
+            this.txt4.Location = new System.Drawing.Point(139, 477);
+            this.txt4.Name = "txt4";
+            this.txt4.Size = new System.Drawing.Size(100, 20);
+            this.txt4.TabIndex = 16;
             // 
-            // txtNoOfRooms
+            // txt3
             // 
-            this.txtNoOfRooms.Location = new System.Drawing.Point(139, 444);
-            this.txtNoOfRooms.Name = "txtNoOfRooms";
-            this.txtNoOfRooms.Size = new System.Drawing.Size(100, 20);
-            this.txtNoOfRooms.TabIndex = 17;
+            this.txt3.Location = new System.Drawing.Point(139, 444);
+            this.txt3.Name = "txt3";
+            this.txt3.Size = new System.Drawing.Size(100, 20);
+            this.txt3.TabIndex = 17;
             // 
-            // txtGuestID
+            // txt2
             // 
-            this.txtGuestID.Location = new System.Drawing.Point(139, 411);
-            this.txtGuestID.Name = "txtGuestID";
-            this.txtGuestID.Size = new System.Drawing.Size(100, 20);
-            this.txtGuestID.TabIndex = 18;
+            this.txt2.Location = new System.Drawing.Point(139, 411);
+            this.txt2.Name = "txt2";
+            this.txt2.Size = new System.Drawing.Size(100, 20);
+            this.txt2.TabIndex = 18;
             // 
             // updateButton
             // 
@@ -226,7 +226,7 @@
             this.listView1.Size = new System.Drawing.Size(887, 336);
             this.listView1.TabIndex = 21;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged_1);
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // submitButton
             // 
@@ -268,24 +268,24 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.updateButton);
-            this.Controls.Add(this.txtGuestID);
-            this.Controls.Add(this.txtNoOfRooms);
-            this.Controls.Add(this.txtNoOfPeople);
-            this.Controls.Add(this.txtStartDate);
-            this.Controls.Add(this.txtEndDate);
-            this.Controls.Add(this.txtSentConfirmation);
-            this.Controls.Add(this.txtReceiveDeposit);
-            this.Controls.Add(this.txtIsCancelled);
-            this.Controls.Add(this.txtResNo);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txt2);
+            this.Controls.Add(this.txt3);
+            this.Controls.Add(this.txt4);
+            this.Controls.Add(this.txt5);
+            this.Controls.Add(this.txt6);
+            this.Controls.Add(this.txt7);
+            this.Controls.Add(this.txt8);
+            this.Controls.Add(this.txt9);
+            this.Controls.Add(this.txt1);
+            this.Controls.Add(this.lbl4);
+            this.Controls.Add(this.lbl3);
+            this.Controls.Add(this.lbl2);
+            this.Controls.Add(this.lbl7);
+            this.Controls.Add(this.lbl8);
+            this.Controls.Add(this.lbl5);
+            this.Controls.Add(this.lbl9);
+            this.Controls.Add(this.lbl6);
+            this.Controls.Add(this.lbl1);
             this.Name = "ListForm";
             this.Text = "ListForm";
             this.Load += new System.EventHandler(this.ListForm_Load);
@@ -295,24 +295,24 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtResNo;
-        private System.Windows.Forms.TextBox txtIsCancelled;
-        private System.Windows.Forms.TextBox txtReceiveDeposit;
-        private System.Windows.Forms.TextBox txtSentConfirmation;
-        private System.Windows.Forms.TextBox txtEndDate;
-        private System.Windows.Forms.TextBox txtStartDate;
-        private System.Windows.Forms.TextBox txtNoOfPeople;
-        private System.Windows.Forms.TextBox txtNoOfRooms;
-        private System.Windows.Forms.TextBox txtGuestID;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label lbl6;
+        private System.Windows.Forms.Label lbl9;
+        private System.Windows.Forms.Label lbl5;
+        private System.Windows.Forms.Label lbl8;
+        private System.Windows.Forms.Label lbl7;
+        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label lbl3;
+        private System.Windows.Forms.Label lbl4;
+        private System.Windows.Forms.TextBox txt1;
+        private System.Windows.Forms.TextBox txt9;
+        private System.Windows.Forms.TextBox txt8;
+        private System.Windows.Forms.TextBox txt7;
+        private System.Windows.Forms.TextBox txt6;
+        private System.Windows.Forms.TextBox txt5;
+        private System.Windows.Forms.TextBox txt4;
+        private System.Windows.Forms.TextBox txt3;
+        private System.Windows.Forms.TextBox txt2;
         private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.ListView listView1;
