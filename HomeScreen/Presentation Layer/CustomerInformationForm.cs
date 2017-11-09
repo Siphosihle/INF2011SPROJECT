@@ -158,6 +158,11 @@ namespace HomeScreen
         {
 
         }
+
+        private void txtboxID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

@@ -92,5 +92,15 @@ namespace HomeScreen.Presentation_Layer
             booking = bking;
 
         }
+
+        private void rtbReservationDetails_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NewBooking_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

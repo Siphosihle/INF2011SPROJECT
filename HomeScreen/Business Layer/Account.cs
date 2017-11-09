@@ -13,18 +13,24 @@ namespace HomeScreen.Business_Layer
         //properties
         //constructors
 
-        private int accountID;
-        private int guestID;
+        private string accountID;
+        private string guestID;
         private decimal balance;
 
         #region Properties
 
-        public int AccountID
+        public string AccountID
         {
-            get { return accountID; }
-            set { accountID = value; }
+            get
+            {
+                return accountID;
+            }
+            set
+            {
+                accountID = value;
+            }
         }
-        public int GuestID
+        public string GuestID
         {
             get { return guestID; }
             set { guestID = value; }

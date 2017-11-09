@@ -33,79 +33,79 @@ namespace HomeScreen.Business_Layer
 
 
         #region Database Communication
-        /*public void DataMaintenance(Admin anAdmin, DB.DBOperation operation)
+        public void DataMaintenance(Account anAccount, DB.DBOperation operation)
         {
             int index = 0;
             //perform a given database operation to the dataset in memory;
-            accountDB.DataSetChange(anAdmin, operation);
+            accountDB.DataSetChange(anAccount, operation);
             //perform operations on the collection
             switch (operation)
             {
                 case DB.DBOperation.Add:
                     //*** Add the employee to the Collection
-                    admins.Add(anAdmin);
+                    accounts.Add(anAccount);
                     break;
                 case DB.DBOperation.Edit:
-                    index = FindIndex(anAdmin);
-                    admins[index] = anAdmin;  // replace employee at this index with the updated employee
+                    index = FindIndex(anAccount);
+                    accounts[index] = anAccount;  // replace employee at this index with the updated employee
                     break;
                 case DB.DBOperation.Delete:
-                    index = FindIndex(anAdmin);  // find the index of the specific employee in collection
-                    admins.RemoveAt(index);  // remove that employee form the collection
+                    index = FindIndex(anAccount);  // find the index of the specific employee in collection
+                    accounts.RemoveAt(index);  // remove that employee form the collection
                     break;
             }
         }
 
         //***Commit the changes to the database
-        /*public bool FinalizeChanges(Admin admin)
+        public bool FinalizeChanges(Account acc)
         {
             //***call the EmployeeDB method that will commit the changes to the database
-            return adminDB.UpdateDataSource(admin);
+            return accountDB.UpdateDataSource(acc);
         }
         #endregion
 
         #region Search Methods
         //This method  (function) searched through all the employess to finds onlly those with the required role
-        public Collection<Employee> FindByRole(Collection<Employee> emps, Role.RoleType roleVal)
+        public Collection<Account> FindByAccountID(Collection<Account> collection, Account acc)
         {
-            Collection<Employee> matches = new Collection<Employee>();
+            Collection<Account> matches = new Collection<Account>();
 
-            foreach (Employee emp in emps)
+            foreach (Account act in collection)
             {
-                if (emp.role.RoleValue == roleVal)
+                if (accountDB.AllAccounts.Equals(acc))
                 {
-                    matches.Add(emp);
+                    matches.Add(act);
                 }
             }
             return matches;
         }
 
-        public Collection<Employee> FindByRole(Role.RoleType roleVal)
+        public Collection<Account> FindByAccountID(Account acc)
         {
-            Collection<Employee> matches = new Collection<Employee>();
+            Collection<Account> matches = new Collection<Account>();
 
-            foreach (Employee emp in employees)
+            foreach (Account act in accounts)
             {
-                if (emp.role.RoleValue == roleVal)
+                if (accountDB.AllAccounts.Equals(acc))
                 {
-                    matches.Add(emp);
+                    matches.Add(act);
                 }
             }
             return matches;
         }
         //This method receives a employee ID as a parameter; finds the employee object in the collection of employees and then returns this object
-        public Admin Find(string ID)
+        public Account Find(string ID)
         {
             int index = 0;
-            bool found = (employees[index].ID == ID);  //check if it is the first student
-            int count = employees.Count;
-            while (!(found) && (index < employees.Count - 1))  //if not "this" student and you are not at the end of the list 
+            bool found = (accounts[index].AccountID == ID);  //check if it is the first student
+            int count = accounts.Count;
+            while (!(found) && (index < accounts.Count - 1))  //if not "this" student and you are not at the end of the list 
             {
                 index = index + 1;
-                found = (employees[index].ID == ID);   // this will be TRUE if found
+                found = (accounts[index].AccountID == ID);   // this will be TRUE if found
             }
-            return employees[index];  // this is the one!  
-        } */
+            return accounts[index];  // this is the one!  
+        }
 
         public int FindIndex(Account anAccount)
         {
