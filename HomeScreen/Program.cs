@@ -18,7 +18,7 @@ namespace HomeScreen
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ListForm());
+            Application.Run(new RestEasyMDIParent());
         }
     }
 }

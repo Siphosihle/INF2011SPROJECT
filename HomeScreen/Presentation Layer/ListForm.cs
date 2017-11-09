@@ -52,14 +52,14 @@ namespace HomeScreen.Presentation_Layer
 
         private void ListForm_Load(object sender, EventArgs e)
         {
-
+            ShowAll(true);
         }
 
         private void ListForm_Activated(object sender, EventArgs e)
         {
             listView1.View = View.Details;
             setUpListView();
-            ShowAll(false);
+            ShowAll(true);
         }
 
         private void setUpListView()
@@ -101,15 +101,15 @@ namespace HomeScreen.Presentation_Layer
         }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ShowAll(true);
-            state = FormStates.View;
-            ShowAll(false);
-            if (listView1.SelectedItems.Count > 0)   // if you selected an item 
-            {
-                booking = bookingController.Find(Convert.ToInt32(listView1.SelectedItems[0].Text));  //selected student becoms current student
-                                                                                                     // Show the details of the selected student in the controls
-                PopulateTextBoxes(booking);
-            }
+            //ShowAll(true);
+            //state = FormStates.View;
+            //ShowAll(false);
+            //if (listView1.SelectedItems.Count > 0)   // if you selected an item 
+            //{
+            //    booking = bookingController.Find(Convert.ToInt32(listView1.SelectedItems[0].Text));  //selected student becoms current student
+            //                                                                                         // Show the details of the selected student in the controls
+            //    PopulateTextBoxes(booking);
+            //}
         }
         private void ShowAll(bool value)
         {
@@ -228,6 +228,19 @@ namespace HomeScreen.Presentation_Layer
         private void editButton_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            ShowAll(true);
+            state = FormStates.View;
+            ShowAll(false);
+            if (listView1.SelectedItems.Count > 0)   // if you selected an item 
+            {
+                booking = bookingController.Find(Convert.ToInt32(listView1.SelectedItems[0].Text));  //selected student becoms current student
+                                                                                                     // Show the details of the selected student in the controls
+                PopulateTextBoxes(booking);
+            }
         }
     }
 }

@@ -226,8 +226,8 @@ namespace HomeScreen.Presentation_Layer
 
 
             booking = new Booking();
-            booking.ReservationNumber = Convert.ToString(bookingController.GenerateReferenceNumber(bookingController.AllBookings.Count));
-            booking.NoOfRooms = Convert.ToString(bookingController.CalculateNoOfRooms(Convert.ToDouble(cmbNoOfGuests.Text)));
+            booking.ReservationNumber = Convert.ToInt32(bookingController.GenerateReferenceNumber(bookingController.AllBookings.Count));
+            booking.NoOfRooms = Convert.ToInt32(bookingController.CalculateNoOfRooms(Convert.ToDouble(cmbNoOfGuests.Text)));
             booking.StartDate = dtpCheckInDate.Value;
             booking.EndDate = dtpCheckOutDate.Value;
             booking.SentConfirmation = false;
