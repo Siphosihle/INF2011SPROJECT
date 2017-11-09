@@ -73,7 +73,7 @@ namespace HomeScreen.Presentation_Layer
             accounts = accountController.AllAccounts;
             foreach (Account account in accounts)
             {
-                if (txtAccountID.Text == guest.GuestID)
+                if (txtAccountID.Text == account.AccountID)
                 {
                     bFound = true;
                     count++;

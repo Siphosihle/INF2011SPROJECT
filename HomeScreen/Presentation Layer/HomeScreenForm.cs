@@ -89,19 +89,19 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnUpdateBooking_Click(object sender, EventArgs e)
         {
-            CreateNewLVForm("booking", "update");
+            //CreateNewLVForm("booking", "update");
         }
 
 
         private void btnBookingEnquiry_Click(object sender, EventArgs e)
         {
 
-            CreateNewLVForm("guest", "read");
+            /*CreateNewLVForm("guest", "read")*/;
         }
 
         private void btnCancelBooking_Click(object sender, EventArgs e)
         {
-            CreateNewLVForm("booking", "delete");
+            //CreateNewLVForm("booking", "delete");
 
         }
 
