@@ -113,9 +113,9 @@ namespace HomeScreen
                 gst = guestController.Find(txtboxID.Text);
 
                 MessageBox.Show("Existing Guest");
-                ConfirmGuestForm cgf = new ConfirmGuestForm(gst, booking, hotel);
+                ListForm lf = new ListForm(guestController);
                 this.Hide();
-                cgf.ShowDialog();
+                lf.Show();
                 this.Close();
                 //confirm.ShowData(); 
             }

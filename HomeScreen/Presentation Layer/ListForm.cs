@@ -22,11 +22,14 @@ namespace HomeScreen.Presentation_Layer
             Edit = 2,
             Delete = 3
         }
+
         public bool formClosed = false;
         private GuestController guestController;
         private BookingController bookingController;
+
         private Guest guest;
         private Booking booking;
+
         private Collection<Guest> guests;
         private FormStates state;
 
@@ -41,6 +44,25 @@ namespace HomeScreen.Presentation_Layer
             this.FormClosed += ListForm_FormClosed;
             state = FormStates.View;
         }
+
+        public ListForm(string table)
+        {
+            InitializeComponent();
+
+            switch (table)
+            {
+                case "booking":
+                    bookingController = new BookingController();
+                    break;
+            }
+
+            //Set up Event Handlers for some form events in code rather than trhough the designer
+            this.Load += ListForm_Load;
+            this.Activated += ListForm_Activated;
+            this.FormClosed += ListForm_FormClosed;
+            state = FormStates.View;
+        }
+
 
         private void ListForm_FormClosed(object sender, FormClosedEventArgs e)
         {
