@@ -73,6 +73,7 @@
             this.txtboxID.Name = "txtboxID";
             this.txtboxID.Size = new System.Drawing.Size(162, 22);
             this.txtboxID.TabIndex = 4;
+            this.txtboxID.TextChanged += new System.EventHandler(this.txtboxID_TextChanged);
             // 
             // lblFirstName
             // 

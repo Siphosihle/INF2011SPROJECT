@@ -63,6 +63,7 @@
             this.rtbReservationDetails.Size = new System.Drawing.Size(362, 198);
             this.rtbReservationDetails.TabIndex = 56;
             this.rtbReservationDetails.Text = "";
+            this.rtbReservationDetails.TextChanged += new System.EventHandler(this.rtbReservationDetails_TextChanged);
             // 
             // btnHome
             // 
@@ -100,6 +101,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "NewBooking";
             this.Text = "NewBooking";
+            this.Load += new System.EventHandler(this.NewBooking_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -19,13 +19,15 @@ namespace HomeScreen.Presentation_Layer
 
         private Guest guest;
         private Booking booking;
-
+        private Account accountObj;
+        private AccountController accountController;
+        private Collection<Account> accounts;
         public bool confirmFormClosed;
 
         public PaymentForm()
         {
             InitializeComponent();
-
+            accountController = new AccountController();
             this.FormClosed += Form_Closed;
         }
 
@@ -64,9 +66,44 @@ namespace HomeScreen.Presentation_Layer
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnMakePayment_Click(object sender, EventArgs e)
         {
+            int count = 0;
+            bool bFound = false;
+            accounts = accountController.AllAccounts;
+            foreach (Account account in accounts)
+            {
+                if (txtAccountID.Text == guest.GuestID)
+                {
+                    bFound = true;
+                    count++;
+                }
+            }
 
+            if ((bFound == true))
+            {
+
+                accountObj = accountController.Find(txtAccountID.Text);
+
+                MessageBox.Show("Existing Account");
+                //ListForm lf = new ListForm(accountController);
+                //this.Hide();
+                //lf.Show();
+                //this.Close();
+                ////confirm.ShowData(); 
+            }
+            if ((bFound == false) && (count == 1))
+            {
+                MessageBox.Show("New Account");
+                //NewGuestForm ngf = new NewGuestForm();
+                //this.Hide();
+                //ngf.ShowDialog();
+                //this.Close();
+            }
+            if (count == 0)
+            {
+                MessageBox.Show("Please enter all the details");
+            }
         }
     }
 }
