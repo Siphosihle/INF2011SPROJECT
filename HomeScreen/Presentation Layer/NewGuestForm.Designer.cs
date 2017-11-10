@@ -44,9 +44,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtemail = new System.Windows.Forms.TextBox();
             this.txtstatus = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -74,21 +72,21 @@
             // 
             // txtboxEmail
             // 
-            this.txtboxEmail.Location = new System.Drawing.Point(395, 330);
+            this.txtboxEmail.Location = new System.Drawing.Point(395, 391);
             this.txtboxEmail.Name = "txtboxEmail";
             this.txtboxEmail.Size = new System.Drawing.Size(174, 20);
             this.txtboxEmail.TabIndex = 10;
             // 
             // txtboxCellphone
             // 
-            this.txtboxCellphone.Location = new System.Drawing.Point(395, 386);
+            this.txtboxCellphone.Location = new System.Drawing.Point(395, 323);
             this.txtboxCellphone.Name = "txtboxCellphone";
             this.txtboxCellphone.Size = new System.Drawing.Size(174, 20);
             this.txtboxCellphone.TabIndex = 11;
             // 
             // txtboxAddress
             // 
-            this.txtboxAddress.Location = new System.Drawing.Point(395, 439);
+            this.txtboxAddress.Location = new System.Drawing.Point(395, 464);
             this.txtboxAddress.Name = "txtboxAddress";
             this.txtboxAddress.Size = new System.Drawing.Size(174, 20);
             this.txtboxAddress.TabIndex = 12;
@@ -130,7 +128,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.HotPink;
-            this.label2.Location = new System.Drawing.Point(313, 444);
+            this.label2.Location = new System.Drawing.Point(313, 466);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 48;
@@ -203,38 +201,20 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.HotPink;
-            this.label1.Location = new System.Drawing.Point(312, 485);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 55;
-            this.label1.Text = "Email";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.HotPink;
-            this.label8.Location = new System.Drawing.Point(313, 515);
+            this.label8.Location = new System.Drawing.Point(323, 513);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 15);
             this.label8.TabIndex = 56;
             this.label8.Text = "Status";
             // 
-            // txtemail
-            // 
-            this.txtemail.Location = new System.Drawing.Point(395, 483);
-            this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(174, 20);
-            this.txtemail.TabIndex = 57;
-            // 
             // txtstatus
             // 
-            this.txtstatus.Location = new System.Drawing.Point(395, 513);
+            this.txtstatus.Location = new System.Drawing.Point(395, 511);
             this.txtstatus.Name = "txtstatus";
             this.txtstatus.Size = new System.Drawing.Size(174, 20);
             this.txtstatus.TabIndex = 58;
@@ -245,9 +225,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 630);
             this.Controls.Add(this.txtstatus);
-            this.Controls.Add(this.txtemail);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -289,9 +267,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.TextBox txtstatus;
     }
 }

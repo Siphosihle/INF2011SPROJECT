@@ -117,11 +117,6 @@ namespace HomeScreen.Database_Layer
                 {
                     aBooking = new Booking();
 
-
-                    int iDefault = 0;
-                    DateTime dt1Default = DateTime.Today;
-                    DateTime dt2Default = DateTime.Today.AddDays(1);
-
                     aBooking.ReservationNumber = Convert.ToInt32(myRow["ReservationNumber"]);
                     aBooking.GuestID = Convert.ToInt32(myRow["GuestID"]);
                     aBooking.NoOfRooms = Convert.ToInt32(myRow["NoOfRooms"]);

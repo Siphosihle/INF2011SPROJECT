@@ -23,10 +23,12 @@ namespace HomeScreen.Presentation_Layer
 
         private GuestController guestController;
 
-        public NewGuestForm(Booking bking, Hotel htl)
+        public NewGuestForm(Booking bking, Hotel htl, long gstID)
         {
             InitializeComponent();
             guestController = new GuestController();
+
+            txtboxID.Text = gstID.ToString();
 
         }
 

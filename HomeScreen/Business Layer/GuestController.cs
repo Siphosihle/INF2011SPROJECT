@@ -28,37 +28,30 @@ namespace HomeScreen.Business_Layer
         public void DataMaintenance(Guest gst, DB.DBOperation operation)
         {
             int index = 0;
-            //perform a given database operation to the dataset in memory; 
             guestDB.DataSetChange(gst, operation);
-            //perform operations on the collection
             switch (operation)
             {
                 case DB.DBOperation.Add:
-                    //*** Add the employee to the Collection
                     guests.Add(gst);
                     break;
                 case DB.DBOperation.Edit:
                     index = FindIndex(gst);
-                    guests[index] = gst;  // replace employee at this index with the updated employee
+                    guests[index] = gst;  
                     break;
                 case DB.DBOperation.Delete:
-                    index = FindIndex(gst);  // find the index of the specific employee in collection
-                    guests.RemoveAt(index);  // remove that employee form the collection
+                    index = FindIndex(gst);  
+                    guests.RemoveAt(index); 
                     break;
             }
         }
 
-        //***Commit the changes to the database
         public bool FinalizeChanges(Guest gst)
         {
-            //***call the EmployeeDB method that will commit the changes to the database
-            //return guestDB.UpdateDataSource(gst);
             return true;
         }
 
 
         #region Search Methods
-        //This method  (function) searched through all the employess to finds onlly those with the required role
         public Collection<Guest> FindByGuestID(Collection<Guest> coll, Guest gst)
         {
             Collection<Guest> matches = new Collection<Guest>();
@@ -86,16 +79,15 @@ namespace HomeScreen.Business_Layer
             }
             return matches;
         }
-        //This method receives a employee ID as a parameter; finds the employee object in the collection of employees and then returns this object
-        public Guest Find(int ID)
+        public Guest Find(long ID)
         {
             int index = 0;
-            bool found = (guests[index].GuestID == ID);  //check if it is the first student
+            bool found = (guests[index].GuestID.Equals(ID));  
             int count = guests.Count;
             while (!(found) && (index < guests.Count - 1))  //if not "this" student and you are not at the end of the list 
             {
                 index = index + 1;
-                found = (guests[index].GuestID == ID);   // this will be TRUE if found
+                found = (guests[index].GuestID.Equals(ID));   // this will be TRUE if found
             }
             return guests[index];  // this is the one!  
         }

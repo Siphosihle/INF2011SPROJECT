@@ -114,6 +114,8 @@ namespace HomeScreen
             int count = 0;
             bool bFound = false;
             guests = guestController.AllGuests;
+
+
             foreach (Guest guest in guests)
             {
                 if (txtboxID.Text == guest.GuestID.ToString())
@@ -123,7 +125,11 @@ namespace HomeScreen
                 }
             }
 
-            if ((bFound == true))
+            if (txtboxID.Text == "")
+            {
+                MessageBox.Show("Please enter all the details");
+            }
+            else if ((bFound == true) )
             {
 
                 guest = guestController.Find(Convert.ToInt32(txtboxID.Text));
@@ -133,20 +139,18 @@ namespace HomeScreen
                 this.Hide();
                 lf.Show();
                 this.Close();
+           
                 //confirm.ShowData(); 
             }
-            if ((bFound == false) && (count == 1))
+            else if ((bFound == false))
             {
                 MessageBox.Show("New Guest");
-                NewGuestForm ngf = new NewGuestForm(booking, hotel);
+                NewGuestForm ngf = new NewGuestForm(booking, hotel, Convert.ToInt64(txtboxID.Text));
                 this.Hide();
                 ngf.ShowDialog();
                 this.Close();
             }
-            if(count == 0)
-            {
-                MessageBox.Show("Please enter all the details");
-            }
+            
 
         }
 

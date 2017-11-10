@@ -40,10 +40,8 @@
             this.i1 = new System.Windows.Forms.TextBox();
             this.i2 = new System.Windows.Forms.TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.i5 = new System.Windows.Forms.DateTimePicker();
             this.i6 = new System.Windows.Forms.DateTimePicker();
             this.i3 = new System.Windows.Forms.TextBox();
@@ -51,7 +49,8 @@
             this.i7 = new System.Windows.Forms.TextBox();
             this.i8 = new System.Windows.Forms.TextBox();
             this.i9 = new System.Windows.Forms.TextBox();
-            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnContinue = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl1
@@ -141,6 +140,7 @@
             this.i1.Name = "i1";
             this.i1.Size = new System.Drawing.Size(121, 20);
             this.i1.TabIndex = 10;
+            this.i1.TextChanged += new System.EventHandler(this.i1_TextChanged);
             // 
             // i2
             // 
@@ -158,16 +158,6 @@
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(784, 470);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 20;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // listView1
             // 
@@ -187,16 +177,6 @@
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.submitButton_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(784, 414);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 23;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // i5
             // 
@@ -251,22 +231,33 @@
             this.i9.Size = new System.Drawing.Size(137, 20);
             this.i9.TabIndex = 35;
             // 
-            // btnConfirm
+            // btnDelete
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(906, 442);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirm.TabIndex = 36;
-            this.btnConfirm.Text = "confirm";
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            this.btnDelete.Location = new System.Drawing.Point(784, 414);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 37;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete2_Click);
+            // 
+            // btnContinue
+            // 
+            this.btnContinue.Location = new System.Drawing.Point(784, 470);
+            this.btnContinue.Name = "btnContinue";
+            this.btnContinue.Size = new System.Drawing.Size(75, 23);
+            this.btnContinue.TabIndex = 38;
+            this.btnContinue.Text = "Continue";
+            this.btnContinue.UseVisualStyleBackColor = true;
+            this.btnContinue.Click += new System.EventHandler(this.btnCancel2_Click);
             // 
             // ListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 531);
-            this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.btnContinue);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.i9);
             this.Controls.Add(this.i8);
             this.Controls.Add(this.i7);
@@ -274,10 +265,8 @@
             this.Controls.Add(this.i3);
             this.Controls.Add(this.i6);
             this.Controls.Add(this.i5);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.i2);
             this.Controls.Add(this.i1);
@@ -311,10 +300,8 @@
         private System.Windows.Forms.TextBox i1;
         private System.Windows.Forms.TextBox i2;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DateTimePicker i5;
         private System.Windows.Forms.DateTimePicker i6;
         private System.Windows.Forms.TextBox i3;
@@ -322,6 +309,7 @@
         private System.Windows.Forms.TextBox i7;
         private System.Windows.Forms.TextBox i8;
         private System.Windows.Forms.TextBox i9;
-        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnContinue;
     }
 }

@@ -111,6 +111,11 @@ namespace HomeScreen.Presentation_Layer
                     guestController = new GuestController();
                     guests = guestController.AllGuests;
                     break;
+                case "nguest":
+                    guestController = new GuestController();
+                    guests = guestController.AllGuests;
+                    nguest = gst;
+                    break;
 
                 case "account":
                     accountcontroller = new AccountController();
@@ -140,8 +145,7 @@ namespace HomeScreen.Presentation_Layer
             this.Load += ListForm_Load;
             this.Activated += ListForm_Activated;
             this.FormClosed += ListForm_FormClosed;
-
-
+            state = FormStates.View;
         }
 
         #endregion
@@ -184,6 +188,9 @@ namespace HomeScreen.Presentation_Layer
                     case "guest":
                         guest = guestController.Find(Convert.ToInt32(listView1.SelectedItems[0].Text));
                         break;
+                    case "nguest":
+                        guest = guestController.Find(Convert.ToInt32(listView1.SelectedItems[0].Text));
+                        break;
                 }
 
 
@@ -195,12 +202,11 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
-            state = FormStates.Edit;
-            btnDelete.Visible = false;
-            PopulateObject(table);
-            bookingController.DataMaintenance(booking, Database_Layer.DB.DBOperation.Edit);
-            ShowAll2(true, table);
+            
+                state = FormStates.Edit;
+                btnDelete.Visible = false;
+                ShowAll2(true, table);
+           
         }
 
         #endregion
@@ -242,6 +248,33 @@ namespace HomeScreen.Presentation_Layer
                         sDetails.SubItems.Add(guest.Status);
                         listView1.Items.Add(sDetails);
                     }
+
+                    break;
+
+                case "nguest":
+                    listView1.Columns.Insert(0, "GuestID", 120, HorizontalAlignment.Left);
+                    listView1.Columns.Insert(1, "Name", 120, HorizontalAlignment.Left);
+                    listView1.Columns.Insert(2, "Surname", 120, HorizontalAlignment.Left);
+                    listView1.Columns.Insert(3, "PhoneNo", 120, HorizontalAlignment.Left);
+                    listView1.Columns.Insert(4, "Address", 120, HorizontalAlignment.Left);
+                    listView1.Columns.Insert(5, "Email", 120, HorizontalAlignment.Left);
+                    listView1.Columns.Insert(6, "Status", 120, HorizontalAlignment.Left);
+
+
+                    listView1.Text = "Showing Guest Details";
+
+                    
+                        sDetails = new ListViewItem();
+                        sDetails.Text = guest.GuestID.ToString();
+                        // Do the same for Gender, HomeLanguage, PopGroup and SA_Citizenship_Status
+                        sDetails.SubItems.Add(guest.Name);
+                        sDetails.SubItems.Add(guest.Surname);
+                        sDetails.SubItems.Add(guest.PhoneNumber);
+                        sDetails.SubItems.Add(guest.Address);
+                        sDetails.SubItems.Add(guest.Email);
+                        sDetails.SubItems.Add(guest.Status);
+                        listView1.Items.Add(sDetails);
+                    
 
                     break;
 
@@ -288,8 +321,6 @@ namespace HomeScreen.Presentation_Layer
             }
 
 
-
-
             listView1.Refresh();
             listView1.GridLines = true;
         }
@@ -320,6 +351,7 @@ namespace HomeScreen.Presentation_Layer
 
             if ((state == FormStates.Edit) && value)
             {
+
                 i1.Enabled = !value;
                 //do the same for all buttons & textboxes
                 switch (table)
@@ -328,6 +360,8 @@ namespace HomeScreen.Presentation_Layer
                         i2.Enabled = !value;
                         break;
                     case "guest":
+                    case "nguest":
+                        i2.Enabled = value;
                         break;
                 }
 
@@ -343,31 +377,28 @@ namespace HomeScreen.Presentation_Layer
 
             if (state == FormStates.Delete)
             {
-                btnCancel.Visible = !value;
+                btnContinue.Visible = !value;
                 btnSubmit.Visible = !value;
             }
             else
             {
-                btnCancel.Visible = value;
+                btnContinue.Visible = value;
                 btnSubmit.Visible = value;
             }
 
             switch (tbl)
             {
+                case "nguest":
                 case "guest":
                     lbl1.Text = "GuestID";
                     lbl2.Text = "Name";
                     lbl3.Text = "Surname";
                     lbl4.Text = "Phone Number";
-                    lbl5.Text = "Address";
-                    lbl6.Text = "Email";
-                    lbl7.Text = "Status";
-
-                    lbl8.Visible = !value;
-                    i8.Visible = !value;
-                    lbl9.Visible = !value;
-                    i9.Visible = !value;
-
+                    lbl7.Text = "Address";
+                    lbl8.Text = "Email";
+                    lbl9.Text = "Status";
+                    break;
+                case "booking":
                     break;
             }
 
@@ -381,12 +412,17 @@ namespace HomeScreen.Presentation_Layer
         {
             if ((state == FormStates.Edit) && value)
             {
+
                 switch (tbl)
                 {
                     case "bookings":
                         i1.Enabled = !value;
                         //do the same for all buttons & textboxes
                         i2.Enabled = !value;
+                        break;
+                    case "guest":
+                    case "nguest":
+                        i1.Enabled = !value;
                         break;
                 }
 
@@ -408,12 +444,13 @@ namespace HomeScreen.Presentation_Layer
 
             if (state == FormStates.Delete)
             {
-                btnCancel.Visible = !value;
+
+                btnContinue.Visible = !value;
                 btnSubmit.Visible = !value;
             }
             else
             {
-                btnCancel.Visible = value;
+                btnContinue.Visible = value;
                 btnSubmit.Visible = value;
             }
         }
@@ -433,6 +470,26 @@ namespace HomeScreen.Presentation_Layer
                     booking.SentConfirmation = Convert.ToBoolean(i7.Text);
                     booking.RecievedDeposit = Convert.ToBoolean(i8.Text);
                     booking.IsCancelled = Convert.ToBoolean(i9.Text);
+
+                    break;
+                case "guest":
+                    guest = new Guest();
+                    guest.GuestID = Convert.ToInt32(i1.Text);
+                    guest.Name = Convert.ToString(i2.Text);
+                    guest.Surname = Convert.ToString(i3.Text);
+                    guest.PhoneNumber = Convert.ToString(i4.Text);
+                    guest.Address = Convert.ToString(i7.Text);
+                    guest.Email = Convert.ToString(i8.Text);
+                    guest.Status = Convert.ToString(i9.Text);
+                    break;
+                case "nguest":
+                    guest.GuestID = Convert.ToInt32(i1.Text);
+                    guest.Name = Convert.ToString(i2.Text);
+                    guest.Surname = Convert.ToString(i3.Text);
+                    guest.PhoneNumber = Convert.ToString(i4.Text);
+                    guest.Address = Convert.ToString(i7.Text);
+                    guest.Email = Convert.ToString(i8.Text);
+                    guest.Status = Convert.ToString(i9.Text);
                     break;
             }
 
@@ -442,14 +499,15 @@ namespace HomeScreen.Presentation_Layer
 
             switch (table)
             {
-                case "Guest":
+                case "nguest":
+                case "guest":
                     i1.Text = Convert.ToString(gst.GuestID);
                     i2.Text = Convert.ToString(gst.Name);
                     i3.Text = Convert.ToString(gst.Surname);
                     i4.Text = Convert.ToString(gst.PhoneNumber);
-                    i8.Text = Convert.ToString(gst.Address);
-                    i9.Text = Convert.ToString(gst.Email);
-                    i7.Text = Convert.ToString(gst.Status);
+                    i7.Text = Convert.ToString(gst.Address);
+                    i8.Text = Convert.ToString(gst.Email);
+                    i9.Text = Convert.ToString(gst.Status);
                     break;
                 case "booking":
                     i1.Text = Convert.ToString(bkg.ReservationNumber);
@@ -483,52 +541,84 @@ namespace HomeScreen.Presentation_Layer
 
         #endregion
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            ClearAll();
-            state = FormStates.View;
-            ShowAll1(false, table);
-            setUpListView();
-        }
-
+        
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            if (state == FormStates.Edit)
+            switch(table)
             {
-                PopulateObject(table);
-                bookingController.DataMaintenance(booking, DB.DBOperation.Edit);
+                case "booking":
+                    if (state == FormStates.Edit)
+                    {
+                        PopulateObject(table);
+                        bookingController.DataMaintenance(booking, DB.DBOperation.Edit);
+                    }
+                    else
+                    {
+                        bookingController.DataMaintenance(booking, DB.DBOperation.Delete);
+                    }
+                    bookingController.FinalizeChanges(booking);
+                    break;
+                case "guest":
+                case "nguest":
+                    if (state == FormStates.Edit)
+                    {
+                        PopulateObject(table);
+                        guestController.DataMaintenance(guest, DB.DBOperation.Edit);
+                    }
+                    else
+                    {
+                        guestController.DataMaintenance(guest, DB.DBOperation.Delete);
+                    }
+                    guestController.FinalizeChanges(guest);
+                    break;
+
             }
-            else
-            {
-                bookingController.DataMaintenance(booking, DB.DBOperation.Delete);
-            }
-            bookingController.FinalizeChanges(booking);
+            
             ClearAll();
             state = FormStates.View;
             ShowAll1(false, table);
             setUpListView();   //refresh List View
             booking = null;
 
-            btnUpdate.Enabled = false;
-            btnDelete.Enabled = false;
-
         }
 
-        private void btnCancel_Click_1(object sender, EventArgs e)
+        
+
+        private void CreateNewForm(string tbl)
+        {
+            switch(tbl)
+            {
+                case "nguest":
+                    pf = new PaymentForm();
+                    pf.MdiParent = this.MdiParent;
+                    pf.StartPosition = FormStartPosition.CenterParent;
+                    break;
+                case "guest":
+                case "booking":
+                    hsf = new HomeScreenForm();
+                    hsf.MdiParent = this.MdiParent;
+                    hsf.StartPosition = FormStartPosition.CenterParent;
+                    break;
+            }
+            
+        }
+
+        private void btnDelete2_Click(object sender, EventArgs e)
         {
             state = FormStates.Delete;
             btnUpdate.Visible = false;
-            //call the ShowAll method
             ShowAll2(false, table);
             MessageBox.Show("This record is about to be deleted");
+            btnDelete.Enabled = false;
         }
 
-        private void btnConfirm_Click(object sender, EventArgs e)
+        private void btnCancel2_Click(object sender, EventArgs e)
         {
             switch (table)
             {
-                case "guest":
+
+                case "nguest":
                     if (pf == null)
                     {
                         CreateNewForm(table);
@@ -542,16 +632,25 @@ namespace HomeScreen.Presentation_Layer
                     this.Close();
                     break;
                 case "booking":
+                case "guest":
+                    if (hsf == null)
+                    {
+                        CreateNewForm(table);
+                    }
+                    if (hsf.confirmFormClosed)
+                    {
+                        CreateNewForm(table);
+                    }
+                    this.Hide();
+                    hsf.Show();
+                    this.Close();
                     break;
-
             }
-        }
+            }
 
-        private void CreateNewForm(string tbl)
+        private void i1_TextChanged(object sender, EventArgs e)
         {
-            pf = new PaymentForm();
-            pf.MdiParent = this.MdiParent;
-            pf.StartPosition = FormStartPosition.CenterParent;
+
         }
     }
 }

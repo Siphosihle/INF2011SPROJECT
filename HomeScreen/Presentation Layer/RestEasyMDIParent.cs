@@ -222,7 +222,12 @@ namespace HomeScreen.Presentation_Layer
 
         private void logInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DisplayAdminForm(this);
+            if(adminForm.confirmFormClosed)
+            {
+                CreateNewAdminForm();
+
+            }
+            adminForm.Show();
         }
 
         protected virtual void OnLogIn(EventArgs e)

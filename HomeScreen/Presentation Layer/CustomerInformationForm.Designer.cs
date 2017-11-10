@@ -29,11 +29,7 @@
         private void InitializeComponent()
         {
             this.lblGuestDetails = new System.Windows.Forms.Label();
-            this.txtboxFirstName = new System.Windows.Forms.TextBox();
-            this.txtboxLastName = new System.Windows.Forms.TextBox();
             this.txtboxID = new System.Windows.Forms.TextBox();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.lbLastName = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.btnCheckStatus = new System.Windows.Forms.Button();
             this.picBox = new System.Windows.Forms.PictureBox();
@@ -52,57 +48,20 @@
             this.lblGuestDetails.Text = "GUEST DETAILS";
             this.lblGuestDetails.Click += new System.EventHandler(this.lblGuestDetails_Click);
             // 
-            // txtboxFirstName
-            // 
-            this.txtboxFirstName.Location = new System.Drawing.Point(423, 175);
-            this.txtboxFirstName.Name = "txtboxFirstName";
-            this.txtboxFirstName.Size = new System.Drawing.Size(162, 22);
-            this.txtboxFirstName.TabIndex = 2;
-            this.txtboxFirstName.TextChanged += new System.EventHandler(this.txtboxFirstName_TextChanged_1);
-            // 
-            // txtboxLastName
-            // 
-            this.txtboxLastName.Location = new System.Drawing.Point(423, 236);
-            this.txtboxLastName.Name = "txtboxLastName";
-            this.txtboxLastName.Size = new System.Drawing.Size(162, 22);
-            this.txtboxLastName.TabIndex = 3;
-            // 
             // txtboxID
             // 
-            this.txtboxID.Location = new System.Drawing.Point(423, 296);
+            this.txtboxID.Location = new System.Drawing.Point(415, 214);
             this.txtboxID.Name = "txtboxID";
             this.txtboxID.Size = new System.Drawing.Size(162, 22);
             this.txtboxID.TabIndex = 4;
             this.txtboxID.TextChanged += new System.EventHandler(this.txtboxID_TextChanged);
-            // 
-            // lblFirstName
-            // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.ForeColor = System.Drawing.Color.HotPink;
-            this.lblFirstName.Location = new System.Drawing.Point(340, 182);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(68, 15);
-            this.lblFirstName.TabIndex = 16;
-            this.lblFirstName.Text = "First Name";
-            // 
-            // lbLastName
-            // 
-            this.lbLastName.AutoSize = true;
-            this.lbLastName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLastName.ForeColor = System.Drawing.Color.HotPink;
-            this.lbLastName.Location = new System.Drawing.Point(343, 243);
-            this.lbLastName.Name = "lbLastName";
-            this.lbLastName.Size = new System.Drawing.Size(65, 15);
-            this.lbLastName.TabIndex = 17;
-            this.lbLastName.Text = "Last Name";
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblID.ForeColor = System.Drawing.Color.HotPink;
-            this.lblID.Location = new System.Drawing.Point(356, 303);
+            this.lblID.Location = new System.Drawing.Point(348, 221);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(52, 15);
             this.lblID.TabIndex = 18;
@@ -137,11 +96,7 @@
             this.Controls.Add(this.btnCheckStatus);
             this.Controls.Add(this.picBox);
             this.Controls.Add(this.lblID);
-            this.Controls.Add(this.lbLastName);
-            this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.txtboxID);
-            this.Controls.Add(this.txtboxLastName);
-            this.Controls.Add(this.txtboxFirstName);
             this.Controls.Add(this.lblGuestDetails);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "CustomerInformationForm";
@@ -155,11 +110,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblGuestDetails;
-        private System.Windows.Forms.TextBox txtboxFirstName;
-        private System.Windows.Forms.TextBox txtboxLastName;
         private System.Windows.Forms.TextBox txtboxID;
-        private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.Label lbLastName;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.PictureBox picBox;
         private System.Windows.Forms.Button btnCheckStatus;

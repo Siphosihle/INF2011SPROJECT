@@ -141,7 +141,7 @@ namespace HomeScreen.Database_Layer
             //Create Parameters to communicate with SQL INSERT
             //https://www.google.co.za/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=size+in+bytes+of+Int+in+SQL
             SqlParameter param = default(SqlParameter);
-            param = new SqlParameter("@GuestID", SqlDbType.NVarChar, 15, "GuestID");
+            param = new SqlParameter("@GuestID", SqlDbType.Int, 20, "GuestID");
             daMain.InsertCommand.Parameters.Add(param);
 
             param = new SqlParameter("@Name", SqlDbType.NVarChar, 10, "Name");
@@ -199,14 +199,14 @@ namespace HomeScreen.Database_Layer
         {
             //--Create Parameters to communicate with SQL DELETE
             SqlParameter param;
-            param = new SqlParameter("@GuestID", SqlDbType.NVarChar, 15, "GuestID");
+            param = new SqlParameter("@GuestID", SqlDbType.Int, 20, "GuestID");
             param.SourceVersion = DataRowVersion.Original;
             daMain.DeleteCommand.Parameters.Add(param);
         }
         private void Create_INSERT_Command(Guest gst)
         {
             //Create the command that must be used to insert values into the Books table..
-            daMain.InsertCommand = new SqlCommand("INSERT into Guests (GuestID, Name, Surname, PhoneNo, Address) VALUES (@GuestID, @Name, @Surname, @PhoneNo, @Address)", cnMain);
+            daMain.InsertCommand = new SqlCommand("INSERT into Guests (GuestID, Name, Surname, PhoneNo, Address, Email, Status) VALUES (@GuestID, @Name, @Surname, @PhoneNo, @Address, @Email, @Status)", cnMain);
             Build_INSERT_Parameters(gst);
         }
 
@@ -214,7 +214,7 @@ namespace HomeScreen.Database_Layer
         {
             //Create the command that must be used to insert values into one of the three tables
             //Assumption is that the ID and EMPID cannot be changed
-            daMain.UpdateCommand = new SqlCommand("UPDATE Guests SET Name =@Name, Surname =@Surname, PhoneNo =@PhoneNo, Address =@Address, " + "WHERE GuestID = @Original_ID", cnMain);
+            daMain.UpdateCommand = new SqlCommand("UPDATE Guests SET Name =@Name, Surname =@Surname, PhoneNo =@PhoneNo, Address =@Address, Email =@Email, Status=@Status, " + "WHERE GuestID = @Original_ID", cnMain);
             Build_UPDATE_Parameters(gst);
         }
 
@@ -242,7 +242,7 @@ namespace HomeScreen.Database_Layer
             success = UpdateDataSource(sqlLocal, table);
             return success;
         }
-        #endregion
+        #endregion 
 
     }
 }
