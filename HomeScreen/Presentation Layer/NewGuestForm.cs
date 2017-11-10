@@ -23,7 +23,7 @@ namespace HomeScreen.Presentation_Layer
 
         private GuestController guestController;
 
-        public NewGuestForm(Booking bking, Hotel htl, long gstID)
+        public NewGuestForm(Booking bking, Hotel htl, int gstID)
         {
             InitializeComponent();
             guestController = new GuestController();
@@ -42,9 +42,9 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            
+
             try
-            {
+            { 
                 PopulateObject();
                 MessageBox.Show("To be submitted to the Database!");
                 guestController.DataMaintenance(guest, DB.DBOperation.Add);

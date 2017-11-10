@@ -144,7 +144,7 @@ namespace HomeScreen
             else if ((bFound == false))
             {
                 MessageBox.Show("New Guest");
-                NewGuestForm ngf = new NewGuestForm(booking, hotel, Convert.ToInt64(txtboxID.Text));
+                NewGuestForm ngf = new NewGuestForm(booking, hotel, Convert.ToInt32(txtboxID.Text));
                 this.Hide();
                 ngf.ShowDialog();
                 this.Close();

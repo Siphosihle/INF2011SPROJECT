@@ -47,7 +47,7 @@ namespace HomeScreen.Business_Layer
 
         public bool FinalizeChanges(Guest gst)
         {
-            return true;
+            return guestDB.UpdateDataSource(gst);
         }
 
 
