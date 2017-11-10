@@ -25,10 +25,13 @@ namespace HomeScreen.Presentation_Layer
 
         #region Data Members
 
+        private PaymentForm pf;
+        private HomeScreenForm hsf;
+
         public bool confirmFormClosed = false;
+
         private GuestController guestController;
         private BookingController bookingController;
-
         private AccountController accountcontroller;
         private AdminController admincontroller;
         private HotelController hotelcontroller;
@@ -36,7 +39,11 @@ namespace HomeScreen.Presentation_Layer
         private RoomController roomcontroller;
 
         private Guest guest;
+        private Guest nguest;
         private Booking booking;
+        private Hotel hotel;
+        private Account account;
+
 
         private Collection<Guest> guests;
         private Collection<Booking> bookings;
@@ -44,6 +51,9 @@ namespace HomeScreen.Presentation_Layer
         private FormStates state;
 
         private string table;
+        private HotelController hotelController;
+        private PaymentController paymentController;
+        private RoomController roomController;
 
         #endregion
 
@@ -53,10 +63,10 @@ namespace HomeScreen.Presentation_Layer
         {
             InitializeComponent();
 
-            guestController = aController;
-            guests = guestController.AllGuests;
+            guestController = new GuestController();
             bookingController = new BookingController();
             bookings = bookingController.AllBookings;
+            guests = guestController.AllGuests;
 
             //Set up Event Handlers for some form events in code rather than trhough the designer
             this.Load += ListForm_Load;
@@ -69,9 +79,14 @@ namespace HomeScreen.Presentation_Layer
         {
             InitializeComponent();
 
-            guests = guestController.AllGuests;
+            guestController = new GuestController();
             bookingController = new BookingController();
             bookings = bookingController.AllBookings;
+            guests = guestController.AllGuests;
+
+            booking = bking;
+            guest = gst;
+            hotel = htl;
 
             //Set up Event Handlers for some form events in code rather than trhough the designer
             this.Load += ListForm_Load;
@@ -80,21 +95,21 @@ namespace HomeScreen.Presentation_Layer
             state = FormStates.View;
         }
 
-        public ListForm(string tbl, string crudFunction)
+        public ListForm(string tbl, string crudFunction, Booking bking, Guest gst, Hotel htl)
         {
             InitializeComponent();
 
             table = tbl;
 
-
-
             switch (table)
             {
                 case "booking":
                     bookingController = new BookingController();
+                    bookings = bookingController.AllBookings;
                     break;
                 case "guest":
                     guestController = new GuestController();
+                    guests = guestController.AllGuests;
                     break;
 
                 case "account":
@@ -104,30 +119,22 @@ namespace HomeScreen.Presentation_Layer
                     admincontroller = new AdminController();
                     break;
                 case "hotel":
-                    guestController = new GuestController();
+                    hotelController = new HotelController();
                     break;
                 case "payment":
-                    guestController = new GuestController();
+                    paymentController = new PaymentController();
                     break;
                 case "room":
-                    guestController = new GuestController();
+                    roomController = new RoomController();
                     break;
 
             }
 
-            switch (crudFunction)
-            {
-                case "read":
-                    state = FormStates.View;
-                    break;
-                case "update":
-                    state = FormStates.Edit;
-                    break;
-                case "delete":
-                    state = FormStates.Delete;
-                    break;
+            booking = bking;
+            guest = gst;
+            hotel = htl;
 
-            }
+            
 
             //Set up Event Handlers for some form events in code rather than trhough the designer
             this.Load += ListForm_Load;
@@ -169,9 +176,20 @@ namespace HomeScreen.Presentation_Layer
             ShowAll2(false, table);
             if (listView1.SelectedItems.Count > 0)   // if you selected an item 
             {
-                booking = bookingController.Find(Convert.ToInt32(listView1.SelectedItems[0].Text));  //selected student becoms current student
-                                                                                                     // Show the details of the selected student in the controls
-                PopulateTextBoxes(guest, booking);
+                switch (table)
+                {
+                    case "booking":
+                        booking = bookingController.Find(Convert.ToInt32(listView1.SelectedItems[0].Text));  //selected student becoms current student
+                        break;
+                    case "guest":
+                        guest = guestController.Find(Convert.ToInt32(listView1.SelectedItems[0].Text));
+                        break;
+                }
+
+
+            
+            // Show the details of the selected student in the controls
+            PopulateTextBoxes(guest, booking);
             }
         }
 
@@ -199,7 +217,7 @@ namespace HomeScreen.Presentation_Layer
             switch (table)
             {
                 #region Guest Setup
-                case "Guest":
+                case "guest":
                     listView1.Columns.Insert(0, "GuestID", 120, HorizontalAlignment.Left);
                     listView1.Columns.Insert(1, "Name", 120, HorizontalAlignment.Left);
                     listView1.Columns.Insert(2, "Surname", 120, HorizontalAlignment.Left);
@@ -208,10 +226,8 @@ namespace HomeScreen.Presentation_Layer
                     listView1.Columns.Insert(5, "Email", 120, HorizontalAlignment.Left);
                     listView1.Columns.Insert(6, "Status", 120, HorizontalAlignment.Left);
 
-                    Collection<Guest> guests = null;
-
-                    guests = guestController.AllGuests;
-                    listView1.Text = "Listing of all Guests";
+                    
+                    listView1.Text = "Showing Guest Details";
 
                     foreach (Guest guest in guests)
                     {
@@ -431,8 +447,8 @@ namespace HomeScreen.Presentation_Layer
                     i2.Text = Convert.ToString(gst.Name);
                     i3.Text = Convert.ToString(gst.Surname);
                     i4.Text = Convert.ToString(gst.PhoneNumber);
-                    i5.Text = Convert.ToString(gst.Address);
-                    i6.Text = Convert.ToString(gst.Email);
+                    i8.Text = Convert.ToString(gst.Address);
+                    i9.Text = Convert.ToString(gst.Email);
                     i7.Text = Convert.ToString(gst.Status);
                     break;
                 case "booking":
@@ -457,8 +473,8 @@ namespace HomeScreen.Presentation_Layer
             i2.Text = "";
             i3.Text = "";
             i4.Text = "";
-            i5.Text = "";
-            i6.Text = "";
+            i5.Value = DateTime.Today;
+            i6.Value = DateTime.Today.AddDays(1);
             i7.Text = "";
             i8.Text = "";
             i9.Text = "";
@@ -499,13 +515,43 @@ namespace HomeScreen.Presentation_Layer
 
         }
 
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        private void btnCancel_Click_1(object sender, EventArgs e)
         {
             state = FormStates.Delete;
             btnUpdate.Visible = false;
             //call the ShowAll method
             ShowAll2(false, table);
             MessageBox.Show("This record is about to be deleted");
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            switch (table)
+            {
+                case "guest":
+                    if (pf == null)
+                    {
+                        CreateNewForm(table);
+                    }
+                    if (pf.confirmFormClosed)
+                    {
+                        CreateNewForm(table);
+                    }
+                    this.Hide();
+                    pf.Show();
+                    this.Close();
+                    break;
+                case "booking":
+                    break;
+
+            }
+        }
+
+        private void CreateNewForm(string tbl)
+        {
+            pf = new PaymentForm();
+            pf.MdiParent = this.MdiParent;
+            pf.StartPosition = FormStartPosition.CenterParent;
         }
     }
 }

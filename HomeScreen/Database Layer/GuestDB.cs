@@ -19,7 +19,7 @@ namespace HomeScreen.Database_Layer
         private string sqlLocal = "SELECT * FROM Guests";
 
 
-        private Collection<Guest> guest;
+        private Collection<Guest> guests;
 
         public struct ColumnAttribs
         {
@@ -31,7 +31,7 @@ namespace HomeScreen.Database_Layer
         //Default Constructor
         public GuestDB() : base()
         {
-            guest = new Collection<Guest>();
+            guests = new Collection<Guest>();
             FillDataSet(sqlLocal, table);
             Add2Collection(table);
         }
@@ -39,7 +39,7 @@ namespace HomeScreen.Database_Layer
         {
             get
             {
-                return guest;
+                return guests;
             }
         }
         public DataSet GetDataSet()
@@ -86,7 +86,7 @@ namespace HomeScreen.Database_Layer
                 if (!(myRow.RowState == DataRowState.Deleted))
                 {
                     //In c# there is no item property (but we use the 2-dim array) it is automatically known to the compiler when used as below
-                    if (gst.GuestID == Convert.ToString(dsMain.Tables[table].Rows[rowIndex]["GuestID"]))
+                    if (gst.GuestID == Convert.ToInt32(dsMain.Tables[table].Rows[rowIndex]["GuestID"]))
                     {
                         returnValue = rowIndex;
                     }
@@ -122,14 +122,14 @@ namespace HomeScreen.Database_Layer
                 if (!(myRow.RowState == DataRowState.Deleted))
                 {
                     aGuest = new Guest();
-                    aGuest.GuestID = Convert.ToString(myRow["GuestID"]).TrimEnd();
+                    aGuest.GuestID = Convert.ToInt32(myRow["GuestID"]);
                     aGuest.Name = Convert.ToString(myRow["Name"]).TrimEnd();
                     aGuest.Surname = Convert.ToString(myRow["Surname"]).TrimEnd();
                     aGuest.PhoneNumber = Convert.ToString(myRow["PhoneNo"]).TrimEnd();
                     aGuest.Address = Convert.ToString(myRow["Address"]).TrimEnd();
                     aGuest.Email = Convert.ToString(myRow["Email"]).TrimEnd();
                     aGuest.Status = Convert.ToString(myRow["Status"]).TrimEnd();
-                    guest.Add(aGuest);
+                    guests.Add(aGuest);
                 }
             }
         }
@@ -148,13 +148,19 @@ namespace HomeScreen.Database_Layer
             daMain.InsertCommand.Parameters.Add(param);
 
             //Do the same for Description & answer -ensure that you choose the right size
-            param = new SqlParameter("@Surname", SqlDbType.NVarChar, 100, "Surame");
+            param = new SqlParameter("@Surname", SqlDbType.NVarChar, 50, "Surame");
             daMain.InsertCommand.Parameters.Add(param);
 
             param = new SqlParameter("@PhoneNo", SqlDbType.NVarChar, 15, "PhoneNo");
             daMain.InsertCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@Address", SqlDbType.TinyInt, 1, "Address");
+            param = new SqlParameter("@Address", SqlDbType.NVarChar, 50, "Address");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@Email", SqlDbType.NVarChar, 50, "Email");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@Status", SqlDbType.NVarChar, 50, "Status");
             daMain.InsertCommand.Parameters.Add(param);
             //***https://msdn.microsoft.com/en-za/library/ms179882.aspx
         }
@@ -164,20 +170,27 @@ namespace HomeScreen.Database_Layer
             //---Create Parameters to communicate with SQL UPDATE
             SqlParameter param = default(SqlParameter);
 
-            param = new SqlParameter("@Name", SqlDbType.NVarChar, 100, "Name");
+            param = new SqlParameter("@Name", SqlDbType.NVarChar, 50, "Name");
             param.SourceVersion = DataRowVersion.Current;
             daMain.UpdateCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@Surname", SqlDbType.NVarChar, 100, "Surname");
+            param = new SqlParameter("@Surname", SqlDbType.NVarChar, 50, "Surname");
             param.SourceVersion = DataRowVersion.Current;
             daMain.UpdateCommand.Parameters.Add(param);
 
-            //Do for all fields other than ID and EMPID as for Insert 
             param = new SqlParameter("@Phone", SqlDbType.NVarChar, 15, "Phone");
             param.SourceVersion = DataRowVersion.Current;
             daMain.UpdateCommand.Parameters.Add(param);
 
-            param = new SqlParameter("@Address", SqlDbType.TinyInt, 1, "Address");
+            param = new SqlParameter("@Address", SqlDbType.NVarChar, 50, "Address");
+            param.SourceVersion = DataRowVersion.Current;
+            daMain.UpdateCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@Email", SqlDbType.NVarChar, 50, "Email");
+            param.SourceVersion = DataRowVersion.Current;
+            daMain.UpdateCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@Status", SqlDbType.NVarChar, 50, "Status");
             param.SourceVersion = DataRowVersion.Current;
             daMain.UpdateCommand.Parameters.Add(param);
         }
@@ -186,7 +199,7 @@ namespace HomeScreen.Database_Layer
         {
             //--Create Parameters to communicate with SQL DELETE
             SqlParameter param;
-            param = new SqlParameter("@ID", SqlDbType.NVarChar, 15, "ID");
+            param = new SqlParameter("@GuestID", SqlDbType.NVarChar, 15, "GuestID");
             param.SourceVersion = DataRowVersion.Original;
             daMain.DeleteCommand.Parameters.Add(param);
         }

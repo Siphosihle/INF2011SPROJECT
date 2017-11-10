@@ -125,7 +125,7 @@ namespace HomeScreen.Presentation_Layer
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            ListForm hs = new ListForm(booking, guest, hotel);
+            CustomerInformationForm hs = new CustomerInformationForm(booking, guest, hotel);
             this.Hide();
             hs.Show();
             hs.MdiParent = this.MdiParent;

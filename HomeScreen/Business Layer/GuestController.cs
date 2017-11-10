@@ -10,8 +10,8 @@ namespace HomeScreen.Business_Layer
 {
     public class GuestController
     {
-        GuestDB guestDB;
-        Collection<Guest> guests;
+        private GuestDB guestDB;
+        private Collection<Guest> guests;
 
         public Collection<Guest> AllGuests
         {
@@ -52,7 +52,8 @@ namespace HomeScreen.Business_Layer
         public bool FinalizeChanges(Guest gst)
         {
             //***call the EmployeeDB method that will commit the changes to the database
-            return guestDB.UpdateDataSource(gst);
+            //return guestDB.UpdateDataSource(gst);
+            return true;
         }
 
 
@@ -86,7 +87,7 @@ namespace HomeScreen.Business_Layer
             return matches;
         }
         //This method receives a employee ID as a parameter; finds the employee object in the collection of employees and then returns this object
-        public Guest Find(string ID)
+        public Guest Find(int ID)
         {
             int index = 0;
             bool found = (guests[index].GuestID == ID);  //check if it is the first student

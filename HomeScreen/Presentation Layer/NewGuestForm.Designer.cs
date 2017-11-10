@@ -44,6 +44,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtemail = new System.Windows.Forms.TextBox();
+            this.txtstatus = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,12 +106,13 @@
             // 
             this.btnPrevious.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevious.ForeColor = System.Drawing.Color.HotPink;
-            this.btnPrevious.Location = new System.Drawing.Point(423, 514);
+            this.btnPrevious.Location = new System.Drawing.Point(405, 554);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(123, 32);
             this.btnPrevious.TabIndex = 45;
             this.btnPrevious.Text = "Submit";
             this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // lbBookingDetails
             // 
@@ -190,7 +195,7 @@
             // 
             this.btnBack.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.HotPink;
-            this.btnBack.Location = new System.Drawing.Point(70, 514);
+            this.btnBack.Location = new System.Drawing.Point(67, 554);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(123, 32);
             this.btnBack.TabIndex = 54;
@@ -198,11 +203,51 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.HotPink;
+            this.label1.Location = new System.Drawing.Point(312, 485);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Email";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.HotPink;
+            this.label8.Location = new System.Drawing.Point(313, 515);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 15);
+            this.label8.TabIndex = 56;
+            this.label8.Text = "Status";
+            // 
+            // txtemail
+            // 
+            this.txtemail.Location = new System.Drawing.Point(395, 483);
+            this.txtemail.Name = "txtemail";
+            this.txtemail.Size = new System.Drawing.Size(174, 20);
+            this.txtemail.TabIndex = 57;
+            // 
+            // txtstatus
+            // 
+            this.txtstatus.Location = new System.Drawing.Point(395, 513);
+            this.txtstatus.Name = "txtstatus";
+            this.txtstatus.Size = new System.Drawing.Size(174, 20);
+            this.txtstatus.TabIndex = 58;
+            // 
             // NewGuestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 630);
+            this.Controls.Add(this.txtstatus);
+            this.Controls.Add(this.txtemail);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -244,5 +289,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtemail;
+        private System.Windows.Forms.TextBox txtstatus;
     }
 }

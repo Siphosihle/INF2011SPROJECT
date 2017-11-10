@@ -25,7 +25,7 @@ namespace HomeScreen
 
         private GuestController guestController;
         private Collection<Guest> guests;
-        private Guest gst;
+        private Guest guest;
         private Booking booking;
         private Hotel hotel;
 
@@ -82,7 +82,8 @@ namespace HomeScreen
         {
             InitializeComponent();
             guestController = new GuestController();
-            gst = new Guest();
+
+            guest = gst;
             booking = bking;
             hotel = htl;
 
@@ -115,7 +116,7 @@ namespace HomeScreen
             guests = guestController.AllGuests;
             foreach (Guest guest in guests)
             {
-                if (txtboxID.Text == guest.GuestID)
+                if (txtboxID.Text == guest.GuestID.ToString())
                 {
                     bFound = true;
                     count++;
@@ -125,10 +126,10 @@ namespace HomeScreen
             if ((bFound == true))
             {
 
-                gst = guestController.Find(txtboxID.Text);
+                guest = guestController.Find(Convert.ToInt32(txtboxID.Text));
 
                 MessageBox.Show("Existing Guest");
-                ListForm lf = new ListForm(guestController);
+                ListForm lf = new ListForm("nguest","update", booking, guest, hotel);
                 this.Hide();
                 lf.Show();
                 this.Close();
@@ -137,7 +138,7 @@ namespace HomeScreen
             if ((bFound == false) && (count == 1))
             {
                 MessageBox.Show("New Guest");
-                NewGuestForm ngf = new NewGuestForm();
+                NewGuestForm ngf = new NewGuestForm(booking, hotel);
                 this.Hide();
                 ngf.ShowDialog();
                 this.Close();

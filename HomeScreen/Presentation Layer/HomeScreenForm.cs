@@ -22,6 +22,9 @@ namespace HomeScreen.Presentation_Layer
         private ListForm lvForm;
 
         public bool confirmFormClosed = false;
+        private Booking booking;
+        private Guest guest;
+        private Hotel hotel;
 
         public HomeScreenForm()
         {
@@ -68,13 +71,13 @@ namespace HomeScreen.Presentation_Layer
         {
             if (lvForm == null)
             {
-                lvForm = new ListForm(tbl, crudFunction);
+                lvForm = new ListForm(tbl, crudFunction, booking, guest, hotel);
                 lvForm.MdiParent = this.MdiParent;
                 lvForm.StartPosition = FormStartPosition.CenterParent;
             }
             if (lvForm.confirmFormClosed)
             {
-                lvForm = new ListForm(tbl, crudFunction);
+                lvForm = new ListForm(tbl, crudFunction, booking, guest, hotel);
                 lvForm.MdiParent = this.MdiParent;
                 lvForm.StartPosition = FormStartPosition.CenterParent;
             }
@@ -96,7 +99,7 @@ namespace HomeScreen.Presentation_Layer
         private void btnBookingEnquiry_Click(object sender, EventArgs e)
         {
 
-            CreateNewLVForm("guest", "read");
+            CreateNewLVForm("guest", "update");
         }
 
         private void btnCancelBooking_Click(object sender, EventArgs e)

@@ -15,10 +15,18 @@ namespace HomeScreen.Presentation_Layer
 {
     public partial class NewGuestForm : Form
     {
-        public NewGuestForm()
+        private ListForm lvForm;
+
+        private Guest guest;
+        private Booking booking;
+        private Hotel hotel;
+
+        private GuestController guestController;
+
+        public NewGuestForm(Booking bking, Hotel htl)
         {
             InitializeComponent();
-
+            guestController = new GuestController();
 
         }
 
@@ -29,5 +37,65 @@ namespace HomeScreen.Presentation_Layer
             //cif.ShowDialog();
             this.Close();
         }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            
+            PopulateObject();
+            MessageBox.Show("To be submitted to the Database!");
+            try
+            {
+                guestController.DataMaintenance(guest, DB.DBOperation.Add);
+                guestController.FinalizeChanges(guest);
+                ClearAll();
+
+                lvForm = new ListForm("nguest", "update", booking, guest, hotel);
+                lvForm.MdiParent = this.MdiParent;
+                lvForm.StartPosition = FormStartPosition.CenterParent;
+                this.Hide();
+                lvForm.Show();
+                this.Close();
+
+            }
+            catch
+            {
+                MessageBox.Show("Please Fill in valid data");
+            }
+            
+
+
+
+        }
+
+        private void ShowAll(bool v)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void ClearAll()
+        {
+            txtboxID.Clear();
+            txtboxAddress.Clear();
+            txtboxCellphone.Clear();
+            txtboxEmail.Clear();
+            txtboxFirstName.Clear();
+            txtboxSurname.Clear();
+        }
+
+        private void PopulateObject()
+        {
+            guest = new Guest();
+            guest.GuestID = Convert.ToInt32(txtboxID.Text);
+            guest.Name = Convert.ToString(txtboxID.Text);
+            guest.Surname = Convert.ToString(txtboxID.Text);
+            guest.PhoneNumber = Convert.ToString(txtboxID.Text);
+            guest.Address = Convert.ToString(txtboxID.Text);
+            guest.Email = Convert.ToString(txtboxID.Text);
+            guest.Status = Convert.ToString(txtboxID.Text);
+
+            
+
+        }
+
     }
 }

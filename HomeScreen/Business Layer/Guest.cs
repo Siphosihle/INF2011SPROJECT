@@ -15,7 +15,7 @@ namespace HomeScreen.Business_Layer
         //constructors
 
         #region Members
-        private string guestID;
+        private int guestID;
         private string name;
         private string surname;
         private string phoneNo;
@@ -26,7 +26,7 @@ namespace HomeScreen.Business_Layer
         #endregion
 
         #region Properties
-        public string GuestID
+        public int GuestID
         {
             get
             {
@@ -104,7 +104,7 @@ namespace HomeScreen.Business_Layer
         {
             name = "";
             surname = "";
-            guestID = "";
+            guestID = 0;
         }
 
         public void GuestDetails(string name, string surname, int phone, string address)

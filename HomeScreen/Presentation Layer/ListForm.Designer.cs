@@ -51,6 +51,7 @@
             this.i7 = new System.Windows.Forms.TextBox();
             this.i8 = new System.Windows.Forms.TextBox();
             this.i9 = new System.Windows.Forms.TextBox();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl1
@@ -166,7 +167,7 @@
             this.btnCancel.TabIndex = 20;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // listView1
             // 
@@ -195,7 +196,7 @@
             this.btnDelete.TabIndex = 23;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
+            this.btnDelete.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // i5
             // 
@@ -250,11 +251,22 @@
             this.i9.Size = new System.Drawing.Size(137, 20);
             this.i9.TabIndex = 35;
             // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Location = new System.Drawing.Point(906, 442);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirm.TabIndex = 36;
+            this.btnConfirm.Text = "confirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
             // ListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 531);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.i9);
             this.Controls.Add(this.i8);
             this.Controls.Add(this.i7);
@@ -310,5 +322,6 @@
         private System.Windows.Forms.TextBox i7;
         private System.Windows.Forms.TextBox i8;
         private System.Windows.Forms.TextBox i9;
+        private System.Windows.Forms.Button btnConfirm;
     }
 }
