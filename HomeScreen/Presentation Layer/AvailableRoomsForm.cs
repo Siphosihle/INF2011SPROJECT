@@ -118,7 +118,7 @@ namespace HomeScreen.Presentation_Layer
             BookingDetailsForm hs = new BookingDetailsForm();
             this.Hide();
             hs.Show();
-            hs.MdiParent = this;
+            hs.MdiParent = this.MdiParent;
             hs.StartPosition = FormStartPosition.CenterParent;
             this.Close();
         }

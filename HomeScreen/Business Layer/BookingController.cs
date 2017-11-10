@@ -34,9 +34,9 @@ namespace HomeScreen.Business_Layer
 
         
 
-        internal void CalculateDeposit()
+        public decimal CalculateDeposit()
         {
-
+            return 0;
         }
 
         
@@ -94,9 +94,7 @@ namespace HomeScreen.Business_Layer
         
         public bool FinalizeChanges(Booking booking)
         {
-            //***call the EmployeeDB method that will commit the changes to the database
-            //return bookingDB.UpdateDataSource(booking);
-            return false;
+            return bookingDB.UpdateDataSource(booking);
         } 
         #endregion
 
@@ -109,30 +107,9 @@ namespace HomeScreen.Business_Layer
             return roomBookingDB.AllBookings;
         }
 
-        /*
-         //This method  (function) searched through all the employess to finds onlly those with the required role
-        public Collection<Booking> FindByAvailability(Collection<Booking> bkings)
-        {
-            Collection<Booking> matches = new Collection<Booking>();
-
-            foreach (Booking bking in bkings)
-            {
-
-            }
-                
-
-            foreach (Booking emp in emps)
-            {
-                if (emp.role.RoleValue == roleVal)
-                {
-                    matches.Add(emp);
-                }
-            }
-            return matches;
-        } */
+        
 
 
-        //This method receives a employee ID as a parameter; finds the employee object in the collection of employees and then returns this object
 
         public Booking Find(int resNo)
         {

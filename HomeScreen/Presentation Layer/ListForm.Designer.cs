@@ -44,13 +44,13 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.i3 = new System.Windows.Forms.ComboBox();
-            this.i4 = new System.Windows.Forms.ComboBox();
             this.i5 = new System.Windows.Forms.DateTimePicker();
             this.i6 = new System.Windows.Forms.DateTimePicker();
-            this.i7 = new System.Windows.Forms.ComboBox();
-            this.i8 = new System.Windows.Forms.ComboBox();
-            this.i9 = new System.Windows.Forms.ComboBox();
+            this.i3 = new System.Windows.Forms.TextBox();
+            this.i4 = new System.Windows.Forms.TextBox();
+            this.i7 = new System.Windows.Forms.TextBox();
+            this.i8 = new System.Windows.Forms.TextBox();
+            this.i9 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbl1
@@ -197,25 +197,10 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
-            // i3
-            // 
-            this.i3.FormattingEnabled = true;
-            this.i3.Location = new System.Drawing.Point(139, 439);
-            this.i3.Name = "i3";
-            this.i3.Size = new System.Drawing.Size(121, 21);
-            this.i3.TabIndex = 24;
-            // 
-            // i4
-            // 
-            this.i4.FormattingEnabled = true;
-            this.i4.Location = new System.Drawing.Point(139, 477);
-            this.i4.Name = "i4";
-            this.i4.Size = new System.Drawing.Size(121, 21);
-            this.i4.TabIndex = 25;
-            // 
             // i5
             // 
             this.i5.Location = new System.Drawing.Point(433, 373);
+            this.i5.MinDate = new System.DateTime(2017, 11, 10, 0, 0, 0, 0);
             this.i5.Name = "i5";
             this.i5.Size = new System.Drawing.Size(200, 20);
             this.i5.TabIndex = 26;
@@ -223,33 +208,47 @@
             // i6
             // 
             this.i6.Location = new System.Drawing.Point(433, 408);
+            this.i6.MaxDate = new System.DateTime(2017, 12, 31, 0, 0, 0, 0);
+            this.i6.MinDate = new System.DateTime(2017, 11, 10, 0, 0, 0, 0);
             this.i6.Name = "i6";
             this.i6.Size = new System.Drawing.Size(200, 20);
             this.i6.TabIndex = 27;
+            this.i6.Value = new System.DateTime(2017, 11, 10, 1, 32, 39, 0);
+            // 
+            // i3
+            // 
+            this.i3.Location = new System.Drawing.Point(139, 440);
+            this.i3.Name = "i3";
+            this.i3.Size = new System.Drawing.Size(121, 20);
+            this.i3.TabIndex = 31;
+            // 
+            // i4
+            // 
+            this.i4.Location = new System.Drawing.Point(139, 477);
+            this.i4.Name = "i4";
+            this.i4.Size = new System.Drawing.Size(121, 20);
+            this.i4.TabIndex = 32;
             // 
             // i7
             // 
-            this.i7.FormattingEnabled = true;
-            this.i7.Location = new System.Drawing.Point(433, 447);
+            this.i7.Location = new System.Drawing.Point(433, 444);
             this.i7.Name = "i7";
-            this.i7.Size = new System.Drawing.Size(121, 21);
-            this.i7.TabIndex = 28;
+            this.i7.Size = new System.Drawing.Size(200, 20);
+            this.i7.TabIndex = 33;
             // 
             // i8
             // 
-            this.i8.FormattingEnabled = true;
             this.i8.Location = new System.Drawing.Point(433, 485);
             this.i8.Name = "i8";
-            this.i8.Size = new System.Drawing.Size(121, 21);
-            this.i8.TabIndex = 29;
+            this.i8.Size = new System.Drawing.Size(200, 20);
+            this.i8.TabIndex = 34;
             // 
             // i9
             // 
-            this.i9.FormattingEnabled = true;
-            this.i9.Location = new System.Drawing.Point(738, 373);
+            this.i9.Location = new System.Drawing.Point(722, 373);
             this.i9.Name = "i9";
-            this.i9.Size = new System.Drawing.Size(121, 21);
-            this.i9.TabIndex = 30;
+            this.i9.Size = new System.Drawing.Size(137, 20);
+            this.i9.TabIndex = 35;
             // 
             // ListForm
             // 
@@ -259,10 +258,10 @@
             this.Controls.Add(this.i9);
             this.Controls.Add(this.i8);
             this.Controls.Add(this.i7);
-            this.Controls.Add(this.i6);
-            this.Controls.Add(this.i5);
             this.Controls.Add(this.i4);
             this.Controls.Add(this.i3);
+            this.Controls.Add(this.i6);
+            this.Controls.Add(this.i5);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.listView1);
@@ -304,12 +303,12 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.ComboBox i3;
-        private System.Windows.Forms.ComboBox i4;
         private System.Windows.Forms.DateTimePicker i5;
         private System.Windows.Forms.DateTimePicker i6;
-        private System.Windows.Forms.ComboBox i7;
-        private System.Windows.Forms.ComboBox i8;
-        private System.Windows.Forms.ComboBox i9;
+        private System.Windows.Forms.TextBox i3;
+        private System.Windows.Forms.TextBox i4;
+        private System.Windows.Forms.TextBox i7;
+        private System.Windows.Forms.TextBox i8;
+        private System.Windows.Forms.TextBox i9;
     }
 }

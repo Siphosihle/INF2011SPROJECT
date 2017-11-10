@@ -23,6 +23,8 @@ namespace HomeScreen.Presentation_Layer
             Delete = 3
         }
 
+        #region Data Members
+
         public bool confirmFormClosed = false;
         private GuestController guestController;
         private BookingController bookingController;
@@ -42,6 +44,10 @@ namespace HomeScreen.Presentation_Layer
         private FormStates state;
 
         private string table;
+
+        #endregion
+
+        #region Constructor
 
         public ListForm(GuestController aController)
         {
@@ -109,11 +115,6 @@ namespace HomeScreen.Presentation_Layer
 
             }
 
-            //Set up Event Handlers for some form events in code rather than trhough the designer
-            this.Load += ListForm_Load;
-            this.Activated += ListForm_Activated;
-            this.FormClosed += ListForm_FormClosed;
-
             switch (crudFunction)
             {
                 case "read":
@@ -127,8 +128,18 @@ namespace HomeScreen.Presentation_Layer
                     break;
 
             }
+
+            //Set up Event Handlers for some form events in code rather than trhough the designer
+            this.Load += ListForm_Load;
+            this.Activated += ListForm_Activated;
+            this.FormClosed += ListForm_FormClosed;
+
+
         }
 
+        #endregion
+
+        #region Form Events
 
         private void ListForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -146,6 +157,37 @@ namespace HomeScreen.Presentation_Layer
             setUpListView();
             ShowAll1(false, table);
         }
+
+        #endregion
+
+        #region GUI
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ShowAll1(true, table);
+            state = FormStates.View;
+            ShowAll2(false, table);
+            if (listView1.SelectedItems.Count > 0)   // if you selected an item 
+            {
+                booking = bookingController.Find(Convert.ToInt32(listView1.SelectedItems[0].Text));  //selected student becoms current student
+                                                                                                     // Show the details of the selected student in the controls
+                PopulateTextBoxes(guest, booking);
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+            state = FormStates.Edit;
+            btnDelete.Visible = false;
+            PopulateObject(table);
+            bookingController.DataMaintenance(booking, Database_Layer.DB.DBOperation.Edit);
+            ShowAll2(true, table);
+        }
+
+        #endregion
+
+        #region Methods
 
         private void setUpListView()
         {
@@ -235,46 +277,45 @@ namespace HomeScreen.Presentation_Layer
             listView1.Refresh();
             listView1.GridLines = true;
         }
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ShowAll1(true, table);
-            state = FormStates.View;
-            ShowAll2(false, table);
-            if (listView1.SelectedItems.Count > 0)   // if you selected an item 
-            {
-                booking = bookingController.Find(Convert.ToInt32(listView1.SelectedItems[0].Text));  //selected student becoms current student
-                                                                                                     // Show the details of the selected student in the controls
-                PopulateTextBoxes(guest, booking);
-            }
-        }
+
         private void ShowAll1(bool value, string tbl)
         {
 
             lbl1.Visible = value;
-            lbl6.Visible = value;
-            lbl9.Visible = value;
-            lbl5.Visible = value;
-            lbl8.Visible = value;
-            lbl7.Visible = value;
             lbl2.Visible = value;
             lbl3.Visible = value;
             lbl4.Visible = value;
+            lbl5.Visible = value;
+            lbl6.Visible = value;
+            lbl7.Visible = value;
+            lbl8.Visible = value;
+            lbl9.Visible = value;
 
             i1.Visible = value;
-            txt6.Visible = value;
             i2.Visible = value;
-            txt9.Visible = value;
-            txt4.Visible = value;
-            txt3.Visible = value;
-            txt8.Visible = value;
-            txt5.Visible = value;
-            txt7.Visible = value;
+            i2.Visible = value;
+            i3.Visible = value;
+            i4.Visible = value;
+            i5.Visible = value;
+            i6.Visible = value;
+            i7.Visible = value;
+            i8.Visible = value;
+            i9.Visible = value;
 
             if ((state == FormStates.Edit) && value)
             {
                 i1.Enabled = !value;
                 //do the same for all buttons & textboxes
-                i2.Enabled = !value;
+                switch (table)
+                {
+                    case "booking":
+                        i2.Enabled = !value;
+                        break;
+                    case "guest":
+                        break;
+                }
+
+
             }
             else
             {
@@ -307,9 +348,9 @@ namespace HomeScreen.Presentation_Layer
                     lbl7.Text = "Status";
 
                     lbl8.Visible = !value;
-                    txt9.Visible = !value;
+                    i8.Visible = !value;
                     lbl9.Visible = !value;
-                    txt9.Visible = !value;
+                    i9.Visible = !value;
 
                     break;
             }
@@ -339,13 +380,13 @@ namespace HomeScreen.Presentation_Layer
                 i1.Enabled = value;
                 i2.Enabled = value;
             }
-            txt3.Enabled = value;
-            txt4.Enabled = value;
-            txt5.Enabled = value;
-            txt6.Enabled = value;
-            txt7.Enabled = value;
-            txt8.Enabled = value;
-            txt9.Enabled = value;
+            i3.Enabled = value;
+            i4.Enabled = value;
+            i5.Enabled = value;
+            i6.Enabled = value;
+            i7.Enabled = value;
+            i8.Enabled = value;
+            i9.Enabled = value;
 
 
 
@@ -361,27 +402,6 @@ namespace HomeScreen.Presentation_Layer
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
-            state = FormStates.Edit;
-            btnDelete.Visible = false;
-            //PopulateObject();
-            //bookingController.DataMaintenance(booking, Database_Layer.DB.DBOperation.Edit);
-            ShowAll2(true, table);
-        }
-        private void ClearAll()
-        {
-            txt6.Text = "";
-            i2.Text = "";
-            txt9.Text = "";
-            txt4.Text = "";
-            txt3.Text = "";
-            txt8.Text = "";
-            i1.Text = "";
-            txt7.Text = "";
-            txt5.Text = "";
-        }
         private void PopulateObject(string table)
         {
             switch (table)
@@ -390,13 +410,13 @@ namespace HomeScreen.Presentation_Layer
                     booking = new Booking();
                     booking.ReservationNumber = Convert.ToInt32(i1.Text);
                     booking.GuestID = Convert.ToInt32(i2.Text);
-                    booking.NoOfRooms = Convert.ToInt32(txt3.Text);
-                    booking.NoOfPeople = Convert.ToInt32(txt4.Text);
-                    booking.StartDate = Convert.ToDateTime(txt5.Text);
-                    booking.EndDate = Convert.ToDateTime(txt6.Text);
-                    booking.SentConfirmation = Convert.ToBoolean(txt7.Text);
-                    booking.RecievedDeposit = Convert.ToBoolean(txt8.Text);
-                    booking.IsCancelled = Convert.ToBoolean(txt9.Text);
+                    booking.NoOfRooms = Convert.ToInt32(i3.Text);
+                    booking.NoOfPeople = Convert.ToInt32(i4.Text);
+                    booking.StartDate = Convert.ToDateTime(i5.Value);
+                    booking.EndDate = Convert.ToDateTime(i6.Value);
+                    booking.SentConfirmation = Convert.ToBoolean(i7.Text);
+                    booking.RecievedDeposit = Convert.ToBoolean(i8.Text);
+                    booking.IsCancelled = Convert.ToBoolean(i9.Text);
                     break;
             }
 
@@ -409,27 +429,44 @@ namespace HomeScreen.Presentation_Layer
                 case "Guest":
                     i1.Text = Convert.ToString(gst.GuestID);
                     i2.Text = Convert.ToString(gst.Name);
-                    txt3.Text = Convert.ToString(gst.Surname);
-                    txt4.Text = Convert.ToString(gst.PhoneNumber);
-                    txt5.Text = Convert.ToString(gst.Address);
-                    txt6.Text = Convert.ToString(gst.Email);
-                    txt7.Text = Convert.ToString(gst.Status);
+                    i3.Text = Convert.ToString(gst.Surname);
+                    i4.Text = Convert.ToString(gst.PhoneNumber);
+                    i5.Text = Convert.ToString(gst.Address);
+                    i6.Text = Convert.ToString(gst.Email);
+                    i7.Text = Convert.ToString(gst.Status);
                     break;
                 case "booking":
                     i1.Text = Convert.ToString(bkg.ReservationNumber);
                     i2.Text = Convert.ToString(bkg.GuestID);
-                    txt3.Text = Convert.ToString(bkg.NoOfRooms);
-                    txt4.Text = Convert.ToString(bkg.NoOfPeople);
-                    txt5.Text = Convert.ToString(bkg.StartDate);
-                    txt6.Text = Convert.ToString(bkg.EndDate);
-                    txt7.Text = Convert.ToString(bkg.SentConfirmation);
-                    txt8.Text = Convert.ToString(bkg.RecievedDeposit);
-                    txt9.Text = Convert.ToString(bkg.IsCancelled);
+                    i3.Text = Convert.ToString(bkg.NoOfRooms);
+                    i4.Text = Convert.ToString(bkg.NoOfPeople);
+                    i5.Value = Convert.ToDateTime(bkg.StartDate);
+                    i6.Value = Convert.ToDateTime(bkg.EndDate);
+                    i7.Text = Convert.ToString(bkg.SentConfirmation);
+                    i8.Text = Convert.ToString(bkg.RecievedDeposit);
+                    i9.Text = Convert.ToString(bkg.IsCancelled);
                     break;
             }
 
 
         }
+
+        private void ClearAll()
+        {
+            i1.Text = "";
+            i2.Text = "";
+            i3.Text = "";
+            i4.Text = "";
+            i5.Text = "";
+            i6.Text = "";
+            i7.Text = "";
+            i8.Text = "";
+            i9.Text = "";
+        }
+
+
+        #endregion
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             ClearAll();
@@ -456,6 +493,10 @@ namespace HomeScreen.Presentation_Layer
             ShowAll1(false, table);
             setUpListView();   //refresh List View
             booking = null;
+
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+
         }
 
         private void btnDelete_Click_1(object sender, EventArgs e)

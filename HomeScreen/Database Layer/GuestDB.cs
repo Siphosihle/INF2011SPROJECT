@@ -106,6 +106,8 @@ namespace HomeScreen.Database_Layer
             aRow["Surname"] = gst.Surname;
             aRow["PhoneNo"] = gst.PhoneNumber;
             aRow["Address"] = gst.Address;
+            aRow["Email"] = gst.Email;
+            aRow["Status"] = gst.Status;
         }
  
         private void Add2Collection(string table)

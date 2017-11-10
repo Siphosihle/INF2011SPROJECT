@@ -185,6 +185,17 @@ namespace HomeScreen.Database_Layer
 
         }
 
+        public bool UpdateDataSource(Booking booking)
+        {
+            bool success = true;
+            //Create_INSERT_Command(booking);
+            //Create_UPDATE_Command(booking);
+            //Create_DELETE_Command(booking);
+            
+            success = UpdateDataSource(sqlLocal1, table1);
+            return success;
+        }
+
 
     }
 }
