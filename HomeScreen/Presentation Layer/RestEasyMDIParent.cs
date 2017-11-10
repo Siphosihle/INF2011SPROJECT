@@ -69,13 +69,6 @@ namespace HomeScreen.Presentation_Layer
 
             //rAllController.AvailRoomsInst += RoomAllocationController_AvailRoomsInst;
             frmState = FormState.LoggedOff;
-            this.accountsToolStripMenuItem.Enabled = false;
-            this.adminsToolStripMenuItem.Enabled = false;
-            this.hotelsToolStripMenuItem.Enabled = false;
-            this.hotelsToolStripMenuItem.Enabled = false;
-            this.paymentsToolStripMenuItem.Enabled = false;
-            this.roomsToolStripMenuItem.Enabled = false;
-            this.roomRatesToolStripMenuItem.Enabled = false;
 
         }
         #endregion
@@ -242,5 +235,10 @@ namespace HomeScreen.Presentation_Layer
         public event EventHandler LogIn;
 
         #endregion
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

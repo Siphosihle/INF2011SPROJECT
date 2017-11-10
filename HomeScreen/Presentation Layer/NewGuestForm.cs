@@ -43,15 +43,15 @@ namespace HomeScreen.Presentation_Layer
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             
-            PopulateObject();
-            MessageBox.Show("To be submitted to the Database!");
             try
             {
+                PopulateObject();
+                MessageBox.Show("To be submitted to the Database!");
                 guestController.DataMaintenance(guest, DB.DBOperation.Add);
                 guestController.FinalizeChanges(guest);
                 ClearAll();
 
-                lvForm = new ListForm("nguest", "update", booking, guest, hotel);
+                lvForm = new ListForm("guest", "update", booking, guest, hotel);
                 lvForm.MdiParent = this.MdiParent;
                 lvForm.StartPosition = FormStartPosition.CenterParent;
                 this.Hide();
@@ -87,7 +87,7 @@ namespace HomeScreen.Presentation_Layer
         private void PopulateObject()
         {
             guest = new Guest();
-            guest.GuestID = Convert.ToInt32(txtboxID.Text);
+            guest.GuestID = Int32.Parse(txtboxID.Text);
             guest.Name = Convert.ToString(txtboxID.Text);
             guest.Surname = Convert.ToString(txtboxID.Text);
             guest.PhoneNumber = Convert.ToString(txtboxID.Text);

@@ -136,7 +136,6 @@ namespace HomeScreen.Presentation_Layer
             }
 
             booking = bking;
-            guest = gst;
             hotel = htl;
 
             
@@ -204,7 +203,6 @@ namespace HomeScreen.Presentation_Layer
         {
             
                 state = FormStates.Edit;
-                btnDelete.Visible = false;
                 ShowAll2(true, table);
            
         }
@@ -309,7 +307,7 @@ namespace HomeScreen.Presentation_Layer
                         sDetails.SubItems.Add(booking.StartDate.ToString());
                         sDetails.SubItems.Add(booking.EndDate.ToString());
                         sDetails.SubItems.Add(booking.SentConfirmation.ToString());
-                        sDetails.SubItems.Add(booking.RecievedDeposit.ToString());
+                        sDetails.SubItems.Add(booking.RecieveDeposit.ToString());
                         sDetails.SubItems.Add(booking.IsCancelled.ToString());
                         listView1.Items.Add(sDetails);
                     }
@@ -468,7 +466,7 @@ namespace HomeScreen.Presentation_Layer
                     booking.StartDate = Convert.ToDateTime(i5.Value);
                     booking.EndDate = Convert.ToDateTime(i6.Value);
                     booking.SentConfirmation = Convert.ToBoolean(i7.Text);
-                    booking.RecievedDeposit = Convert.ToBoolean(i8.Text);
+                    booking.RecieveDeposit = Convert.ToBoolean(i8.Text);
                     booking.IsCancelled = Convert.ToBoolean(i9.Text);
 
                     break;
@@ -517,7 +515,7 @@ namespace HomeScreen.Presentation_Layer
                     i5.Value = Convert.ToDateTime(bkg.StartDate);
                     i6.Value = Convert.ToDateTime(bkg.EndDate);
                     i7.Text = Convert.ToString(bkg.SentConfirmation);
-                    i8.Text = Convert.ToString(bkg.RecievedDeposit);
+                    i8.Text = Convert.ToString(bkg.RecieveDeposit);
                     i9.Text = Convert.ToString(bkg.IsCancelled);
                     break;
             }
@@ -607,7 +605,6 @@ namespace HomeScreen.Presentation_Layer
         private void btnDelete2_Click(object sender, EventArgs e)
         {
             state = FormStates.Delete;
-            btnUpdate.Visible = false;
             ShowAll2(false, table);
             MessageBox.Show("This record is about to be deleted");
             btnDelete.Enabled = false;

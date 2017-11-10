@@ -124,7 +124,7 @@ namespace HomeScreen.Database_Layer
                     aBooking.StartDate = Convert.ToDateTime(myRow["StartDate"]);
                     aBooking.EndDate = Convert.ToDateTime(myRow["EndDate"]);
                     aBooking.SentConfirmation = Convert.ToBoolean(myRow["SentConfirmation"]);
-                    aBooking.RecievedDeposit = Convert.ToBoolean(myRow["RecieveDeposit"]);
+                    aBooking.RecieveDeposit = Convert.ToBoolean(myRow["RecieveDeposit"]);
                     aBooking.IsCancelled = Convert.ToBoolean(myRow["IsCancelled"]);
 
                     bookings.Add(aBooking);
@@ -147,7 +147,7 @@ namespace HomeScreen.Database_Layer
             aRow["StartDate"] = aBooking.StartDate;
             aRow["EndDate"] = aBooking.EndDate;
             aRow["SentConfirmation"] = aBooking.SentConfirmation;
-            aRow["RecieveDeposit"] = aBooking.RecievedDeposit;
+            aRow["RecieveDeposit"] = aBooking.RecieveDeposit;
             aRow["IsCancelled"] = aBooking.IsCancelled;
 
             
@@ -175,21 +175,137 @@ namespace HomeScreen.Database_Layer
         }
         #endregion
 
-        private void SearchByRoom()
+        #region Build Parameters, Create Commands & Update database
+        private void Build_INSERT_Parameters(Booking bking)
         {
+            //Create Parameters to communicate with SQL INSERT
+            //https://www.google.co.za/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=size+in+bytes+of+Int+in+SQL
+            SqlParameter param = default(SqlParameter);
+            param = new SqlParameter("@ReservationNumber", SqlDbType.Int, 20, "ReservationNumber");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@GuestID", SqlDbType.Int, 20, "GuestID");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            //Do the same for Description & answer -ensure that you choose the right size
+            param = new SqlParameter("@NoOfRooms", SqlDbType.Int, 50, "NoOfRooms");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@NoOfPeople", SqlDbType.Int, 15, "NoOfPeople");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@StartDate", SqlDbType.DateTime, 50, "StartDate");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@EndDate", SqlDbType.DateTime, 50, "EndDate");
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@SentConfirmation", SqlDbType.Bit, 50, "SentConfirmation");
+            
+            daMain.InsertCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@RecieveDeposit", SqlDbType.Bit, 50, "RecieveDeposit");
+
+            daMain.InsertCommand.Parameters.Add(param);
+            param = new SqlParameter("@IsCancelled", SqlDbType.Bit, 50, "IsCancelled");
+
+            daMain.InsertCommand.Parameters.Add(param);
+            //***https://msdn.microsoft.com/en-za/library/ms179882.aspx
+        }
+
+        private void Build_UPDATE_Parameters(Booking bking)
+        {
+            //---Create Parameters to communicate with SQL UPDATE
+            SqlParameter param = default(SqlParameter);
+
+            param = new SqlParameter("@GuestID", SqlDbType.Int, 20, "GuestID");
+            param.SourceVersion = DataRowVersion.Current;
+            daMain.UpdateCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@NoOfRooms", SqlDbType.Int, 50, "NoOfRooms");
+            param.SourceVersion = DataRowVersion.Current;
+            daMain.UpdateCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@NoOfPeople", SqlDbType.Int, 15, "NoOfPeople");
+            param.SourceVersion = DataRowVersion.Current;
+            daMain.UpdateCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@StartDate", SqlDbType.DateTime, 50, "StartDate");
+            param.SourceVersion = DataRowVersion.Current;
+            daMain.UpdateCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@EndDate", SqlDbType.DateTime, 50, "EndDate");
+            param.SourceVersion = DataRowVersion.Current;
+            daMain.UpdateCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@SentConfirmation", SqlDbType.Bit, 50, "SentConfirmation");
+            param.SourceVersion = DataRowVersion.Current;
+            daMain.UpdateCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@RecieveDeposit", SqlDbType.Bit, 50, "RecieveDeposit");
+            param.SourceVersion = DataRowVersion.Current;
+            daMain.UpdateCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@IsCancelled", SqlDbType.Bit, 50, "IsCancelled");
+            param.SourceVersion = DataRowVersion.Current;
+            daMain.UpdateCommand.Parameters.Add(param);
+
+            param = new SqlParameter("@Original_ReservationNumber", SqlDbType.NVarChar, 15, "ReservationNumber");
+            param.SourceVersion = DataRowVersion.Original;
+            daMain.UpdateCommand.Parameters.Add(param);
 
         }
 
-        public bool UpdateDataSource(Booking booking)
+        private void Build_DELETE_Parameters()
+        {
+            //--Create Parameters to communicate with SQL DELETE
+            SqlParameter param;
+            param = new SqlParameter("@ReservationNumber", SqlDbType.Int, 20, "ReservationNumber");
+            param.SourceVersion = DataRowVersion.Original;
+            daMain.DeleteCommand.Parameters.Add(param);
+        }
+        private void Create_INSERT_Command(Booking bking)
+        {
+            //Create the command that must be used to insert values into the Books table..
+            daMain.InsertCommand = new SqlCommand("INSERT into Bookings (ReservationNumber, GuestID, NoOfRooms, NoOfPeople, StartDate, EndDate, SentConfirmation, RecieveDeposit, IsCancelled) VALUES (@ReservationNumber, @GuestID, @NoOfRooms, @NoOfPeople, @StartDate, @EndDate, @SentConfirmation, @RecieveDeposit, @IsCancelled)", cnMain);
+            Build_INSERT_Parameters(bking);
+        }
+
+        private void Create_UPDATE_Command(Booking bking)
+        {
+            //Create the command that must be used to insert values into one of the three tables
+            daMain.UpdateCommand = new SqlCommand("UPDATE Bookings SET GuestID =@GuestID, NoOfRooms =@NoOfRooms, NoOfPeople =@NoOfPeople, StartDate =@StartDate, EndDate=@EndDate, SentConfirmation =@SentConfirmation, RecieveDeposit =@RecieveDeposit, IsCancelled =@IsCancelled " + "WHERE ReservationNumber = @Original_ReservationNumber", cnMain);
+            Build_UPDATE_Parameters(bking);
+        }
+
+        private string Create_DELETE_Command(Booking bking)
+        {
+            string errorString = null;
+            //Create the command that must be used to delete values from the the appropriate table
+            daMain.DeleteCommand = new SqlCommand("DELETE FROM Bookings WHERE ReservationNumber = @ReservationNumber", cnMain);
+            try
+            {
+                Build_DELETE_Parameters();
+            }
+            catch (Exception errObj)
+            {
+                errorString = errObj.Message + "  " + errObj.StackTrace;
+            }
+            return errorString;
+        }
+        public bool UpdateDataSource(Booking bking)
         {
             bool success = true;
-            //Create_INSERT_Command(booking);
-            //Create_UPDATE_Command(booking);
-            //Create_DELETE_Command(booking);
-            
+            Create_INSERT_Command(bking);
+            Create_UPDATE_Command(bking);
+            Create_DELETE_Command(bking);
             success = UpdateDataSource(sqlLocal1, table1);
             return success;
         }
+        #endregion 
+
+
+
 
 
     }

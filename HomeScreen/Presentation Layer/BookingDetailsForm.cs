@@ -260,7 +260,7 @@ namespace HomeScreen.Presentation_Layer
             booking.StartDate = dtpCheckInDate.Value;
             booking.EndDate = dtpCheckOutDate.Value;
             booking.SentConfirmation = false;
-            booking.RecievedDeposit = false;
+            booking.RecieveDeposit = false;
             booking.IsCancelled = false;
             
 

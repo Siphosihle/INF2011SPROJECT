@@ -83,7 +83,6 @@ namespace HomeScreen
             InitializeComponent();
             guestController = new GuestController();
 
-            guest = gst;
             booking = bking;
             hotel = htl;
 
@@ -135,7 +134,7 @@ namespace HomeScreen
                 guest = guestController.Find(Convert.ToInt32(txtboxID.Text));
 
                 MessageBox.Show("Existing Guest");
-                ListForm lf = new ListForm("nguest","update", booking, guest, hotel);
+                ListForm lf = new ListForm("guest","update", booking, guest, hotel);
                 this.Hide();
                 lf.Show();
                 this.Close();

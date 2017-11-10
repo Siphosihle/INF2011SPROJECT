@@ -72,6 +72,7 @@
             // 
             // cmbPaymentType
             // 
+            this.cmbPaymentType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPaymentType.FormattingEnabled = true;
             this.cmbPaymentType.Items.AddRange(new object[] {
             "Credit Card"});

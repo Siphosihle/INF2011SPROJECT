@@ -22,7 +22,7 @@ namespace HomeScreen.Business_Layer
         private int noOfRooms;
         private DateTime startDate;
         private DateTime endDate;
-        bool sentConfirmation, receivedDeposit, isCancelled;
+        bool sentConfirmation, receiveDeposit, isCancelled;
 
         private Calendar myCal = CultureInfo.InvariantCulture.Calendar;
         private DateTime date;
@@ -107,15 +107,15 @@ namespace HomeScreen.Business_Layer
                 sentConfirmation = value;
             }
         }
-        public bool RecievedDeposit
+        public bool RecieveDeposit
         {
             get
             {
-                return receivedDeposit;
+                return receiveDeposit;
             }
             set
             {
-                receivedDeposit = value;
+                receiveDeposit = value;
             }
         }
         public bool IsCancelled
